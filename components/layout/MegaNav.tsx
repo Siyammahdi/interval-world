@@ -52,7 +52,7 @@ function NavTab({ item }: { item: NavItem }) {
   );
 }
 
-/** Primary mega-menu — navy bar, white labels, white hover panel (matches live sprites) */
+/** Primary mega-menu — width matches the content column (not full viewport) */
 export function MegaNav() {
   return (
     <nav aria-label="Primary" className="w-full bg-iw-navy text-white">

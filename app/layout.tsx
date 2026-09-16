@@ -25,12 +25,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${roboto.variable} h-full`}>
       <body className="min-h-full bg-white font-sans text-iw-navy antialiased">
-        {/* Centered page shell matching live ~1148px canvas */}
-        <div className="mx-auto min-h-full w-full max-w-[1148px] bg-white ">
-          <SiteHeader />
-          {children}
-          <SiteFooter />
-        </div>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
         <CookieBanner />
       </body>
     </html>

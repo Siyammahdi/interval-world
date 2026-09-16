@@ -1,12 +1,16 @@
 import { CreateProfilePage } from "@/components/content/CreateProfilePage";
 import { CsSupportLayout } from "@/components/content/CsSupportLayout";
+import { EmailUsForm } from "@/components/content/EmailUsForm";
+import { FaqContent } from "@/components/content/FaqContent";
 import { IntervalHdPage } from "@/components/content/IntervalHdPage";
 import { LoginForm } from "@/components/content/LoginForm";
+import { LoginHelpContent } from "@/components/content/LoginHelpContent";
 import { OfficesContent } from "@/components/content/OfficesContent";
 import { TrackerPage } from "@/components/content/TrackerPage";
 import { Container } from "@/components/ui/Container";
 import { intervalHd } from "@/data/interval-hd";
 import type { LivePage } from "@/data/live-pages";
+import { rewriteLiveHtmlLinks } from "@/lib/rewrite-live-links";
 
 type Props = {
   page: LivePage;
@@ -43,16 +47,27 @@ export function LiveContentPage({ page }: Props) {
     return <TrackerPage />;
   }
 
+  const bodyHtml = rewriteLiveHtmlLinks(page.bodyHtml);
+
   if (isCsPage(page) && page.path !== "/web/cs/directory" && page.path !== "/web/cs/mobile-app") {
-    const content =
-      page.layout === "cs-offices" || page.path === "/web/cs/offices" ? (
-        <OfficesContent html={page.bodyHtml} />
-      ) : (
+    let content: React.ReactNode;
+
+    if (page.path === "/web/cs/email-us") {
+      content = <EmailUsForm />;
+    } else if (page.path === "/web/cs/help-login") {
+      content = <FaqContent html={page.bodyHtml} />;
+    } else if (page.path === "/web/my/account/forgotSignInInfo") {
+      content = <LoginHelpContent html={page.bodyHtml} />;
+    } else if (page.layout === "cs-offices" || page.path === "/web/cs/offices") {
+      content = <OfficesContent html={bodyHtml} />;
+    } else {
+      content = (
         <div
           className="iw-cs-inner"
-          dangerouslySetInnerHTML={{ __html: page.bodyHtml }}
+          dangerouslySetInnerHTML={{ __html: bodyHtml }}
         />
       );
+    }
 
     return <CsSupportLayout activePath={page.path}>{content}</CsSupportLayout>;
   }
@@ -62,7 +77,7 @@ export function LiveContentPage({ page }: Props) {
       <Container>
         <div
           className="iw-live-body clearfix"
-          dangerouslySetInnerHTML={{ __html: page.bodyHtml }}
+          dangerouslySetInnerHTML={{ __html: bodyHtml }}
         />
       </Container>
     </main>

@@ -43,7 +43,7 @@ export function HeroCarousel({ slides, intervalMs = 5000 }: HeroCarouselProps) {
 
   return (
     <div
-      className="relative mx-auto w-full max-w-[940px] overflow-hidden bg-[#0b2744]"
+      className="relative mx-auto w-full overflow-hidden bg-[#0b2744]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"

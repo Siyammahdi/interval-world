@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { logoutAction } from "@/app/actions/auth";
 import { LanguageSelect } from "@/components/layout/LanguageSelect";
 import { MegaNav } from "@/components/layout/MegaNav";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { isLoggedIn } from "@/lib/session";
 
-export function SiteHeader() {
+export async function SiteHeader() {
+  const loggedIn = await isLoggedIn();
+
   return (
     <header className="w-full">
       <a
@@ -36,15 +40,28 @@ export function SiteHeader() {
           </Link>
 
           <div className="mb-1 ml-auto flex items-center gap-4">
-            <Link
-              href="/web/my/account/createProfileOrJoin"
-              className="text-[11px] text-iw-blue hover:underline"
-            >
-              Create Profile
-            </Link>
-            <Button href="/web/my/auth/loginPage" className="min-w-[86px] px-5 py-2 text-[14px]">
-              Sign In
-            </Button>
+            {loggedIn ? (
+              <form action={logoutAction}>
+                <button
+                  type="submit"
+                  className="inline-flex min-w-[86px] items-center justify-center rounded-md border border-iw-blue bg-white px-5 py-2 text-[14px] text-iw-blue transition-colors hover:bg-iw-blue hover:text-white"
+                >
+                  Log Out
+                </button>
+              </form>
+            ) : (
+              <>
+                <Link
+                  href="/web/my/account/createProfileOrJoin"
+                  className="text-[11px] text-iw-blue hover:underline"
+                >
+                  Create Profile
+                </Link>
+                <Button href="/web/my/auth/loginPage" className="min-w-[86px] px-5 py-2 text-[14px]">
+                  Sign In
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </Container>

@@ -1,0 +1,426 @@
+[
+  {
+    "id": 1,
+    "label": "Exchange",
+    "topics": [
+      {
+        "label": "I need some help with...",
+        "value": "no selection"
+      },
+      {
+        "label": "Bonus Certificates",
+        "value": "Exchange-Bonus Certificates"
+      },
+      {
+        "label": "Cancellations",
+        "value": "Exchange-Cancellations"
+      },
+      {
+        "label": "Confirmations",
+        "value": "Exchange-Confirmations"
+      },
+      {
+        "label": "Cruise Exchange",
+        "value": "Exchange-Cruise Exchange"
+      },
+      {
+        "label": "Deposits",
+        "value": "Exchange-Deposits"
+      },
+      {
+        "label": "Flexchange",
+        "value": "Exchange-Flexchange"
+      },
+      {
+        "label": "Guest Certificates",
+        "value": "Exchange-Guest Certificates"
+      },
+      {
+        "label": "Insurance",
+        "value": "Exchange-Insurance"
+      },
+      {
+        "label": "Placing a Pending Request",
+        "value": "Exchange-Placing a Pending Request"
+      },
+      {
+        "label": "Policies",
+        "value": "Exchange-Policies"
+      },
+      {
+        "label": "Status of a Pending Request",
+        "value": "Exchange-Status of a Pending Request"
+      },
+      {
+        "label": "Unit Size",
+        "value": "Exchange-Unit Size"
+      },
+      {
+        "label": "Suggestions",
+        "value": "Exchange-Suggestions"
+      },
+      {
+        "label": "Other",
+        "value": "Exchange-Other"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "label": "Getaways",
+    "topics": [
+      {
+        "label": "I need some help with...",
+        "value": "no selection"
+      },
+      {
+        "label": "Destinations",
+        "value": "Getaways-Destinations"
+      },
+      {
+        "label": "Guest Certificates",
+        "value": "Getaways-Guest Certificates"
+      },
+      {
+        "label": "Insurance",
+        "value": "Getaways-Insurance"
+      },
+      {
+        "label": "Prices",
+        "value": "Getaways-Prices"
+      },
+      {
+        "label": "Suggestions",
+        "value": "Getaways-Suggestions"
+      },
+      {
+        "label": "Other",
+        "value": "Getaways-Other"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "label": "Travel",
+    "topics": [
+      {
+        "label": "I need some help with...",
+        "value": "no selection"
+      },
+      {
+        "label": "Air",
+        "value": "Travel-Air"
+      },
+      {
+        "label": "Car Rental",
+        "value": "Travel-Car Rental"
+      },
+      {
+        "label": "Cruises",
+        "value": "Travel-Cruises"
+      },
+      {
+        "label": "Hotels",
+        "value": "Travel-Hotels"
+      },
+      {
+        "label": "Insurance",
+        "value": "Travel-Insurance"
+      },
+      {
+        "label": "Tours",
+        "value": "Travel-Tours"
+      },
+      {
+        "label": "Suggestions",
+        "value": "Travel-Suggestions"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "label": "Membership",
+    "topics": [
+      {
+        "label": "I need some help with...",
+        "value": "no selection"
+      },
+      {
+        "label": "Platinum",
+        "value": "Membership-Platinum"
+      },
+      {
+        "label": "Interval Gold",
+        "value": "Membership-Interval Gold"
+      },
+      {
+        "label": "Changes",
+        "value": "Membership-Changes"
+      },
+      {
+        "label": "Expiration Dates",
+        "value": "Membership-Expiration Dates"
+      },
+      {
+        "label": "Golf Access",
+        "value": "Membership-Golf Access"
+      },
+      {
+        "label": "Materials",
+        "value": "Membership-Materials"
+      },
+      {
+        "label": "Member Number",
+        "value": "Membership-Member Number"
+      },
+      {
+        "label": "Purchasing a Timeshare",
+        "value": "Membership-Purchasing"
+      },
+      {
+        "label": "Renewals",
+        "value": "Membership-Renewals"
+      },
+      {
+        "label": "Resort Directory",
+        "value": "Membership-Resort Directory"
+      },
+      {
+        "label": "Selling a Timeshare",
+        "value": "Membership-Selling"
+      },
+      {
+        "label": "Other",
+        "value": "Membership-Other"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "label": "Newsletter",
+    "topics": [
+      {
+        "label": "I need some help with...",
+        "value": "no selection"
+      },
+      {
+        "label": "Subscribe",
+        "value": "Newsletter-Subscribe"
+      },
+      {
+        "label": "Unsubscribe",
+        "value": "Newsletter-Unsubscribe"
+      },
+      {
+        "label": "Suggestions",
+        "value": "Newsletter-Suggestions"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "label": "Privacy",
+    "topics": [
+      {
+        "label": "I need some help with...",
+        "value": "no selection"
+      },
+      {
+        "label": "Inquiry",
+        "value": "Privacy-Inquiry"
+      },
+      {
+        "label": "Complaint",
+        "value": "Privacy-Complaint"
+      },
+      {
+        "label": "Email Communications",
+        "value": "Privacy-Email Communications"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "label": "Web site Technical Issues",
+    "topics": [
+      {
+        "label": "I need some help with...",
+        "value": "no selection"
+      },
+      {
+        "label": "Access",
+        "value": "Website-Access"
+      },
+      {
+        "label": "Assistance",
+        "value": "Website-Assistance"
+      },
+      {
+        "label": "Online Registration",
+        "value": "Website-Registration"
+      },
+      {
+        "label": "Password",
+        "value": "Website-Password"
+      },
+      {
+        "label": "Suggestions",
+        "value": "Website-Suggestions"
+      },
+      {
+        "label": "Other",
+        "value": "Website-Other"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "label": "Interval International App",
+    "topics": [
+      {
+        "label": "I need some help with...",
+        "value": "no selection"
+      },
+      {
+        "label": "Access",
+        "value": "Interval International App-Access"
+      },
+      {
+        "label": "Getaways",
+        "value": "Interval International App-Getaways"
+      },
+      {
+        "label": "Password",
+        "value": "Interval International App-Password"
+      },
+      {
+        "label": "Resort Directory",
+        "value": "Interval International App-Resort Directory"
+      },
+      {
+        "label": "Suggestions",
+        "value": "Interval International App-Suggestions"
+      },
+      {
+        "label": "Technical Issues",
+        "value": "Interval International App-Technical Issues"
+      },
+      {
+        "label": "Other",
+        "value": "Interval International App-Other"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "label": "Mobile Website",
+    "topics": [
+      {
+        "label": "I need some help with...",
+        "value": "no selection"
+      },
+      {
+        "label": "Access",
+        "value": "Mobile Website-Access"
+      },
+      {
+        "label": "Getaways",
+        "value": "Mobile Website-Getaways"
+      },
+      {
+        "label": "Exchange",
+        "value": "Mobile Website-Exchange"
+      },
+      {
+        "label": "Membership",
+        "value": "Mobile Website-Membership"
+      },
+      {
+        "label": "Password",
+        "value": "Mobile Website-Suggestions"
+      },
+      {
+        "label": "Suggestions",
+        "value": "Mobile Website-Suggestions"
+      },
+      {
+        "label": "Technical Issues",
+        "value": "Mobile Website-Technical Issues"
+      },
+      {
+        "label": "Other",
+        "value": "Mobile Website-Other"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "label": "Non-members",
+    "topics": [
+      {
+        "label": "I need some help with...",
+        "value": "no selection"
+      },
+      {
+        "label": "Membership Enrollment",
+        "value": "Non-members-Membership Enrollment"
+      },
+      {
+        "label": "Resort Information",
+        "value": "Non-members-Resort Information"
+      },
+      {
+        "label": "Timeshare Purchasing",
+        "value": "Non-members-Timeshare Purchasing"
+      },
+      {
+        "label": "Other",
+        "value": "Non-members-Other"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "label": "All-Inclusive",
+    "topics": [
+      {
+        "label": "I need some help with...",
+        "value": "no selection"
+      },
+      {
+        "label": "Deals",
+        "value": "All-Inclusive-Deals"
+      },
+      {
+        "label": "Fees",
+        "value": "All-Inclusive-Fees"
+      },
+      {
+        "label": "Other",
+        "value": "All-Inclusive-Other"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "label": "GDPR",
+    "topics": [
+      {
+        "label": "I need some help with...",
+        "value": "no selection"
+      },
+      {
+        "label": "Rectification",
+        "value": "Rectification"
+      },
+      {
+        "label": "Erasure",
+        "value": "Erasure"
+      },
+      {
+        "label": "Data Portability",
+        "value": "Data Portability"
+      }
+    ]
+  }
+]

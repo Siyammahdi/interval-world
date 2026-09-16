@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { rewriteLiveHtmlLinks } from "@/lib/rewrite-live-links";
 
 type OfficesContentProps = {
   html: string;
@@ -11,6 +12,7 @@ type OfficesContentProps = {
  */
 export function OfficesContent({ html }: OfficesContentProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const bodyHtml = rewriteLiveHtmlLinks(html);
 
   useEffect(() => {
     const root = ref.current;
@@ -29,7 +31,6 @@ export function OfficesContent({ html }: OfficesContentProps) {
         document.getElementById(id);
       if (target) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
-        // Keep hash for deep-linking like the live site
         if (value.startsWith("#")) {
           history.replaceState(null, "", value);
         }
@@ -37,18 +38,17 @@ export function OfficesContent({ html }: OfficesContentProps) {
     };
 
     select.addEventListener("change", onChange);
-    // Strip inline onChange from live markup
     select.removeAttribute("onchange");
     select.removeAttribute("onChange");
 
     return () => select.removeEventListener("change", onChange);
-  }, [html]);
+  }, [bodyHtml]);
 
   return (
     <div
       ref={ref}
       className="iw-offices-content"
-      dangerouslySetInnerHTML={{ __html: html }}
+      dangerouslySetInnerHTML={{ __html: bodyHtml }}
     />
   );
 }
