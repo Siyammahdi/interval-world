@@ -1,252 +1,1034 @@
-﻿[
-    {
-        "path":  "/web/my/info/ownership",
-        "layout":  "2col",
-        "title":  "",
-        "hero":  "time_share_610x231.jpg",
-        "play":  false,
-        "h2":  "Great Vacations. Great Values.",
-        "sideH4":  "Learn About The Many Ways to Exchange! || Interval International Membership Benefits",
-        "sideImgs":  "jointoday_Sidebar_289x147.jpg, Many_Ways_To_Exchange_Sidebar.jpg, intervalbasic_Sidebar_289x147.jpg"
-    },
-    {
-        "path":  "/web/my/info/ownership/overview",
-        "layout":  "2col",
-        "title":  "",
-        "hero":  "About_Vacation_Ownership_Left_Column.jpg",
-        "play":  false,
-        "h2":  "Vacation Ownership: Year-Round Value With Exceptional Benefits!",
-        "sideH4":  "Membership Benefits",
-        "sideImgs":  "jointoday_Sidebar_289x147.jpg, Interval_Logo_Sidebar289x147.jpg"
-    },
-    {
-        "path":  "/web/my/info/ownership/about",
-        "layout":  "2col",
-        "title":  "",
-        "hero":  "About_Interval_610x231_V1.jpg",
-        "play":  false,
-        "h2":  "Why Interval International?",
-        "sideH4":  "Membership Benefits",
-        "sideImgs":  "jointoday_Sidebar_289x147.jpg, getaway_discounts_c_sidebar_289x147.jpg, intervalhd_1_sidebar_new_289x147.jpg"
-    },
-    {
-        "path":  "/web/cs/offices",
-        "layout":  "FAIL",
-        "title":  "The remote server returned an error: (404) Not Found."
-    },
-    {
-        "path":  "/web/my/info/planning",
-        "layout":  "3col",
-        "title":  "",
-        "hero":  "",
-        "play":  false,
-        "h2":  "Explore \u0026 Plan | Interval HD | The New Interval App! | Member Publications | Community",
-        "sideH4":  "",
-        "sideImgs":  "Explore_and_Plan_Sidebar_289x147_V2.jpg, intervalhd_4_sidebar_289x147.jpg, intervals_app_new_2_noborder_289x147.jpg, community_green_b_289x147.jpg, interval_travel_new_noborder_289x147.jpg"
-    },
-    {
-        "path":  "/web/cs/directory",
-        "layout":  "FAIL",
-        "title":  "The remote server returned an error: (404) Not Found."
-    },
-    {
-        "path":  "/web/my/channel",
-        "layout":  "unknown",
-        "title":  "Interval International | Interval HD",
-        "hero":  "",
-        "play":  false,
-        "h2":  "Interval Video | Sign In | Search Getaways | Vacation Exchange | Interval HD",
-        "sideH4":  "",
-        "sideImgs":  ""
-    },
-    {
-        "path":  "/web/cs/mobile-app",
-        "layout":  "FAIL",
-        "title":  "The remote server returned an error: (404) Not Found."
-    },
-    {
-        "path":  "/web/my/info/planning/magazine",
-        "layout":  "2col",
-        "title":  "",
-        "hero":  "",
-        "play":  false,
-        "h2":  "Member Publications",
-        "sideH4":  "Interval Travel",
-        "sideImgs":  "Interval_Logo_Sidebar289x147.jpg, interval_travel_new_noborder_289x147.jpg"
-    },
-    {
-        "path":  "/web/my/info/planning/community",
-        "layout":  "2col",
-        "title":  "",
-        "hero":  "stay_connected_prelogin_left_column_banner_610x231.jpg",
-        "play":  false,
-        "h2":  "Socialize with Us",
-        "sideH4":  "Interval World Magazine || Like us on Facebook",
-        "sideImgs":  "intervals_app_new_2_noborder_289x147.jpg, facebook_jointheconversation.jpg"
-    },
-    {
-        "path":  "/web/my/info/planning/travel",
-        "layout":  "3col",
-        "title":  "",
-        "hero":  "",
-        "play":  false,
-        "h2":  "Find a Room | Arrive in Style | Suite Deals | Get on Board | See the World",
-        "sideH4":  "",
-        "sideImgs":  ""
-    },
-    {
-        "path":  "/web/my/info/planning/tracker",
-        "layout":  "unknown",
-        "title":  "",
-        "hero":  "",
-        "play":  false,
-        "h2":  "Point the Way",
-        "sideH4":  "",
-        "sideImgs":  ""
-    },
-    {
-        "path":  "/web/my/info/benefits",
-        "layout":  "2col",
-        "title":  "",
-        "hero":  "About_Interval_610x231_V1.jpg",
-        "play":  false,
-        "h2":  "Membership Has Its Benefits!",
-        "sideH4":  "Online Resort Directory",
-        "sideImgs":  "special_offers_a_sidebar_289x147.jpg, Explore_and_Plan_Sidebar_289x147_V2.jpg"
-    },
-    {
-        "path":  "/web/my/info/benefits/exchange",
-        "layout":  "3col",
-        "title":  "",
-        "hero":  "",
-        "play":  false,
-        "h2":  "Deposit First | Request First | Flexchange | ShortStay Exchange | E-Plus",
-        "sideH4":  "",
-        "sideImgs":  "Flexchange_V2_Sidebar.jpg, lake_tahoe_1_sidebar_289x147.jpg, Flexchange_Sidebar.jpg, lasvegas_2_sidebar_289x147.jpg, Interval_Options_Sidebar.jpg"
-    },
-    {
-        "path":  "/web/my/info/benefits/getaways",
-        "layout":  "3col",
-        "title":  "",
-        "hero":  "",
-        "play":  false,
-        "h2":  "Super Affordable | Room to Move | No Exchange Required | Vacation Hotspots | Discounts, Discounts, Discounts",
-        "sideH4":  "",
-        "sideImgs":  ""
-    },
-    {
-        "path":  "/web/my/info/benefits/membership",
-        "layout":  "2col",
-        "title":  "",
-        "hero":  "Interval_basic_Left_Column_610x231.jpg",
-        "play":  false,
-        "h2":  "Interval International Membership",
-        "sideH4":  "E-Plus\u003csup\u003e\u0026reg;\u003c/sup\u003e || VIP Concierge Services",
-        "sideImgs":  "getaway_discounts_e_sidebar_289x147.jpg, eplus_prelogin_sidebar289x147.jpg, Allianz_SideBar_289x147.jpg, concierge_sidebar_289x147.jpg"
-    },
-    {
-        "path":  "/web/my/info/benefits/gold",
-        "layout":  "2col",
-        "title":  "",
-        "hero":  "Interval_Gold_Memb_Left_Column_610x231.jpg",
-        "play":  false,
-        "h2":  "Interval Gold",
-        "sideH4":  "Guest Certificates for Friends || Watch Videos on Interval HD",
-        "sideImgs":  "gest_certificate_sidebar_289x147.jpg, intervalhd_4_sidebar_289x147.jpg"
-    },
-    {
-        "path":  "/web/my/info/benefits/platinum",
-        "layout":  "2col",
-        "title":  "",
-        "hero":  "Interval_Platinum_Left_Column_610x231.jpg",
-        "play":  false,
-        "h2":  "Interval Platinum",
-        "sideH4":  "Online Resort Directory",
-        "sideImgs":  "jointoday_Sidebar_289x147.jpg, Explore_and_Plan_Sidebar_289x147_V2.jpg"
-    },
-    {
-        "path":  "/web/my/info/benefits/offers",
-        "layout":  "2col",
-        "title":  "",
-        "hero":  "specialoffers_bigdeals_610x231.jpg",
-        "play":  false,
-        "h2":  "Special Offers. Big Deals.",
-        "sideH4":  "Online Resort Directory || Interval World Magazine",
-        "sideImgs":  "intervals_app_new_2_noborder_289x147.jpg, Explore_and_Plan_Sidebar_289x147_V2.jpg, intervals_magazine_b_sidebar_289x147.jpg"
-    },
-    {
-        "path":  "/web/my/info/membership",
-        "layout":  "2col",
-        "title":  "",
-        "hero":  "Join_Today_Left_Column_610x231.jpg",
-        "play":  false,
-        "h2":  "Join Today",
-        "sideH4":  "Interval Gold Membership || Interval Platinum Membership",
-        "sideImgs":  "intervalbasic_Sidebar_289x147.jpg, interval_goldSidebar_289x147.jpg, intervalplat_Sidebar_289x147.jpg"
-    },
-    {
-        "path":  "/web/my/account/createProfileOrJoin",
-        "layout":  "unknown",
-        "title":  "Create Password/Enroll",
-        "hero":  "",
-        "play":  false,
-        "h2":  "Web Profile | Become A Member",
-        "sideH4":  "",
-        "sideImgs":  ""
-    },
-    {
-        "path":  "/web/my/auth/loginPage",
-        "layout":  "login",
-        "title":  "Member Login Page",
-        "hero":  "",
-        "play":  false,
-        "h2":  "",
-        "sideH4":  "",
-        "sideImgs":  ""
-    },
-    {
-        "path":  "/web/cs/about",
-        "layout":  "FAIL",
-        "title":  "The remote server returned an error: (404) Not Found."
-    },
-    {
-        "path":  "/web/cs/legal",
-        "layout":  "FAIL",
-        "title":  "The remote server returned an error: (404) Not Found."
-    },
-    {
-        "path":  "/web/cs/customer-service",
-        "layout":  "FAIL",
-        "title":  "The remote server returned an error: (404) Not Found."
-    },
-    {
-        "path":  "/web/cs/help-login",
-        "layout":  "FAIL",
-        "title":  "The remote server returned an error: (404) Not Found."
-    },
-    {
-        "path":  "/web/cs/travel-advisories",
-        "layout":  "FAIL",
-        "title":  "The remote server returned an error: (404) Not Found."
-    },
-    {
-        "path":  "/web/cs/eplus",
-        "layout":  "FAIL",
-        "title":  "The remote server returned an error: (404) Not Found."
-    },
-    {
-        "path":  "/web/cs/deposit",
-        "layout":  "FAIL",
-        "title":  "The remote server returned an error: (404) Not Found."
-    },
-    {
-        "path":  "/web/my/deals",
-        "layout":  "unknown",
-        "title":  "Interval International | Home",
-        "hero":  "",
-        "play":  false,
-        "h2":  "",
-        "sideH4":  "",
-        "sideImgs":  ""
-    }
+[
+  {
+    "path": "/web/my/info/ownership",
+    "documentTitle": "Why Vacation Ownership? | Interval International",
+    "layoutType": "2col_video",
+    "leftHero": "time_share_610x231.jpg",
+    "hasPlayButton": true,
+    "h2Headings": [
+      "Great Vacations. Great Values."
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [
+      "Join Today",
+      "Learn About The Many Ways to Exchange!",
+      "Interval International Membership Benefits"
+    ],
+    "sidebarImages": [
+      "jointoday_Sidebar_289x147.jpg",
+      "Many_Ways_To_Exchange_Sidebar.jpg",
+      "intervalbasic_Sidebar_289x147.jpg"
+    ],
+    "bodyTextPreview": "Great Vacations. Great Values. More than 7 million people enjoy vacation ownership annually. As one of the most highly regulated products on the market, vacation ownership fits the lifestyle of families worldwide because it offers a variety of convenient, high-quality opportunities.When you join Interval International®, you receive even more from your vacations. Not only will you enjoy a great resort to retreat to every year, you can also decide to vacation in a different place, or at a differen",
+    "allContentImages": [
+      "/iimedia/images/prelogin/left_column_banner/time_share_610x231.jpg",
+      "/iimedia/images/prelogin/side_bar/jointoday_Sidebar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/Many_Ways_To_Exchange_Sidebar.jpg",
+      "/iimedia/images/prelogin/side_bar/intervalbasic_Sidebar_289x147.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t\t\t\n\t\t\t\t\t<a href=\"2183737248001\" class=\"play_video\" rel=\"#player_modal\">\n                         <div class=\"related_videos_sidebar_row\">\n                          <div class=\"video_thumbnail_play_hover\"></div>\n\n                         \t<img alt=\"\" src=\"/iimedia/images/prelogin/left_column_banner/time_share_610x231.jpg\">\n                          </div>\n                     </a>\n\t\t\t\t\n\t\t\t<h2>Great Vacations. Great Values.</h2>\n\t\t\t<p></p><p>More than 7 million people enjoy&nbsp;<a href=\"/web/my/info/ownership/overview\">vacation ownership</a>&nbsp;annually. As one of the most highly regulated products on the market, vacation ownership fits the lifestyle of families worldwide because it offers a variety of convenient, high-quality opportunities.<br><br>When you join&nbsp;<a href=\"/web/my/info/ownership/about\">Interval International</a><sup>®</sup>, you receive even more from your vacations. Not only&nbsp;will&nbsp;you enjoy a great resort to retreat to every year, you can also decide to vacation in a different place, or at a different time of year, with thousands of vacation exchange options. It's great for a change of pace, and offers so much flexibility.<br><br>Vacation ownership makes it possible to enjoy life the way it’s meant to be lived – seeing the world’s wonders and spending quality time with your family and friends.</p><p></p>\n\n\t\n\n\n\t\t\t",
+    "fetchedFrom": "/web/my/info/ownership",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/ownership/overview",
+    "documentTitle": "About Vacation Ownership | Interval International",
+    "layoutType": "2col_video",
+    "leftHero": "About_Vacation_Ownership_Left_Column.jpg",
+    "hasPlayButton": true,
+    "h2Headings": [
+      "Vacation Ownership: Year-Round Value With Exceptional Benefits!"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [
+      "Join Today",
+      "Membership Benefits"
+    ],
+    "sidebarImages": [
+      "jointoday_Sidebar_289x147.jpg",
+      "Interval_Logo_Sidebar289x147.jpg"
+    ],
+    "bodyTextPreview": "Vacation Ownership: Year-Round Value With Exceptional Benefits! Value in Ownership Millions of families worldwide get more out of their vacation by paying only for the time they want. When they take their vacation time they can also enjoy spacious accommodations with fabulous resort amenities. It’s Your Vacation Time, Use It! Vacation ownership comes with a wide variety of exchange options. With an Interval membership, the many ways to exchange offer the flexibility to trade your week or points ",
+    "allContentImages": [
+      "/iimedia/images/prelogin/left_column_banner/About_Vacation_Ownership_Left_Column.jpg",
+      "/iimedia/images/prelogin/side_bar/jointoday_Sidebar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/Interval_Logo_Sidebar289x147.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t\t\t\n\t\t\t\t\t<a href=\"2280288354001\" class=\"play_video\" rel=\"#player_modal\">\n                         <div class=\"related_videos_sidebar_row\">\n                          <div class=\"video_thumbnail_play_hover\"></div>\n\n                         \t<img alt=\"\" src=\"/iimedia/images/prelogin/left_column_banner/About_Vacation_Ownership_Left_Column.jpg\">\n                          </div>\n                     </a>\n\t\t\t\t\n\t\t\t<h2>Vacation Ownership: Year-Round Value With Exceptional Benefits!</h2>\n\t\t\t<p></p><p><strong><em><span style=\"color: #0080c0; font-size: large;\">Value in Ownership </span></em></strong>&nbsp;<br>Millions of families worldwide get more out of their vacation by paying only for the time they want. When they take their vacation time they can also enjoy <strong>spacious accommodations with fabulous resort amenities.</strong> &nbsp;<br><br><span style=\"color: #0080c0; font-size: large;\"><strong><em>It’s Your Vacation Time, Use It!</em></strong></span>&nbsp;<br>Vacation ownership comes with a wide <strong>variety of exchange options</strong>. With an Interval membership, the&nbsp;<a href=\"/web/my/info/benefits/exchange\">many ways to exchange</a>&nbsp;offer the flexibility to trade your week or points for a resort vacation or towards a cruise or a hotel stay. Whatever your budget, with vacation ownership you can afford spectacular, unforgettable vacations in style, every year.<br><br><span style=\"color: #0080c0; font-size: large;\"><strong><em>The World Is Your Playground</em></strong></span>&nbsp;<br>When you purchase time with an Interval International<sup>®</sup> – affiliated resort, you will have a world of vacations from which to choose. You’ll have access to Interval’s Exchange Network&nbsp;offering <strong>over 3,200 resorts located in the world's most desireable places</strong>. How’s that for a wide selection?<br><br>To learn more, peruse the&nbsp;<a href=\"/web/cs?a=1500\">Online Resort Directory</a>. You’ll explore a coveted collection of celebrated hospitality ",
+    "fetchedFrom": "/web/my/info/ownership/overview",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/ownership/about",
+    "documentTitle": "Why Interval International? | Interval International",
+    "layoutType": "2col_video",
+    "leftHero": "About_Interval_610x231_V1.jpg",
+    "hasPlayButton": true,
+    "h2Headings": [
+      "Why Interval International?"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [
+      "Join Today",
+      "Membership Benefits"
+    ],
+    "sidebarImages": [
+      "jointoday_Sidebar_289x147.jpg",
+      "getaway_discounts_c_sidebar_289x147.jpg",
+      "intervalhd_1_sidebar_new_289x147.jpg"
+    ],
+    "bodyTextPreview": "Why Interval International? The perfect vacation! For some it means lying on a tropical beach. For others, it’s family time at a thrilling theme park destination. For a couple looking for a romantic escape, a peaceful respite in the mountains might be in store. No matter where you go, it’s all about quality vacation time with family, friends, and loved ones. And there’s no better way to experience the perfect vacation year after year than through vacation ownership and membership with Interval I",
+    "allContentImages": [
+      "/iimedia/images/prelogin/left_column_banner/About_Interval_610x231_V1.jpg",
+      "/iimedia/images/prelogin/side_bar/jointoday_Sidebar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/getaway_discounts_c_sidebar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/intervalhd_1_sidebar_new_289x147.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t\t\t\n\t\t\t\t\t<a href=\"2280290297001\" class=\"play_video\" rel=\"#player_modal\">\n                         <div class=\"related_videos_sidebar_row\">\n                          <div class=\"video_thumbnail_play_hover\"></div>\n\n                         \t<img alt=\"\" src=\"/iimedia/images/prelogin/left_column_banner/About_Interval_610x231_V1.jpg\">\n                          </div>\n                     </a>\n\t\t\t\t\n\t\t\t<h2>Why Interval International?</h2>\n\t\t\t<p></p><p>The perfect vacation!</p>\n<p>For some it means lying on a tropical beach. For others, it’s family time at a thrilling theme park destination. For a couple looking for a romantic escape, a peaceful respite in the mountains might be in store.</p>\n<p>No matter where you go, it’s all about quality vacation time with family, friends, and loved ones. And there’s no better way to experience the perfect vacation year after year than through vacation ownership and membership with Interval International<sup>®</sup>.</p>\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp;Since 1976, Interval International has been making it easy for members to spend vacation time<br>&nbsp;&nbsp;&nbsp;&nbsp;at a vast network of quality resorts. And with <a href=\"/web/cs?a=1500\">o</a><a href=\"/web/cs?a=1500\">v</a><a href=\"/web/cs?a=1500\">er 3,200 &nbsp;resorts in &nbsp;90&nbsp;countries</a> and <br>&nbsp;&nbsp;&nbsp;&nbsp;territories &nbsp;from which to choose, members truly have the world at their disposal.</div>\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp;Interval membership offers so much more than vacation exchange. You’ll also have access to a suite<br>&nbsp;&nbsp;&nbsp;&nbsp;of benefits such as&nbsp;<a href=\"/web/my/info/benefits/getaways\">Getaways</a>&nbsp;— weeklong stays in the world’s most desireable destinations at an exclusive price.<br>&nbsp;&nbsp;&nbsp;&nbsp;And&nbsp;<a href=\"/web/my/info/benefits/gold\">Interval Gold</a><sup>®</sup> and&nbsp;<a href=\"/web/my/info/benef",
+    "fetchedFrom": "/web/my/info/ownership/about",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/cs/offices",
+    "documentTitle": "Interval International | Offices",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [
+      "U.S.A. World Headquarters",
+      "Argentina",
+      "Australia",
+      "Belgium",
+      "Belize",
+      "Bolivia",
+      "Brasil",
+      "Chile",
+      "China",
+      "Colombia",
+      "Costa Rica",
+      "Czech Republic",
+      "Denmark",
+      "Ecuador",
+      "Egypt",
+      "El Salvador",
+      "Finland",
+      "France",
+      "French Guyana",
+      "Germany",
+      "Greece",
+      "Guatemala",
+      "Guyana",
+      "Honduras",
+      "Hong Kong",
+      "Hungary",
+      "India",
+      "Indonesia",
+      "Israel",
+      "Italy",
+      "Japan",
+      "Korea",
+      "Malaysia",
+      "Mexico",
+      "New Zealand",
+      "Nicaragua",
+      "Norway",
+      "Panama",
+      "Paraguay",
+      "Peru",
+      "Philippines",
+      "Poland",
+      "Portugal",
+      "Russia",
+      "Singapore",
+      "South Africa",
+      "Spain",
+      "Suriname",
+      "Sweden",
+      "Taiwan",
+      "The Netherlands",
+      "Thailand",
+      "U.K.",
+      "United Arab Emirates",
+      "Uruguay",
+      "Venezuela"
+    ],
+    "h1Headings": [
+      "Our Offices"
+    ],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Our Offices To find your local Interval servicing office, please select your country of residency from the drop down below. Country of Residency: Select location here USA Argentina Australia Belgium Belize Bolivia Brasil Chile China Colombia Costa Rica Czech Republic Denmark Ecuador El Salvador Egypt Finland France French Guyana Germany Greece Guatemala Guyana Honduras Hong Kong Hungary India Indonesia Israel Italy Japan Korea Malaysia Mexico New Zealand Nicaragua Norway Panama Paraguay Peru Phi",
+    "allContentImages": [],
+    "leftHtmlSnippet": "\n                    <!-- content for Column 2 (content) -->\n                    <!-- InstanceBeginEditable name=\"column2content\" -->\n                    <h1><p>Our Offices</p>\n</h1>\n                    <p> </p><p><strong>To find your local Interval servicing office, please select your country of residency from the drop down below.</strong></p><p></p>\n                    <form name=\"form1\" method=\"post\" action=\"\">\n                            <strong>Country of Residency</strong>:\n                            <select name=\"select2\" onchange=\"MM_jumpMenu('parent',this,1)\">\n                                <option selected=\"\">Select location here </option>\n                                <option value=\"#usa\">USA </option>\n                                <option value=\"#argentina\">Argentina </option>\n                                <option value=\"#australia\">Australia </option>\n                                <option value=\"#belgium\">Belgium </option>\n                                <option value=\"#belize\">Belize </option>\n                                <option value=\"#bolivia\">Bolivia </option>\n                                <option value=\"#brasil\">Brasil </option>\n                                <option value=\"#chile\">Chile </option>\n                                <option value=\"#china\">China </option>\n                                <option value=\"#colombia\">Colombia </option>\n                                <option value=\"#cr\">Costa Rica </option>\n                                <option value=\"#cr2\">Czech Republic </option>\n                                <option value=\"#denmark\">Denmark </option>\n                                <option value=\"#ecuador\">Ecuador </option>\n                                <option value=\"#elsalvador\">El Salvador </option>\n                                <option value=\"#egypt\">Egypt </option>\n                                <option value=\"#finland\">Finland </option>\n                                <option value=\"#france\">France </option",
+    "fetchedFrom": "/web/cs?a=60&p=offices",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/planning",
+    "documentTitle": "Explore & Plan | Interval International",
+    "layoutType": "3col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Explore & Plan",
+      "Interval HD",
+      "The New Interval App!",
+      "Member Publications",
+      "Community",
+      "Interval Travel®"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Explore & Plan Interval makes planning your next vacation a breeze. Whether you're still in fact-finding mode and researching potential destinations, or you've found your slice of heaven and are ready to book, intervalworld.com is your starting point! Here's a look at the resources available to you, and just how easy — and fun — it is to plan your next great escape! Interval HD Explore destinations and tour resorts before you confirm an exchange or buy a Getaway. View videos highlighting vacatio",
+    "allContentImages": [
+      "/iimedia/images/prelogin/preloginHeroImages/welcomebanner.jpg",
+      "/iimedia/images/prelogin/side_bar/Explore_and_Plan_Sidebar_289x147_V2.jpg",
+      "/iimedia/images/prelogin/side_bar/intervalhd_4_sidebar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/intervals_app_new_2_noborder_289x147.jpg",
+      "/iimedia/images/prelogin/Sidebar_banner_289x147_English-2-19AUG25.jpg",
+      "/iimedia/images/prelogin/side_bar/community_green_b_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/interval_travel_new_noborder_289x147.jpg"
+    ],
+    "leftHtmlSnippet": "\n                            \n    \n    \n        <div id=\"player_modal\">\n            <iframe name=\"player_frame\" id=\"player_frame\" scrolling=\"no\" allowtransparency=\"yes\" align=\"center\" frameborder=\"no\"></iframe>\n        </div>\n        \n            \n                \n                    \n\n\n\n\n\n\n\t\t<div id=\"body\">\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t<div id=\"p101_hero_img\"><img src=\"/iimedia/images/prelogin/preloginHeroImages/welcomebanner.jpg\" border=\"0\" alt=\"\"></div>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\n\t\n\t\n\t\t\t  <div id=\"p101_3col_container_940\">\n\n\t\t\t\n\t\t\t\t\n\t\t\t\t<div id=\"p101_3col_block\">\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div id=\"p101_3col_img\"><a href=\"/web/cs?a=1500\"><img src=\"/iimedia/images/prelogin/side_bar/Explore_and_Plan_Sidebar_289x147_V2.jpg\" border=\"0\" alt=\"\"></a></div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\n\n\n\t\t\t\t\t\t<div id=\"p101_3col_txt\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<h2><a href=\"/web/cs?a=1500\">Explore &amp; Plan</a></h2>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t<p></p><p>Interval makes planning your next vacation a breeze. Whether you're still in fact-finding mode and researching potential destinations, or you've found your slice of heaven and are ready to book, intervalworld.com is your starting point! Here's a look at the resources available to you, and just how easy — and fun — it is to plan your next great escape!</p><p></p>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t<div id=\"p101_3col_block\">\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div id=\"p101_3col_img\"><a href=\"https://www.intervalworld.com/web/my/channel\"><img src=\"/iimedia/images/prelogin/side_bar/intervalhd_4_sidebar_289x147.jpg\" border=\"0\" alt=\"\"></a></div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\n\n\n\t\t\t\t\t\t<div id=\"p101_3col_txt\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<h2><a href=\"https://www.intervalworld.com/web/my/channel\">Interval HD</a></h2>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t<p></p><p>Explore destinations and tour resorts before you confirm an exchange or buy a Getaway.&nbsp; <a href=\"https://www.intervalworld.com/web/my/channel\">View videos</a>&nbsp;highlighting vacation experiences around the globe. Plus, watch&nbsp;member&nbsp;videos about Interval membership, t",
+    "fetchedFrom": "/web/my/info/planning",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/cs/directory",
+    "documentTitle": "Interval International | Resort Directory Home",
+    "layoutType": "directory",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Search by Region",
+      "Advanced Search",
+      "Map Search"
+    ],
+    "h1Headings": [
+      "Resort Directory"
+    ],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Resort Directory The Resort Directory contains information to help you plan your next exchange vacation, including resort descriptions, photos, and listings of amenities and activities on-site and nearby. Search by Region Please select a region. Asia Australia & New Zealand Canada - Eastern Canada - Western Caribbean & Atlantic Islands Central America Europe - Central & The Low Countries Europe - East Mediterranean & Adriatic Europe - France, Italy & Malta Europe - Portugal, Spain & Andorra Euro",
+    "allContentImages": [
+      "/images/rd_map_lrg.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t\t\t\t\t<!-- content for Column 2 (content) -->\n\t\t\t\t\t<!-- InstanceBeginEditable name=\"column2content\" -->\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t<!-- start: if getaway or exchange map search -->\n                    <!-- get the all action codes --> \n\t\t\t\n\n                 \t\t\t\t\n\t\t\t\t\t\t\n                        <!-- start: if resort directory map search -->\n                        <h1>Resort Directory</h1>\n\t\t\t\t\t\t<p>The Resort Directory contains information to help you plan your next exchange vacation, including resort descriptions, photos, and listings of amenities and activities on-site and nearby.</p>\n\n\t\t\t\t\t\t<h2>Search by Region</h2>\n\t\t\t\t\t\t<!-- end: if resort directory map search -->\n\t\t\t\t\t\t<small>\n\t\t\t\t\t\t<form class=\"rd_search\" name=\"region\" method=\"GET\" action=\"/web/cs\">\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"a\" value=\"1501\">\n\t\t\t\t\t\t\t\t\t\t\t\t<select class=\"float_left rd_region_sel\" name=\"regionCode\" aria-label=\"Select Region\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option selected=\"\">Please select a region.</option>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"24\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tAsia\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"26\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tAustralia &amp; New Zealand\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"1\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tCanada - Eastern\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"2\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tCanada - Western         \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"14\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tCaribbean &amp; Atlantic Islands\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"16\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tCentral America\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"19\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEurope - Central &amp; The Low Countries\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"29\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEurope - East Mediterranean &amp; Adriatic\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"18\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tEurope - France, Italy &amp; Malta\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</option>\n\t",
+    "fetchedFrom": "/web/cs?a=1500",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/channel",
+    "documentTitle": "Interval International | Interval HD",
+    "layoutType": "channel",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Interval Video",
+      "Sign In",
+      "Search Getaways",
+      "Vacation Exchange",
+      "Interval HD",
+      "United States",
+      "Canada",
+      "Caribbean",
+      "Europe",
+      "Mexico & Central America"
+    ],
+    "h1Headings": [],
+    "h3Headings": [
+      "Enter Travel Dates",
+      "Enter Number of Guests",
+      "Share This Page",
+      "Explore Destinations. Tour Resorts. Take a Vacation"
+    ],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "",
+    "allContentImages": [
+      "/iimedia/pdf/iw/buyers-guide.pdf"
+    ],
+    "leftHtmlSnippet": "",
+    "fetchedFrom": "/web/my/channel",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/cs/mobile-app",
+    "documentTitle": "Interval International | Mobile App",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [],
+    "h1Headings": [
+      "Enjoy the member benefits from anywhere."
+    ],
+    "h3Headings": [
+      "Exchange Like Never Before",
+      "Exchange + Getaways Combined",
+      "Choose What to Use",
+      "Certificates",
+      "Upcoming Trips",
+      "Faster Login",
+      "Other Features",
+      "Mobile app is available for Apple and Android devices. Once you download the new Interval International app, please delete the older version of the app from your device."
+    ],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Enjoy the member benefits from anywhere. New features for a new experience, and available for download today. Download for Apple iOS Download for Android Exchange Like Never Before This is what we call a game changer. The Interval International app now features the ability to exchange from the palm of your hand. Exchange + Getaways Combined We've made it easier to see your vacation options! Search for both exchanges and Getaways together, or search each separately. Choose What to Use Search firs",
+    "allContentImages": [
+      "/images/iw/mobile-app-ipad-white.png",
+      "/images/iw/mobile-app-iphone-white.png",
+      "/iimedia/images/hero/beach-overhead.png",
+      "/iimedia/images/icons/icon-1.png",
+      "/iimedia/images/icons/icon-2.png",
+      "/iimedia/images/icon7.png",
+      "/iimedia/images/mobile/cert-thumbnail.png",
+      "/iimedia/images/icons/icon-5.png",
+      "/iimedia/images/icons/icon-6.png",
+      "/iimedia/images/mobile/home.png",
+      "/iimedia/images/mobile/vacation.png",
+      "/iimedia/images/mobile/Accom-certs-extend-phone.png",
+      "/iimedia/images/mobile/certs.png",
+      "/iimedia/images/mobile/units2.png",
+      "/iimedia/images/mobile/units1.png"
+    ],
+    "leftHtmlSnippet": "\n\n\t\t\t\t<div class=\"mobile-hero short\">\n\t\t\t\t  <div class=\"mobile-hero-left-content\">\n\t\t\t\t\t<h1 class=\"mobile-hero-text\" data-aos=\"fade-down\" data-aos-delay=\"600\" data-aos-duration=\"400\">Enjoy the member benefits from anywhere.</h1>\n\t\t\t\t\t<div class=\"mobile-hero-text\" data-aos=\"fade-down\" data-aos-delay=\"950\" data-aos-duration=\"400\"><p>New features for a new experience, and available for download today.</p>\n\t\t\t\t\t</div>\n\t\t\t\t\t<a class=\"mobile-hero-btn orange left\" href=\"https://itunes.apple.com/us/app/interval-international-to-go/id1440050404?ls=1&amp;mt=8\" data-aos=\"fade-up\" data-aos-delay=\"1700\" data-aos-duration=\"500\">\n\t\t\t\t\t\tDownload for Apple iOS\n\t\t\t\t\t</a>\n\t\t\t\t\t<a class=\"mobile-hero-btn orange right\" href=\"https://play.google.com/store/apps/details?id=com.intervalintl.app.interval\" data-aos=\"fade-up\" data-aos-delay=\"1850\" data-aos-duration=\"500\">\n\t\t\t\t\t\tDownload for Android\n\t\t\t\t\t</a>\n\t\t\t\t  </div>\n\t\t\t\t  \t<img src=\"/images/iw/mobile-app-ipad-white.png\" class=\"mobile-hero-ipad white\" data-aos=\"fade-left\" data-aos-delay=\"550\">\n\t\t\t\t\t<img src=\"/images/iw/mobile-app-iphone-white.png\" class=\"mobile-hero-iphone white\" data-aos=\"fade-left\" data-aos-delay=\"750\">\n\t\t\t\t\t<img src=\"https://www.intervalworld.com/iimedia/images/hero/beach-overhead.png\" alt=\"\" class=\"mobile-hero-bg\" data-aos=\"fade-in\" data-aos-delay=\"220\" data-aos-duration=\"1000\">\n\t\t\t\t</div>\n\n\n\t\t\t<div class=\"mobile-app-feature-grid\">\n\n\n\t\t\t\t<div class=\"mobile-app-panel-content\">\n\t\t\t\t\t<img src=\"https://www.intervalworld.com/iimedia/images/icons/icon-1.png\" alt=\"\" class=\"mobile-app-icon\">\n\t\t\t\t\t<h3>Exchange Like Never Before</h3>\n\t\t\t\t\t<p>This is what we call a game changer. The&nbsp;Interval International app now features the ability to exchange from the palm of your hand.</p>\n\t\t\t\t</div>\n\n\n\t\t\t\t<div class=\"mobile-app-panel-content\">\n\t\t\t\t\t<img src=\"https://www.intervalworld.com/iimedia/images/icons/icon-2.png\" alt=\"\" class=\"mobile-app-icon\">\n\t\t\t\t\t<h3>Exchange + Getaways Combined</h3>\n\t\t\t\t\t<p>We've made it easier to see your vac",
+    "fetchedFrom": "/web/cs?a=60&p=mobile-app",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/planning/magazine",
+    "documentTitle": "Member Publications | Interval International",
+    "layoutType": "2col_hero",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Member Publications"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [
+      "Membership Benefits",
+      "Interval Travel"
+    ],
+    "sidebarImages": [
+      "Interval_Logo_Sidebar289x147.jpg",
+      "interval_travel_new_noborder_289x147.jpg"
+    ],
+    "bodyTextPreview": "Member Publications Welcome to a world of vacation inspiration. Your member website will include engaging articles and member travel information, building on the legacy of Interval World® magazine first published in 1982. Explore exciting destinations, travel tips, membership updates, and new resort listings. You'll also find great vacation bargains and exclusive members-only offers. Dream big, find your fun, and let Interval World help you discover your next great vacation.",
+    "allContentImages": [
+      "/iimedia/images/benefits/Magazine_Banner_610x231-2-19AUG25.jpg",
+      "/images/misc/2020-vacation-dreams/btn-start-planning.gif",
+      "/iimedia/images/prelogin/side_bar/Interval_Logo_Sidebar289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/interval_travel_new_noborder_289x147.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t  <div id=\"p101_2col_hero\"><img src=\"/iimedia/images/benefits/Magazine_Banner_610x231-2-19AUG25.jpg\" border=\"0\" alt=\"\"></div>\n\t\t\t\t\t\t \n\t\t\t\t \n\t\t\t<h2>Member Publications</h2>\n\t\t\t<p></p><p>Welcome to a world of vacation inspiration.</p>\n<p>Your member website will include engaging articles and member travel information, building on the legacy of <em>Interval World</em><sup>®</sup> magazine first published in 1982.</p>\n<p>Explore exciting destinations, travel tips, membership updates, and new resort listings. You'll also find great vacation bargains and exclusive members-only offers.</p>\n<p>Dream big, find your fun, and let&nbsp;<em>Interval World</em>&nbsp;help you discover your next great vacation.</p>\n<p>&nbsp;</p>\n<p><a title=\"Get Inspired Today\" href=\"https://pub.intervalworld.com/?campaignID=WB:WEBS:19AUG25:MB:DI:EG:AL:ALL:EN:HPLEPMB\" target=\"_blank\" rel=\"noopener\"><img src=\"https://newsletter.intervalworld.com/files/live/sites/news/files/images/misc/2020-vacation-dreams/btn-start-planning.gif\" alt=\"Get Inspired Today\" width=\"232\" height=\"53\" style=\"display: block; margin-left: auto; margin-right: auto;\"></a></p><p></p>\n\n\t\n\n\n\t\t\t",
+    "fetchedFrom": "/web/my/info/planning/magazine",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/planning/community",
+    "documentTitle": "Stay Connected | Interval International",
+    "layoutType": "2col_hero",
+    "leftHero": "stay_connected_prelogin_left_column_banner_610x231.jpg",
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Socialize with Us"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [
+      "Interval International App",
+      "Interval World Magazine",
+      "Like us on Facebook"
+    ],
+    "sidebarImages": [
+      "intervals_app_new_2_noborder_289x147.jpg",
+      "facebook_jointheconversation.jpg"
+    ],
+    "bodyTextPreview": "Socialize with Us Whether you 'Like' Facebook, share pictures on Instagram, post videos on YouTube or pin favorites on Pinterest, you can connect with Interval wherever you go. Add one — add them all! Let's be social together. Community is a members-only resource for all of your Interval- and travel-related questions. It’s easy to get exchange and Getaway tips, travel recommendations, and resort details from your fellow Interval members. You can share your travel experiences — even your favorite",
+    "allContentImages": [
+      "/iimedia/images/prelogin/left_column_banner/stay_connected_prelogin_left_column_banner_610x231.jpg",
+      "/iimedia/images/prelogin/FB_38x38.jpg",
+      "/iimedia/images/icons/Instagram38x38.jpg",
+      "/iimedia/images/prelogin/YouTube_38x38.jpg",
+      "/iimedia/images/prelogin/Pinterest_38x38.jpg",
+      "/iimedia/images/icons/icon_benefit_community.png",
+      "/iimedia/images/prelogin/side_bar/intervals_app_new_2_noborder_289x147.jpg",
+      "/iimedia/images/prelogin/Sidebar_banner_289x147_English.jpg",
+      "/iimedia/images/prelogin/side_bar/facebook_jointheconversation.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t  <div id=\"p101_2col_hero\"><img src=\"/iimedia/images/prelogin/left_column_banner/stay_connected_prelogin_left_column_banner_610x231.jpg\" border=\"0\" alt=\"\"></div>\n\t\t\t\t\t\t \n\t\t\t\t \n\t\t\t<h2>Socialize with Us</h2>\n\t\t\t<p></p><p>Whether you 'Like' Facebook, share pictures on Instagram, post videos on YouTube or pin favorites on Pinterest, you can connect with Interval wherever you go. Add one — add them all! Let's be social together.</p>\n<p><a href=\"https://www.facebook.com/intervalintl\" target=\"_blank\" rel=\"noopener\"><img title=\"Facebook \" src=\"http://www.intervalworld.com/iimedia/images/prelogin/FB_38x38.jpg\" alt=\"Facebook \" width=\"38\" height=\"38\" border=\"0\"></a>&nbsp;&nbsp; <a href=\"http://instagram.com/intervalworld\" target=\"_blank\" rel=\"noopener\"><img title=\"\" src=\"http://www.intervalworld.com/iimedia/images/icons/Instagram38x38.jpg\" alt=\"\" width=\"38\" height=\"38\" border=\"0\"></a>&nbsp;&nbsp; <a href=\"http://www.youtube.com/IntervalsWorld\" target=\"_blank\" rel=\"noopener\"><img title=\"YouTube\" src=\"http://www.intervalworld.com/iimedia/images/prelogin/YouTube_38x38.jpg\" alt=\"YouTube\" border=\"0\"></a>&nbsp;&nbsp; <a href=\"http://pinterest.com/intervalworld/\" target=\"_blank\" rel=\"noopener\"><img title=\"Pinterest \" src=\"http://www.intervalworld.com/iimedia/images/prelogin/Pinterest_38x38.jpg\" alt=\"Pinterest \" border=\"0\"></a>&nbsp;&nbsp;&nbsp;</p>\n<p>Community is a members-only resource for all of your Interval- and travel-related questions. It’s easy to get exchange and Getaway tips, travel recommendations, and resort details from your fellow Interval members. You can share your travel experiences — even your favorite vacation photos.</p>\n<p><a href=\"http://www.intervalworld.com/web/cs?a=110\" target=\"_blank\" rel=\"noopener\"><img title=\"\" src=\"http://www.intervalworld.com/iimedia/images/icons/icon_benefit_community.png\" alt=\"\" width=\"37\" height=\"40\" border=\"0\"></a></p>\n<p><a href=\"http://www.intervalworld.com/web/cs?a=95&amp;url=https://www.intervalworld.com/web/cs%3",
+    "fetchedFrom": "/web/my/info/planning/community",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/planning/travel",
+    "documentTitle": "Interval Travel | Interval International",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Find a Room",
+      "Arrive in Style",
+      "Suite Deals",
+      "Get on Board",
+      "See the World",
+      "Do It All"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Find a Room Your Interval International® membership gives you access to incredible hotel deals through Priceline Partner Solutions™ — check in with members-only rates and extra discounts on 1.2 million hotels around the world. Book your next stay at a price you’ll love. Arrive in Style Enjoy special savings on car rentals with Hertz®. Enroll in Hertz Gold Plus Rewards® for free and take advantage of added perks. Or upgrade to Interval Gold® or Interval Platinum® for even more car rental benefits",
+    "allContentImages": [
+      "/iimedia/images/prelogin/IntervalTravel_Prelogin.jpg",
+      "/iimedia/images/prelogin/Hotels.jpg",
+      "/iimedia/images/prelogin/CarRentals.jpg",
+      "/iimedia/images/prelogin/ResortDeals.jpg",
+      "/iimedia/images/prelogin/Cruises.jpg",
+      "/iimedia/images/prelogin/Tours.jpg",
+      "/iimedia/images/prelogin/Activities.jpg"
+    ],
+    "leftHtmlSnippet": "\n                            \n    \n    \n        <div id=\"player_modal\">\n            <iframe name=\"player_frame\" id=\"player_frame\" scrolling=\"no\" allowtransparency=\"yes\" align=\"center\" frameborder=\"no\"></iframe>\n        </div>\n        \n            \n                \n                    <div id=\"body\">\n        <div id=\"p101_hero_img\">\n                        <a href=\"https://www.intervalworld.com/web/cs?a=95&amp;url=https://www.intervalworld.com/web/cs%3fa=60%26s=tr-home-content%26t=tr-template  \">\n                            <img src=\"/iimedia/images/prelogin/IntervalTravel_Prelogin.jpg\" border=\"0\" alt=\"\">\n                        </a>\n                    </div>\n                <div id=\"p101_3col_container_940\">\n            <div id=\"p101_3col_block\">\n                        <div id=\"p101_3col_img\">\n                                    <a href=\"https://www.intervalworld.com/web/cs?a=95&amp;url=https://www.intervalworld.com/web/my/travel/hotels%3fr=0.5182149207802496 \">\n                                        <img src=\"/iimedia/images/prelogin/Hotels.jpg\" border=\"0\" alt=\"\">\n                                    </a>\n                                </div>\n                            <div id=\"p101_3col_txt\">\n                            <h2>\n                                    <a href=\"https://www.intervalworld.com/web/cs?a=95&amp;url=https://www.intervalworld.com/web/my/travel/hotels%3fr=0.5182149207802496 \">\n                                        Find a Room</a>\n                                </h2>\n                            <p>\n                                </p><p>Your Interval International<sup>®</sup> membership gives you access to incredible hotel deals through Priceline Partner Solutions<sup>™</sup> — check in with members-only rates and extra discounts on 1.2 million hotels around the world. Book your next stay at a price you’ll love.</p><p></p>\n                            </div>\n                    </div>\n                <div id=\"p101_3col_block\">\n               ",
+    "fetchedFrom": "/web/my/info/planning/travel",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/planning/tracker",
+    "documentTitle": "Interval Exchange Tracker | Interval International",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Point the Way"
+    ],
+    "h1Headings": [
+      "A World of Possibilities"
+    ],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "A World of Possibilities Can't decide where to go? Check out where other members are traveling with the Interval Exchange Tracker. This travel-planning tool displays exchange and Getaway activity across Interval's network through an interactive world map. Where you go and what you do is up to you! Simply click on the pins below to view photos and resort details. , , Point the Way Click the light blue pin on the map for recent exchange activity, resort details, and photos. The light blue circle o",
+    "allContentImages": [
+      "/images/rel_pin.png",
+      "/images/dest_pin.png",
+      "/iimedia/images/prelogin/blue_pin_exchange_tracker.jpg",
+      "/iimedia/images/prelogin/blue_circle.png",
+      "/iimedia/images/prelogin/orange_pin_exchange_tracker.jpg"
+    ],
+    "leftHtmlSnippet": "\n                            \n    \n    \n        <div id=\"player_modal\">\n            <iframe name=\"player_frame\" id=\"player_frame\" scrolling=\"no\" allowtransparency=\"yes\" align=\"center\" frameborder=\"no\"></iframe>\n        </div>\n        \n            \n                \n                    <div class=\"tracker_container\">\n        <script type=\"text/javascript\" src=\"/scripts/jquery/plugins/jquery.webticker.min.js\"></script>\n        <script type=\"text/javascript\" src=\"/scripts/my/info/map.js\"></script>\n        <script type=\"text/javascript\" src=\"https://maps.googleapis.com/maps/api/js?sensor=false&amp;key=AIzaSyB7xmG1NdH47uZ9wKIc1G-yfxU4Dk0WGU8&amp;libraries=drawing \"></script>\n        <style type=\"text/css\">\n            h3 {\n                font-size: 13px;\n                color: #555555;\n            }\n            h5 {\n                font-size: 11px;\n                color: #838383;\n            }\n        </style>\n        <div>\n            <h1>\n                A World of Possibilities</h1>\n        </div>\n        <p>\n            </p><p>Can't decide where to go? Check out where other members are traveling with the&nbsp;Interval Exchange Tracker. This travel-planning tool displays exchange and Getaway activity across Interval's network through an interactive world map.</p>\n\n<p>Where you&nbsp;go and what you do is up to you! Simply click on the pins&nbsp;below to&nbsp;view&nbsp;photos and resort details.&nbsp;</p>\n<p></p>\n        <div id=\"map_canvas\"></div>\n        <ul id=\"webticker\"></ul>\n        <div id=\"popupBox\" style=\"display: none;overflow: visible!important;\">\n            <h4 id=\"heading\"></h4>\n            <div id=\"relBox\" class=\"rel_container\">\n                <div class=\"des_rel_pins\">\n                    <img src=\"/images/rel_pin.png\">\n                </div>\n                <div class=\"ext_img\">\n                    <img id=\"relImg\" style=\"width: 152px;\">\n                </div>\n                <div class=\"ext_txt\">\n                    <a id=\"relMoreDetails\" href=\"#\">\n  ",
+    "fetchedFrom": "/web/my/info/planning/tracker",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/benefits",
+    "documentTitle": "Membership Benefits | Interval International",
+    "layoutType": "2col_hero",
+    "leftHero": "About_Interval_610x231_V1.jpg",
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Membership Has Its Benefits!"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [
+      "Special Offers",
+      "Online Resort Directory"
+    ],
+    "sidebarImages": [
+      "special_offers_a_sidebar_289x147.jpg",
+      "Explore_and_Plan_Sidebar_289x147_V2.jpg"
+    ],
+    "bodyTextPreview": "Membership Has Its Benefits! As a member of Interval International®, you can exchange to hundreds of quality resorts in some of the world’s most sought-after vacation destinations. And exchange is just the beginning! From Getaways to Guest Certificates to our VIP ConciergeSM service, members get to choose their value and discounts because Interval offers three levels: Interval International membership, Interval Gold®, and Interval Platinum®.",
+    "allContentImages": [
+      "/iimedia/images/prelogin/left_column_banner/About_Interval_610x231_V1.jpg",
+      "/iimedia/images/prelogin/side_bar/special_offers_a_sidebar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/Explore_and_Plan_Sidebar_289x147_V2.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t  <div id=\"p101_2col_hero\"><img src=\"/iimedia/images/prelogin/left_column_banner/About_Interval_610x231_V1.jpg\" border=\"0\" alt=\"\"></div>\n\t\t\t\t\t\t \n\t\t\t\t \n\t\t\t<h2>Membership Has Its Benefits!</h2>\n\t\t\t<p></p><p>As a member of Interval International<sup>®</sup>, you can exchange to&nbsp;hundreds of&nbsp;quality resorts in some of the world’s most sought-after vacation destinations. And exchange is just the beginning! <br><br>From&nbsp;Getaways to&nbsp;Guest Certificates to our VIP Concierge<sup>SM</sup> service, members get to choose their value and discounts because Interval offers three&nbsp;levels:&nbsp;<a href=\"/web/my/info/benefits/membership\">Interval International membership</a>,&nbsp;<a href=\"/web/my/info/benefits/gold\">Interval Gold<sup>®</sup></a>, and&nbsp;<a href=\"/web/my/info/benefits/platinum\">Interval Platinum<sup>®</sup></a>.</p>\n<p>&nbsp;</p><p></p>\n\n\t\n\n\n\t\t\t",
+    "fetchedFrom": "/web/my/info/benefits",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/benefits/exchange",
+    "documentTitle": "Vacation Exchange | Interval International",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": true,
+    "h2Headings": [
+      "Deposit First",
+      "Request First",
+      "Flexchange",
+      "ShortStay Exchange",
+      "E-Plus",
+      "Interval Options®"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Deposit First Use Deposit First when you are sure you want a different vacation experience. You’ll enjoy the flexibility of up to a four-year travel window — allowing you to exchange anytime from two years before to two years after the first day of your home resort week. Request First If you want the security of retaining your home resort week until you receive an exchange confirmation, use Request First. Place a request and travel from two years before the week you offer in exchange up until th",
+    "allContentImages": [
+      "/iimedia/images/prelogin/preloginHeroImages/Exchange_Casey_Hero940x300_V2.jpg",
+      "/iimedia/images/prelogin/side_bar/Flexchange_V2_Sidebar.jpg",
+      "/iimedia/images/prelogin/side_bar/lake_tahoe_1_sidebar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/Flexchange_Sidebar.jpg",
+      "/iimedia/images/prelogin/side_bar/lasvegas_2_sidebar_289x147.jpg",
+      "/iimedia/images/prelogin/preloginHeroImages/eplusbenefitsimage289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/Interval_Options_Sidebar.jpg"
+    ],
+    "leftHtmlSnippet": "\n                            \n    \n    \n        <div id=\"player_modal\">\n            <iframe name=\"player_frame\" id=\"player_frame\" scrolling=\"no\" allowtransparency=\"yes\" align=\"center\" frameborder=\"no\"></iframe>\n        </div>\n        \n            \n                \n                    <div id=\"body\">\n        <div id=\"p101_3col_vid\">\n                <a href=\"3384294651001\" class=\"play_video\" rel=\"#player_modal\">\n                    <div class=\"related_videos_sidebar_row\">\n                        <div class=\"video_thumbnail_play_hover\"></div>\n                        <img alt=\"\" src=\"/iimedia/images/prelogin/preloginHeroImages/Exchange_Casey_Hero940x300_V2.jpg\">\n                    </div>\n                </a>\n            </div>\n        <div id=\"p101_3col_container_940\">\n            <div id=\"p101_3col_block\">\n                        <div id=\"p101_3col_img\">\n                                    <img src=\"/iimedia/images/prelogin/side_bar/Flexchange_V2_Sidebar.jpg\" border=\"0\" alt=\"\">\n                                </div>\n                            <div id=\"p101_3col_txt\">\n                            <h2>\n                                    Deposit First</h2>\n                            <p>\n                                </p><p>Use Deposit First when you are sure you want a different vacation experience. You’ll enjoy the flexibility of up to a four-year travel window — allowing you to exchange anytime from two years before to two years after the first day of your home resort week.</p><p></p>\n                            </div>\n                    </div>\n                <div id=\"p101_3col_block\">\n                        <div id=\"p101_3col_img\">\n                                    <img src=\"/iimedia/images/prelogin/side_bar/lake_tahoe_1_sidebar_289x147.jpg\" border=\"0\" alt=\"\">\n                                </div>\n                            <div id=\"p101_3col_txt\">\n                            <h2>\n                                    Request First</h2>\n                      ",
+    "fetchedFrom": "/web/my/info/benefits/exchange",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/benefits/getaways",
+    "documentTitle": "Getaways | Interval International",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Super Affordable",
+      "Room to Move",
+      "No Exchange Required",
+      "Vacation Hotspots",
+      "Discounts, Discounts, Discounts",
+      "Always the Best Rates"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Super Affordable Getaways provide members with unsurpassed value for their vacation dollar. Getaways are resort stays in destinations around the world, in spacious accommodations and are available for seven nights or less. Room to Move Getaways are perfect for every traveling party, however large or small. Accommodations range from intimate studios to multibedroom units with separate living and dining areas. And many have full kitchens! No Exchange Required Getaways can be enjoyed at any time wi",
+    "allContentImages": [
+      "/iimedia/images/prelogin/GWPrelogin_hero_ssg.jpg",
+      "/iimedia/images/prelogin/GWPrelogin/section1.jpg",
+      "/iimedia/images/prelogin/GWPrelogin/section2.jpg",
+      "/iimedia/images/prelogin/GWPrelogin/section3.jpg",
+      "/iimedia/images/prelogin/GWPrelogin/section4.jpg",
+      "/iimedia/images/prelogin/GWPrelogin/section5.jpg",
+      "/iimedia/images/prelogin/GWPrelogin/section6.jpg"
+    ],
+    "leftHtmlSnippet": "\n                            \n    \n    \n        <div id=\"player_modal\">\n            <iframe name=\"player_frame\" id=\"player_frame\" scrolling=\"no\" allowtransparency=\"yes\" align=\"center\" frameborder=\"no\"></iframe>\n        </div>\n        \n            \n                \n                    \n\n\n\t\n\t\t\t<div id=\"body\">\n\t\t\t\t<!--Hero image, URL-->\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t <div id=\"p101_hero_img\"><img src=\"/iimedia/images/prelogin/GWPrelogin_hero_ssg.jpg\" border=\"0\" alt=\"\"></div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t<!--Title, Body text URL-->\n\t\t\t\t<div id=\"p101_1col_container\">\n\t\t\t\t<h2></h2>\n\t\t\t\t\t<div id=\"landing\">\n\t\t\t\t\t\t<p></p>\n\t\t\t\t\t</div>\n\t\n\n\n\t\t\t</div>\n\t\t\n\t\n\n\n\n\n\t\t<div id=\"body\">\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\n\t\n\t\t\t  <div id=\"p101_3col_container_940\">\n\n\t\t\t\n\t\t\t\t\n\t\t\t\t<div id=\"p101_3col_block\">\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div id=\"p101_3col_img\"><a href=\"https://www.intervalworld.com/web/cs?a=95&amp;url=https://www.intervalworld.com/web/cs%3fa=60%26s=gold-getaways\"><img src=\"/iimedia/images/prelogin/GWPrelogin/section1.jpg\" border=\"0\" alt=\"\"></a></div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\n\n\n\t\t\t\t\t\t<div id=\"p101_3col_txt\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<h2><a href=\"https://www.intervalworld.com/web/cs?a=95&amp;url=https://www.intervalworld.com/web/cs%3fa=60%26s=gold-getaways\">Super Affordable </a></h2>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t<p></p><p>Getaways provide members with unsurpassed value for their vacation dollar. Getaways are resort stays in destinations around the world, in spacious accommodations and are available for seven nights or less.</p><p></p>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t </div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t<div id=\"p101_3col_block\">\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div id=\"p101_3col_img\"><a href=\"https://www.intervalworld.com/web/cs?a=95&amp;url=https://www.intervalworld.com/web/cs%3fa=60%26s=gold-getaways\"><img src=\"/iimedia/images/prelogin/GWPrelogin/section2.jpg\" border=\"0\" alt=\"\"></a></div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\n\n\n\t\t\t\t\t\t<div id=\"p101_3col_txt\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<h2><a href=\"https://www.intervalworld.com/web/cs?a=95&amp;url=https://www.intervalworld.com/web/cs%3fa=60%26s=gold-getaways\">Room to Mov",
+    "fetchedFrom": "/web/my/info/benefits/getaways",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/benefits/membership",
+    "documentTitle": "Interval Membership | Interval International",
+    "layoutType": "2col_hero",
+    "leftHero": "Interval_basic_Left_Column_610x231.jpg",
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Interval International Membership"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [
+      "Getaway Discounts",
+      "E-Plus®",
+      "Trip Protection",
+      "VIP Concierge Services"
+    ],
+    "sidebarImages": [
+      "getaway_discounts_e_sidebar_289x147.jpg",
+      "eplus_prelogin_sidebar289x147.jpg",
+      "Allianz_SideBar_289x147.jpg",
+      "concierge_sidebar_289x147.jpg"
+    ],
+    "bodyTextPreview": "Interval International Membership As a vacation owner, you and your family can enjoy great, affordable vacations year after year. And with an Interval membership, you’ll have access to a variety of benefits that will help you make the most out of your vacation time.* · Gain access to thousands of resorts in more than 90 countries and territories when you exchange your vacation time for spacious, quality accommodations at some of the world’s most desirable resort destinations! · Nearly 1.6-millio",
+    "allContentImages": [
+      "/iimedia/images/prelogin/left_column_banner/Interval_basic_Left_Column_610x231.jpg",
+      "/iimedia/images/prelogin/side_bar/getaway_discounts_e_sidebar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/eplus_prelogin_sidebar289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/Allianz_SideBar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/concierge_sidebar_289x147.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t  <div id=\"p101_2col_hero\"><img src=\"/iimedia/images/prelogin/left_column_banner/Interval_basic_Left_Column_610x231.jpg\" border=\"0\" alt=\"\"></div>\n\t\t\t\t\t\t \n\t\t\t\t \n\t\t\t<h2>Interval International Membership</h2>\n\t\t\t<p></p><p>As a vacation owner, you and your family can enjoy great, affordable vacations year after year. And with an Interval membership, you’ll have access to a variety of benefits that will help you make the most out of your vacation time.*</p>\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp;Gain access to <a href=\"/web/cs?a=1500\">t</a><a href=\"/web/cs?a=1500\">h</a><a href=\"/web/cs?a=1500\">ousands of&nbsp;resorts in more than 90 countries and territories</a>&nbsp;when you exchange<br>&nbsp;&nbsp;&nbsp;&nbsp;your vacation time for spacious, quality accommodations at some of the world’s most desirable<br>&nbsp;&nbsp;&nbsp;&nbsp;resort destinations!</div>\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp;<strong>Nearly 1.6-million vacation owner families</strong> trade through Interval’s worldwide exchange<br>&nbsp; &nbsp;network, giving you more exchange opportunities to enjoy.</div>\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp;Travel more often, without relinquishing your time, with&nbsp;<a href=\"/web/my/info/benefits/getaways\">Getaways</a>.</div>\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp; <a href=\"https://www.intervalworld.com/web/my/info/planning/magazine\" target=\"_blank\" rel=\"noopener\">Interval's online member publication</a> features exciting vacation ideas, travel inspiration, and tips for maximizing your membership.</div>\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp;Give the gift of travel by assigning the use of your resort time or Getaway to friends and family<br>&nbsp;&nbsp;&nbsp;&nbsp;by purchasing <strong>affordable Guest Certificates</strong>.</div>\n",
+    "fetchedFrom": "/web/my/info/benefits/membership",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/benefits/gold",
+    "documentTitle": "Interval Gold | Interval International",
+    "layoutType": "2col_hero",
+    "leftHero": "Interval_Gold_Memb_Left_Column_610x231.jpg",
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Interval Gold"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [
+      "Guest Certificates for Friends",
+      "Watch Videos on Interval HD"
+    ],
+    "sidebarImages": [
+      "gest_certificate_sidebar_289x147.jpg",
+      "intervalhd_4_sidebar_289x147.jpg"
+    ],
+    "bodyTextPreview": "Interval Gold As a vacation owner, you and your family can enjoy great, affordable vacations year after year. Interval Gold membership upgrades your choices to help you make the most of your vacation time and gives you much more exchange power. · With ShortStay Exchange®, you can trade your week for two vacations of 1 to 6 nights each. If you’re a points-based member, you can take as many ShortStay Exchanges as your available points allow. · Try something completely different on your next vacati",
+    "allContentImages": [
+      "/iimedia/images/prelogin/left_column_banner/Interval_Gold_Memb_Left_Column_610x231.jpg",
+      "/iimedia/images/prelogin/side_bar/gest_certificate_sidebar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/intervalhd_4_sidebar_289x147.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t                <div id=\"p101_2col_hero\"><img src=\"/iimedia/images/prelogin/left_column_banner/Interval_Gold_Memb_Left_Column_610x231.jpg\" border=\"0\" alt=\"\"></div>\n\t                    <h2>\n\t                    Interval Gold</h2>\n\t                <p>\n\t                    </p><p>As a vacation owner, you and your family can enjoy great, affordable vacations year after year.<br>\n<br>\nInterval Gold&nbsp;membership upgrades your choices to help you make the most of your vacation time and gives you much more exchange&nbsp;power.</p>\n\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp;With <strong>ShortStay Exchange<sup>®</sup>,</strong> you can trade your&nbsp;week for&nbsp;two vacations of 1 to 6 nights each.<br>\n&nbsp;&nbsp;&nbsp;&nbsp;If you’re a&nbsp;points-based member, you can take as many ShortStay Exchanges as&nbsp;your available<br>\n&nbsp;&nbsp;&nbsp;&nbsp;points allow.</div>\n\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp;Try something completely different on your next vacation with <strong>Interval Options<sup>®</sup></strong> and trade your<br>\n&nbsp;&nbsp;&nbsp;&nbsp;week or points toward the purchase of a cruise, tour, golf, or spa vacation!</div>\n\n<p>You’ll have the same great <a href=\"/web/my/info/benefits/getaways\">access to Getaways</a> — affordable resort vacations for seven nights or less — but&nbsp;&nbsp;Interval Gold&nbsp;members get great discounts on each&nbsp;one you take (minimum night stay required). Talk about an incentive to travel more often.</p>\n\n<p><span style=\"color: #ff8040;\"><strong>Interval Gold&nbsp;also provides valuable services and discounts you can use at home or when traveling.</strong></span></p>\n\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp; <a href=\"https://www.intervalworld.com/web/cs?a=95&amp;url=https://www.intervalworld.com/web/cs%3fa=216\">Hotel Exchange:</a> Trade your week or points for a hotel stay.&nbsp;</div>\n",
+    "fetchedFrom": "/web/my/info/benefits/gold",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/benefits/platinum",
+    "documentTitle": "Interval Platinum | Interval International",
+    "layoutType": "2col_hero",
+    "leftHero": "Interval_Platinum_Left_Column_610x231.jpg",
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Interval Platinum"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [
+      "Join Today",
+      "Online Resort Directory"
+    ],
+    "sidebarImages": [
+      "jointoday_Sidebar_289x147.jpg",
+      "Explore_and_Plan_Sidebar_289x147_V2.jpg"
+    ],
+    "bodyTextPreview": "Interval Platinum As a vacation owner, you and your family can enjoy great, affordable vacations year after year. And with Interval Platinum®, you get all the great benefits of the Interval Gold® membership (including ShortStay Exchange®, VIP ConciergeSM, and Interval Options®), plus these great Interval Platinum benefits:* · Hotel Exchange: Trade your week or points for a hotel stay. · Interval Experiences lets you exchange your week or points towards exciting and unique adventures. · Enjoy VIP",
+    "allContentImages": [
+      "/iimedia/images/prelogin/left_column_banner/Interval_Platinum_Left_Column_610x231.jpg",
+      "/iimedia/images/prelogin/side_bar/jointoday_Sidebar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/Explore_and_Plan_Sidebar_289x147_V2.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t                <div id=\"p101_2col_hero\"><img src=\"/iimedia/images/prelogin/left_column_banner/Interval_Platinum_Left_Column_610x231.jpg\" border=\"0\" alt=\"\"></div>\n\t                    <h2>\n\t                    Interval Platinum</h2>\n\t                <p>\n\t                    </p><p>As a vacation owner, you and your family can enjoy great, affordable vacations year after year. And with Interval Platinum<sup>®</sup>, you get all the great benefits of the Interval Gold<sup>®</sup> membership <strong>(including ShortStay Exchange<sup>®</sup>, VIP Concierge<sup>SM</sup>, and Interval Options<sup>®</sup>),</strong> plus these great Interval Platinum benefits:*</p>\n\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp; <a href=\"https://www.intervalworld.com/web/cs?a=95&amp;url=https://www.intervalworld.com/web/cs%3fa=216\">Hotel Exchange:</a> Trade your week or points for a hotel stay.&nbsp;</div>\n\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp; <a href=\"https://www.intervalworld.com/web/cs?a=60&amp;s=platinum-aspire-golf \">Interval Experiences</a> lets you exchange your week or points towards exciting and unique<br>\n&nbsp;&nbsp;&nbsp;&nbsp;adventures.</div>\n\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp; Enjoy VIP treatment, including special amenities, when you reserve in advance with<br>\n&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"https://www.intervalworld.com/web/cs?a=60&amp;s=platinum-aspire-golf \">Dining Connection</a></div>\n\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp; <a href=\"https://www.intervalworld.com/web/cs?a=60&amp;s=platinum-aspire-golf \">Golf Connection:</a> Explore golf options in your destination of choice with your concierge.</div>\n\n<div style=\"margin-top: 10px; margin-bottom: 10px; margin-left: 20px;\">·&nbsp;&nbsp; Discover hot restaurants, shopping opportunities, nightlife options, sightseeing musts,<br>\n&nbsp;&nbsp;&n",
+    "fetchedFrom": "/web/my/info/benefits/platinum",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/benefits/offers",
+    "documentTitle": "Special Offers | Interval International",
+    "layoutType": "2col_hero",
+    "leftHero": "specialoffers_bigdeals_610x231.jpg",
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Special Offers. Big Deals."
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [
+      "Interval International App",
+      "Online Resort Directory",
+      "Interval World Magazine"
+    ],
+    "sidebarImages": [
+      "intervals_app_new_2_noborder_289x147.jpg",
+      "Explore_and_Plan_Sidebar_289x147_V2.jpg",
+      "intervals_magazine_b_sidebar_289x147.jpg"
+    ],
+    "bodyTextPreview": "Special Offers. Big Deals. As an Interval member, you have access to these gotta-have-it deals and so much more! Getaway Sales Take advantage of great deals on your next Getaway vacation. These fabulous Getaways are for a limited-time only — don’t miss out! Extra Vacations Exchange or Getaway into one of our featured destinations and get a bonus vacation. Cruise Offers Receive onboard credits and discounts on select cruise sailings. Last Minute Deals Looking to travel in the next few days? Get y",
+    "allContentImages": [
+      "/iimedia/images/prelogin/left_column_banner/specialoffers_bigdeals_610x231.jpg",
+      "/iimedia/images/prelogin/side_bar/intervals_app_new_2_noborder_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/Explore_and_Plan_Sidebar_289x147_V2.jpg",
+      "/iimedia/images/prelogin/side_bar/intervals_magazine_b_sidebar_289x147.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t  <div id=\"p101_2col_hero\"><img src=\"/iimedia/images/prelogin/left_column_banner/specialoffers_bigdeals_610x231.jpg\" border=\"0\"></div>\n\t\t\t\t\t\t \n\t\t\t\t \n\t\t\t<h2>Special Offers. Big Deals.</h2>\n\t\t\t<p></p><p>As an Interval member, you have access to these gotta-have-it deals and so much more! <br><br><span style=\"color: #ff8040;\"><strong><span style=\"color: #ff8040; font-size: large;\"><em><span style=\"color: #0080c0;\">Getaway Sales</span>&nbsp;</em></span></strong></span> <br>Take advantage of great deals on your next Getaway vacation. These fabulous Getaways are for a limited-time only — don’t miss out! <br><br><span style=\"font-size: large;\"><strong><span style=\"color: #0080c0; font-size: large;\"><em>Extra Vacations</em></span></strong></span> <br>Exchange or Getaway into one of our featured destinations and get a bonus&nbsp;vacation. <br><br><span style=\"color: #0080c0; font-size: large;\"><strong><em>Cruise Offers</em></strong></span> <br>Receive onboard&nbsp;credits and discounts on select cruise sailings. <br><br><span style=\"color: #0080c0; font-size: large;\"><strong><em>Last Minute Deals</em></strong></span> <br>Looking to travel in the next few days? Get your bags ready. Choose from a selection of great destinations for your last-minute escape.&nbsp;</p><p></p>\n\n\t\n\n\n\t\t\t",
+    "fetchedFrom": "/web/my/info/benefits/offers",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/info/membership",
+    "documentTitle": "Join Today | Interval International",
+    "layoutType": "2col_hero",
+    "leftHero": "Join_Today_Left_Column_610x231.jpg",
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Join Today"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [
+      "Interval International Membership",
+      "Interval Gold Membership",
+      "Interval Platinum Membership"
+    ],
+    "sidebarImages": [
+      "intervalbasic_Sidebar_289x147.jpg",
+      "interval_goldSidebar_289x147.jpg",
+      "intervalplat_Sidebar_289x147.jpg"
+    ],
+    "bodyTextPreview": "Join Today Take advantage of Interval’s vast exchange network of over 3,200 resorts in more than 90 countries and territories. With our super affordable, high-quality resorts and amazing benefits, members receive endless value and enhanced leisure to their lifestyles both at home and on vacation. Once you join, your family can start planning one of many fantastic vacations! Click here to become a member of Interval International® today!",
+    "allContentImages": [
+      "/iimedia/images/prelogin/left_column_banner/Join_Today_Left_Column_610x231.jpg",
+      "/iimedia/images/prelogin/side_bar/intervalbasic_Sidebar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/interval_goldSidebar_289x147.jpg",
+      "/iimedia/images/prelogin/side_bar/intervalplat_Sidebar_289x147.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t  <div id=\"p101_2col_hero\"><img src=\"/iimedia/images/prelogin/left_column_banner/Join_Today_Left_Column_610x231.jpg\" border=\"0\" alt=\"\"></div>\n\t\t\t\t\t\t \n\t\t\t\t \n\t\t\t<h2>Join Today</h2>\n\t\t\t<p></p><p>Take advantage of Interval’s vast exchange network of over 3,200 resorts in more than 90 countries and territories. With our super affordable, high-quality resorts and amazing benefits, members receive endless value and enhanced leisure to their lifestyles both at home and on vacation. Once you join, your family can start planning one of many fantastic vacations! <br><br><a href=\"/web/my/account/createProfileOrJoin\">Click here</a>&nbsp;to become a member of Interval International<sup>®</sup>&nbsp;today!</p><p></p>\n\n\t\n\n\n\t\t\t",
+    "fetchedFrom": "/web/my/info/membership",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/account/createProfileOrJoin",
+    "documentTitle": "Create Password/Enroll",
+    "layoutType": "form",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Web Profile",
+      "Become A Member"
+    ],
+    "h1Headings": [
+      "Welcome to Intervalworld.com"
+    ],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Welcome to Intervalworld.com Web Profile If you're an Interval member, please create a Web Profile for easy access to all your membership benefits. Create Web Profile Become A Member Get the most out of your vacation ownership - join Interval International today! If you own a vacation week(s) or points at a resort that is affiliated with Interval, you'll need your resort ownership information. If you've received a mailer from us, it contains a Solicitation # which is unique to you and when enter",
+    "allContentImages": [],
+    "leftHtmlSnippet": "\n\t                            \n        <h1>\n            Welcome to Intervalworld.com\n        </h1>\n        <div id=\"referer\" style=\"display:none\" title=\"https://www.intervalworld.com/web/my/account/createProfileOrJoin\">\n        </div>\n        <div class=\"box_rnd_1\">\n            \n            <h2>\n                Web Profile\n            </h2>\n            <p>\n                If you're an Interval member, please create a Web Profile for easy access to all your membership benefits.\n            </p>\n            <p>\n                <a href=\"/web/my/account/lookupMember\" class=\"button\">Create Web Profile</a>\n            </p>\n            <div class=\"clear_both\"></div>\n        </div>\n<br>\n        <div class=\"box_rnd_1\">\n            <h2>\n                Become A Member\n            </h2>\n            <p>\n                Get the most out of your vacation ownership - join Interval International today! If you own a vacation week(s) or points at a resort that is affiliated with Interval, you'll need your resort ownership information. If you've received a mailer from us, it contains a Solicitation # which is unique to you and when entered will expedite your enrollment process. Welcome to Interval membership!\n            </p>           \n                <p>For information regarding the Interval International Exchange Program, see <a href=\"https://www.intervalworld.com/web/cs?a=60&amp;p=legal\">Legal Information</a>.</p>\n\t\t\t<p><a href=\"/web/my/account/chooseCountry\" class=\"button\" id=\"enrollment\">Join Today</a></p>\n            <div class=\"clear_both\"></div>\n        </div>\n        \n        <!-- overlayed element -->\n        <div class=\"iw-dialog\">\n\t        <div class=\"overlay overlay_sz_2\" id=\"overlay_xcludedcountry\">\n\t        \t<div class=\"custom-border\">\n\t        \t\t<a class=\"close\"></a>\n\t            \t<div class=\"contentWrap padding-left\" id=\"content_xcludedcountry\"></div>\n\t            </div>\n\t        </div>        \n\t    </div> \n\t    \n\t       \n    \n\t                        ",
+    "fetchedFrom": "/web/my/account/createProfileOrJoin",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/auth/loginPage",
+    "documentTitle": "Member Login Page",
+    "layoutType": "login",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [],
+    "h1Headings": [
+      "Member Login"
+    ],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Member Login Login ID: Password: Remember Me Login Help? Create Profile or Join Today",
+    "allContentImages": [],
+    "leftHtmlSnippet": "",
+    "fetchedFrom": "/web/my/auth/loginPage",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/cs/about",
+    "documentTitle": "Interval International | About",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [],
+    "h1Headings": [
+      "About Interval International"
+    ],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "About Interval International Interval International operates membership programs for vacationers and provides value-added services to its developer clients worldwide. Based in Miami, Florida, the company has been a pioneer and innovator in serving the vacation ownership market since 1976. Today, Interval's exchange network comprises over 3,200 resorts in more than 90 countries and territories. Through offices in 12 countries, Interval offers world-class products and benefits to resort clients an",
+    "allContentImages": [],
+    "leftHtmlSnippet": "\n\t\t\t\t\t<!-- content for Column 2 (content) -->\n\t\t\t\t\t<!-- InstanceBeginEditable name=\"column2content\" -->\n\n<!-- START template from this line down -->\n\n                <div id=\"iicontent_tc\">\n\n\n<a name=\"top\"></a>\n\n\t\t\t\t\t\t<h1><p>About Interval International</p></h1>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\n\t\t\t\t\t\t<p>Interval International operates membership programs for vacationers and provides value-added services to its developer clients worldwide. Based in Miami, Florida, the company has been a pioneer and innovator in serving the vacation ownership market since 1976. Today, Interval's exchange network comprises over 3,200 resorts in more than 90 countries and territories. Through offices in 12 countries, Interval offers world-class products and benefits to resort clients and nearly 1.6-million-member families who are enrolled in various membership programs.</p>\n\n<p><span style=\"font-size: medium; color: #ff8040;\"><strong>Contact Us<br></strong></span>For Customer Service, please e-mail:<br><a href=\"mailto:CustomerService@intervalintl.com\" target=\"_self\">CustomerService@intervalintl.com</a>&nbsp;<br>For media inquiries, please e-mail:<br><a href=\"mailto:companynews@intervalholdings.com\" target=\"_self\">companynews@intervalholdings.com</a>&nbsp;</p>\n\n\t\t\t\t\n\t\t\n\n\n\t\t\t\n\t\t</div>\n\n\n\n\t\t<!--END iicontent_tc-->\n\n                    <!-- END template -->\n\n\n",
+    "fetchedFrom": "/web/cs?a=60&p=about",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/cs/legal",
+    "documentTitle": "Interval International | Legal",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [],
+    "h1Headings": [
+      "Legal Information"
+    ],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Legal Information In order to continually provide the best online experience and to maintain the most comprehensive package of travel benefits possible, we need to pass along some legal information to all of our visitors. Please read the Terms and Conditions 2026 carefully before you decide to purchase any products or services from this Web site. Interval International’s Exchange Program Amendment as of January 1st, 2026 Interval International’s Modern Slavery Statement for the U.K as of Decembe",
+    "allContentImages": [
+      "/iimedia/pdf/iw/buyers-guide.pdf",
+      "/iimedia/pdf/Standard_Amendment_111725.pdf",
+      "/iimedia/pdf/UK_ModernSlaveryStatement_2026.pdf",
+      "/iimedia/pdf/Interval_International_Fraud_Advisory_2023.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_CZE.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_DAN.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_DUT.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_ENG_(UK",
+      "/iimedia/pdf/OnlineTerms_0225_FIN.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_FRE.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_GER.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_GRE.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_HUN.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_ITA.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_NOR.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_SPA_(SPAIN",
+      "/iimedia/pdf/OnlineTerms_0225_SWE.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_POR.pdf",
+      "/iimedia/pdf/OnlineTerms_0225_VIET.pdf",
+      "/iimedia/pdf/iw/EMEAA_Fees_EUR1_FN.pdf"
+    ],
+    "leftHtmlSnippet": "\n\t\t\t\t\t<!-- content for Column 2 (content) -->\n\t\t\t\t\t<!-- InstanceBeginEditable name=\"column2content\" -->\n\t\t\t\t\t\n\t\t\t\t\t<!-- START template from this line down -->\n<div id=\"iicontent_tc\">\n\t\t<a name=\"top\"></a>\n\t\t<h1>\n\t\t\t\tLegal Information</h1>\n\t\t\t<p>&nbsp;</p>\n\n<p>In order to continually provide the best online experience and to maintain the most comprehensive package of travel benefits possible, we need to pass along some legal information to all of our visitors. Please read the <a class=\"icon_pdf\" href=\"/iimedia/pdf/iw/buyers-guide.pdf\" rel=\"noopener\" target=\"_blank\">Terms and Conditions 2026</a>&nbsp;carefully before you decide to purchase any products or services from this Web site.&nbsp;</p>\n\n<p><a href=\"https://www.intervalworld.com/iimedia/pdf/Standard_Amendment_111725.pdf\" rel=\"noopener\" target=\"_blank\">Interval International’s Exchange Program Amendment as of January 1st, 2026</a></p>\n\n<p><a href=\"https://www.intervalworld.com/iimedia/pdf/UK_ModernSlaveryStatement_2026.pdf\" rel=\"noopener\" target=\"_blank\">Interval International’s Modern Slavery Statement for the U.K as of December 31, 2025</a></p>\n\n<p><a href=\"https://www.intervalworld.com/iimedia/pdf/Interval_International_Fraud_Advisory_2023.pdf\" rel=\"noopener\" target=\"_blank\">Consumer Alert: Scams</a></p>\n\n<p>&nbsp;</p>\n\n<p>Terms and Conditions in language:</p>\n\n<p><a href=\"https://www.intervalworld.com/iimedia/pdf/OnlineTerms_0225_CZE.pdf\" rel=\"noopener\" target=\"_blank\">CZECH</a></p>\n\n<p><a href=\"https://www.intervalworld.com/iimedia/pdf/OnlineTerms_0225_DAN.pdf\" rel=\"noopener\" target=\"_blank\">DANISH</a></p>\n\n<p><a href=\"https://www.intervalworld.com/iimedia/pdf/OnlineTerms_0225_DUT.pdf\" rel=\"noopener\" target=\"_blank\">DUTCH</a></p>\n\n<p><a href=\"https://www.intervalworld.com/iimedia/pdf/OnlineTerms_0225_ENG_(UK).pdf\" rel=\"noopener\" target=\"_blank\">ENGLISH/UK</a></p>\n\n<p><a href=\"https://www.intervalworld.com/iimedia/pdf/OnlineTerms_0225_FIN.pdf\" rel=\"noopener\" target=\"_blank\">FINNISH</a></p>\n\n<p><a href=\"https:",
+    "fetchedFrom": "/web/cs?a=60&p=legal",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/cs/customer-service",
+    "documentTitle": "Interval International | Customer Service",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [],
+    "h1Headings": [
+      "Customer Support"
+    ],
+    "h3Headings": [
+      "Featured Benefits"
+    ],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Customer Support Forgot your Membership Number/User ID or Password? Retrieve or reset your Sign-in information. Having trouble Signing in? Visit Frequently Asked Questions to find fast answers. Didn't find what you were looking for in FAQs? Email Us your question. Need a phone number or an address to one of our World Wide offices? Check out our list of global offices available to service you.",
+    "allContentImages": [],
+    "leftHtmlSnippet": "\n\t\t\t\t\t<!-- content for Column 2 (content) -->\n\t\t\t\t\t<!-- InstanceBeginEditable name=\"column2content\" -->\n\t\t\t\t\t<h1>Customer Support</h1>\n\t\t\t\t\t\n\t\t<!-- show items below if user NOT signed-in -->\n\t\t<ul>\n\t\t\t\t\t<li>Forgot your Membership Number/User ID or Password? <a href=\"/web/my/account/forgotSignInInfo\">Retrieve or reset</a> your Sign-in information.</li>\n\t\t\t\t\t\n\t\t\t\t\t<li>Having trouble Signing in? Visit <a href=\"https://www.intervalworld.com/web/cs?a=60&amp;p=help-login\">Frequently Asked Questions</a> to find fast answers.</li>\n\t\t\t\t\t\n\t\t\t\t\t<li>Didn't find what you were looking for in FAQs? <a href=\"https://www.intervalworld.com/web/cs?a=80\">Email Us</a> your question.</li>\n\t\t\t\t\t\n\t\t\t\t\t<li>Need a phone number or an address to one of our World Wide offices? Check out our list of global <a href=\"https://www.intervalworld.com/web/cs?a=60&amp;p=offices\">offices</a> available to service you.</li>\n\t\t\t\t\t\n\t\t\t\t\t</ul>\n\t\t\t\t\t<p>&nbsp;</p>\n\t\t\t\t\t<p>&nbsp;</p>\n\t\t\t\t\t<p>&nbsp;</p>\n\t\t\t\t\t<p>&nbsp;</p>\n\t\t\n\t\t\n\t\t\n\t\t\t\t\t<!-- InstanceEndEditable -->\n\t\t\t\t\t<!-- InstanceBeginEditable name=\"pagetitle\" --> <!-- InstanceEndEditable -->\n\t\t\t\t\t<!-- InstanceBeginEditable name=\"content2\" --> \n      \n      <!-- InstanceEndEditable -->\n\t\t\t\t",
+    "fetchedFrom": "/web/cs?a=60&p=customer-service",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/cs/help-login",
+    "documentTitle": "Interval International | Help Login",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Q. How do I create a Web Profile?",
+      "Q. How do I sign in?",
+      "Q. I already have a Login ID and Password, why can’t I sign in?",
+      "Q. What should I use for my Password?",
+      "Q. How do I sign in if I have more than one Interval member number?",
+      "Q. Can I create multiple profiles?",
+      "Q. Can I edit my Web Profile?",
+      "Q. What is a Password Hint?",
+      "Q. What if I forget my Login ID or Password?",
+      "Q. How do I change my Password?",
+      "Q. How do I change my Security Questions?",
+      "Q. What is my membership number?",
+      "Q. Can I change my membership number?",
+      "Q. What is the Interval International To Go app?",
+      "Q. Where can I find the Interval International To Go app?",
+      "Q. If I already have the Interval International To Go app, how do I get the new version?",
+      "Q. Is my login the same as my login ID on intervalworld.com?",
+      "Q. How do I set up Fingerprint Access?",
+      "Q. Can I set up Facial Recognition?",
+      "Q. Can I use the Interval International To Go app on my iPad?",
+      "Q. Why am I having trouble signing in to the Interval International To Go app?",
+      "Q. Can I still use the Interval International To Go app if I'm not a member of Interval International?",
+      "Q. Is the Interval International To Go app available outside of the U.S.?",
+      "Q. Can I make a vacation exchange with the Interval International To Go app?",
+      "Q. How do I trade my week or points to book an exchange on the Interval International To Go app?",
+      "Q. Can I redeem a Resort Accommodations Certificate on the app?",
+      "Q. Can I search exchanges and Getaways at the same time on the Interval International To Go app?",
+      "Q. Can I search multiple resorts on the Interval International To Go app?",
+      "Q. Can I renew my membership on the Interval International To Go app?",
+      "Q. Can I share great resorts I find on the Interval International To Go app with people who don’t have it?",
+      "Q. Can I view my upcoming trip on the Interval International To Go app?",
+      "Q. Who can I call for technical issues regarding the app?",
+      "Q. What are Getaway Alerts?",
+      "Q. I created a Getaway Alert. I can see inventory available, but I have not received a notification.",
+      "Q. I received a Getaway Alert, but inventory was not available when I responded.",
+      "Q. I received a Getaway Alert, but I can't tell what it's for.",
+      "Q. I logged out of the Interval International To Go app. Why am I still getting Getaway Alerts?",
+      "Q. I already confirmed a unit. Why am I still receiving Getaway Alerts?",
+      "Q. Can you stop sending alerts between certain hours?",
+      "Q. What is E-Plus?",
+      "Q. What is a retrade?",
+      "Q. How does E-Plus differ from a regular retrade?",
+      "Q. Do I have to pay for a unit-size upgrade on an E-Plus retrade?",
+      "Q. Why should I purchase E-Plus instead of a retrade?",
+      "Q. When can I purchase E-Plus?",
+      "Q. How do I purchase E-Plus?",
+      "Q. How much is E-Plus?",
+      "Q. How often can I purchase E-Plus?",
+      "Q. Is E-Plus refundable?",
+      "Q. Does E-Plus expire?",
+      "Q. Can I purchase E-Plus for Getaways?",
+      "Q. Can I purchase E-Plus for ShortStay Exchange® or Interval Options®?",
+      "Q. Who do I contact for more information?",
+      "Q. Are there any limitations on when I can travel with an E-Plus retrade?",
+      "Q. How will the recent changes to E-Plus impact purchases made prior to the update?",
+      "Q. What is Interval International’s mobile web?",
+      "Q. How do I get to the mobile web?",
+      "Q. How do I log in/is my login the same as my login ID on IntervalWorld.com?",
+      "Q. Can I still access the mobile web if I’m not a member of Interval International?",
+      "Q. Can I still access IntervalWorld.com’s full site on my mobile device?",
+      "Q. Can I renew my membership on the mobile web?",
+      "Q. Is the mobile web available outside of the U.S.?",
+      "Q. Who can I call for technical issues regarding the mobile web?",
+      "Q. What is Priceline Partner Solutions™?",
+      "Q. What is the hotel discount and how do I get it?",
+      "Q. If I upgrade my Interval membership to Interval Gold or Interval Platinum, how long do I have to wait until I can use my hotel discount?",
+      "Q. How can I book my hotel stay?",
+      "Q. Do hotel discounts apply only to selected hotels?",
+      "Q. Is there a limit to how many times I can use the hotel discount?",
+      "Q. Can I get the hotel discount if I book my hotel reservation over the phone?",
+      "Q. Can I get the hotel discount on bookings made on Priceline.com?",
+      "Q. I still have questions about my travel booking. Is there a number I can call?",
+      "Q. Can I book one-way flights, or flights with multiple destinations?",
+      "Q. Can I book international flights to and from the US?",
+      "Q. What should I know about flights booked with multiple tickets and/or airlines?",
+      "Q. How can I select a seat for my flight?",
+      "Q. Can I modify or cancel my flight reservation?",
+      "Q. Can I modify or cancel my car reservation?",
+      "Q. Where can I find additional information and answers to my insurance-related plan questions on Covid-19 coverage?",
+      "Q. Why do I need Trip Protection?",
+      "Q. What does Trip Protection cover?",
+      "Q. Why do I need trip protection if I have E-Plus?",
+      "Q. When should I purchase Trip Protection?",
+      "Q. What are the benefit limits on my plan?",
+      "Q. How can I increase my benefit limits?",
+      "Q. Who is the primary traveler?",
+      "Q. Do all members of my party need be on the Trip Protection plan—what if they’re not listed?",
+      "Q. Won’t my credit card and personal health insurance give me the coverage I need while traveling?",
+      "Q. What is considered a travel delay?",
+      "Q. Does Trip Protection reimburse fees associated with exchange?",
+      "Q. Can I change the details of my insurance plan?",
+      "Q. What happens to my Trip Protection plan if I change my trip dates or destination?",
+      "Q. How do I get another copy of my plan documents?",
+      "Q. Why isn't my Trip Protection purchase displayed in my travel confirmation?",
+      "Q. How do I cancel my plan?",
+      "Q. If I cancel my trip, do I get my money back?",
+      "Q. Is my Trip Insurance cancelled automatically if I cancel my travel arrangements?",
+      "Q. How do I file a claim?",
+      "Q. Where do I find a list of the required claim documents?",
+      "Q. Where do I send my required claim documents?",
+      "Q. How do I check the status of a claim I've filed?",
+      "Q. How long will it take for my claim to be reviewed?",
+      "Q. If my claim is approved how will I get paid?",
+      "Terms, conditions, and exclusions apply."
+    ],
+    "h1Headings": [
+      "Login, Profile and Password FAQs",
+      "Interval International To Go App FAQs",
+      "E-Plus FAQS",
+      "Interval International Mobile Web FAQs",
+      "Hotel, Car, and Air Benefit FAQs",
+      "Allianz Global Assistance FAQs"
+    ],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Please select your FAQs Category: Interval International App Login, Profile and Password Mobile Web Site Login, Profile and Password FAQs Close All | Open All Q. How do I create a Web Profile? Click the Create Profile link on the homepage to begin. Select the Create Web Profile button then enter your member number and the phone number that matches your membership record. You will then be taken to a Web Profile form where you can set up your Login ID and Password. Login IDs must be a minimum of 5",
+    "allContentImages": [
+      "/images/close_all_icon.gif",
+      "/images/open_all_icon.gif"
+    ],
+    "leftHtmlSnippet": "\n\t\t\t\t\t<!-- content for Column 2 (content) -->\n\t\t\t\t\t<!-- InstanceBeginEditable name=\"column2content\" -->\n\t\t\t\t\t<div id=\"faq_main\">\n\t\t\t\t\t    \n\t\t\t\t\t\t<div id=\"faq_header\" style=\"visibility:visible\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tPlease select your FAQs Category:\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t<form name=\"form\" id=\"form\">\n\t\t\t\t\t\t\t\t<select name=\"jumpMenu\" id=\"jumpMenu\" aria-label=\"Select FAQ Category\">\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<option value=\"ii_app_faq\">Interval International App</option>\n\t\t\t\t\t\t\t\t\t<option value=\"help_login\">Login, Profile and Password</option>\n\t\t\t\t\t\t\t\t\t<option value=\"ii_mobile_faq\">Mobile Web Site</option>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t\t<input type=\"button\" class=\"button\" value=\"View FAQ\" onclick=\"showFAQ('jumpMenu')\">\t\t\t\t\n\t\t\t\t\t\t\t</form>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div id=\"faq_body\">\n\t\t\t\t\t\t\t<div id=\"help_login\" style=\"display:none;\">\n\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t<br>\n<h1><p>Login, Profile and Password FAQs</p></h1>\n\t\t\t\t\t<br>\n\t\t\t\t<div id=\"openclose\" align=\"right\">\n\t\t\t\t\t<a href=\"javascript:void(0);\" onclick=\"closeAllCollapsiblePanelLogin();\">Close All <img src=\"/images/close_all_icon.gif\" width=\"9\" height=\"9\" border=\"0\"></a> | <a href=\"javascript:void(0);\" onclick=\"openAllCollapsiblePanelLogin();\">Open All <img src=\"/images/open_all_icon.gif\" width=\"9\" height=\"9\" border=\"0\"></a>\n\t\t\t\t</div>\n\t\t\t\t<script type=\"text/javascript\"> function closeAllCollapsiblePanelLogin() {\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin1.close();\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin2.close();\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin3.close();\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin4.close();\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin5.close();\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin6.close();\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin7.close();\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin8.close();\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin9.close();\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin10.close();\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin11.close();\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin12.close();\n\t\t\t\t\n\t\t\t\t\tCollapsiblePanelLogin13.close();\n\t\t\t\t\n\n\n\n\t\t\t\t}\n",
+    "fetchedFrom": "/web/cs?a=60&p=help-login",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/cs/travel-advisories",
+    "documentTitle": "Interval International | Travel Advisories",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [],
+    "h1Headings": [
+      "Travel Advisories"
+    ],
+    "h3Headings": [
+      "Resort Name & Location",
+      "Resort Code"
+    ],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Travel Advisories As of March 2, 2026 We are closely monitoring the situation in the Middle East (Dubai / Israel) and advise members to exercise caution when planning travel. Before departing, please review the latest guidance from the U.S. Department of State or other relevant governmental sources from your country of residence for updates. The safety, security, and well-being of our members is always our top priority. Due to recent natural disasters, the following areas or resorts have been cl",
+    "allContentImages": [],
+    "leftHtmlSnippet": "\n\t\t\t\t\t<!-- content for Column 2 (content) -->\n\t\t\t\t\t<!-- InstanceBeginEditable name=\"column2content\" -->\n\t\t\t\t\t<h1>Travel Advisories</h1>\t\t\t\n\t\t\t\t\t<!--/// travel-advisories-content.jsp ///-->\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n    \n<p><strong>As of March 2, 2026</strong></p>\n<!--Begin Opening Paragraphs-->\n<p>We are closely monitoring the situation in the Middle East (Dubai / Israel) and advise members to exercise caution when planning travel. Before departing, please review the latest guidance from the U.S. Department of State or other relevant governmental sources from your country of residence for updates.</p>\n\n<p>The safety, security, and well-being of our members is always our top priority. &nbsp;Due to recent natural disasters, the following areas or resorts have been closed.</p>\n<!--End Opening Paragraphs-->\n<div id=\"TabbedPanels1\" class=\"TabbedPanels TabbedPanelsRd\">\n\t<ul class=\"TabbedPanelsTabGroup\">\n        <li class=\"TabbedPanelsTab\">\n                <a href=\"#tab2\">\n                    Resort Closures</a>\n            </li>\n        </ul>\n\t<div id=\"wrapper_top\" class=\"TabbedPanelsContentGroup\">\n        <div id=\"tab2\" class=\"TabbedPanelsContent\">\n                <p style=\"font-size: 18px; font-weight: bold; color: #EE6200;margin-bottom: 9px;\">\n                    Resorts by location, closed due to Natural Events (IW)</p><table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"table_chart\">\n                  \n                      <tbody><tr>\n                          <th valign=\"top\"><h3>Resort Name &amp; Location</h3></th>\n                          <th align=\"center\" valign=\"top\"><h3>Resort Code</h3></th>\n                      </tr>\n                      <tr>\n                          <td valign=\"top\">&nbsp;</td>\n                          <td valign=\"top\">&nbsp;</td>\n                      </tr>\n                      <tr>\n  <td valign=\"top\">\n    <strong>Daytona Beach / Ormond Beach</strong>\n    <strong> </strong>\n  </td>\n  <td valign=\"top\"",
+    "fetchedFrom": "/web/cs?a=60&p=travel-advisories",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/cs/eplus",
+    "documentTitle": "E-Plus | Interval International",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "About Interval | Privacy and Cookie Policies | Cookie Settings | Do Not Sell/Share | Legal Information | Accessibility | Customer Support | FAQs Copyright© 2026 Interval International. All rights reserved.",
+    "allContentImages": [
+      "/iimedia/images/prelogin/preloginHeroImages/eplus_prelogin_insert_A.jpg",
+      "/iimedia/images/prelogin/preloginHeroImages/eplus_prelogin_insert_B.jpg",
+      "/iimedia/images/newsletter/misc/ads-announcement/learn_more_button.jpg"
+    ],
+    "leftHtmlSnippet": "\n                            \n    \n    \n        <div id=\"player_modal\">\n            <iframe name=\"player_frame\" id=\"player_frame\" scrolling=\"no\" allowtransparency=\"yes\" align=\"center\" frameborder=\"no\"></iframe>\n        </div>\n        \n            \n                \n                    \n\n\n\t\n\t\t\t<div id=\"body\">\n\t\t\t\t<!--Hero image, URL-->\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t <div id=\"p101_hero_img\"><img src=\"/iimedia/images/prelogin/preloginHeroImages/eplus_prelogin_insert_A.jpg\" border=\"0\"></div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t<!--Title, Body text URL-->\n\t\t\t\t<div id=\"p101_1col_container\">\n\t\t\t\t<h2></h2>\n\t\t\t\t\t<div id=\"landing\">\n\t\t\t\t\t\t<p></p><p><span style=\"font-size: 12px;\"><sup><img src=\"https://www.intervalworld.com/iimedia/images/prelogin/preloginHeroImages/eplus_prelogin_insert_B.jpg\" alt=\"\"></sup></span></p>\n<p>&nbsp;</p>\n<p style=\"padding-left: 330px;\"><span style=\"font-size: 12px;\"><sup><a href=\"https://www.intervalworld.com/web/cs?a=95&amp;url=https://www.intervalworld.com/web/cs%3fa=60%26s=benefits-eplus\" target=\"_blank\" rel=\"noopener\"><img src=\"https://www.intervalworld.com/iimedia/images/newsletter/misc/ads-announcement/learn_more_button.jpg\" alt=\"\" style=\"float: left;\"></a></sup></span></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p><p></p>\n\t\t\t\t\t</div>\n\t\n\n\n\t\t\t</div>\n\t\t\n\t\n\n\n\n\n\n\n\n\n                \n            \n            \n        \n    \n                        </div>\n                        <div id=\"column2contentbottom\"></div>\n                    ",
+    "fetchedFrom": "/web/my/info/benefits/eplus",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/cs/deposit",
+    "documentTitle": "Deposit for Flexibility | Interval International",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [
+      "Get An Extra Seven-Night Resort Stay!"
+    ],
+    "h1Headings": [],
+    "h3Headings": [],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Get An Extra Seven-Night Resort Stay! Take an extra week's vacation, affordably! Deposit your eligible resort week by February 19, 2021 and receive a Resort Accommodations Certificate once the deposit is verified. Your eligible week(s) are marked with a green tag on the My Units page. Then, just click on the Deposit Unit button and follow the simple instructions. Don't miss out on this limited-time offer! TERMS & CONDITIONS To be eligible for this special offer, your entire unit must be deposite",
+    "allContentImages": [
+      "/iimedia/images/hero/Dep_Sol_Hero_Banner_1.jpg",
+      "/iimedia/images/buttons/email_buttons/deposit.gif"
+    ],
+    "leftHtmlSnippet": "\n                            \n    \n    \n        <div id=\"player_modal\">\n            <iframe name=\"player_frame\" id=\"player_frame\" scrolling=\"no\" allowtransparency=\"yes\" align=\"center\" frameborder=\"no\"></iframe>\n        </div>\n        \n            \n                \n                    \n\n\n\t\n\t\t\t<div id=\"body\">\n\t\t\t\t<!--Hero image, URL-->\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t <div id=\"p101_hero_img\"><img src=\"/iimedia/images/hero/Dep_Sol_Hero_Banner_1.jpg\" border=\"0\"></div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t<!--Title, Body text URL-->\n\t\t\t\t<div id=\"p101_1col_container\">\n\t\t\t\t<h2>Get An Extra Seven-Night Resort Stay!</h2>\n\t\t\t\t\t<div id=\"landing\">\n\t\t\t\t\t\t<p></p><p><span style=\"font-size: 12pt;\">Take an extra week's vacation, affordably!&nbsp;&nbsp;Deposit your eligible resort week by <strong>February 19, 2021</strong>&nbsp;and receive a Resort Accommodations Certificate&nbsp;once the deposit is verified.&nbsp;</span></p>\n<p><span style=\"font-size: 12pt;\">Your eligible week(s) are marked with a green tag on the My Units page. Then, just click on the Deposit Unit button and follow the simple instructions.</span></p>\n<p><span style=\"font-size: 12pt;\"><strong>Don't miss out on this limited-time offer!</strong></span></p>\n<p><a href=\"https://www.intervalworld.com/web/cs?a=95&amp;url=https://www.intervalworld.com/web/cs?a=202\"><strong><img src=\"https://www.intervalworld.com/iimedia/images/buttons/email_buttons/deposit.gif\" alt=\"Deposit Now\" width=\"150\" height=\"37\" style=\"display: block; margin-left: auto; margin-right: auto;\"></strong></a></p>\n<p><br><br></p>\n<hr style=\"border: 1px solid #d9d9d9; margin: 20px 0px 10px;\"><p></p>\n\t\t\t\t\t</div>\n\t\n\t\t\t<p><small></small></p><p><small><strong>TERMS &amp; CONDITIONS</strong></small></p><small>\n<p>To be eligible for this special offer, your entire unit must be deposited by February 19, 2021. No portion may be locked off. If you hold floating time, you must secure a designated vacation week at your home resort between the eligibility dates stated on the My Units page, prior to",
+    "fetchedFrom": "/web/my/info/benefits/deposit",
+    "httpStatus": 200
+  },
+  {
+    "path": "/web/my/deals",
+    "documentTitle": "Interval International | Home",
+    "layoutType": "1col",
+    "leftHero": null,
+    "hasPlayButton": false,
+    "h2Headings": [],
+    "h1Headings": [
+      "Important Member Information"
+    ],
+    "h3Headings": [
+      "Vacation Ownership",
+      "Vacation Exchange",
+      "The Value of Getaways",
+      "50 years of looking forward."
+    ],
+    "h4SidebarTitles": [],
+    "sidebarImages": [],
+    "bodyTextPreview": "Important Member Information The safety and well-being of our members is our top priority. Please refer to our Travel Advisories page for information regarding resort closures. The page is updated frequently, so please review it before proceeding with your travel plans. Vacation Ownership Vacation ownership makes it possible to enjoy life the way it’s supposed to be lived – and as an Interval International® member, you get even more from your vacations. Vacation Exchange See more, and do more, b",
+    "allContentImages": [
+      "/iimedia/images/2026_Promotions/Sept_Exchange_Sale/US/Slider_banner_940x296_English.jpg",
+      "/iimedia/images/Resortfee_transparency/launch-prelogin_slider_banner_960x296.jpg",
+      "/iimedia/images/slider/getaway_prelogin_slider_940x296.jpg",
+      "/iimedia/images/prelogin/Slider_940x296.jpg",
+      "/iimedia/images/PreLogin_Deposit_Banner.jpg",
+      "/iimedia/images/eplus2020_940x296_preloginslider.jpg",
+      "/iimedia/images/prelogin/landing_carousel/prelogin_vacation_ownership.jpg",
+      "/iimedia/images/prelogin/homepage_exchange2022.jpg",
+      "/iimedia/images/prelogin/homepage_getaways2022.jpg",
+      "/iimedia/images/prelogin/Pre-login_Carousel_211x133.jpg"
+    ],
+    "leftHtmlSnippet": "\n\t                            \n        <em>\n            <span id=\"errorMessage\">\n                \n            </span>\n        </em>\n        \n        <!-- slider -->\n        <div id=\"hp_slider\">\n            <div class=\"slider-wrapper theme-interval\">\n          \n                <div class=\"spinner_wrapper1\" id=\"spinner_wrapper_loading\">\n                </div>\n                                    \n            \t\n            \t\t<div id=\"spinner_wrapper_content\" style=\"display:none;\">\n            \t\t\t<div id=\"slideshow\">\n    <a href=\"https://www.intervalworld.com/web/cs?a=95&amp;url=https%3A%2F%2Fwww.intervalworld.com%2Fweb%2Fmy%2Fdeals&amp;intcmp=Banner_2026Sept14_Prelogin_GLOBAL_ALL_SeptExchangeSale_NA_Deals_2026Sept14_login_NA_NA\" aria-label=\"Exchange Special: Exchange &amp; Receive a resort accomodations certificate\">\n            <img src=\"/iimedia/images/2026_Promotions/Sept_Exchange_Sale/US/Slider_banner_940x296_English.jpg\" border=\"0\" alt=\"Exchange Special: Exchange &amp; Receive a resort accomodations certificate\" tabindex=\"0\" role=\"button\" aria-label=\"Exchange Special: Exchange &amp; Receive a resort accomodations certificate\">\n        </a>\n    <!-- for each list specified, use the Aspire jsp to display -->\n    <a href=\"/web/cs?a=95&amp;url=https://www.intervalworld.com/web/cs%3fa=1000%26selectGetawaytab=true\" aria-label=\"Total price. Total transparency. Vacation planning is easier than ever with up-front pricing.\">\n                <img src=\"/iimedia/images/Resortfee_transparency/launch-prelogin_slider_banner_960x296.jpg\" border=\"0\" alt=\"Total price. Total transparency. Vacation planning is easier than ever with up-front pricing.\" tabindex=\"0\" role=\"button\" aria-label=\"Total price. Total transparency. Vacation planning is easier than ever with up-front pricing.\"></a>\n        <a href=\"/web/cs?a=95&amp;url=https://www.intervalworld.com/web/cs%3fa=1000%26selectGetawaytab=true \" aria-label=\"Your next Getaway is here! Resort vacations without exchanging! Explore Getaways",
+    "fetchedFrom": "/web/my/deals",
+    "httpStatus": 200
+  }
 ]
