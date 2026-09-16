@@ -1,0 +1,347 @@
+
+.aos-all {
+  width:  100%;
+  margin: 10vh auto 0 auto;
+}
+.aos-all *{
+  box-sizing: border-box;
+}
+
+.aos-item {
+  display: inline-block;
+  float: left;
+  width: 100%;
+  height: 300px;
+  padding: 20px;
+}
+
+.aos-item__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  float: left;
+  background: #1da4e2;
+  line-height: 260px;
+  text-align: center;
+  color: #fff;
+}
+
+#column1, #column3{
+  display: none;
+}
+#page_content_1col #column2{
+  width: 100% !important;
+}
+
+.mobile-hero{
+  margin-left: -15px;
+  margin-top: -15px;
+  margin-right: -15px;
+  position: relative;
+  width: 950px;
+  height: 470px;
+}
+.mobile-hero:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.mobile-hero-bg{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: 0;
+  max-width: 950px;
+  top: 0;
+  left: 0;
+}
+.mobile-hero-left-content {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 2;
+}
+
+.mobile-hero-btn {
+    background: #0077be;
+    border-radius: 6px;
+    color: #fff !important;
+    text-decoration: none;
+    padding: 16px 32px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.mobile-hero-btn:hover {
+    background: #006AA7;
+    text-decoration: none !important;
+}
+
+.mobile-hero-btn.left {
+    margin: 160px 20px;
+}
+
+.new-features-banner{
+  font-size: 24px;
+  color: #f06f36;
+  background: #f6f6f6;
+  padding: 1em;
+  text-align: center;
+  margin-left:-10px;
+  margin-right: -10px;
+}
+
+.mobile-app-panel{
+  min-height: 300px;
+  border-top: 1px solid #eeeeee;
+  margin-left: -10px;
+  margin-right: -10px;
+  overflow: hidden;
+  padding-top: 4em;
+  position: relative;
+}
+
+.mobile-app-panel .mobile-app-panel-content{
+  width: 52%;
+  text-align: center;
+  padding: 1em;
+}
+.mobile-app-panel .mobile-app-panel-content h3{
+  color: #2c2c2c;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.mobile-app-panel .mobile-app-panel-content p{
+  font-size: 15px;
+  color: #757575;
+}
+.mobile-app-panel .mobile-app-panel-content img{width: 100px;}
+
+.mobile-app-panel .screen img{
+  width: 100%;
+  margin-bottom: -4px;
+}
+.mobile-app-panel .screen{
+  width: 45%;
+  position: absolute;
+  margin-top: 20px;  
+  bottom: 0;  
+}
+.mobile-app-panel .screen.full-height{
+  height: auto;
+  bottom: -360px;
+  width: 52%;
+}
+.mobile-app-panel.content-left .mobile-app-panel-content{
+  float: left;
+}
+.mobile-app-panel.content-left .screen{
+  right: 0;
+}
+.mobile-app-panel.content-right .mobile-app-panel-content{
+  float: right;
+}
+.mobile-app-panel.content-right .screen{
+  left: 0;
+}
+.mobile-app-panel:last-of-type{
+  margin-bottom: -10px;
+}
+.mobile-app-panel:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+#body{
+  border-bottom: none;
+}
+
+.mobile-app-download-buttons{
+  height: 135px;
+  padding: 30px 0 80px;
+}
+
+.mobile-app-download-buttons h3 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 28px;
+}
+
+
+.mobile-app-download-buttons .button-wrapper{
+  margin: 25px 25% 0;
+  display: inline-block;
+  width: 50%;
+}
+
+.button-wrapper .ios{
+  float: left;
+  background: url(/images/iw/apple-store-black.png) no-repeat center;
+  background-size: cover;
+}
+
+.button-wrapper .android{
+  float: right;
+  background: url(/images/iw/android-store-black.png) no-repeat center;
+  background-size: cover;
+}
+
+.mobile-app-download-buttons a{
+  width: 196px;
+  height: 58px;
+  display: block;
+  /*transition: all 200ms ease-in-out;*/
+  text-indent: -9999px;
+  border: 2px solid #ffffff;
+}
+
+.mobile-app-download-buttons a:hover{
+  box-shadow: 0px 5px 15px 0px rgba(50, 50, 50, 0.51);
+  border-radius: 10px;
+  border: 2px solid #111111;
+}
+
+.mobile-app-download-buttons .ios img{
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 800px) {
+  .aos-item {
+    width: 50%;
+  }
+}
+
+
+
+
+/* Slim UI */
+.mobile-hero.short{
+  height: 380px;
+}
+.short .mobile-hero-left-content{
+  top: 60px;
+  width: 55%;
+}
+.short h1.mobile-hero-text{
+  color: #18294b !important;
+}
+.mobile-hero-text p {
+    color: #13294B !important;
+    font-size: 18px !important;
+}
+
+.mobile-hero-iphone{
+    width: 156px;
+    height: auto;
+    position: absolute;
+    z-index: 10;
+    bottom: 0px;
+    right: 25px;
+}
+.mobile-hero-ipad{
+    width: 344px;
+    height: auto;
+    position: absolute;
+    z-index: 9;
+    bottom: 10px;
+    right: 50px;
+}
+.mobile-hero-iphone.white{
+    width: 110px;
+    bottom: 0px;
+    right: 235px;
+}
+.mobile-hero-ipad.white{
+    width: 245px;
+    bottom: 10px;
+    right: 30px;
+}
+
+.mobile-app-feature-grid{
+  margin-top: 30px;
+}
+.mobile-app-feature-grid .mobile-app-panel-content h3 {
+    font-size: 16px;
+    margin-top: 18px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.mobile-app-feature-grid .mobile-app-panel-content p {
+    font-size: 15px;
+    text-align: center;
+    min-height: 200px;
+}
+
+.mobile-app-feature-grid .mobile-app-panel-content img{
+  height: 100px;
+  width: auto;
+  margin: 30px auto;
+  display: block;
+}
+.mobile-app-feature-grid {
+
+}
+.mobile-app-panel-content{
+    width: 260px;
+    display: inline-block;
+    padding: 0 20px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.mobile-app-lower-panel{  
+  padding-bottom: 50px;
+  margin-top: 30px;
+  position: relative;
+}
+.mobile-app-screen-rotator{
+  width: 332px;
+  margin-left: 50px;
+  margin-right: 50px;
+  float: left;
+  margin-top: 50px;
+  height: 600px;
+}
+.mobile-app-screen-rotator img{
+  width: 100%;
+}
+.mobile-app-laundry-list{
+  width: 50%;
+  margin-top: 50px;
+  display: inline-block;
+  min-height: 580px;
+}
+.mobile-app-laundry-list h3 {
+    font-size: 3em;
+}
+
+
+.mobile-app-laundry-list ul{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.mobile-app-laundry-list li {
+    font-size: 16px;
+    margin-bottom: 15px;
+    list-style-type: circle;
+}
+
+h1.mobile-hero-text {
+  margin: -30px 0 0 20PX;
+  width: 680px;
+}
+
+.mobile-hero-text p {
+  margin: -30px 0 0 20PX;
+  width: 680px;
+}
+
+
+
+

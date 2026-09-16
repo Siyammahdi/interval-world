@@ -1,0 +1,194 @@
+<div id="ihd_player_overlay">
+            <div id="ihd_player_wrap">
+             	<!-- START: HEADER -->
+                <div class="ihd_player_header">
+                    <a title="IntervalHD" href="/web/my/hd">
+                        <div class="ihd_player_header_strip_logo"></div>
+                    </a>
+                    <div class="ihd_player_header_strip">
+                        <div class="ihd_player_back_to_interval player_hide">
+                            Back to Interval
+                        </div>
+                    </div>
+                </div>
+                <!-- END: HEADER -->
+                    
+                <!-- START: TITLE -->
+                <div class="ihd_player_header_title_wrap">
+                    <div id="videoName" class="ihd_player_header_title delay_fourth lt">
+                        <h2>
+                            <a href="#" title="View Resort Details">Interval Video</a>
+                        </h2>
+                        <!-- <a href="">View Resort Details</a> -->
+                    </div>
+                    
+	                    <div id="ihd_player_header_search" class="action_btn_wrap delay_fourth rt">
+	                        <a rel="#exchange_dates" class="ii_button-2 exchange actions_modal_trigger" tabindex="0">Search Exchange</a>
+	                        <a rel="#getaway_dates" class="ii_button-2 getaways actions_modal_trigger" tabindex="0">Search Getaways</a>
+	                    </div>
+                    
+                    
+                    <!-- Login Modal Content -->
+                    <div id="login_modal" class="actions_modal_content">
+                        <div id="errorBox" style="display:none">
+                            <em><span id="errorMessage"><p></p></span></em>
+                        </div>
+                        <form name="loginForm" action="/web/my/auth/login" method="post" autocomplete="off">
+                            <input name="resortDirectoryLogin" type="hidden" value="true" />
+                            <h2 class="resort_details_title">Sign In</h2>
+                            
+                            <div class="form_group">
+                            
+                                <div class="login_group_wrapper">
+                                    <div class="login_group">
+                                        <label>Login ID</label>
+                                        <input aria-label="Login ID" id="loginID" name="j_username" type="text" value="" size="16" maxlength="33" onChange="this.value = $.trim( this.value )" autocomplete="off" />   
+                                    </div>
+                                </div>
+                                
+                                <div class="login_group_wrapper">
+                                    <div class="login_group">
+                                        <label>Password</label>
+                                        <input id="loginPassword" name="j_password" type="password" size="16" maxlength="33" onchange="this.value = $.trim( this.value )" autocomplete="off">
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            
+                            <div class="login_group">
+                                <ul>
+                                    <li>
+                                        <input class="ii_button-1" type="submit" value="Sign In">
+                                    <li>
+                                        <a href="/web/my/account/forgotSignInInfo">Forgot Password?</a>
+                                    </li>
+                                    <li>
+                                        <a href="/web/my/account/createProfileOrJoin">Join Today!</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </form>
+                    </div>
+                    
+                    <!-- Getaway Modal Content -->
+                    <div id="getaway_dates" class="actions_modal_content">
+            			<div class="custom-border">
+                  			<div class="close" aria-label="close" tabindex="0" role="button"></div>    
+	                        <form id="getaway_dates_form" name="SearchForm" action="/web/cs?a=1001" method="post">
+	                        	<input id="areaCode" name="areaCode" type="hidden" value="" />
+	                            <input id="searchCriteria" name="searchCriteria" type="hidden" value="" />
+	                            <input id="searchType" name="searchType" type="hidden" value="ResortSearch" />                            
+	                            <input id="omniOrigin" name="omniOrigin" type="hidden" value="IntervalHD" />
+	                            <h2 class="resort_details_title">
+	                                Search Getaways
+	                            </h2>
+	                            <div class="form_group ihd_calendar">
+	                                <h3>Enter Travel Dates</h3>
+	                                <div class="field_group">
+	                                    <div style="display:none" id="startDate">0</div>
+	                                    <label for="fromDate-gw">Earliest Travel Date</label>
+	                                    <input aria-label="Earliest Travel Date" type="text" value="" placeholder="mm/dd/yyyy" size="11" id="fromDate-gw" name="fromDate" autocomplete="off" class="datepicker fromDate" /> 
+	                                   
+	                                </div>
+	                                <div class="field_group pad_left_10">
+		                                
+	                                    <div style="display:none" id="endDate">+2y</div>
+	                                    <label for="toDate-gw" class="disabled">Latest Travel Date</label>
+	                                   	<input aria-label="Latest Travel Date" type="text" value="" placeholder="mm/dd/yyyy" size="11" id="toDate-gw" name="toDate" autocomplete="off" class="datepicker toDate disabled" disabled="disabled" /> 
+	                                </div>
+	                            </div>
+	                            <input type="submit" class="ii_button-1 login_required" value="Begin Search" />
+	                        </form>
+                    	</div>
+                   </div>
+                   
+                   <!-- Exchange Modal Content -->
+                   <div id="exchange_dates" class="actions_modal_content">
+                   		<div class="custom-border">
+                  			<div class="close" aria-label="close" tabindex="0" role="button"></div>
+		                        <form id="exchange_dates_form" name="SearchForm" action="/web/cs?a=203" method="post">
+		                        	<input id="areaCode" name="areaCode" type="hidden" value="" />
+		                            <input id="searchCriteria" name="searchCriteria" type="hidden" value="" />
+		                            <input id="searchType" name="searchType" type="hidden" value="ResortSearch" />                            
+		                            <input id="omniOrigin" name="omniOrigin" type="hidden" value="IntervalHD" />
+		                            <h2 class="resort_details_title">
+		                                Vacation Exchange
+		                            </h2>
+		                            <div class="form_group ihd_calendar">
+		                                <h3>Enter Travel Dates</h3>
+		                                <div class="field_group">
+		                                    <div style="display:none" id="startDate">0</div>
+		                                    <label for="fromDate-ex">Earliest Travel Date</label>
+		                                    <input aria-label="Earliest Travel Date" type="text" value="" placeholder="mm/dd/yyyy" size="11" id="fromDate-ex" name="fromDate" autocomplete="off" class="datepicker fromDate" />
+											
+		                                </div>
+		                                <div class="field_group pad_left_10">
+		                                    <div style="display:none" id="endDate">+2y</div>
+		                                    <label for="toDate-ex" class="disabled">Latest Travel Date</label>
+		                                    <input aria-label="Latest Travel Date" type="text" value="" placeholder="mm/dd/yyyy" size="11" id="toDate-ex" name="toDate" autocomplete="off" class="datepicker toDate disabled" disabled="disabled" />
+											
+		                                </div>
+		                            </div>
+		                            <div class="form_group">
+		                                <h3>Enter Number of Guests</h3>
+		                                <div class="field_group no_bg">
+		                                    <label for="numberOfAdults" class="">Adults</label>
+		                                    <select id="numberOfAdults" name="numberOfAdults" aria-label="Adults">
+		                                        <option>1</option>
+		                                        <option>2</option>
+		                                        <option>3</option>
+		                                        <option>4</option>
+		                                        <option>5</option>
+		                                        <option>6</option>
+		                                        <option>7</option>
+		                                        <option>8</option>
+		                                        <option>9</option>
+		                                    </select>
+		                                </div>
+		                                <div class="field_group no_bg pad_left_10">
+		                                    <label for="numberOfChildren" class="">Children <span class="small">(Age: 0-16)</span></label>
+		                                    <select id="numberOfChildren" name="numberOfChildren" aria-label="children(Age: 0-16)">
+		                                        <option>0</option>
+		                                        <option>1</option>
+		                                        <option>2</option>
+		                                        <option>3</option>
+		                                        <option>4</option>
+		                                        <option>5</option>
+		                                        <option>6</option>
+		                                        <option>7</option>
+		                                        <option>8</option>
+		                                        <option>9</option>
+		                                    </select>
+		                                </div>
+		                            </div>
+		                            <input type="submit" class="ii_button-1 login_required" value="Begin Search" />
+		                        </form>
+                    		</div>
+                   		</div> 
+                	</div>
+                	<!-- END: TITLE -->
+                
+	                <!-- START: SCREEN -->
+	                <div class="ihd_player_screen_wrap">
+	                    <div class="ihd_player_screen delay_third">
+	                        <iframe name="player_frame" id="player_frame" scrolling="no" allowtransparency="yes" align="center" frameborder="no"></iframe>
+	                    </div>
+	                </div>
+	                <!-- END: SCREEN -->
+	                <!-- START: TABS -->
+                	<div id="ihd_player_tabs_wrap" class="delay_second"></div>
+               		 <!-- END: TABS -->
+                 	<br>
+                 	<div>
+					    <h3>Share This Page</h3><br>
+					    <!-- AddThis Button BEGIN -->
+						<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+						<a class="addthis_button_facebook" tabindex="0"></a>
+						<a class="addthis_button_twitter" tabindex="0"></a>
+						<a class="addthis_button_pinterest_share" tabindex="0"></a>
+						<a class="addthis_button_email" tabindex="0"></a>
+					</div>   
+				</div>
+            </div>
+        </div>

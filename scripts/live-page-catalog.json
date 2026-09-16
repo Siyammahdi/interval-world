@@ -1,0 +1,252 @@
+﻿[
+    {
+        "path":  "/web/my/info/ownership",
+        "layout":  "2col",
+        "title":  "",
+        "hero":  "time_share_610x231.jpg",
+        "play":  false,
+        "h2":  "Great Vacations. Great Values.",
+        "sideH4":  "Learn About The Many Ways to Exchange! || Interval International Membership Benefits",
+        "sideImgs":  "jointoday_Sidebar_289x147.jpg, Many_Ways_To_Exchange_Sidebar.jpg, intervalbasic_Sidebar_289x147.jpg"
+    },
+    {
+        "path":  "/web/my/info/ownership/overview",
+        "layout":  "2col",
+        "title":  "",
+        "hero":  "About_Vacation_Ownership_Left_Column.jpg",
+        "play":  false,
+        "h2":  "Vacation Ownership: Year-Round Value With Exceptional Benefits!",
+        "sideH4":  "Membership Benefits",
+        "sideImgs":  "jointoday_Sidebar_289x147.jpg, Interval_Logo_Sidebar289x147.jpg"
+    },
+    {
+        "path":  "/web/my/info/ownership/about",
+        "layout":  "2col",
+        "title":  "",
+        "hero":  "About_Interval_610x231_V1.jpg",
+        "play":  false,
+        "h2":  "Why Interval International?",
+        "sideH4":  "Membership Benefits",
+        "sideImgs":  "jointoday_Sidebar_289x147.jpg, getaway_discounts_c_sidebar_289x147.jpg, intervalhd_1_sidebar_new_289x147.jpg"
+    },
+    {
+        "path":  "/web/cs/offices",
+        "layout":  "FAIL",
+        "title":  "The remote server returned an error: (404) Not Found."
+    },
+    {
+        "path":  "/web/my/info/planning",
+        "layout":  "3col",
+        "title":  "",
+        "hero":  "",
+        "play":  false,
+        "h2":  "Explore \u0026 Plan | Interval HD | The New Interval App! | Member Publications | Community",
+        "sideH4":  "",
+        "sideImgs":  "Explore_and_Plan_Sidebar_289x147_V2.jpg, intervalhd_4_sidebar_289x147.jpg, intervals_app_new_2_noborder_289x147.jpg, community_green_b_289x147.jpg, interval_travel_new_noborder_289x147.jpg"
+    },
+    {
+        "path":  "/web/cs/directory",
+        "layout":  "FAIL",
+        "title":  "The remote server returned an error: (404) Not Found."
+    },
+    {
+        "path":  "/web/my/channel",
+        "layout":  "unknown",
+        "title":  "Interval International | Interval HD",
+        "hero":  "",
+        "play":  false,
+        "h2":  "Interval Video | Sign In | Search Getaways | Vacation Exchange | Interval HD",
+        "sideH4":  "",
+        "sideImgs":  ""
+    },
+    {
+        "path":  "/web/cs/mobile-app",
+        "layout":  "FAIL",
+        "title":  "The remote server returned an error: (404) Not Found."
+    },
+    {
+        "path":  "/web/my/info/planning/magazine",
+        "layout":  "2col",
+        "title":  "",
+        "hero":  "",
+        "play":  false,
+        "h2":  "Member Publications",
+        "sideH4":  "Interval Travel",
+        "sideImgs":  "Interval_Logo_Sidebar289x147.jpg, interval_travel_new_noborder_289x147.jpg"
+    },
+    {
+        "path":  "/web/my/info/planning/community",
+        "layout":  "2col",
+        "title":  "",
+        "hero":  "stay_connected_prelogin_left_column_banner_610x231.jpg",
+        "play":  false,
+        "h2":  "Socialize with Us",
+        "sideH4":  "Interval World Magazine || Like us on Facebook",
+        "sideImgs":  "intervals_app_new_2_noborder_289x147.jpg, facebook_jointheconversation.jpg"
+    },
+    {
+        "path":  "/web/my/info/planning/travel",
+        "layout":  "3col",
+        "title":  "",
+        "hero":  "",
+        "play":  false,
+        "h2":  "Find a Room | Arrive in Style | Suite Deals | Get on Board | See the World",
+        "sideH4":  "",
+        "sideImgs":  ""
+    },
+    {
+        "path":  "/web/my/info/planning/tracker",
+        "layout":  "unknown",
+        "title":  "",
+        "hero":  "",
+        "play":  false,
+        "h2":  "Point the Way",
+        "sideH4":  "",
+        "sideImgs":  ""
+    },
+    {
+        "path":  "/web/my/info/benefits",
+        "layout":  "2col",
+        "title":  "",
+        "hero":  "About_Interval_610x231_V1.jpg",
+        "play":  false,
+        "h2":  "Membership Has Its Benefits!",
+        "sideH4":  "Online Resort Directory",
+        "sideImgs":  "special_offers_a_sidebar_289x147.jpg, Explore_and_Plan_Sidebar_289x147_V2.jpg"
+    },
+    {
+        "path":  "/web/my/info/benefits/exchange",
+        "layout":  "3col",
+        "title":  "",
+        "hero":  "",
+        "play":  false,
+        "h2":  "Deposit First | Request First | Flexchange | ShortStay Exchange | E-Plus",
+        "sideH4":  "",
+        "sideImgs":  "Flexchange_V2_Sidebar.jpg, lake_tahoe_1_sidebar_289x147.jpg, Flexchange_Sidebar.jpg, lasvegas_2_sidebar_289x147.jpg, Interval_Options_Sidebar.jpg"
+    },
+    {
+        "path":  "/web/my/info/benefits/getaways",
+        "layout":  "3col",
+        "title":  "",
+        "hero":  "",
+        "play":  false,
+        "h2":  "Super Affordable | Room to Move | No Exchange Required | Vacation Hotspots | Discounts, Discounts, Discounts",
+        "sideH4":  "",
+        "sideImgs":  ""
+    },
+    {
+        "path":  "/web/my/info/benefits/membership",
+        "layout":  "2col",
+        "title":  "",
+        "hero":  "Interval_basic_Left_Column_610x231.jpg",
+        "play":  false,
+        "h2":  "Interval International Membership",
+        "sideH4":  "E-Plus\u003csup\u003e\u0026reg;\u003c/sup\u003e || VIP Concierge Services",
+        "sideImgs":  "getaway_discounts_e_sidebar_289x147.jpg, eplus_prelogin_sidebar289x147.jpg, Allianz_SideBar_289x147.jpg, concierge_sidebar_289x147.jpg"
+    },
+    {
+        "path":  "/web/my/info/benefits/gold",
+        "layout":  "2col",
+        "title":  "",
+        "hero":  "Interval_Gold_Memb_Left_Column_610x231.jpg",
+        "play":  false,
+        "h2":  "Interval Gold",
+        "sideH4":  "Guest Certificates for Friends || Watch Videos on Interval HD",
+        "sideImgs":  "gest_certificate_sidebar_289x147.jpg, intervalhd_4_sidebar_289x147.jpg"
+    },
+    {
+        "path":  "/web/my/info/benefits/platinum",
+        "layout":  "2col",
+        "title":  "",
+        "hero":  "Interval_Platinum_Left_Column_610x231.jpg",
+        "play":  false,
+        "h2":  "Interval Platinum",
+        "sideH4":  "Online Resort Directory",
+        "sideImgs":  "jointoday_Sidebar_289x147.jpg, Explore_and_Plan_Sidebar_289x147_V2.jpg"
+    },
+    {
+        "path":  "/web/my/info/benefits/offers",
+        "layout":  "2col",
+        "title":  "",
+        "hero":  "specialoffers_bigdeals_610x231.jpg",
+        "play":  false,
+        "h2":  "Special Offers. Big Deals.",
+        "sideH4":  "Online Resort Directory || Interval World Magazine",
+        "sideImgs":  "intervals_app_new_2_noborder_289x147.jpg, Explore_and_Plan_Sidebar_289x147_V2.jpg, intervals_magazine_b_sidebar_289x147.jpg"
+    },
+    {
+        "path":  "/web/my/info/membership",
+        "layout":  "2col",
+        "title":  "",
+        "hero":  "Join_Today_Left_Column_610x231.jpg",
+        "play":  false,
+        "h2":  "Join Today",
+        "sideH4":  "Interval Gold Membership || Interval Platinum Membership",
+        "sideImgs":  "intervalbasic_Sidebar_289x147.jpg, interval_goldSidebar_289x147.jpg, intervalplat_Sidebar_289x147.jpg"
+    },
+    {
+        "path":  "/web/my/account/createProfileOrJoin",
+        "layout":  "unknown",
+        "title":  "Create Password/Enroll",
+        "hero":  "",
+        "play":  false,
+        "h2":  "Web Profile | Become A Member",
+        "sideH4":  "",
+        "sideImgs":  ""
+    },
+    {
+        "path":  "/web/my/auth/loginPage",
+        "layout":  "login",
+        "title":  "Member Login Page",
+        "hero":  "",
+        "play":  false,
+        "h2":  "",
+        "sideH4":  "",
+        "sideImgs":  ""
+    },
+    {
+        "path":  "/web/cs/about",
+        "layout":  "FAIL",
+        "title":  "The remote server returned an error: (404) Not Found."
+    },
+    {
+        "path":  "/web/cs/legal",
+        "layout":  "FAIL",
+        "title":  "The remote server returned an error: (404) Not Found."
+    },
+    {
+        "path":  "/web/cs/customer-service",
+        "layout":  "FAIL",
+        "title":  "The remote server returned an error: (404) Not Found."
+    },
+    {
+        "path":  "/web/cs/help-login",
+        "layout":  "FAIL",
+        "title":  "The remote server returned an error: (404) Not Found."
+    },
+    {
+        "path":  "/web/cs/travel-advisories",
+        "layout":  "FAIL",
+        "title":  "The remote server returned an error: (404) Not Found."
+    },
+    {
+        "path":  "/web/cs/eplus",
+        "layout":  "FAIL",
+        "title":  "The remote server returned an error: (404) Not Found."
+    },
+    {
+        "path":  "/web/cs/deposit",
+        "layout":  "FAIL",
+        "title":  "The remote server returned an error: (404) Not Found."
+    },
+    {
+        "path":  "/web/my/deals",
+        "layout":  "unknown",
+        "title":  "Interval International | Home",
+        "hero":  "",
+        "play":  false,
+        "h2":  "",
+        "sideH4":  "",
+        "sideImgs":  ""
+    }
+]

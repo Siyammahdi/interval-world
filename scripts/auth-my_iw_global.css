@@ -1,0 +1,3429 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+/* Template css overwrite*/
+
+
+/*div#body {border:0!important; width:760px;}*/
+
+a:focus {
+    outline: none;
+    -moz-outline-style: none;
+}
+
+
+/********** OVERLAY WINDOWS ******************/
+
+.overlay_toggle {
+    cursor: pointer;
+}
+
+
+/* the overlayed element */
+
+div.overlay {
+    /* growing background image */
+    /*-- disabled until/unless we can create a collection of sizes that we can work with --*/
+    /* background-image: url('../images/???.gif'); */
+    /* initially overlay is hidden */
+    display: none;
+    /* some padding to layout nested elements nicely  */
+    padding: 20px;
+}
+
+
+/* default close button positioned on upper right corner */
+
+div.overlay .close, #player_modal .close {
+	background-image: url(/images/close.png);     
+	position: absolute;     
+	right: 0px;     
+	top: -3px;     
+	cursor: pointer;     
+	height: 35px;     
+	width: 35px;     
+	background-size: 35px; 
+}
+
+
+/* Overlay window sizing overwrites */
+
+.overlay_sz_1 {
+    width: 740px;
+    background-color: white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.overlay_sz_1 div.contentWrap {
+    height: 575px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.overlay_sz_1 div.contentWrap_editCard{
+    height:auto!important;
+}
+.overlay_sz_2 {
+    width: 350px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.overlay_sz_2 div.contentWrap {
+    height: 340px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.overlay_sz_3 {
+    width: 450px;
+    background-color: white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.overlay_sz_3 div.contentWrap {
+    height: 358px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.overlay_sz_4 {
+    width: 550px;
+    background-color: white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.overlay_sz_4 div.contentWrap {
+    height: 475px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.overlay_sz_5 {
+    width: 900px;
+    background-color: white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.overlay_sz_5 div.contentWrap {
+    height: 533px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.contentWrap_editCard {
+    height:auto!important;
+}
+
+/* .overlay_sz_5 img {display:none;} */
+
+.overlay_sz_svc_dw {
+    width: 350px;
+    height: 150px !important;
+    background-color: white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.overlay_sz_svc_dw div.contentWrap {
+    height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.overlay_sz_flexible {
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    max-width: 900px;
+}
+
+.overlay_sz_6 {
+    width: 925px !important;
+    background-color: white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.overlay_sz_6 div.contentWrap {
+    height: 460px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.overlay_sz_7 {
+    width: 590px;
+    height: 110px;
+    background-color: white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.overlay_sz_7 div.contentWrap {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.overlay_sz_svc_cppopup {
+    width: 550px;
+    height: 335px !important;
+    background-color: white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding: 2px 10px 0 28px;
+}
+
+.overlay_sz_svc_cppopup div.contentWrap {
+    height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#apt_wrapper {
+    width: auto;
+}
+
+.overlay_sz_5 div.contentWrap {
+    height: 540px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#overlay_existingAccountLogin #headercolumn2 {
+    margin-left: 55px;
+}
+
+#overlay_availablePointsTool {
+    height: 500px;
+    /* z-index: 100000 !important; */
+}
+
+.overlay_sz_svc_cppopup h1 {
+    text-align: center;
+}
+
+.overlay_sz_svc_cppopup .header_logo {
+    float: left;
+    height: 77px;
+    margin-top: 30px;
+    width: 517px !important;
+}
+
+.contentWrap_availablePointsTool h4 {
+    color: #000;
+    font-size: 1.15em;
+}
+
+.contentWrap_availablePointsTool #apt_wrapper .box_rnd_1 {
+    width: auto;
+}
+
+.contentWrap_availablePointsTool .please_wait {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 42px;
+}
+
+.contentWrap_availablePointsTool #point_buckets {
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-top: 10px;
+    border: 1px solid #d2d2d2;
+}
+
+.contentWrap_availablePointsTool #point_buckets table {
+    border: 0;
+}
+
+.contentWrap_availablePointsTool .closeButtonWrapper {
+    margin-top: 35px;
+}
+
+#overlay_benefitsDetails {
+    height: 500px;
+    background-color: #fff;
+    z-index: 100000 !important;
+    width: 790px;
+    padding: 40px 40px 70px!important;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.contentWrap_benefitsDetails h1 {
+    margin-top: 0;
+}
+
+.contentWrap_benefitsDetails h4 {
+    color: #757575;
+    font-size: 1.15em;
+    margin-top: 28px;
+}
+
+.contentWrap_benefitsDetails #apt_wrapper .box_rnd_1 {
+    width: auto;
+}
+
+.contentWrap_benefitsDetails .please_wait {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 42px;
+}
+
+.contentWrap_benefitsDetails #point_buckets {
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-top: 10px;
+    border: 1px solid #d2d2d2;
+}
+
+.contentWrap_benefitsDetails #point_buckets table {
+    border: 0;
+}
+
+.contentWrap_benefitsDetails .closeButtonWrapper {
+    margin-top: 35px;
+}
+
+
+/********** LAYOUT ******************/
+
+.choose_mem_block {
+    width: 720px;
+}
+
+.choose_mem_block .table_frame {
+    position: static;
+}
+
+.choose_mem_col_1 {
+    width: 260px;
+    margin-right: 50px;
+}
+
+.choose_mem_col_2 {
+    width: 280px;
+    margin-right: 20px;
+}
+
+.col_side_border {
+    border-left: 1px solid #d2d2d2;
+    border-right: 1px solid #d2d2d2;
+}
+
+.border_right {
+    border-right: 1px solid #d2d2d2;
+}
+
+.tier_cols {
+    width: 75px;
+    padding: 0 5px;
+    height: 90px;
+    float: left;
+    text-align: center;
+}
+
+
+/********** CREATE PROFILE h2 EDIT IW-22648 ******************/
+
+.box_rnd_1 {
+    background-color: #ffffff; 
+    border: 1px solid #d2d2d2; 
+    -moz-border-radius: 8px; 
+    -webkit-border-radius: 8px; 
+    padding: 20px; 
+    width: 95%; 
+    margin: 0 0 10px 0;
+}
+
+#my_memberships_wrap .box_rnd_1 { 
+    background-color: #ffffff; 
+     border:0px; 
+}
+    
+.box_rnd_1_top  { 
+    background-color: #ECF1F8; 
+    border-right: 1px solid #d2d2d2; 
+    border-bottom: 1px solid #d2d2d2; 
+    border-left: 1px solid #d2d2d2; 
+    -webkit-border-radius: 5px; 
+    padding: 8px; width: 98%; 
+}
+
+.box_rnd_2 { 
+    background-color: white; 
+    border: 1px solid #fff; 
+    -moz-border-radius: 8px; 
+    padding: 8px; width: 98%;   
+}
+
+.table_frame_transaction_completed_body .box_rnd_2 {
+    width: 643px;
+	margin-top: 10px;
+	padding:0;
+}
+
+.box_rnd_2_top {
+    background-color: white;
+    border-right: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+    border-left: 1px solid #d2d2d2;
+    -moz-border-radius: 0 0 8px 8px;
+    -webkit-border-radius: 0 0 8px 8px;
+    padding: 8px;
+    width: 868px;
+    margin: 0 0 10px 0;
+    padding: 30px 30px 30px 20px;
+    border-radius: 0 0 8px 8px;
+}
+.box_rnd_2_top_rnp {
+    background-color: white;
+    border-right: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+    border-left: 1px solid #d2d2d2;
+    -moz-border-radius: 0 0 8px 8px;
+    -webkit-border-radius: 0 0 8px 8px;
+    padding: 8px;
+    width: 95%;
+    margin: 0 0 10px 0;
+    padding: 30px 30px 30px 20px;
+    border-radius: 0 0 8px 8px;
+}
+
+.box_rnd_2_mid {
+    background-color: white; 
+    border-right: 1px solid #d2d2d2; 
+    border-bottom: 1px solid #d2d2d2; 
+    border-left: 1px solid #d2d2d2; 
+    border-radius: 0 0 8px 8px; 
+    padding: 0 20px 10px 20px;
+}
+
+.box_rnd_3 {
+    border: 1px solid #d2d2d2; 
+    -moz-border-radius: 8px; 
+    -webkit-border-radius: 8px; 
+    border-radius: 8px; 
+    padding: 30px 30px 0 20px; 
+    margin: 30px 0 0 0; 
+    width: 868px;
+}
+.box_rnd_3_top { 
+    border: 0;
+     border-bottom: none; 
+    padding: 0 30px 0 20px; 
+    margin: 30px 0 0 0;
+    width: 90%;
+}
+.box_rnd_3_top_ps{
+     border-radius: 8px 8px 0 0;
+     -moz-border-radius: 8px 8px 0 0;
+     -webkit-border-radius: 8px 8px 0 0;
+     border-bottom: none;
+     width: 95%;
+ }
+.box_rnd_3_top_rnp {
+    border: 1px solid #d2d2d2;
+    border-radius: 8px 8px 0 0;
+    -moz-border-radius: 8px 8px 0 0;
+    -webkit-border-radius: 8px 8px 0 0;
+    border-bottom: none;
+    padding: 0 30px 0 20px;
+    margin: 30px 0 0 0;
+    width: 95%;
+}
+
+.box_2 { 
+    background-color: white; 
+    border: 1px solid #d2d2d2; 
+    padding: 8px; width: 94.5%; 
+    margin: 10px 0 0 5px; 
+    border-radius: 8px; 
+}
+
+
+.box_rnd_3_top_sc {
+    border: 0;
+    border-bottom: none;
+    padding: 0 16px 0 16px;
+    margin: 16px 0 0 0;
+    width: 85%;
+}
+
+table.table_chart {
+    background-color: white;
+}
+
+body#resortInformation table.table_chart {
+    margin-bottom: 10px;
+}
+.memberships_auto_renew_description{
+	width: 465px;
+	padding: 0;
+}
+
+.membership-auto-accordion .ui-state-active,  .membership-auto-accordion .ui-state-default{
+        border:0px;
+        background-color:#fff;
+        color: #0077be;
+        font-size: 12px;
+        font-weight: bold;
+        }
+      
+.membership-auto-accordion .ui-widget-content {
+   border: 0px solid #dddddd; 
+   padding: 1em .5em;
+   
+}
+.memberships_auto_renew_description h5{
+    font-size:12px;
+    color:#757575;
+}
+.membership-auto-accordion li {
+    margin-bottom: .4em;
+    list-style: disc;
+        line-height: 25px;
+}
+	
+	.autorenew_settings{
+    display:inline-block;
+}
+.ccExp-date{
+	margin-left:45px;
+}
+.membership-auto-accordion .accordian_header {
+    border-top: 1px solid #d2d2d2;
+    border-radius: 0;
+    padding-top: 7px;
+    padding-bottom: 0;
+}
+
+.membership-auto-accordion .ui-state-active .ui-icon{
+    background-image: url(../../images/_icons/upbluearrow.png);
+    background-position: 0;
+    background-size: contain;
+    height: 11px;
+    width: 11px;
+    margin-right:5px
+}
+.membership-auto-accordion .ui-accordion-header-collapsed .ui-icon{
+    background-image: url(../../images/_icons/downbluearrow.png);
+    background-position: 0;
+    background-size: contain;
+    height: 11px;
+    width: 11px;
+    margin-right:5px
+}
+
+.autorenew_indicator_checkMark {
+    display: inline-block;
+    float: right;
+    color: #757575;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.autorenew_indicator_checkMark img {
+    width: 15px;
+    height: 10px;
+    margin-left: 5px;
+}
+
+#my_memberships_wrap .txt_bump_1 {
+    padding-left: 5px;
+}
+
+#my_memberships_wrap .txt_bump_mem {
+    padding-right: 5px;
+}
+
+.black_checkmark {
+    padding-top: 5px;
+    display: inline;
+    float: left;
+}
+
+.non_core_autorenew_checkMark,
+.non_core_autorenew_card,
+.non_core_autorenew_opt_in_msg {
+    Padding: 0 0 15px 30px;
+}
+
+.non_core_autorenew_ccUpdate,
+.non_core_autorenew_ccUpdate a {
+    font-size: 10px;
+    color: #0077be;
+    padding: 20px 0 10px 0 !important;
+}
+
+.membership-auto-accordion ul {
+    margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+    .box_rnd_2_top {
+        width: 90%;
+    }
+}
+/********** CUSTOM BUTTONS ******************/
+
+.btn_custom_1 {
+    background-color: #ecf1f8;
+    border: 1px solid #d2d2d2;
+    color: #333;
+    cursor: pointer;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    width: 410px;
+}
+
+.btn_custom_1 a {
+    display: block;
+    padding: 5px 10px;
+}
+
+.btn_custom_1 a:hover {
+    background-color: #006AA7;
+    border-color: #006AA7;
+    color: #fff;
+}
+
+.btn_custom_1 small {
+    float: right;
+    cursor: pointer;
+}
+
+.btn_custom_1 a:hover small {
+    color: #fff;
+}
+
+a.button {
+    text-decoration: none;
+    padding: 2px 20px 2px 20px;
+}
+
+.btn_custom_2 {
+    background-color: #0077be;
+    border: 1px solid #0077be;
+    cursor: pointer;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 6px;
+    margin-right: 6px;
+}
+
+.btn_custom_2 strong {
+    color: #0077be;
+}
+
+
+.btn_custom_2:hover {
+    background-color: #006AA7;
+    border: 1px solid #006AA7;
+    cursor: pointer;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 6px;
+    margin-right: 6px;
+}
+
+.btn_custom_2Wide {
+    background-color: #ffffff;
+    border: 1px solid #d2d2d2;
+    color: #333;
+    cursor: pointer;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 6px 24px;
+    margin-right: 6px;
+}
+
+.btn_custom_2Wide:hover {
+    color: #fff;
+    background-color: #006AA7;
+}
+
+.btn_custom_2Wide strong {
+    color: #0077be;
+}
+#yesno .btn_custom_2 strong {
+    color: #ffffff;
+}
+.btn_custom_2Wide:hover strong {
+    color: #ffffff;
+}
+.btn_custom_3 {
+    background-color: #0077be;
+    border: 1px solid #d2d2d2;
+    color: #ffffff;
+    cursor: pointer;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 6px;
+    margin-right: 6px;
+}
+
+.btn_custom_3:hover {
+    color: #333333;
+    background-color: #ecf1f8;
+}
+
+.btn_custom_3Wide {
+    background-color: #0077be;
+    border: 1px solid #d2d2d2;
+    color: #ffffff;
+    cursor: pointer;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 6px 12px;
+    margin-right: 6px;
+}
+
+.btn_custom_3Wide:hover {
+    color: #333;
+    background-color: #ecf1f8;
+}
+
+
+/***************** TOOLTIP **********************/
+
+.tooltip {
+    display: none;
+    width: 200px;
+    padding: 5px;
+    font-size: 11px;
+    background-color: white;
+    border: 2px solid #757575;
+}
+
+
+/* style the trigger elements */
+
+.dyna img {
+    border: 0;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+
+/******************** FORM *********************/
+
+.my_wf_create_web_profile label {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 148px;
+}
+
+label {
+    
+}
+
+#exchange_form label,
+#getaway_form label {
+    font-weight: normal;
+    font-size: 10px;
+}
+
+.my_wf_create_web_profile input,
+.my_wf_create_web_profile textarea {
+    width: auto;
+    float: left;
+    margin-right: 5px;
+}
+
+.my_wf_create_web_profile input[type="button"] {
+    float: right;
+}
+
+.my_wf_create_web_profile p {
+    clear: both;
+    margin-top: .5em!important;
+}
+
+.txt_holder {
+    width: 205px;
+    float: left;
+    vertical-align: top;
+}
+
+.txt_holder_2 {
+    width: auto;
+    float: left;
+    padding-top: 4px;
+}
+
+.my_error {
+    font-family: Arial;
+    color: red;
+    font-size: 11px;
+}
+
+#showCellPhoneAgreementDiv input {
+    float: left;
+}
+
+#showCellPhoneAgreementDiv span div {
+    margin-left: 25px;
+}
+
+
+/********** MARGINS & PADDINGS ******************/
+
+.float_right {
+    float: right;
+}
+
+.float_none {
+    float: none!important;
+}
+
+.margin_top_1 {
+    margin-top: 5px;
+}
+
+.margin_top_2 {
+    margin-top: 10px;
+}
+
+.margin-bottom_1 {
+    margin-bottom: 5px;
+}
+
+.margin-bottom_2 {
+    margin-bottom: 10px;
+}
+
+.margin-bottom_3 {
+    margin-bottom: 20px;
+}
+
+.margin-bottom_4 {
+    margin-bottom: 40px;
+}
+
+.margin_top_bottom_1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.margin_top_bottom_2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.paddind_1 {
+    padding: 5px;
+}
+
+.padding_2 {
+    padding: 8px;
+}
+
+
+/************** Membership Selection *************/
+
+#membership_selection table thead tr th {
+    padding: 5px;
+    background-color: #ECF8FD;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.left_col,
+.center_col,
+.right_col {
+    width: 33%;
+}
+
+.center_col {
+    border-left: 1px solid #d2d2d2;
+    border-right: 1px solid #d2d2d2;
+}
+
+.col_wrap {
+    padding: 0 15px;
+    margin-top: 8px;
+}
+
+#center_main_column {
+    width: 940px;
+    float: left;
+    background-color: #FFFFFF;
+    margin: 0;
+    position: relative;
+}
+
+#body_index {
+    width: 940px;
+    padding: 0;
+    margin: 0;
+    float: left;
+    position: relative;
+    border: 10px solid white;
+    background-color: #ffffff;
+}
+
+ul.term_price,
+ul.term_price li ul {
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.term {
+    margin-bottom: 10px;
+}
+
+.term_price {
+    min-height: 130px;
+    line-height: 1.5em;
+}
+
+ul.term_price li {
+    list-style-type: none;
+}
+
+ul.term_price li div.term {
+    float: left;
+    width: 95px;
+}
+
+ul.term_price li span {
+    float: right;
+    width: 110px;
+    text-align: right;
+    color: #0077be;
+}
+
+ul.term_price li label.years {
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+}
+
+ul.term_price li.sub_li {
+    margin-left: 15px;
+}
+
+ul.term_price li.main_li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #d2d2d2;
+    min-height: 84px;
+}
+
+.no_border {
+    border: none!important;
+}
+
+.main_li small span {
+    color: #666!important;
+}
+
+
+/**.term_price .main_li small span {position:absolute; padding-top:20px;} **/
+
+
+/************** END: Membership Selection *************/
+
+.resort_code_btn {
+    background-color: #0077be;
+    border: 1px solid #a14203;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 4px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.benefits_block .floated_list li {
+    width: 140px;
+    margin-right: 10px;
+}
+
+ul.floated_list {
+    margin-left: 0;
+}
+
+.floated_list li {
+    float: left;
+}
+
+.CollapsiblePanelFaq h2 {
+    color: #023776;
+}
+
+.odd {
+    background-color: #d8e1ed!important;
+}
+
+
+/******* START: Membership View *******/
+
+li#membership_inc {
+    margin: 0;
+    padding: 0;
+}
+
+#membership_view {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 0 0 0 10px;
+    display: block;
+}
+
+#membership_view form {
+    display: inline;
+}
+
+#membership_view input#btn_go {
+    border: none;     
+    margin: 0 0 -8px 0;     
+    padding: 10px 0 0 0;
+}
+
+p.itemdetail {
+    margin-top: 0.2em;
+}
+
+
+/******* END: Membership View *******/
+
+
+/******* Loader Image ********/
+
+DIV#icon-loader {
+    width: 500px;
+    height: 500px;
+}
+
+
+/** 
+ * While we're having the loading class set.
+ * Removig it, will remove the loading message
+ */
+
+DIV#icon-loader.loading,
+#icon2-loader.loading {
+    background: url(/images/loader2.gif) no-repeat center center;
+}
+
+
+/** Small loader icon ***/
+
+
+/** 
+ * While we're having the loading class set.
+ * Removig it, will remove the loading message
+ */
+
+#iconsm-loader.loading {
+    background: url(/images/loader.gif) no-repeat;
+}
+
+
+/******* END: Loader Image*******/
+
+ul.term_price li.main_li_selected {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #d2d2d2;
+    min-height: 84px;
+    /* fallback */
+    background-color: #fffcba;
+    background: url(/images/linear_bg_2.png);
+    background-repeat: repeat-x;
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(100% 100% 90deg, #fefa8c, #fffdcc);
+    /* Safari 4-5, Chrome 1-9 */
+    /* -webkit-gradient(<type>, <point> [, <radius>]?, <point> [, <radius>]? [, <stop>]*) */
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fffdcc), to(#fefa8c));
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(#fefa8c, #fffdcc);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(#fefa8c, #fffdcc);
+}
+
+li.no_border_selected {
+    /* fallback */
+    background-color: #fffcba;
+    background: url(/images/linear_bg_2.png);
+    background-repeat: repeat-x;
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(100% 100% 90deg, #fefa8c, #fffdcc);
+    /* Safari 4-5, Chrome 1-9 */
+    /* -webkit-gradient(<type>, <point> [, <radius>]?, <point> [, <radius>]? [, <stop>]*) */
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fffdcc), to(#fefa8c));
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(#fefa8c, #fffdcc);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(#fefa8c, #fffdcc);
+    border: none!important;
+}
+
+td#points_datepicker button {
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+
+/* Rounded Corners Classes =================================== */
+
+.rounded_corner_5px-all {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.rounded_corner_5px-top {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+}
+
+.rounded_corner_5px-bottom {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+}
+
+
+/* EOF Rounded Corners Classes =================================== */
+
+.promo-code-search-box {
+    margin-bottom: 20px;
+}
+
+.promo-code-search-box .pc-search-button {
+    color: #023776;
+    background: #fffddf;
+    border: solid 1px #d2d2d2;
+    cursor: pointer;
+    padding: 2px;
+}
+
+
+/** START:Single Sign on Landing page changes*/
+
+.rnd-corner-1 {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#svc_lp_wrap {
+    width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#svc_lp_wrap .box_rnd_1,
+#svc_lp_wrap .box_rnd_2 {
+    padding: 18px;
+    margin: 0;
+    width: auto;
+}
+
+#svc_lp_col_1 {
+    width: 420px;
+    float: left;
+    margin-right: 55px;
+}
+
+#svc_lp_col_2 {
+    width: 420px;
+    float: left;
+}
+
+#svc_lp_col_1,
+#svc_lp_col_2,
+#svc_lp_col_3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/** END:Single Sign on Landing page changes*/
+
+
+/* START: Shell Specific */
+
+#svc_points_calculator_wrap {
+    padding: 20px;
+    background-color: white;
+}
+
+.pnt_calc {
+    background: #f6bfb8;
+    border: 1px solid #dd7b6e;
+    padding: 6px;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pnt_calc small {
+    font-size: 11px;
+}
+
+.pnt_calc_success {
+    background: #c2f0a8 url('/images/accept.png') no-repeat 50% 4px;
+    border: 1px solid #8bd56d;
+    display: block;
+    padding: 5px;
+    height: 15px;
+}
+
+.pnt_continue_disabled {
+    background-color: #d2d2d2;
+    border: 1px solid #bbbaba;
+    color: #ece9e9;
+    display: block;
+    padding: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pnt_continue_success {
+    border: 1px solid #ce4502;
+    color: #fff;
+    display: block;
+    padding: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background: #ffb76b;
+    cursor: pointer;
+    background: -moz-linear-gradient(top, #ffb76b 0, #fc571b 49%, #ff7f04 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffb76b), color-stop(49%, #fc571b), color-stop(100%, #ff7f04));
+    background: -webkit-linear-gradient(top, #ffb76b 0, #fc571b 49%, #ff7f04 100%);
+    background: -o-linear-gradient(top, #ffb76b 0, #fc571b 49%, #ff7f04 100%);
+    background: -ms-linear-gradient(top, #ffb76b 0, #fc571b 49%, #ff7f04 100%);
+    background: linear-gradient(top, #ffb76b 0, #fc571b 49%, #ff7f04 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffb76b', endColorstr='#ff7f04', GradientType=0);
+}
+
+.rnd-corner-1 {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#svc_lp_wrap {
+    width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#svc_lp_wrap .box_rnd_1,
+#svc_lp_wrap .box_rnd_2 {
+    padding: 18px;
+    margin: 0;
+    width: auto;
+}
+
+#svc_lp_col_1 {
+    width: 420px;
+    float: left;
+    margin-right: 55px;
+}
+
+#svc_lp_col_2 {
+    width: 420px;
+    float: left;
+}
+
+#svc_lp_col_1,
+#svc_lp_col_2,
+#svc_lp_col_3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.svc_disclaimer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ecf6fc;
+}
+
+.svc_disclaimer small {
+    font-weight: lighter!important;
+}
+
+.row_shaded {
+    background-color: #f5f5f5;
+}
+
+table.data_grid {
+    border-bottom: none;
+    background-color: #FFF;
+}
+
+table.data_grid tr td,
+table.data_grid tr th {
+    font-size: 11px;
+    border-bottom: 1px solid #eae8e8;
+}
+
+table.data_grid tr td strong {
+    font-size: 13px;
+}
+
+.highlight_1 {
+    color: #e12121;
+}
+
+table.data_grid tr td.no-border-grid {
+    border-bottom: none;
+}
+
+
+/*table.data_grid tr td.spacer_row {
+	padding:0;
+	background-color:#d2d2d2;
+}*/
+
+
+/* Shell My Units */
+
+.svc_main_header h2 {
+    margin-bottom: 3px;
+    margin-top: 10px;
+    color: #666;
+}
+
+.svc_sub_header h2 {
+    padding-left: 10px;
+}
+
+.svc_main_header h3 {
+    color: #0069b7;
+}
+
+.svc_main_header {
+    margin-left: -10px;
+    /*background-image: url(/images/cig_head_bkg.jpg);
+	background-repeat: repeat-x;*/
+    background-color: #e4e9ed;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    width: 653px;
+    border: 1px solid #cad6e1;
+    margin-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -index: 1000;
+    -moz-box-shadow: 0 2px 1px 1px Grey;
+    -webkit-box-shadow: 0 2px 1px 1px Grey;
+    box-shadow: 0 2px 1px 1px Grey;
+}
+
+.svc_sub_header {
+    margin-left: -11px;
+    background-repeat: repeat-x;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -index: 1000;
+    -moz-box-shadow: 0 1px 1px 1px Grey;
+    -webkit-box-shadow: 0 1px 1px 1px Grey;
+    box-shadow: 0 1px 1px 1px Grey;
+    background: #DDE3E9;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #DDE3E9 0, #FFFFFF 53%, #DDE3E9 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #DDE3E9), color-stop(53%, #FFFFFF), color-stop(100%, #DDE3E9));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #DDE3E9 0, #FFFFFF 53%, #DDE3E9 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #DDE3E9 0, #FFFFFF 53%, #DDE3E9 100%);
+    /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #DDE3E9 0, #FFFFFF 53%, #DDE3E9 100%);
+    /* IE10+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#DDE3E9', endColorstr='#fefefa', GradientType=0);
+    /* IE6-9 */
+    background: linear-gradient(top, #DDE3E9 0, #FFFFFF 53%, #DDE3E9 100%);
+    /* W3C */
+    height: 20px;
+    margin-bottom: 1px;
+    margin-top: 30px;
+    padding: 10px;
+    width: 636px;
+}
+
+.svc_logo_1 {
+    width: 90px;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+}
+
+.svc_logo_1 {
+    width: 90px;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+}
+
+#placeRequest {
+    background-image: url("/images/iw/orange_check.gif");
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu_head {
+    border: 0 solid #998675;
+    cursor: pointer;
+}
+
+.menu_body {
+    display: none;     
+    width: 155px;     
+    z-index: 1000;
+}
+
+.menu_body li {
+    background: #fff;
+}
+
+.menu_body li.alt {
+    background: #fff;
+}
+
+.menu_body li a {
+    color: #023776;
+    text-decoration: none;
+    display: block;
+}
+
+.menu_body #submitButton {
+    margin-bottom: 8px;
+    margin-left: 5px;
+}
+
+ul.topnav {
+    list-style: none;
+    cursor: pointer;
+    padding: 0 10px;
+    margin: 0;
+    float: left;
+    width: 174px;
+    background: #222;
+    font-size: 1.2em;
+    background: url(/images/topnav_bg.gif) repeat-x;
+}
+
+ul.topnav li {
+    float: left;
+    margin: 0;
+    padding: 0 15px 0 0;
+    position: relative;
+    /*--Declare X and Y axis base--*/
+}
+
+ul.topnav li span {
+    /*--Drop down trigger styles--*/
+    width: 17px;
+    height: 35px;
+    float: right;
+    background: url(/images/subnav_btn.gif) no-repeat center top;
+    z-index: 1000;
+}
+
+ul.topnav li span.subhover {
+    background-position: center bottom;
+    cursor: pointer;
+}
+
+
+/*--Hover effect for trigger--*/
+
+ul.topnav li ul.subnav {
+    list-style: none;
+    position: absolute;
+    /*--Important - Keeps subnav from affecting main navigation flow--*/
+    left: 0;
+    top: 35px;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    display: none;
+    float: left;
+    width: 180px;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    border: 1px solid #dbdada;
+    z-index: 1000;
+    margin-left: -5px;
+}
+
+ul.topnav li ul.subnav li {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #dbdada;
+    /*--Create bevel effect--*/
+    clear: both;
+    width: 180px;
+}
+
+html ul.topnav li ul.subnav li a {
+    float: left;
+    width: 155px;
+    background: #fff url(/images/dropdown_linkbg.gif) no-repeat 10px center;
+    padding-left: 20px;
+    z-index: 1000;
+}
+
+html ul.topnav li ul.subnav li a:hover {
+     /*--Hover effect for subnav links--*/     
+     background: #0077be url(/images/dropdown_linkbg.gif) no-repeat 10px center;     
+     z-index: 1000;     
+     color: #ffffff;
+}
+
+.menu_body li p {
+    font-size: 10px;
+    padding: 5px;
+    color: #474748;
+}
+
+.svc_big_deposit {
+    width: 158px;
+    height: 68px;
+    background: url(/images/deposit_bkg.jpg) no-repeat center top;
+    padding-top: 15px;
+}
+
+.my_resort_svc_header_row {
+    background-color: #ededed;
+    display: block;
+    padding: 5px;
+    margin: 0;
+    background-image: url(/images/iw/greyShadow.jpg);
+    background-repeat: no-repeat;
+    background-position: left -9px;
+    height: 135px;
+}
+
+.points {
+    margin-left: 20px
+}
+
+.points ul li {
+    border: 0;
+    margin: 8px 0;
+}
+
+.svc_actions_btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* END: Shell My Units */
+
+
+/* START: Intrawest My Units */
+
+.itw_main_header {
+    background: #eaeaea;
+    ;
+    border-radius: 6px;
+    width: 880px;
+    border: 1px solid #cad6e1;
+    margin-bottom: 40px;
+    padding: 10px;
+    -index: 1000;
+    -moz-box-shadow: 0 2px 1px 1px Grey;
+    -webkit-box-shadow: 0 2px 1px 1px Grey;
+    box-shadow: 0 2px 1px 1px Grey;
+}
+
+.itw_my_units_logo {
+    float: left;
+    background: url(/images/iw/itw/ee_logo.png) no-repeat;
+    height: 70px;
+    width: 250px;
+    margin: 100px 20px 0 20px;
+}
+
+.iw_my_units_logo {
+    float: left;
+    background: url(/images/accommodation-certificates-large.gif) no-repeat;
+    height: 90px;
+    width: 250px;
+    margin: 49px 20px 0 20px;
+}
+
+.itw_my_unit_content {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 1px 1px Grey;
+    overflow: auto;
+    padding: 15px;
+    margin: 10px;
+}
+
+.itw_points_balance {
+    float: left;
+    width: 300px;
+    margin: 0 25px 15px 20px;
+}
+
+.itw_points_balance h2 {
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+
+.itw_points_balance li {
+    padding-top: 10px;
+}
+
+.itw_exchangeButtons {
+    float: left;
+    width: 150px;
+    margin: 60px 15px 0 25px;
+}
+
+.itw_my_units_link a {
+    color: #023776!important;
+    font-size: .9em;
+}
+
+#itw_submitButton input {
+    text-align: center;
+    padding: 10px;
+    font-size: 1.3em;
+    color: #666666;
+    width: 300px;
+    Border: 1px solid #d2d2d2;
+    border-radius: 7px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+#itw_submitButton input:hover {
+    background: #f2f2f2;
+}
+
+.itw_pending_request {
+    width: 900px!important;
+    border-radius: 10px 10px 0 0;
+}
+
+.resort_header_row_itw {
+    border-radius: 10px 10px 0 0!important;
+}
+
+
+/* Intrawest Point Review Box */
+
+.itw_points_preview {
+    border-radius: 10px;
+    margin: 10px 0;
+    color: #666;
+}
+
+.itw_pp_300 {
+    width: 260px;
+}
+.ex_side_form_availability_space input{
+   vertical-align: text-bottom; 
+}
+
+.itw_pp_rt {
+    float: right;
+    width: 260px;
+    margin: 5px 0 0;
+}
+
+.itw_points_preview h2 {
+    font-size: 1.2em;
+    margin: 5px 0;
+    padding: 5px 15px;
+    color: #666;
+}
+
+.itw_points_preview p {
+    margin: 0!important;
+    padding: 5px 15px!important;
+    border-top: 1px solid #d2d2d2;
+    overflow: auto;
+}
+
+.itw_pp_no_border {
+    border: 0!important;
+}
+
+.itw_pp_grey_row {
+    background: #F4F4F4;
+}
+
+.itw_points_preview span {
+    font-size: 1em;
+}
+
+.itw_pp_points {
+    float: right;
+    width: 20%;
+    text-align: center;
+}
+
+.points_borrowed {
+    font-weight: bold;
+    color: #900;
+}
+
+.points_total {
+    font-size: 1.2em!important;
+    font-weight: bold;
+}
+
+.points_last_line {
+    font-size: .9em!important;
+    display: block;
+    width: 65%;
+    float: left;
+}
+
+.blue_box {
+    border: 1px solid #b2d0e7;
+    border-radius: 5px;
+    background: #e1effc;
+    padding: 5px;
+}
+
+.itw_pp_continue {
+    margin: 10px 0;
+    float: right;
+}
+
+.itw_continue_success {
+    border: 1px solid #757575;
+    color: #fff;
+    display: block;
+    padding: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    background: #d2d2d2!important;
+    float: right;
+    margin: 10px 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.itw_pd_10 {
+    padding: 0 10px!important;
+}
+
+.itw_disclaimer {
+    background: #ecf1f8;
+    border: 1px solid #d2d2d2;
+    color: #666;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: .85em;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.itw_disclaimer h2 {
+    margin: 0;
+    color: #666;
+    letter-spacing: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.itw_ds_fee {
+    float: right;
+    padding-right: 5px;
+}
+
+.itw_ds_p {
+    font-size: 1.2em;
+}
+
+.itw_ds_points_and_fees {
+    overflow: auto;
+    margin: 10px 0;
+    line-height: 1em;
+    font-size: 1.2em;
+}
+
+.itw_ds_points_and_fees span {
+    float: left;
+    width: 225px;
+    font-size: .8em;
+    line-height: 10px;
+}
+
+.itw_ds_p_divider {
+    width: 500px;
+    Height: 1px;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.itw_mrn_10 {
+    margin-bottom: 10px;
+}
+
+.itw_no_bld {
+    font-weight: normal;
+}
+
+.itw_content_wide {
+    width: 700px!important;
+}
+
+.itw_ds_tc {
+    clear: both;
+    margin-top: 5px;
+}
+
+.of_auto {
+    overflow: auto;
+}
+
+
+/* END: Intrawest Search Results Points */
+
+.itw_pc_number {
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+}
+
+.itw_pc_words {
+    font-size: 11px;
+    color: #757575;
+    font-weight: bold;
+}
+
+
+/* END: Intrawest Styles */
+
+
+/* START: Add Credit Card */
+
+.add_cc {
+    margin-top: 30px;
+}
+
+.add_cc p {
+    height: 17px;
+    padding-bottom: 10px;
+}
+
+.add_cc small {
+    display: block;
+    float: left;
+    margin: 3px 5px 0 0;
+}
+
+.add_cc strong {
+    display: block;
+    float: left;
+    width: 135px;
+    font-weight: bold;
+}
+
+.add_cc span {
+    width: 245px;
+}
+
+.add_cc input {
+    display: block;
+    float: left !important;
+    width: 200px;
+}
+
+.add_cc select {
+    display: block;
+    float: left;
+    width: 200px;
+    margin-right: 5px;
+}
+
+.add_cc_save {
+    width: 50px !important;
+    margin-left: 145px;
+}
+
+.add_cc_last {
+    border-bottom: none !important;
+}
+
+
+/* END: Add Credit Card */
+
+
+/* END: Shell Specific */
+
+
+/*-- BEGIN: Password Hint Success --*/
+
+#my_edit_web_profile_wrap {
+    width: 700px;
+}
+
+body#passwordHintSuccess form#loginInfo {
+    background: url("/images/password-hint-success-page-C_1.jpg") no-repeat scroll 0 0 transparent;
+    height: 126px;
+    padding: 40px 50px 0;
+}
+
+body#passwordHintSuccess #page_content #forgotPasswordReset p {
+    margin: 0;
+}
+
+body#passwordHintSuccess #column2_w #column2content {
+    margin: 0 0 0 10px;
+}
+
+body#passwordHintSuccess #passwordHint > .box_rnd_1 {
+    width: auto;
+    margin: 0;
+    padding: 30px 50px 50px;
+    border: medium none;
+    border-width: 0 0 1px 0;
+    border-color: #d2d2d2;
+    border-style: solid;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: url("/images/password-hint-success-page-C_2.jpg") repeat-y scroll 0 50px transparent;
+}
+
+body#passwordHintSuccess #forgotPasswordReset {
+    margin: 0;
+    width: auto;
+}
+
+body#passwordHintSuccess #passwordHint h1 {
+    margin: 0;
+    letter-spacing: 0;
+}
+
+body#passwordHintSuccess #hint_wrapper {
+    margin-top: 40px;
+}
+
+body#passwordHintSuccess #txt_hint_login {
+    margin: 20px 0 0 !important;
+}
+
+.form_group .datepicker {
+    background-image: url("/images/calendar_active.png");
+    background-position: 96.5% center;
+    background-repeat: no-repeat;
+    width: 135px;
+    padding: 5px 4px 6px 5px !important;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+@-moz-document url-prefix() {
+    input[type="radio"] {
+        -moz-appearance: radio;
+    }
+}
+
+
+/*-- END: Password Hint Success --*/
+
+#showCellPhoneAgreementDiv input {
+    float: left;
+}
+#showCellPhoneAgreementDiv span div {
+    margin-left: 25px;
+}
+#creditCard select, #addcard_d select {
+    height: 38px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+#creditCard input{
+height: 25px;
+}
+#credit_card_fields input { 
+    height: 38px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    padding: 0 8px;
+}
+
+.cc-opt-img{
+	margin-top:-6px;
+}
+
+/*-- Add Credit Card Modal --*/
+
+    .rt-txt p {
+        margin-top: 0px;
+           margin-bottom: 10px;
+    }
+    .rt-txt h4{
+        font-size: 18px;
+        margin: 0 0 10px;
+
+    }
+    .lt-txt{
+        font-size: 17px;
+    font-weight: bold;
+    line-height: 22px;
+    padding: 0px 20px 10px 0;
+    }
+    .rt-txt{
+        font-size: 14px; 
+        line-height: 20px;
+    }
+    .cc-ads-p{
+    font-size: 14px;
+    font-weight: normal;
+    }
+    .lt-list{
+        font-size: 14px; 
+        font-weight: bold;
+    }
+    .lt-list div {
+    display: inline-block;
+    width: 338px;
+    font-size: 12px;
+    font-weight: normal;
+}
+    .cc-ad-container{
+        width: 800px;
+   
+    height: 520px;
+    overflow: auto;
+    }
+    .cc-ad-img-container{
+       width: 375px; 
+        height: 241px; 
+        overflow: hidden; 
+     
+    }
+    .cc-terms p{
+        font-size: 12px;
+        margin: 0 10px 15px;
+    }
+    .cc-terms h5{
+        margin:10px;
+        color: #757575;
+    }
+    
+    
+    .save-add-cc-toggle {
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+#div_existaddr input{
+    height:12px;
+        margin-top: 1px;
+}
+
+/*-- Existing credit cards start here --*/
+.vs {background: url(/images/iw/img_vs.png) 5px 10% no-repeat; important!}
+.mc {background: url(/images/iw/img_mc.png) 5px 10% no-repeat; important!}
+.ax {background: url(/images/iw/img_ae.png) 5px 10% no-repeat; important!}
+.dc {background: url(/images/iw/img_din.png) 5px 10% no-repeat; important!}
+.ds {background: url(/images/iw/img_dis.png) 5px 10% no-repeat; important!}
+
+.vs, .mc, .ax, .dc, .ds{
+	background-size: 35px,contain;
+	height: 25px;
+	background-position-y: center;
+	padding: 9px 0 3px 44px;
+	font-size: 12px;
+}
+
+#creditCard .button {
+    height: 34px;
+}
+#checkoutinfoaddCardToProfile{
+	   height: 10px;
+}
+    
+.ui-icon.vs {
+	background: url(/images/iw/img_vs.png) 5px 10% no-repeat;	
+}
+
+.ui-icon.mc {
+	background: url(/images/iw/img_mc.png) 5px 10% no-repeat;
+}
+
+.ui-icon.ax {
+	background: url(/images/iw/img_ae.png) 5px 10% no-repeat;
+}
+
+.ui-icon.dc {
+	background: url(/images/iw/img_din.png) 5px 10% no-repeat;
+}
+
+.ui-icon.ds {
+	background: url(/images/iw/img_dis.png) 5px 10% no-repeat;
+}
+
+.ui-icon.vs, .ui-icon.mc, .ui-icon.ax, .ui-icon.dc, .ui-icon.ds{
+	background-size: 35px,contain;
+	height: 25px;
+	background-position-y: center;
+	padding: 9px 0 3px 44px;
+	font-size: 12px;
+}
+.existing_cc_td .ui-widget {
+    width: 245px;
+    margin-right: 15px;
+   padding: 2px 5px;
+}
+.ui-cc-items .ui-menu-item-wrapper {
+    padding: 10px 0 10px 48px;
+}
+#spot_intervalcc img{
+	width:345px;
+}
+.cc-ad-header{
+	    width: 832px;
+    background-color: #0379bf;
+    height: 50px;
+    position: absolute;
+    left: 11px;
+    top: 0px;
+    z-index: 1;
+    border-radius: 5px 5px 0 0;
+}
+.cc-ad-header h1 {
+	    text-align: center;
+    color: #fff;
+    margin: 0px;
+    padding: 16px;
+}
+#overlay_iw_credit_card .close{
+	z-index:2;
+}
+
+.cc-ad-container table{
+	margin-top:43px;
+}
+.lt-list img {
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+
+.lt-list span{
+   font-size:18px;
+  
+  
+}
+.lt-txt h1{
+    color: #0379bf;
+    font-weight: 800;
+}
+
+#overlay_iw_credit_card .custom-border {
+    background: white !important;
+    padding: 15px;
+    border-radius: 5px;
+}
+.cc-opt-img img {
+    height: 40px;
+}
+.existing_cc_td{
+	padding-bottom: 26px!important;
+}
+.existing_cc_td .ui-button .ui-icon{
+    background-image: url(images/ui-icons_222222_256x240.png);
+    top: 10px;
+}
+.existing_cc_td .ui-button:hover .ui-icon{
+    background-image: url(images/ui-icons_222222_256x240.png);
+    top: 11px!important;
+}
+#page_exchange_2col .side_menu_box .frame_content .button_col1 {
+  color: #fff !important;
+  background: none;
+  background-color: #0077be;
+  padding: 10px 25px !important;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  margin: 0;
+}
+
+#page_exchange_2col .side_menu_box .frame_content .button_col1:hover {
+  background-color: #006aa7;
+  border: none;
+}
+
+#page_getaway_2col .side_menu_box .frame_content .button_col1 {
+  color: #fff !important;
+  background: none;
+  background-color: #0077be;
+  padding: 10px 35px !important;
+  margin: 2px 12px !important;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 !important;
+  width: 100%;
+}
+
+#page_getaway_2col .side_menu_box .frame_content .button_col1:hover {
+  background-color: #006aa7;
+  border: none;
+}
+
+.ex_side_form_availability_space label {
+    display: block;
+    width: 160px;
+    line-height: 20px;
+}
+.menu_customer_service_our_offices h2 {
+    line-height:23px;
+}
+.credit_card_details h2{
+	color:#404040;
+	    margin: 15px 0;
+}
+.modal-add-save-container{
+	margin:40px 0 0;
+}
+.add_card_auto{
+	display:inline-block;
+}
+.save_setting_auto{
+	display:inline-block;
+	float:right;
+}
+
+.membership-auto-accordion .row {
+    margin: 0 20px 0;
+}
+
+.my-membership-owners table {
+	border-collapse: collapse;
+}
+
+.my-membership-owners table th {
+padding:10px 0;
+}
+.my-membership-owners table td {
+padding:16px 0 0;
+}
+.owner-name{
+	font-weight:bold;
+}
+#my_memberships_wrap .membership-resort-container{
+    padding:15px 10px;
+  background-color:#fff;
+}
+.membership-resort-container h5 {
+	color:#464646;
+  	margin-top:0;
+}
+.membership-resort-container:first-of-type {
+ border-bottom:1px solid #d2d2d2;   
+}
+.membership-resort-container .resort_title address {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+   
+}
+#storedCredentialButtonMembership{
+	color:#0077be;
+}
+
+.credit_card_details{
+	font-size:19px;
+	font-weight:bold;
+	margin-top: 18px;
+}
+.credit_card_list{
+	padding:16px 0;
+	
+}
+
+.optIn_Terms {
+    display: inline;
+}
+
+.autorenew_setting {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    float: right;
+    display: inline-block;
+}
+
+.autorenew_card_details {
+    display: inline-block;
+    margin-top: 15px;
+}
+.upgrade_auto_renew{
+	margin: 10px 0;	
+}
+.creditcardUSU, .cexh_auto_details, .autorenew_details{
+   margin: 20px 0;	
+}
+
+.creditcardUSU span, .cexh_auto_details span, .autorenew_details span{
+  display:inline-block;
+  width:200px;
+}
+.autorenew_details select, .cexh_auto_details select, .creditcardUSU select{
+    float:right;
+    width: 300px;	
+}
+.auto_bottom_links{
+	 margin-top: 50px;
+}
+.cardInfoAuto{
+	margin: 10px 0;	
+}
+.autorenew_card_details .black_checkmark {
+    margin-left: 25px;
+    padding-right: 10px;
+}
+.creditCardList-container{
+    margin:20px 0;
+}
+.creditCardList-container input{
+   width:14px;
+   height:14px;
+}
+.creditCardList-info{
+text-align:left;
+	
+}
+.expired{
+	color:#DC0101;
+}
+.my_wf_create_web_profile .expired {
+    color: #333;
+    border: 1px solid #DC0101;
+}
+#cvv_text, #mm_yy_text{
+	color:#DC0101;
+}
+ .creditCardList-exp{
+	text-align:right;
+	float:right;
+	
+}
+#my_memberships .ui-widget-content a{
+  color: #0077be;  
+}
+
+.autorenew_checkMark {
+    padding-right: 10px;
+}
+
+.autorenew_opt_in_msg,
+.autorenew_card {
+    margin-left: 20px;
+    padding: 10px 0 10px 32px;
+}
+
+.only_core_autorenew_ccUpdate,
+.only_core_autorenew_ccUpdate a {
+    font-size: 12px;
+    color: #0077be;
+    padding: 10px 0 10px 25px;
+}
+
+.membership-auto-accordion ul {
+    padding: 10px;
+}
+
+
+
+.non_core-autoRenew_no {
+    float: left;
+    width: 200px;
+    padding-left: 5px;
+    margin-top: 5px;
+}
+
+.non_core-autoRenew_no a {
+    color: #0077be;
+}
+
+.non_core_autoRenew_yes {
+    text-align: center;
+    border: 1px solid #0077be;
+    border-radius: 25px;
+    width: 165px;
+    padding: 10px;
+    margin-right: 5px;
+    display: inline;
+    float: right;
+}
+
+
+.non_core_autoRenew_yes a {
+    color: #0077be;
+    font-weight: bold;
+}
+.saveCardMsg{
+	display: inline-block;
+    width: 329px;
+    margin-right:40px;
+        margin-bottom: 20px;
+}
+.saveCardButton-container{
+	    text-align: right;
+    width: 158px;
+    display: inline-block;
+    vertical-align: top;
+}
+#agreeNote{
+	margin-left: 33px;font-size: 10px;
+}
+.update_expired_card_info, .add_card_info{
+	    background-color: #F0FFEF;
+    padding: 13px;
+    margin: 10px 0;
+    border-radius: 7px;
+    font-weight: bold;
+}
+.exp-sec-code input{
+    width: 70px;
+    height: 29px;
+    border: 1px solid #d2d2d2;
+    border-radius:5px;
+	
+}
+.updatExpCard-bottomLinks{
+	margin-top:50px;
+}
+.updatExpCard-butt{
+	display:inline-block;
+	width:150px;
+}
+.updatExpCard-terms{
+		display:inline-block;
+	width:300px;
+}
+.exp-sec-code{
+	margin-left:30px;
+}
+.exp-month-year, .exp-sec-code{
+	display:inline-block;
+}
+.exp-month-year label, .exp-sec-code label{
+display: block;
+    margin-bottom: 11px;
+    margin-top: 20px;
+}
+.updateCreditCardExpiry{
+	display:block;
+	text-align: right;
+}
+.onlyCardOnFileDialog{
+	margin-bottom:45px;
+}
+.onlyCardOnFileBottom{
+	float:right;
+}
+.cancel_no_card_file{
+	    text-align: right;
+    width: 69px;
+    float: right;
+    margin-top: 25px;
+}
+#optInAutoRenewNonCore_info, #opt_in_renewal_card_info{
+    width: 150px;
+    border: 1px solid #eee;
+    font-size: 11px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 234px;
+    margin-bottom: 5px;
+}
+#optInAutoRenewNonCore_info{
+ margin-bottom: -15px!important;	
+}
+#my_edit_expiry_card_wrap select{
+	    width: 100px;
+    height: 34px;
+        border: 1px solid #d2d2d2;
+    border-radius: 5px;
+}
+.addCC-terms-txt{
+	width: 364px;
+    display: inline-block;
+    line-height: 17px;
+    margin-bottom: 50px;
+    margin-left: 8px;
+}
+.scPaymentNote{
+margin-bottom: 30px;	
+}
+.addCC-terms-but{
+	    width: 175px;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+}
+#my_add_card_wrap .my_profile_save, #my_edit_card_wrap .my_profile_save{
+	    display: inline-flex;
+	    padding: 20px 20px;
+}
+.contentWrap_fraud_prevention{
+	height:auto!important;
+}
+#updateCreditCardAutoRenew{
+	display:block;
+	margin:26px;
+}
+.closeCardToolTip{
+	margin-top: 50px;
+}
+.contentWrap_legalInfoMembership{
+	line-height:23px;
+}
+.scPaymentfirstMesLink{
+	float:right;
+}
+#email_pref_expanded input, .scPaymentfirstMes input{
+	    vertical-align: middle;
+}
+.scPaymentContainer{
+	border: 1px solid #d2d2d2;
+    padding: 12px 10px;
+}
+.scPaymentfirstMes{
+	margin-bottom:10px;
+}
+.scPaymentHeading{
+	    text-align: center;
+	    	margin-bottom:10px;
+	    	font-weight: bold;
+}
+#autorenewcorestoredcredential{
+	margin: 6px 25px;
+}
+#storedcredentialno{
+	    margin-top: 10px;
+    display: inline-block;
+}
+.storedCredAutoMesCont{
+	    width: 560px;
+    margin: 20px auto;
+}
+#storedcredentialyes{
+	    float: right;
+    border: 1px solid #0077be;
+    padding: 7px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+/*--wpd --*/
+.wpd_points_balance{
+    width: 370px;
+    border: 1px solid #d2d2d2;
+    padding: 20px;
+    border-radius: 5px;
+    display: inline-block;
+        vertical-align: top;
+    margin-right: 20px;
+}
+.wpd_exchangeButtons li {
+    margin-bottom: 10px;
+}
+.wpd_pending_request .table_frame_body {
+   border-bottom: 0px solid #d2d2d2;
+     background-color: transparent;
+}
+.wpd_pending_request table td{
+	line-height:20px;
+}
+.wpd_pending_request{
+	border-radius: 5px!important;
+	}
+	
+.wpd_points_balance .itw_my_units_link a {
+    color: #007dc5!important;
+    font-size: 13px;
+  margin-bottom: 5px; 
+    display: block;
+}
+.wpd_main_header{
+	  
+    border-radius: 5px;
+        margin-bottom: 29px;
+}
+.wpd_my_unit_content {
+    background: #fff;
+    overflow: auto;
+    padding: 15px;
+    margin: 10px;
+}
+.resvHeading{
+	    text-align: left;
+    font-size: 17px;
+    font-weight: normal;
+}
+.resvPoints{
+	text-align: right;
+	 font-size: 20px;
+}
+
+.wpd_exchangeButtons{
+    display: inline-block;
+    width: 147px;
+   
+}
+.cardExpired{
+border-radius: 2px;
+    border: 1px solid #DC0101;
+    padding: 11px;
+}
+#existing_cc td#ccexp {
+    padding-right: 12px;
+}
+#existing_cc td#ccexp .cardExpired {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    height: 40px;
+    min-width: 96px;
+    box-sizing: border-box;
+    padding: 0 14px;
+    border-radius: 5px;
+    line-height: 1;
+    white-space: nowrap;
+}
+#existing_cc td#ccexp .cardExpired img {
+    flex: 0 0 auto;
+}
+.saveCardCheckbox{
+	width:560px;
+}
+.cvv_popup{
+      position: absolute;
+      /* text-decoration: underline dotted; */
+      cursor: help;
+      border: 1px solid #333;
+      padding: 5px;
+      border-radius: 4px;
+      background-color: #fff;
+      top: -38px;
+      text-align: center;
+      left: 389px;
+      display: block;
+      width: 170px;
+}
+
+.cvv_popup::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid rgba(0,0,0, .7);
+  top: 53px;
+  left: 76px;
+}
+
+
+#existing_cc{
+    position:relative
+}
+.contentWrap_availablePointsTool{
+	height:auto!important;
+}
+#cigPointsChartOverlay{
+	height:500px;
+}
+
+.contentWrap_availablePointsTool #totalBox{
+	    background-color: #f1f1f1;
+	
+}
+.contentWrap_availablePointsTool h4 {
+    padding: 12px;
+}
+.contentWrap_availablePointsTool #shellArea h4 {
+    padding: 7px 0;
+}
+.wpdPointWrapLeft{
+    width: 248px;
+    display: inline-block;
+    border: 1px solid #d2d2d2;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 9px;
+    vertical-align: top;
+    height: 115px;
+    margin-right: 12px;
+}
+.wpdPointWrapRight{
+    width: 177px;
+    display: inline-block;
+    border: 1px solid #d2d2d2;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 9px;
+    height: 115px;
+}
+.svc-pointTool{
+	display:none;
+}
+.totalPonts2{
+	margin-top:28px;
+}
+.ac_cert_clm3 .button_wide {
+    float: none;
+    display: block;
+    text-align: center;
+}
+.ac_cert_clm3 .third-button{
+	display: block;
+    margin: 5px 0;
+    height: auto;
+    padding: 5px 20px;
+    width: auto;
+        text-align: center;
+}
+
+#productsTotalAmount, 
+#membershipTotalAmount, 
+#totalAmount {
+    margin-right: 10px;
+}
+
+#grandTotalAmount{
+    margin-right: 0;
+}
+ 
+#offer { 
+    padding-top: 3px;
+}
+ 
+.autoRenewal_check { 
+    margin-top: 30px; 
+}
+
+#credit_card_fields h4 {
+    color: #18294b;
+}
+
+a#advisements_icon-BSC-1.icon_expand,
+a#advisements_icon-BSC-1.icon_expanded,
+a#advisements_icon-GLD-1.icon_expand,
+a#advisements_icon-GLD-1.icon_expanded{
+	background-position: 0 4px !important;
+	height: 9px !important;
+}
+
+#point_buckets_ii_wrap, 
+#point_buckets_svc_wrap {
+	border: 1px solid #d2d2d2:
+}
+
+.pointsSavedPoints, 
+#totalPointsAmount {
+	float: right;
+}
+
+#addCertificatePopup > div > div.close{
+    right: 3px;
+    top: 6px;
+}
+
+@media (max-width: 768px) {
+    .rnp-currency-label {
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 10px !important;
+        text-decoration: none !important;
+        color: #666666 !important;
+    }
+
+    .product-title-rnp{
+		padding-top: 0 !important;
+        font-size: 14px !important;
+	}
+
+    .product-title-rnp-bold{
+        padding-top: 0 !important;
+        font-size: 14px !important;
+    }
+
+    .product-hr-rnp td {
+        border-top: 1px solid #666666 !important;
+    }
+
+    .product-amt-rnp{
+        padding-top: 0 !important;
+        font-size: 14px !important;
+    }
+
+    .product-amt-rnp-bold{
+        padding-top: 0 !important;
+        font-size: 14px !important;
+    }
+
+
+    .fee-modal {
+        width: 90% !important;
+    }
+
+
+    .special-notes-modal, .upgrade-fee-modal {
+        width: 90% !important;
+        max-height: 80vh !important;
+    }
+}
+
+.payment_summary_title{
+    border-radius: 8px 8px 0 0;
+    background: #13294B;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    color: white !important;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    word-wrap: break-word;
+    letter-spacing: -0.154px;
+    margin-block-end: inherit;
+    padding-left: 16px;
+    padding-top: 8px;
+}
+.product-title-rnp{
+    color:  #000000;
+    /* xSmall/regular */
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+
+    padding-left: 16px;
+    padding-top: 16px;
+}
+
+.product-title-rnp-info {
+    color: #0077be;
+}
+
+.product-title-rnp-discount,
+.product-title-rnp-discount * {
+    color: #487607 !important;
+}
+
+.product-title-rnp-bold{
+    color: #000000;
+    /* xSmall/regular */
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: 150%; /* 18px */
+
+    padding-left: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.box_rnd_2_mid.trip-protection {
+    background-color: white;
+    padding: 0 20px 10px 20px !important;
+    border: 0 !important;
+}
+.box_rnd_2_mid_ps {
+    background-color: white;
+    border-right: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+    border-left: 1px solid #d2d2d2;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Payment Summary (mobile) */
+.box_rnd_3_top_ps {
+    border: 1px solid #E1E6ED;
+    border-bottom: none;
+    background: #FFFFFF;
+    padding: 12px 16px 0 16px;
+}
+
+.box_rnd_2_mid_ps {
+    border-right: 1px solid #E1E6ED;
+    border-bottom: 1px solid #E1E6ED;
+    border-left: 1px solid #E1E6ED;
+    padding: 0 16px 16px 16px;
+}
+
+#promo_section{
+    width: 300px; !important;
+}
+
+.account-payment-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.account-payment-main-column {
+    width: 65%;
+}
+
+.account-payment-side-column {
+    position: relative;
+    width: 35%;
+}
+
+.account-payment-side-column > .relq_info {
+    position: static;
+    top: auto;
+    left: auto;
+    float: none;
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 16px 18px !important;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.account-payment-side-column > .relq_info h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.account-payment-side-column > .relq_info .resort_title2 {
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+.account-payment-side-column > .relq_info .resort_title2 small strong {
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.account-payment-side-column > .relq_info .resort_title2 address {
+    line-height: 18px;
+    margin-top: 6px;
+}
+
+.account-payment-side-column > .relq_info .exchange_booking_info_dates {
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: 8px !important;
+}
+
+.account-payment-side-column > .relq_info .relq_info_pts {
+    overflow: auto;
+}
+
+.account-payment-side-column > .relq_info .icon_container {
+    margin: 3px 0 0;
+    min-height: 0;
+}
+
+.account-payment-sticky-rail {
+    width: 100%;
+}
+
+.account-payment-sticky-placeholder {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.account-payment-promo-box {
+    margin-bottom: 12px;
+}
+
+.account-payment-promo-box #promo_section {
+    overflow: visible;
+}
+
+.payment-summary-heading {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #13294B;
+    line-height: 24px;
+}
+
+.payment-summary-container .payment-summary-table td {
+    padding: 8px 0;
+}
+
+.payment-summary-container .product-title-rnp,
+.payment-summary-container .product-title-rnp-bold,
+.payment-summary-container .product-amt-rnp,
+.payment-summary-container .product-amt-rnp-bold {
+    padding-left: 0;
+    padding-top: 0;
+}
+
+.payment-summary-container .product-title-rnp,
+.payment-summary-container .product-amt-rnp {
+    font-size: 16px !important;
+    line-height: 24px;
+    color: #111111;
+}
+
+/* Override when hotelExchangeInfo is present */
+.payment-summary-container.hotel-exchange-active .product-title-rnp,
+.payment-summary-container.hotel-exchange-active .product-amt-rnp {
+    font-size: 12px !important;
+    padding-top: 0 !important;
+}
+
+.payment-summary-container .product-amt-rnp {
+    font-weight: 500;
+}
+
+.payment-summary-container .product-title-rnp-discount,
+.payment-summary-container .product-title-rnp-discount * {
+    color: #4C7A1C !important;
+}
+
+.payment-summary-container .product-title-rnp-info {
+    color: #0077BE;
+}
+
+.payment-summary-container .payment-summary-link,
+.payment-summary-container .special-notes-link {
+    color: #0077BE;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.payment-summary-total-cost {
+    font-weight: 500;
+}
+
+.payment-summary-footer-wrap {
+    padding-bottom: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment-summary-currency-note {
+    margin-top: 4px;
+    text-align: center;
+    color: #6D6E71;
+}
+
+.payment-summary-currency-note .small3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px !important;
+    font-weight: 400;
+    line-height: 15px;
+}
+
+#dueTodayRow {
+    background-color: #F3F3F3;
+}
+
+#dueTodayRow td {
+    padding: 14px 0;
+}
+
+#dueTodayRow .product-title-rnp-bold,
+#dueTodayRow .product-amt-rnp {
+    font-size: 18px !important;
+    font-weight: 700;
+    color: #111111;
+}
+
+.payment-summary-container.hotel-exchange-active #dueTodayRow .product-title-rnp-bold,
+.payment-summary-container.hotel-exchange-active #dueTodayRow .payment-summary-grand-total{
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+.payment-summary-container.hotel-exchange-active .payment-summary-total-label,
+.payment-summary-container.hotel-exchange-active .payment-summary-total-amount{
+    font-weight: 700 !important;
+}
+
+.payment-summary-container.hotel-exchange-active .payment-summary-divider-row {
+    padding: 2px 0 8px !important;
+}
+
+.payment-summary-container .product-hr-rnp td {
+    border-top: 1px solid #D1D5DB;
+    padding-top: 12px;
+}
+
+.payment-summary-container .product-amt-rnp-bold,
+.payment-summary-container .product-title-rnp-bold {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111111;
+    line-height: 24px;
+}
+
+.payment-summary-container .rnp-currency-label {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    color: #6B7280;
+    text-transform: uppercase;
+}
+
+.he-payment-summary-credit-message-container {
+    margin: 4% auto;
+}
+
+.he-payment-summary-credit-message-text {
+    color: #6D6E71;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px !important;
+    font-weight: 400;
+    line-height: 15px;
+}
+
+.submitTxnBtn_rnp{
+    border-radius: var(--Radius-8, 8px);
+    border: 1px solid var(--Style-button-primary-default, #0077BE);
+    background: var(--Style-button-primary-default, #0077BE);
+    display: flex;
+    padding: var(--Spacing-12, 12px) var(--24, 24px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Spacing-16, 16px);
+    width: 270px !important;
+    margin-left: -10px !important;
+}
+.completeTxnBtn_rnp{
+    border-radius: var(--Radius-8, 8px);
+    border: 1px solid var(--Style-button-primary-default, #0077BE);
+    background: var(--Style-button-primary-default, #0077BE);
+    display: flex;
+    padding: var(--Spacing-12, 12px) var(--24, 24px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Spacing-16, 16px);
+    width: 270px !important;
+    margin-left: -10px !important;
+}
+.skip_calc{
+    padding-right: 16px !important;
+}
+.add_price_payment{
+    font-size:12px !important;
+    padding-right: 16px !important;
+    padding-top: 18px !important;
+}
+
+.payment-summary-container.hotel-exchange-active .add_price_payment,
+.payment-summary-container.hotel-exchange-active .skip_calc {
+    padding-right: 0 !important;
+}
+
+/* Modal Overlay */
+.fee-modal-overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Box */
+.fee-modal {
+    width: 536px;
+    max-height: 80vh;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* clean scroll */
+}
+
+/* Header */
+.fee-modal-header {
+    height: 60px;
+    padding: 56px 16px 0px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fee-modal-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #13294B;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Close button */
+.fee-modal-close {
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+}
+
+/* Body scroll */
+.fee-modal-body {
+    padding: 16px 32px 32px 32px;
+    flex: 1;
+}
+/* Close button image */
+.fee-modal-close-img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    object-fit: contain;
+}
+.due-to-resort-link {
+    cursor: pointer;
+}
+
+#promo_section{
+    width: 300px; !important;
+}
+.due-to-resort-info-icon {
+    margin-left: 6px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.special-notes-link, .upgrade-fee-link {
+    cursor: pointer;
+}
+
+.special-notes-info-icon, .upgrade-fee-info-icon {
+    margin-left: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Overlay */
+.special-notes-overlay, .upgrade-fee-overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.price-include-link{
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    display: inline-flex;
+    text-align: center;
+    color: #000000;
+    font-size: 9px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    line-height: 16.50px;
+    word-wrap: break-word;
+}
+
+/* Modal Box */
+.special-notes-modal, .upgrade-fee-modal {
+    background: #fff;
+    width: 536px;
+    max-height: 614px;
+    padding: 0;
+    border-radius: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-include-link:hover {
+    color: #0077BE;
+}
+
+/* Header */
+.special-notes-header, .upgrade-fee-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.special-notes-title, .upgrade-fee-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #13294B;
+}
+
+.special-notes-close, .upgrade-fee-close {
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Body */
+.special-notes-body, .upgrade-fee-body {
+    padding: 16px;
+    overflow-y: auto;
+}
+/* ------------ TRIGGER ------------ */
+.price-include-link {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #13294B;
+    font-weight: 600;
+    text-decoration: underline;
+    height: 10px;
+}
+
+.price-info-icon {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* ------------ OVERLAY ------------ */
+.pi-modal-overlay {
+    display: none;                        /* hidden initially */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------ MODAL BOX ------------ */
+.pi-modal {
+    background: #fff;
+    width: 500px;
+    max-width: 90%;
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* ------------ CLOSE BUTTON ------------ */
+.pi-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ------------ HEADER ------------ */
+.pi-modal-header {
+    margin-bottom: 0;
+}
+
+.pi-modal-header h2 {
+    margin: 0;
+    color: #000000;
+    font-size: 24px;
+
+}
+
+
+.pi-modal-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #13294B;
+}
+
+/* ------------ BODY ------------ */
+.pi-modal-body p {
+    font-size: 14px;
+    line-height: 21px;
+    color: #2C2C2C;
+    margin: 0;
+}
+/* 1. Hide p tags generated by the reward tag */
+#promoRewardSection p {
+    display: none !important;
+}
+
+/* 2. Remove padding from promo reward TDs */
+#promoRewardSection td:has(input[type="radio"]) {
+    padding: 0 !important;
+}
+
+/* 3. Hide the reward amount placeholder div */
+#promoRewardSection #RewardGwPref {
+    display: none !important;
+}
