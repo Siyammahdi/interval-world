@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { ResortImage } from "@/components/resorts/ResortImage";
 import type { Resort } from "@/lib/resort-types";
-import { resortDisplayName } from "@/lib/resort-types";
+import { resortDisplayName, resortImages } from "@/lib/resort-types";
 
 type Props = {
   resort: Resort;
@@ -8,28 +9,20 @@ type Props = {
 
 export function ResortCard({ resort }: Props) {
   const name = resortDisplayName(resort);
-  const image = resort.img || resort.img2 || resort.img3 || "";
+  const images = resortImages(resort);
 
   return (
     <Link
       href={`/single-resort-page/${resort._id}`}
       className="block overflow-hidden rounded-xl border bg-white shadow-sm transition-shadow hover:shadow-md"
     >
-      <div className="relative mb-3 h-48 w-full overflow-hidden">
-        {image ? (
-          // External host set varies (rci.com, intervalworld.com); use img for parity
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={image}
-            alt={name}
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center bg-gray-100 text-sm text-gray-400">
-            No image
-          </div>
-        )}
-      </div>
+      <ResortImage
+        src={images[0]}
+        fallbacks={images.slice(1)}
+        alt={name}
+        seed={resort._id || name}
+        className="mb-3 h-48 w-full"
+      />
       <div className="px-4 pb-4">
         <p className="mb-2 text-sm font-medium text-[#5a7a9a]">
           {resort.location || "Location unavailable"}

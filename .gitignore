@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-node_modules_old_broken/
+/node_modules_old_broken
 /.pnpm-store
 /.pnp
 .pnp.*
@@ -43,3 +43,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Downloaded resort photos (regenerate with: pnpm images:download)
+/public/images/resorts/

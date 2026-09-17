@@ -94,6 +94,77 @@ export function pointsRatePerNight(unit: string): number {
   }
 }
 
+/**
+ * Local copies of the same Unsplash hotel pool the Netlify app uses when a
+ * resort photo is missing. Kept under public/images/resorts/_fallbacks/.
+ */
+export const FALLBACK_RESORT_IMAGES = [
+  "/images/resorts/_fallbacks/0.jpg",
+  "/images/resorts/_fallbacks/1.jpg",
+  "/images/resorts/_fallbacks/2.jpg",
+  "/images/resorts/_fallbacks/3.jpg",
+  "/images/resorts/_fallbacks/4.jpg",
+  "/images/resorts/_fallbacks/5.jpg",
+  "/images/resorts/_fallbacks/6.jpg",
+  "/images/resorts/_fallbacks/7.jpg",
+  "/images/resorts/_fallbacks/8.jpg",
+  "/images/resorts/_fallbacks/9.jpg",
+  "/images/resorts/_fallbacks/10.jpg",
+  "/images/resorts/_fallbacks/11.jpg",
+  "/images/resorts/_fallbacks/12.jpg",
+  "/images/resorts/_fallbacks/13.jpg",
+  "/images/resorts/_fallbacks/14.jpg",
+] as const;
+
+export function normalizeImageUrl(raw?: string | null): string {
+  if (raw == null) return "";
+  let u = String(raw).trim();
+  if (!u) return "";
+
+  // Local app assets — keep as-is
+  if (u.startsWith("/images/")) return u;
+
+  // Concatenated duplicates: https://a.jpghttps://a.jpg
+  const parts = u.split(/(?=https?:\/\/)/i).filter(Boolean);
+  if (parts.length > 1) {
+    u =
+      parts.find((p) => /^https?:\/\//i.test(p) && /\.(jpg|jpeg|png|webp|gif)(\?|$)/i.test(p)) ||
+      parts[0];
+  }
+
+  if (u.startsWith("//")) u = `https:${u}`;
+
+  if (!/^https?:\/\//i.test(u) && /\.(jpg|jpeg|png|webp|gif)(\?|$)/i.test(u)) {
+    if (
+      u.startsWith("www.") ||
+      u.startsWith("intervalworld.com") ||
+      u.startsWith("rci.com")
+    ) {
+      u = `https://${u}`;
+    } else if (u.startsWith("/") && !u.startsWith("/images/")) {
+      u = `https://www.intervalworld.com${u}`;
+    }
+  }
+
+  if (!/^https?:\/\//i.test(u)) return "";
+
+  try {
+    const parsed = new URL(u);
+    if (!["http:", "https:"].includes(parsed.protocol)) return "";
+    return parsed.href;
+  } catch {
+    return "";
+  }
+}
+
+export function pickFallbackResortImage(seed = ""): string {
+  let hash = 0;
+  for (let i = 0; i < seed.length; i++) {
+    hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;
+  }
+  return FALLBACK_RESORT_IMAGES[hash % FALLBACK_RESORT_IMAGES.length];
+}
+
 export function resortDisplayName(resort: Resort): string {
   return (resort.resortName || resort.place_name || "Resort").trim();
 }
@@ -103,9 +174,9 @@ export function resortDescription(resort: Resort): string {
 }
 
 export function resortImages(resort: Resort): string[] {
-  return [resort.img, resort.img2, resort.img3, resort.img4, resort.img5].filter(
-    (src): src is string => Boolean(src && src.trim()),
-  );
+  return [resort.img, resort.img2, resort.img3, resort.img4, resort.img5]
+    .map((src) => normalizeImageUrl(src))
+    .filter((src) => src.startsWith("/images/"));
 }
 
 /** Netlify stores amenities as "· Item· Item2" — split into clean labels. */

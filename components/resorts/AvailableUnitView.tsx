@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
+import { ResortImage } from "@/components/resorts/ResortImage";
 import {
   AVAILABLE_UNIT_TYPES,
   formatReservationDate,
@@ -13,6 +14,7 @@ import {
 } from "@/lib/available-units";
 import {
   resortDisplayName,
+  resortImages,
   type Resort,
 } from "@/lib/resort-types";
 
@@ -47,6 +49,7 @@ export function AvailableUnitView({ resort, search }: Props) {
   const isExchange = search.vacationType === "Exchange";
   const name = resortDisplayName(resort);
   const symbol = (resort.symbol || resort.resort_ID || "").trim();
+  const images = resortImages(resort);
   const nights = useMemo(
     () => nightsBetween(search.earliestDate, search.latestDate),
     [search.earliestDate, search.latestDate],
@@ -67,8 +70,9 @@ export function AvailableUnitView({ resort, search }: Props) {
       adults: String(search.adults),
       children: String(search.children),
       vacationType: search.vacationType,
+      checkInAs: "member",
     });
-    router.push(`/web/my/auth/loginPage?next=${encodeURIComponent(`/available-unit?${params.toString()}`)}`);
+    router.push(`/checkout?${params.toString()}`);
   }
 
   return (
@@ -149,19 +153,14 @@ export function AvailableUnitView({ resort, search }: Props) {
           {/* Resort card */}
           <div className="mb-8 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
             <div className="flex flex-col sm:flex-row">
-              <div className="h-48 w-full shrink-0 bg-gray-200 sm:h-auto sm:w-56">
-                {resort.img ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={resort.img}
-                    alt={name}
-                    className="h-48 w-full object-cover sm:h-full"
-                  />
-                ) : (
-                  <div className="flex h-48 items-center justify-center text-sm text-gray-400 sm:h-full">
-                    No image
-                  </div>
-                )}
+              <div className="h-48 w-full shrink-0 overflow-hidden bg-gray-200 sm:h-auto sm:min-h-[14rem] sm:w-56">
+                <ResortImage
+                  src={images[0] || resort.img}
+                  fallbacks={images.slice(1)}
+                  alt={name}
+                  seed={resort._id || name}
+                  className="h-48 w-full sm:min-h-[14rem] sm:h-full"
+                />
               </div>
               <div className="relative flex flex-grow flex-col justify-center p-6">
                 {symbol ? (

@@ -17,6 +17,7 @@ const PUBLIC_CONTENT_PREFIXES = [
   "/resort-page",
   "/single-resort-page",
   "/available-unit",
+  "/checkout",
 ] as const;
 
 export function isAuthOnlyPublicPath(pathname: string) {

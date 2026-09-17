@@ -108,7 +108,7 @@ export function ResortDetail({ resort, backHref }: Props) {
 
   return (
     <div className="mx-auto max-w-6xl p-4 md:p-8">
-      <ResortGallery images={images} alt={name} />
+      <ResortGallery images={images} alt={name} seed={resort._id || name} />
 
       {/* Title card — matches Netlify layout */}
       <div className="mb-6 rounded-xl border bg-white p-4 shadow-sm md:p-5">
