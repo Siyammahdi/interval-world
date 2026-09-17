@@ -12,7 +12,7 @@ const CS_P_MAP: Record<string, string> = {
   "travel-advisories": "/web/cs/travel-advisories",
   eplus: "/web/cs/eplus",
   deposit: "/web/cs/deposit",
-  directory: "/web/cs/directory",
+  directory: "/resort-directory",
 };
 
 const S_MAP: Record<string, string> = {
@@ -48,7 +48,7 @@ function mapFromSearchParams(params: URLSearchParams): string | null {
   const s = params.get("s");
   const url = params.get("url");
 
-  if (a === "1500" || a === "1501") return "/web/cs/directory";
+  if (a === "1500" || a === "1501") return "/resort-directory";
   if (a === "80") return "/web/cs/email-us";
 
   if (p && CS_P_MAP[p]) return CS_P_MAP[p];

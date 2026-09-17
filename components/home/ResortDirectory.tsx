@@ -23,7 +23,7 @@ export function ResortDirectory({ destinations }: ResortDirectoryProps) {
       <div className="flex flex-col gap-0 border border-[#d0d7e0] md:flex-row">
         {/* Directory */}
         <div className="flex flex-1 gap-4 p-4">
-          <Link href="/web/cs/directory" className="shrink-0 self-start">
+          <Link href="/resort-directory" className="shrink-0 self-start">
             <Image
               src="/images/misc/catalog.jpg"
               alt="Interval Resort Directory"
@@ -35,7 +35,7 @@ export function ResortDirectory({ destinations }: ResortDirectoryProps) {
 
           <div className="min-w-0 flex-1">
             <h2 id="directory-heading" className="mb-1 text-[15px] font-bold text-iw-blue">
-              <Link href="/web/cs/directory" className="hover:underline">
+              <Link href="/resort-directory" className="hover:underline">
                 Interval&apos;s Resort Directory
               </Link>
             </h2>

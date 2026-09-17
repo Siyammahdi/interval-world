@@ -36,12 +36,19 @@ export const mainNav: NavItem[] = [
     ],
   },
   {
+    id: "resort-directory",
+    label: "Resort Directory",
+    href: "/resort-directory",
+    image: "/images/nav/prelogin_02.jpg",
+    children: [],
+  },
+  {
     id: "planning",
     label: "Explore & Plan",
     href: "/web/my/info/planning",
     image: "/images/nav/prelogin_02.jpg",
     children: [
-      { label: "Online Resort Directory", href: "/web/cs/directory" },
+      { label: "Online Resort Directory", href: "/resort-directory" },
       { label: "Interval HD", href: "/web/my/channel" },
       { label: "Interval International App", href: "/web/cs/mobile-app" },
       { label: "Member Publications", href: "/web/my/info/planning/magazine" },
