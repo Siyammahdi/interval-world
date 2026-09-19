@@ -32,7 +32,7 @@ export const mainNav: NavItem[] = [
     children: [
       { label: "About Vacation Ownership", href: "/web/my/info/ownership/overview" },
       { label: "Why Interval International?", href: "/web/my/info/ownership/about" },
-      { label: "Contact Us", href: "/web/cs/offices" },
+      { label: "Contact Us", href: "/web/cs/email-us" },
     ],
   },
   {
@@ -59,7 +59,7 @@ export const mainNav: NavItem[] = [
   },
   {
     id: "benefits",
-    label: "Member Benefits",
+    label: "Membership Benefits",
     href: "/web/my/info/benefits",
     image: "/images/nav/prelogin_03.jpg",
     children: [

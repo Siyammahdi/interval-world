@@ -2,86 +2,68 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Destination } from "@/data/homepage";
 
-type ResortDirectoryProps = {
+type Props = {
   destinations: Destination[];
 };
 
-/** Split destinations into columns of 4 for the directory grid */
-function columnsFrom(items: Destination[], perCol = 4) {
-  const cols: Destination[][] = [];
-  for (let i = 0; i < items.length; i += perCol) {
-    cols.push(items.slice(i, i + perCol));
-  }
-  return cols;
-}
-
-export function ResortDirectory({ destinations }: ResortDirectoryProps) {
-  const columns = columnsFrom(destinations, 4);
+export function ResortDirectory({ destinations }: Props) {
+  const viewAll = destinations.find((d) => d.label.toLowerCase().includes("view"));
+  const places = destinations.filter((d) => d !== viewAll);
+  const columns: Destination[][] = [[], [], [], [], []];
+  places.forEach((dest, i) => {
+    columns[i % 5].push(dest);
+  });
 
   return (
-    <section className="mb-6" aria-labelledby="directory-heading">
-      <div className="flex flex-col gap-0 border border-[#d0d7e0] md:flex-row">
-        {/* Directory */}
-        <div className="flex flex-1 gap-4 p-4">
-          <Link href="/resort-directory" className="shrink-0 self-start">
-            <Image
-              src="/images/misc/catalog.jpg"
-              alt="Interval Resort Directory"
-              width={70}
-              height={84}
-              className="h-[84px] w-[70px]"
-            />
+    <section className="w-full bg-iw-surface px-6 py-[60px] md:px-[120px] md:py-[100px]">
+      <div className="mx-auto w-full max-w-[1200px]">
+        <div className="mb-6 flex flex-wrap items-end justify-between gap-3 border-b border-iw-border pb-6">
+          <h2 className="text-[28px] font-medium leading-[1.3] text-iw-ink md:text-[35px]">
+            Interval&apos;s Resort Directory
+          </h2>
+          <Link
+            href="/web/cs/mobile-app"
+            className="text-[18px] font-medium text-iw-link underline decoration-2 underline-offset-4 md:text-[20px]"
+          >
+            Download Interval&apos;s App
           </Link>
-
-          <div className="min-w-0 flex-1">
-            <h2 id="directory-heading" className="mb-1 text-[15px] font-bold text-iw-blue">
-              <Link href="/resort-directory" className="hover:underline">
-                Interval&apos;s Resort Directory
-              </Link>
-            </h2>
-
-            <p className="mb-2 flex items-center gap-1.5 text-[11px]">
-              <Image src="/images/misc/icon_mobile.gif" alt="" width={16} height={16} aria-hidden />
-              <Link href="/web/cs/mobile-app" className="text-iw-blue hover:underline">
-                Download Interval App
-              </Link>
-            </p>
-
-            <div className="grid grid-cols-2 gap-x-4 sm:grid-cols-4">
-              {columns.map((col, colIndex) => (
-                <ul key={colIndex} className="space-y-0.5 text-[12px]">
-                  {col.map((dest) => (
-                    <li key={dest.label}>
-                      <Link
-                        href={dest.href}
-                        className={
-                          dest.label === "View All"
-                            ? "font-bold text-iw-blue hover:underline"
-                            : "text-iw-blue hover:underline"
-                        }
-                      >
-                        {dest.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              ))}
-            </div>
-          </div>
         </div>
 
-        {/* Interval HD */}
-        <aside className="shrink-0 border-t border-[#d0d7e0] md:w-[220px] md:border-l md:border-t-0">
-          <Link href="/web/my/channel" className="block h-full">
+        <div className="flex flex-col gap-4 rounded-2xl bg-white px-4 py-6 md:flex-row md:items-center md:justify-between">
+          <div className="grid flex-1 grid-cols-2 gap-x-2 gap-y-0 sm:grid-cols-3 lg:grid-cols-5">
+            {columns.map((col, colIndex) => (
+              <div
+                key={colIndex}
+                className={`flex flex-col gap-4 pr-2 text-[14px] font-medium leading-[1.6] text-iw-ink ${
+                  colIndex < 4 ? "lg:border-r lg:border-iw-border" : ""
+                }`}
+              >
+                {col.map((dest) => (
+                  <Link key={dest.label + dest.href} href={dest.href} className="hover:text-iw-link">
+                    {dest.label}
+                  </Link>
+                ))}
+                {colIndex === 4 && viewAll ? (
+                  <Link
+                    href={viewAll.href}
+                    className="text-[17px] font-bold text-iw-link underline"
+                  >
+                    View all
+                  </Link>
+                ) : null}
+              </div>
+            ))}
+          </div>
+          <Link href="/web/cs/interval-hd" className="mx-auto shrink-0 md:mx-0">
             <Image
-              src="/images/misc/intervalhd.jpg"
-              alt="Interval HD — Now with helpful videos."
-              width={220}
-              height={140}
-              className="h-full w-full object-cover"
+              src="/images/figma/home/intervalhd.png"
+              alt="intervalHD — Now with helpful videos"
+              width={228}
+              height={137}
+              className="h-auto w-[228px]"
             />
           </Link>
-        </aside>
+        </div>
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ export function Button({
   onClick,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center rounded-md border border-iw-blue bg-iw-blue px-5 py-2.5 text-sm text-white transition-colors hover:bg-iw-blue-dark hover:border-iw-blue-dark",
+    "inline-flex items-center justify-center rounded-lg border border-iw-blue bg-iw-blue px-[42px] py-3 text-[17px] font-medium text-white transition-colors hover:bg-iw-blue-dark hover:border-iw-blue-dark",
     className,
   );
 

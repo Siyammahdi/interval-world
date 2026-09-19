@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import helpTopics from "@/data/email-help-topics.json";
+import { cn } from "@/lib/cn";
 
 type Subject = {
   id: number;
@@ -34,7 +35,12 @@ const initial: FormState = {
   comment: "",
 };
 
-/** E-mail Us form — matches live /web/cs?a=80 fields + subject/topic cascade */
+const fieldClass =
+  "h-12 w-full rounded border border-iw-border bg-white px-4 text-[14px] text-iw-ink outline-none transition-colors focus:border-iw-link";
+
+const labelClass = "mb-1 block text-[14px] leading-[1.7] text-iw-ink";
+
+/** E-mail Us form — Figma Customer Support / Email US */
 export function EmailUsForm() {
   const [form, setForm] = useState<FormState>(initial);
   const [errors, setErrors] = useState<string[]>([]);
@@ -76,8 +82,7 @@ export function EmailUsForm() {
 
   if (submitted) {
     return (
-      <div className="iw-email-form">
-        <h1>E-mail</h1>
+      <div className="space-y-4 text-[20px] leading-normal">
         <p>
           Thank you. Your message has been recorded for this demo. On the live Interval site,
           Customer Support receives these requests and typically responds within 24 hours during
@@ -86,9 +91,19 @@ export function EmailUsForm() {
         <p>
           If you need assistance involving immediate travel, please contact an Interval service
           representative via{" "}
-          <Link href="/web/cs/offices">Our Offices</Link>.
+          <Link href="/web/cs/offices" className="font-medium text-iw-link underline">
+            Our Offices
+          </Link>
+          .
         </p>
-        <button type="button" className="button" onClick={() => { setSubmitted(false); setForm(initial); }}>
+        <button
+          type="button"
+          className="inline-flex w-full max-w-[284px] items-center justify-center rounded-lg bg-iw-blue px-[42px] py-3 text-[17px] font-medium text-white hover:bg-iw-blue-dark"
+          onClick={() => {
+            setSubmitted(false);
+            setForm(initial);
+          }}
+        >
           Send another message
         </button>
       </div>
@@ -96,21 +111,25 @@ export function EmailUsForm() {
   }
 
   return (
-    <form className="iw-email-form" name="csform" onSubmit={onSubmit} noValidate>
-      <h1>E-mail</h1>
-      <p>
+    <form
+      name="csform"
+      onSubmit={onSubmit}
+      noValidate
+      className="flex w-full max-w-[791px] flex-col gap-8"
+    >
+      <p className="text-[20px] leading-normal text-iw-ink">
         If you have any questions, comments or concerns that you would like to share with us, please
         let us know. Your feedback is always welcome and appreciated. We are committed to
         continuously improving IntervalWorld.com.
       </p>
-      <p>
-        <small>(*) = required fields</small>
-      </p>
 
       {errors.length > 0 ? (
-        <div className="iw-email-form__errors" role="alert">
-          <h2>Required information missing:</h2>
-          <ul>
+        <div
+          className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-[14px] text-red-800"
+          role="alert"
+        >
+          <p className="mb-1 font-medium">Required information missing:</p>
+          <ul className="list-disc space-y-0.5 pl-5">
             {errors.map((error) => (
               <li key={error}>{error}</li>
             ))}
@@ -118,213 +137,175 @@ export function EmailUsForm() {
         </div>
       ) : null}
 
-      <table className="iw-email-form__table" cellPadding={2} cellSpacing={0}>
-        <tbody>
-          <tr>
-            <td>
-              <label htmlFor="memberNo">
-                <strong>Member Number:</strong>
-              </label>
-            </td>
-            <td>
-              <label htmlFor="emailAddress">
-                <strong>*E-mail Address:</strong>
-              </label>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                id="memberNo"
-                className="textfield"
-                type="text"
-                name="memberNo"
-                size={12}
-                maxLength={12}
-                value={form.memberNo}
-                onChange={(e) => update("memberNo", e.target.value)}
-                aria-label="Member Number"
-              />
-            </td>
-            <td>
-              <input
-                id="emailAddress"
-                className="textfield"
-                type="email"
-                name="emailAddress"
-                size={30}
-                required
-                value={form.emailAddress}
-                onChange={(e) => update("emailAddress", e.target.value)}
-                aria-label="Email Address"
-                aria-required="true"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label htmlFor="firstName">
-                <strong>*First Name:</strong>
-              </label>
-            </td>
-            <td>
-              <label htmlFor="lastName">
-                <strong>*Last Name:</strong>
-              </label>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                id="firstName"
-                className="textfield"
-                type="text"
-                name="firstName"
-                size={19}
-                maxLength={25}
-                required
-                value={form.firstName}
-                onChange={(e) => update("firstName", e.target.value)}
-                aria-label="First Name"
-                aria-required="true"
-              />
-            </td>
-            <td>
-              <input
-                id="lastName"
-                className="textfield"
-                type="text"
-                name="lastName"
-                size={19}
-                maxLength={25}
-                required
-                value={form.lastName}
-                onChange={(e) => update("lastName", e.target.value)}
-                aria-label="Last Name"
-                aria-required="true"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <label htmlFor="exchangeNumber">
-                <strong>Exchange Number:</strong>
-              </label>
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <input
-                id="exchangeNumber"
-                className="textfield"
-                type="text"
-                name="exchangeNumber"
-                size={20}
-                maxLength={25}
-                value={form.exchangeNumber}
-                onChange={(e) => update("exchangeNumber", e.target.value)}
-                aria-label="Exchange Number"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <strong>How may we help you?</strong>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label htmlFor="helpSubject">
-                <strong>*Subject:</strong>
-              </label>
-            </td>
-            <td>
-              <label htmlFor="helpTopic">
-                <strong>*Topic:</strong>
-              </label>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <select
-                id="helpSubject"
-                name="helpSubject"
-                aria-label="Select Help Subject"
-                value={form.helpSubject}
-                onChange={(e) => update("helpSubject", e.target.value)}
-                required
-              >
-                <option value="">Select Subject</option>
-                {subjects.map((subject) => (
-                  <option key={subject.id} value={subject.id}>
-                    {subject.label}
+      <div className="flex flex-col gap-4">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label htmlFor="memberNo" className={labelClass}>
+              Member Number
+            </label>
+            <input
+              id="memberNo"
+              className={fieldClass}
+              type="text"
+              name="memberNo"
+              maxLength={12}
+              value={form.memberNo}
+              onChange={(e) => update("memberNo", e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="emailAddress" className={labelClass}>
+              E-mail Address*
+            </label>
+            <input
+              id="emailAddress"
+              className={fieldClass}
+              type="email"
+              name="emailAddress"
+              required
+              value={form.emailAddress}
+              onChange={(e) => update("emailAddress", e.target.value)}
+              aria-required="true"
+            />
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label htmlFor="firstName" className={labelClass}>
+              First Name*
+            </label>
+            <input
+              id="firstName"
+              className={fieldClass}
+              type="text"
+              name="firstName"
+              maxLength={25}
+              required
+              value={form.firstName}
+              onChange={(e) => update("firstName", e.target.value)}
+              aria-required="true"
+            />
+          </div>
+          <div>
+            <label htmlFor="lastName" className={labelClass}>
+              Last Name*
+            </label>
+            <input
+              id="lastName"
+              className={fieldClass}
+              type="text"
+              name="lastName"
+              maxLength={25}
+              required
+              value={form.lastName}
+              onChange={(e) => update("lastName", e.target.value)}
+              aria-required="true"
+            />
+          </div>
+        </div>
+
+        <div className="sm:w-1/2 sm:pr-2">
+          <label htmlFor="exchangeNumber" className={labelClass}>
+            Exchange Number
+          </label>
+          <div className="flex items-center gap-1">
+            <input
+              id="exchangeNumber"
+              className={cn(fieldClass, "flex-1")}
+              type="text"
+              name="exchangeNumber"
+              maxLength={25}
+              value={form.exchangeNumber}
+              onChange={(e) => update("exchangeNumber", e.target.value)}
+            />
+            <span className="shrink-0 text-[12px] text-iw-muted">(if applicable)</span>
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label htmlFor="helpSubject" className={labelClass}>
+              How may we help you?
+            </label>
+            <select
+              id="helpSubject"
+              name="helpSubject"
+              className={fieldClass}
+              value={form.helpSubject}
+              onChange={(e) => update("helpSubject", e.target.value)}
+              required
+            >
+              <option value="">Select Subject</option>
+              {subjects.map((subject) => (
+                <option key={subject.id} value={subject.id}>
+                  {subject.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="helpTopic" className={cn(labelClass, "invisible")}>
+              Topic
+            </label>
+            <select
+              id="helpTopic"
+              name="helpTopic"
+              className={fieldClass}
+              value={form.helpTopic}
+              onChange={(e) => update("helpTopic", e.target.value)}
+              required
+              disabled={!form.helpSubject}
+            >
+              {!form.helpSubject ? (
+                <option value="">Please select a subject first</option>
+              ) : (
+                topics.map((topic) => (
+                  <option key={topic.value + topic.label} value={topic.value}>
+                    {topic.label}
                   </option>
-                ))}
-              </select>
-            </td>
-            <td>
-              <select
-                id="helpTopic"
-                name="helpTopic"
-                aria-label="Select Help Topic"
-                value={form.helpTopic}
-                onChange={(e) => update("helpTopic", e.target.value)}
-                required
-                disabled={!form.helpSubject}
-              >
-                {!form.helpSubject ? (
-                  <option value="">Please select a subject first</option>
-                ) : (
-                  topics.map((topic) => (
-                    <option key={topic.value + topic.label} value={topic.value}>
-                      {topic.label}
-                    </option>
-                  ))
-                )}
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <label htmlFor="comment">
-                <strong>*Description:</strong>
-              </label>
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <textarea
-                id="comment"
-                name="comment"
-                cols={55}
-                rows={5}
-                required
-                value={form.comment}
-                onChange={(e) => update("comment", e.target.value)}
-                aria-required="true"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <p>
-                Your comments are important. We will make every effort to respond to your message
-                within the next 24 hours during normal business periods.
-              </p>
-              <p>
-                If you need assistance involving immediate travel or with an upcoming trip, please
-                contact an Interval service representative in your local servicing{" "}
-                <Link href="/web/cs/offices">office</Link>.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <input className="button" type="submit" value="Submit" name="submit" />
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                ))
+              )}
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="comment" className={labelClass}>
+            Description*
+          </label>
+          <textarea
+            id="comment"
+            name="comment"
+            rows={6}
+            required
+            value={form.comment}
+            onChange={(e) => update("comment", e.target.value)}
+            aria-required="true"
+            className="min-h-[156px] w-full rounded border border-iw-border bg-white px-4 py-3 text-[14px] text-iw-ink outline-none transition-colors focus:border-iw-link"
+          />
+        </div>
+      </div>
+
+      <p className="text-[20px] leading-normal text-iw-ink">
+        Your comments are important. We will make every effort to respond to your message within the
+        next 24 hours during normal business periods.
+      </p>
+      <p className="text-[20px] leading-normal text-iw-ink">
+        If you need assistance involving immediate travel or with an upcoming trip, please contact an
+        Interval service representative in your{" "}
+        <Link href="/web/cs/offices" className="font-medium text-iw-link underline">
+          local servicing office.
+        </Link>
+      </p>
+
+      <button
+        type="submit"
+        name="submit"
+        className="inline-flex w-full max-w-[284px] items-center justify-center rounded-lg bg-iw-blue px-[42px] py-3 text-[17px] font-medium text-white transition-colors hover:bg-iw-blue-dark"
+      >
+        Submit
+      </button>
     </form>
   );
 }

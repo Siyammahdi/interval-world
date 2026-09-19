@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { AskExpert } from "@/components/home/AskExpert";
 import { trackerContent, type TrackerTrip } from "@/data/tracker";
 import trips from "@/data/tracker-map-data.json";
 
@@ -207,83 +209,74 @@ export function TrackerPage() {
   return (
     <main id="main-content" className="tracker-page">
       <div className="tracker-shell">
-        <div className="tracker-container">
+        <div className="tracker-header">
           <h1>{trackerContent.title}</h1>
-          {trackerContent.paragraphs.map((p) => (
-            <p key={p.slice(0, 32)}>{p}</p>
-          ))}
-
-          <div className="tracker-map-wrap">
-            <div
-              id="map_canvas"
-              ref={mapRef}
-              className="tracker-map-canvas"
-              aria-label="Interval Exchange Tracker map"
+          <nav aria-label="Breadcrumb" className="tracker-breadcrumb">
+            <Link href="/">Home</Link>
+            <Image
+              src="/images/figma/ownership/chevron.svg"
+              alt=""
+              width={5}
+              height={8}
+              aria-hidden
             />
-            {!ready && !error && <div className="tracker-map-loading">Loading map…</div>}
-            {error && <div className="tracker-map-loading">{error}</div>}
-          </div>
+            <span>{trackerContent.breadcrumb}</span>
+          </nav>
+        </div>
 
-          {selected && heading && (
-            <div className="tracker-popup" role="dialog" aria-label={heading}>
-              <button
-                type="button"
-                className="tracker-popup-close"
-                onClick={() => setSelected(null)}
-                aria-label="Close"
-              >
-                ×
-              </button>
-              <h4>{heading}</h4>
-              <div className="tracker-popup-grid">
-                <div className="tracker-popup-col">
-                  <div className="tracker-popup-label">From</div>
-                  <div className="tracker-popup-name">{selected.relinquishedResortName}</div>
-                  <div className="tracker-popup-loc">
-                    {selected.relinquishedCity}, {selected.relinquishedCountry}
-                  </div>
+        <div className="tracker-map-wrap">
+          <div
+            id="map_canvas"
+            ref={mapRef}
+            className="tracker-map-canvas"
+            aria-label="Interval Exchange Tracker map"
+          />
+          {!ready && !error && <div className="tracker-map-loading">Loading map…</div>}
+          {error && <div className="tracker-map-loading">{error}</div>}
+        </div>
+
+        {selected && heading && (
+          <div className="tracker-popup" role="dialog" aria-label={heading}>
+            <button
+              type="button"
+              className="tracker-popup-close"
+              onClick={() => setSelected(null)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <h4>{heading}</h4>
+            <div className="tracker-popup-grid">
+              <div className="tracker-popup-col">
+                <div className="tracker-popup-label">From</div>
+                <div className="tracker-popup-name">{selected.relinquishedResortName}</div>
+                <div className="tracker-popup-loc">
+                  {selected.relinquishedCity}, {selected.relinquishedCountry}
                 </div>
-                <div className="tracker-popup-col">
-                  <div className="tracker-popup-label">To</div>
-                  <div className="tracker-popup-name">{selected.destinationResortName}</div>
-                  <div className="tracker-popup-loc">
-                    {selected.destiantionCity}, {selected.destinationCountry}
-                  </div>
+              </div>
+              <div className="tracker-popup-col">
+                <div className="tracker-popup-label">To</div>
+                <div className="tracker-popup-name">{selected.destinationResortName}</div>
+                <div className="tracker-popup-loc">
+                  {selected.destiantionCity}, {selected.destinationCountry}
                 </div>
               </div>
             </div>
-          )}
+          </div>
+        )}
 
-          <section className="tracker-legend">
-            <h2>{trackerContent.legendTitle}</h2>
-            <p className="tracker-legend-row">
-              <Image
-                src={trackerContent.legend[0].icon}
-                alt=""
-                width={trackerContent.legend[0].iconWidth}
-                height={trackerContent.legend[0].iconHeight}
-              />{" "}
-              {trackerContent.legend[0].text}{" "}
-              <Image
-                src={trackerContent.legend[1].icon}
-                alt=""
-                width={trackerContent.legend[1].iconWidth}
-                height={trackerContent.legend[1].iconHeight}
-              />{" "}
-              {trackerContent.legend[1].text}
+        <section className="tracker-legend">
+          <h2>{trackerContent.legendTitle}</h2>
+          {trackerContent.legend.map((item) => (
+            <p key={item.text} className="tracker-legend-row">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={item.icon} alt="" width={item.iconWidth} height={item.iconHeight} />
+              {item.text}
             </p>
-            <p className="tracker-legend-row">
-              <Image
-                src={trackerContent.legend[2].icon}
-                alt=""
-                width={trackerContent.legend[2].iconWidth}
-                height={trackerContent.legend[2].iconHeight}
-              />{" "}
-              {trackerContent.legend[2].text}
-            </p>
-          </section>
-        </div>
+          ))}
+        </section>
       </div>
+      <AskExpert />
     </main>
   );
 }

@@ -36,20 +36,19 @@ export function CheckoutPayment({ resort, booking }: Props) {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setSubmitting(true);
-    // Demo only — no payment processor
     router.push(`/checkout/confirmation?${query}`);
   }
 
   return (
-    <div className="min-h-[70vh] bg-[#1e293b] px-4 py-8 md:px-6 md:py-10">
-      <div className="mx-auto max-w-3xl">
+    <div className="bg-white px-4 py-8 md:px-6 md:py-10">
+      <div className="mx-auto max-w-[800px]">
         <CheckoutStepper current={3} />
 
-        <div className="mb-4 rounded-2xl bg-white p-5 shadow-sm sm:p-6">
-          <h2 className="text-lg font-bold text-gray-900">
+        <div className="mb-4 rounded-2xl border border-iw-border bg-white p-6 md:p-8">
+          <h2 className="text-2xl font-medium text-iw-ink md:text-[29px]">
             {isExchange ? "Confirm Points Redemption" : "Payment Details"}
           </h2>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm leading-[1.7] text-iw-muted">
             {isExchange
               ? `Redeem points for your stay at ${name}.`
               : `Enter card details to complete your booking at ${name}.`}
@@ -59,59 +58,51 @@ export function CheckoutPayment({ resort, booking }: Props) {
             {!isExchange ? (
               <>
                 <label className="block">
-                  <span className="mb-1 block text-xs font-bold uppercase tracking-wide text-gray-500">
-                    Name on card
-                  </span>
+                  <span className="mb-1 block text-sm font-medium text-iw-ink">Name on card</span>
                   <input
                     required
                     name="cardName"
                     defaultValue="Ann Member"
-                    className="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none focus:border-iw-blue"
+                    className="h-12 w-full rounded border border-iw-border px-4 text-sm outline-none focus:border-iw-link"
                   />
                 </label>
                 <label className="block">
-                  <span className="mb-1 block text-xs font-bold uppercase tracking-wide text-gray-500">
-                    Card number
-                  </span>
+                  <span className="mb-1 block text-sm font-medium text-iw-ink">Card number</span>
                   <input
                     required
                     name="cardNumber"
                     inputMode="numeric"
                     placeholder="4242 4242 4242 4242"
                     defaultValue="4242 4242 4242 4242"
-                    className="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none focus:border-iw-blue"
+                    className="h-12 w-full rounded border border-iw-border px-4 text-sm outline-none focus:border-iw-link"
                   />
                 </label>
                 <div className="grid grid-cols-2 gap-3">
                   <label className="block">
-                    <span className="mb-1 block text-xs font-bold uppercase tracking-wide text-gray-500">
-                      Expiry
-                    </span>
+                    <span className="mb-1 block text-sm font-medium text-iw-ink">Expiry</span>
                     <input
                       required
                       name="expiry"
                       placeholder="MM/YY"
                       defaultValue="12/28"
-                      className="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none focus:border-iw-blue"
+                      className="h-12 w-full rounded border border-iw-border px-4 text-sm outline-none focus:border-iw-link"
                     />
                   </label>
                   <label className="block">
-                    <span className="mb-1 block text-xs font-bold uppercase tracking-wide text-gray-500">
-                      CVC
-                    </span>
+                    <span className="mb-1 block text-sm font-medium text-iw-ink">CVC</span>
                     <input
                       required
                       name="cvc"
                       inputMode="numeric"
                       placeholder="123"
                       defaultValue="123"
-                      className="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none focus:border-iw-blue"
+                      className="h-12 w-full rounded border border-iw-border px-4 text-sm outline-none focus:border-iw-link"
                     />
                   </label>
                 </div>
               </>
             ) : (
-              <div className="rounded-xl border border-gray-100 bg-gray-50 p-4 text-sm text-gray-600">
+              <div className="rounded-lg border border-iw-border bg-iw-surface p-4 text-sm text-iw-muted">
                 <p>
                   Points to redeem:{" "}
                   <span className="font-bold text-iw-navy">
@@ -122,9 +113,9 @@ export function CheckoutPayment({ resort, booking }: Props) {
               </div>
             )}
 
-            <div className="flex items-center justify-between rounded-xl bg-gray-50 px-4 py-3">
-              <span className="text-sm text-gray-500">Amount due</span>
-              <span className="text-lg font-bold text-iw-blue">
+            <div className="flex items-center justify-between rounded-lg bg-iw-surface px-4 py-3">
+              <span className="text-sm text-iw-muted">Amount due</span>
+              <span className="text-lg font-bold text-iw-ink">
                 {pricing.mode === "cash"
                   ? `$${money(pricing.totalCash)} USD`
                   : `${pricing.totalPoints.toLocaleString()} pts`}
@@ -134,14 +125,14 @@ export function CheckoutPayment({ resort, booking }: Props) {
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
               <Link
                 href={`/checkout?${query}`}
-                className="text-center text-sm font-semibold text-gray-500 hover:text-iw-blue"
+                className="text-center text-sm font-medium text-iw-muted hover:text-iw-link"
               >
                 ← Back to Details
               </Link>
               <button
                 type="submit"
                 disabled={submitting}
-                className="rounded-xl bg-iw-blue px-6 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-iw-blue-dark disabled:opacity-60"
+                className="rounded-lg bg-iw-navy px-8 py-3.5 text-[17px] font-medium text-white transition-colors hover:bg-[#0a1f45] disabled:opacity-60"
               >
                 {submitting
                   ? "Processing…"
@@ -153,7 +144,7 @@ export function CheckoutPayment({ resort, booking }: Props) {
           </form>
         </div>
 
-        <p className="text-center text-[11px] text-slate-400">Demo checkout — no real charges.</p>
+        <p className="text-center text-[11px] text-iw-muted">Demo checkout — no real charges.</p>
       </div>
     </div>
   );

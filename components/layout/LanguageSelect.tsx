@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { languages } from "@/data/navigation";
-import { cn } from "@/lib/cn";
 
-/** Language control for the navy top utility bar */
+/** Language control matching Figma header (text + chevron). */
 export function LanguageSelect() {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -18,32 +18,29 @@ export function LanguageSelect() {
   }, []);
 
   return (
-    <div
-      ref={rootRef}
-      className="relative flex items-center gap-1.5 text-[11px] text-white"
-    >
-      <span className="font-normal">Language:</span>
+    <div ref={rootRef} className="relative flex items-center gap-2 text-[17px] text-iw-ink">
       <button
         type="button"
         aria-haspopup="listbox"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className={cn(
-          "relative min-w-[88px] rounded-sm border border-white/40 bg-white py-0.5 pl-2 pr-5 text-left text-[11px] text-iw-navy",
-          open && "rounded-b-none",
-        )}
+        className="inline-flex items-center gap-2"
       >
         English
-        <span
+        <Image
+          src="/images/figma/home/chevron.svg"
+          alt=""
+          width={23}
+          height={23}
+          className="size-[23px] rotate-90"
           aria-hidden
-          className="pointer-events-none absolute right-1.5 top-1/2 h-0 w-0 -translate-y-1/2 border-x-[3.5px] border-t-[4px] border-x-transparent border-t-iw-navy"
         />
       </button>
 
       {open && (
         <ul
           role="listbox"
-          className="absolute right-0 top-full z-50 min-w-[120px] overflow-hidden rounded-b border border-[#b8c0cc] border-t-0 bg-white shadow-md"
+          className="absolute right-0 top-full z-50 mt-2 min-w-[140px] overflow-hidden rounded-lg border border-iw-border bg-white shadow-md"
         >
           {languages
             .filter((lang) => lang.code !== "en")
@@ -51,7 +48,7 @@ export function LanguageSelect() {
               <li key={lang.code} role="option">
                 <a
                   href={lang.href}
-                  className="block px-3 py-1.5 text-[11px] text-iw-navy hover:bg-[#eef3f8] hover:text-iw-blue"
+                  className="block px-3 py-2 text-[14px] text-iw-ink hover:bg-iw-surface hover:text-iw-blue"
                   onClick={() => setOpen(false)}
                 >
                   {lang.label}

@@ -14,7 +14,7 @@ type Props = {
 export function CheckoutStepper({ current }: Props) {
   return (
     <div className="mb-8">
-      <h1 className="mb-6 text-center text-2xl font-semibold tracking-wide text-slate-400">
+      <h1 className="mb-6 text-center text-2xl font-medium tracking-wide text-iw-ink md:text-[29px]">
         Checkout
       </h1>
       <ol className="mx-auto flex max-w-2xl items-start justify-between px-2">
@@ -26,7 +26,7 @@ export function CheckoutStepper({ current }: Props) {
               {i < STEPS.length - 1 ? (
                 <span
                   className={`absolute left-[calc(50%+1.1rem)] right-[calc(-50%+1.1rem)] top-4 h-0.5 ${
-                    step.n < current ? "bg-iw-blue" : "bg-white/70"
+                    step.n < current ? "bg-iw-link" : "bg-iw-border"
                   }`}
                   aria-hidden
                 />
@@ -34,10 +34,10 @@ export function CheckoutStepper({ current }: Props) {
               <span
                 className={`relative z-10 flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ${
                   done
-                    ? "bg-white text-iw-blue"
+                    ? "bg-iw-navy text-white"
                     : active
-                      ? "bg-iw-blue text-white"
-                      : "border-2 border-white/80 bg-transparent text-white"
+                      ? "bg-iw-link text-white"
+                      : "border-2 border-iw-border bg-white text-iw-muted"
                 }`}
               >
                 {done ? (
@@ -50,7 +50,7 @@ export function CheckoutStepper({ current }: Props) {
               </span>
               <span
                 className={`mt-2 text-center text-[11px] font-medium sm:text-xs ${
-                  active ? "text-white" : "text-slate-400"
+                  active ? "text-iw-ink" : "text-iw-muted"
                 }`}
               >
                 {step.label}

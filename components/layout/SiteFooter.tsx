@@ -1,71 +1,27 @@
-import Image from "next/image";
 import Link from "next/link";
-import { footerLinks, socialLinks } from "@/data/navigation";
-import { Container } from "@/components/ui/Container";
+import { footerLinks } from "@/data/navigation";
 
+/** Minimal Figma footer — copyright + legal links (social lives in Ask Expert). */
 export function SiteFooter() {
   return (
-    <footer className="mt-2 w-full pb-6">
-      <Container>
-        {/* Social row */}
-        <div className="mb-5 flex items-center justify-center gap-3 py-2">
-          <span className="hidden h-px flex-1 max-w-[200px] bg-[#c5ced8] sm:block" aria-hidden />
-          <div className="flex items-center gap-2">
-            {socialLinks.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={item.label}
-                className="transition-opacity hover:opacity-80"
-              >
-                <Image src={item.icon} alt="" width={38} height={38} className="h-[38px] w-[38px] rounded-full" />
-              </Link>
+    <footer className="w-full border-t border-iw-muted bg-white">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center gap-4 px-6 pb-6 pt-[60px] text-center md:px-[120px]">
+        <p className="text-[14px] font-bold tracking-[0.14px] text-iw-ink">
+          Copyright© 2026 Interval International. All rights reserved.
+        </p>
+        <nav aria-label="Footer">
+          <ul className="flex flex-wrap items-center justify-center gap-x-0 gap-y-1 text-[12px] font-medium tracking-[0.12px] text-iw-ink">
+            {footerLinks.map((link, index) => (
+              <li key={link.label} className="flex items-center">
+                {index > 0 && <span className="mx-1.5 text-iw-ink">|</span>}
+                <Link href={link.href} className="hover:text-iw-link hover:underline">
+                  {link.label}
+                </Link>
+              </li>
             ))}
-          </div>
-          <span className="hidden h-px flex-1 max-w-[200px] bg-[#c5ced8] sm:block" aria-hidden />
-        </div>
-
-        {/* App + ad row */}
-        <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
-          <Link href="/web/cs/mobile-app" className="shrink-0">
-            <Image
-              src="/images/misc/mobile_app.jpg"
-              alt="Take your benefits with you. Discover our App"
-              width={200}
-              height={90}
-              className="h-auto w-[200px]"
-            />
-          </Link>
-          <div
-            className="flex h-[90px] w-full max-w-[728px] flex-1 items-center justify-center border border-[#d0d7e0] bg-[#f4f6f8] text-[11px] text-[#8a94a3]"
-            aria-label="Advertisement"
-          >
-            Advertisement
-          </div>
-        </div>
-
-        <div className="border-t border-[#d0d7e0] pt-3">
-          <div className="flex flex-col gap-2 text-[9px] text-[#5a6575] sm:flex-row sm:items-start sm:justify-between">
-            <p className="shrink-0">
-              Copyright© {new Date().getFullYear()} Interval International. All rights reserved.
-            </p>
-            <nav aria-label="Footer">
-              <ul className="flex flex-wrap gap-x-0 gap-y-1 sm:justify-end">
-                {footerLinks.map((link, index) => (
-                  <li key={link.label} className="flex items-center">
-                    {index > 0 && <span className="mx-1.5 text-[#9aa5b4]">|</span>}
-                    <Link href={link.href} className="hover:text-iw-blue hover:underline">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </Container>
+          </ul>
+        </nav>
+      </div>
     </footer>
   );
 }

@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
+import { AskExpert } from "@/components/home/AskExpert";
 import { ResortGallery } from "@/components/resorts/ResortGallery";
 import {
   EXCHANGE_RATES,
@@ -21,23 +23,6 @@ type Props = {
 
 type VacationType = "Exchange" | "Getaways" | "";
 type Tab = "description" | "amenities" | "map";
-
-function LocationPin() {
-  return (
-    <svg
-      className="mt-0.5 h-4 w-4 shrink-0 text-iw-blue"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      aria-hidden
-    >
-      <path
-        fillRule="evenodd"
-        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
 
 function todayInputValue() {
   const now = new Date();
@@ -63,7 +48,6 @@ export function ResortDetail({ resort, backHref }: Props) {
   const name = resortDisplayName(resort);
   const description = resortDescription(resort);
   const images = resortImages(resort);
-  const symbol = (resort.symbol || resort.resort_ID || "").trim();
   const onSite = useMemo(() => parseAmenityList(resort.onSite), [resort.onSite]);
   const nearby = useMemo(() => parseAmenityList(resort.nearby), [resort.nearby]);
 
@@ -107,297 +91,299 @@ export function ResortDetail({ resort, backHref }: Props) {
   }
 
   return (
-    <div className="mx-auto max-w-6xl p-4 md:p-8">
-      <ResortGallery images={images} alt={name} seed={resort._id || name} />
+    <>
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-8 px-4 py-8 md:px-8 md:pb-12">
+        <ResortGallery images={images} alt={name} seed={resort._id || name} />
 
-      {/* Title card — matches Netlify layout */}
-      <div className="mb-6 rounded-xl border bg-white p-4 shadow-sm md:p-5">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-iw-blue md:text-3xl">{name}</h1>
-            {resort.location ? (
-              <p className="mt-2 flex items-start gap-1.5 text-sm text-gray-600 md:text-base">
-                <LocationPin />
-                <span>{resort.location}</span>
-              </p>
-            ) : null}
-          </div>
-          {symbol ? (
-            <div className="shrink-0 self-start rounded-md border-2 border-iw-navy px-4 py-2 text-center">
-              <p className="text-[11px] font-bold uppercase tracking-wide text-gray-500">
-                Symbol
-              </p>
-              <p className="text-lg font-bold text-iw-navy">{symbol}</p>
-            </div>
+        <div className="flex flex-col items-center gap-2 text-center">
+          <h1 className="text-[32px] font-medium leading-[1.3] tracking-[-0.01em] text-iw-ink md:text-[42px]">
+            {name}
+          </h1>
+          {resort.location ? (
+            <p className="flex items-center gap-1 text-base text-iw-muted md:text-[20px]">
+              <Image
+                src="/images/figma/booking/location.svg"
+                alt=""
+                width={32}
+                height={32}
+                className="h-7 w-7 shrink-0 md:h-8 md:w-8"
+              />
+              <span>{resort.location}</span>
+            </p>
           ) : null}
         </div>
-      </div>
 
-      {/* Vacation type toggle */}
-      <div className="mb-4 flex justify-center">
-        <button
-          type="button"
-          className={`rounded-l-md border-2 px-6 py-2.5 text-sm font-semibold transition-all ${
-            isExchange
-              ? "border-iw-navy bg-iw-navy text-white"
-              : "border-gray-300 text-gray-700 hover:bg-gray-50"
-          }`}
-          onClick={() => setVacationType("Exchange")}
-        >
-          Exchange <span className="text-xs opacity-75">(Points)</span>
-        </button>
-        <button
-          type="button"
-          className={`rounded-r-md border-2 border-l-0 px-6 py-2.5 text-sm font-semibold transition-all ${
-            isGetaways
-              ? "border-iw-blue bg-iw-blue text-white"
-              : "border-gray-300 text-gray-700 hover:bg-gray-50"
-          }`}
-          onClick={() => setVacationType("Getaways")}
-        >
-          Getaways <span className="text-xs">(Cash)</span>
-        </button>
-      </div>
-
-      {!vacationType ? (
-        <div className="mb-8 rounded-lg border bg-gray-50 p-6 text-center text-gray-600">
-          <p className="font-semibold text-iw-navy">Select a vacation type to begin.</p>
-          <p className="mt-1 text-sm">
-            Choose Exchange to pay with points or Getaways to pay with cash.
-          </p>
-        </div>
-      ) : (
-        <div className="mb-8 rounded-lg border bg-white p-4 shadow-sm md:p-6">
-          {isExchange ? (
-            <div className="mb-5 rounded-lg border border-iw-navy bg-iw-navy p-4">
-              <h2 className="mb-1 text-lg font-bold text-white">Exchange Vacation (Points)</h2>
-              <p className="text-sm text-gray-200">Book with points at our competitive rates.</p>
-              <div className="mt-3 grid grid-cols-2 gap-2 text-xs sm:grid-cols-3">
-                {EXCHANGE_RATES.map((rate) => (
-                  <div
-                    key={rate.t}
-                    className="rounded border border-iw-navy bg-white p-2 text-center"
-                  >
-                    <p className="font-semibold text-iw-navy">{rate.t}</p>
-                    <p className="font-bold text-iw-navy">{rate.p}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-2 text-xs text-gray-200">
-                * Final points will be calculated based on the total number of nights selected.
-              </p>
-            </div>
-          ) : null}
-
-          {isGetaways ? (
-            <div className="mb-5 rounded-lg border border-iw-blue bg-iw-blue p-4">
-              <h2 className="mb-1 text-lg font-bold text-white">Getaway Vacation (Cash)</h2>
-              <p className="text-sm text-gray-200">
-                Book with cash at our competitive Last Call rates.
-              </p>
-              <div className="mt-3 grid grid-cols-2 gap-2 text-xs sm:grid-cols-3">
-                {GETAWAY_RATES.map((rate) => (
-                  <div
-                    key={rate.t}
-                    className="rounded border border-iw-blue bg-white p-2 text-center"
-                  >
-                    <p className="font-semibold text-iw-blue">{rate.t}</p>
-                    <p className="font-bold text-iw-blue">{rate.p}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-2 text-xs text-gray-200">* Prices shown before tax</p>
-            </div>
-          ) : null}
-
-          <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">
-                Earliest Travel Date
-              </label>
-              <input
-                type="date"
-                value={earliest}
-                min={minDate}
-                onChange={(e) => handleEarliestChange(e.target.value)}
-                className="w-full rounded border border-gray-300 px-3 py-2 text-sm outline-none focus:border-iw-blue focus:ring-1 focus:ring-iw-blue"
-              />
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">
-                Latest Travel Date
-              </label>
-              <input
-                type="date"
-                value={latest}
-                min={latestMin}
-                onChange={(e) => setLatest(e.target.value)}
-                className="w-full rounded border border-gray-300 px-3 py-2 text-sm outline-none focus:border-iw-blue focus:ring-1 focus:ring-iw-blue"
-              />
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">Adults</label>
-              <select
-                value={adults}
-                onChange={(e) => setAdults(Number(e.target.value))}
-                className="w-full rounded border border-gray-300 px-3 py-2 text-sm outline-none focus:border-iw-blue focus:ring-1 focus:ring-iw-blue"
-              >
-                {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
-                  <option key={n} value={n}>
-                    {n}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">Children</label>
-              <select
-                value={children}
-                onChange={(e) => setChildren(Number(e.target.value))}
-                className="w-full rounded border border-gray-300 px-3 py-2 text-sm outline-none focus:border-iw-blue focus:ring-1 focus:ring-iw-blue"
-              >
-                {Array.from({ length: 11 }, (_, i) => i).map((n) => (
-                  <option key={n} value={n}>
-                    {n}
-                  </option>
-                ))}
-              </select>
-            </div>
+        <div className="flex w-full max-w-[1053px] flex-col items-center gap-4">
+          <div className="flex w-full max-w-[452px] gap-4 rounded-2xl bg-iw-surface p-2">
+            <button
+              type="button"
+              className={`flex-1 rounded-lg p-2.5 text-[17px] font-medium transition-colors ${
+                isExchange
+                  ? "bg-iw-link text-white"
+                  : "bg-white text-iw-navy hover:bg-white/90"
+              }`}
+              onClick={() => setVacationType("Exchange")}
+            >
+              Exchange(points)
+            </button>
+            <button
+              type="button"
+              className={`flex-1 rounded-lg p-2.5 text-[17px] font-medium transition-colors ${
+                isGetaways
+                  ? "bg-iw-link text-white"
+                  : "bg-white text-iw-navy hover:bg-white/90"
+              }`}
+              onClick={() => setVacationType("Getaways")}
+            >
+              Getaways(cash)
+            </button>
           </div>
 
-          <button
-            type="button"
-            onClick={handleSearch}
-            className={`w-full rounded-lg py-3 font-bold text-white transition-colors ${
-              isExchange
-                ? "bg-iw-navy hover:bg-[#0f1d35]"
-                : "bg-iw-blue hover:bg-iw-blue-dark"
-            }`}
-          >
-            {isExchange
-              ? "Search Available Units (Points)"
-              : "Search Available Units (Cash)"}
-          </button>
-        </div>
-      )}
-
-      {/* Info tabs */}
-      <div className="mb-0 flex flex-wrap justify-center gap-0 md:justify-start">
-        {(
-          [
-            ["description", "Description"],
-            ["amenities", "Amenities"],
-            ["map", "Map"],
-          ] as const
-        ).map(([id, label]) => (
-          <button
-            key={id}
-            type="button"
-            className={`border-2 border-gray-200 px-4 py-2 text-sm font-medium ${
-              tab === id ? "bg-blue-500 text-white" : "bg-white text-gray-700 hover:bg-gray-50"
-            }`}
-            onClick={() => setTab(id)}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
-
-      <div className="mb-6 min-h-[120px] rounded-b-lg border border-t-0 bg-white p-5 text-gray-700">
-        {tab === "description" && (
-          <p className="whitespace-pre-wrap leading-relaxed">
-            {description || "Description not available."}
-          </p>
-        )}
-
-        {tab === "amenities" && (
-          <div>
-            <h3 className="mb-3 text-lg font-bold text-iw-navy">On-Site Amenities</h3>
-            {onSite.length > 0 ? (
-              <ul className="mb-4 ml-5 list-disc columns-1 gap-x-8 sm:columns-2">
-                {onSite.map((item) => (
-                  <li key={item} className="mb-1 break-inside-avoid">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="mb-4 text-sm text-gray-500">Not available.</p>
-            )}
-
-            <h3 className="mb-3 mt-4 text-lg font-bold text-iw-navy">Nearby Amenities</h3>
-            {nearby.length > 0 ? (
-              <ul className="ml-5 list-disc columns-1 gap-x-8 sm:columns-2">
-                {nearby.map((item) => (
-                  <li key={item} className="mb-1 break-inside-avoid">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-sm text-gray-500">Not available.</p>
-            )}
-
-            <div className="mt-5 border-y-2 py-2 hover:bg-blue-50">
-              <button
-                type="button"
-                className="w-full text-left text-xl font-bold text-gray-500"
-                onClick={() => setShowInfo((v) => !v)}
+          {!vacationType ? (
+            <div className="w-full rounded-2xl border border-iw-border bg-iw-surface px-6 py-10 text-center">
+              <p className="text-lg font-medium text-iw-navy">Select a vacation type to begin.</p>
+              <p className="mt-1 text-sm text-iw-muted">
+                Choose Exchange to pay with points or Getaways to pay with cash.
+              </p>
+            </div>
+          ) : (
+            <div className="w-full overflow-hidden rounded-2xl border border-iw-border bg-white shadow-sm">
+              <div
+                className={`px-5 py-5 text-white md:px-8 ${
+                  isExchange ? "bg-iw-navy" : "bg-iw-link"
+                }`}
               >
-                {showInfo ? "Hide Resort Information" : "Resort Information"}
-              </button>
-              {showInfo ? (
-                <div className="mt-3 space-y-3 text-sm">
+                <h2 className="text-xl font-bold md:text-2xl">
+                  {isExchange ? "Exchange Vacation (Points)" : "Getaway Vacation (Cash)"}
+                </h2>
+                <p className="mt-1 text-sm text-white/85">
+                  {isExchange
+                    ? "Book with points at our competitive rates."
+                    : "Book with cash at our competitive Last Call rates."}
+                </p>
+                <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                  {(isExchange ? EXCHANGE_RATES : GETAWAY_RATES).map((rate) => (
+                    <div
+                      key={rate.t}
+                      className="rounded-lg border border-white/20 bg-white p-2.5 text-center"
+                    >
+                      <p
+                        className={`text-sm font-semibold ${
+                          isExchange ? "text-iw-navy" : "text-iw-link"
+                        }`}
+                      >
+                        {rate.t}
+                      </p>
+                      <p
+                        className={`text-base font-bold ${
+                          isExchange ? "text-iw-navy" : "text-iw-link"
+                        }`}
+                      >
+                        {rate.p}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-3 text-xs text-white/80">
+                  {isExchange
+                    ? "* Final points will be calculated based on the total number of nights selected."
+                    : "* Prices shown before tax"}
+                </p>
+              </div>
+
+              <div className="space-y-4 bg-white p-5 md:p-8">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div>
-                    <h4 className="font-bold">Check-In Days</h4>
-                    <p>
-                      {resort.checkInDays && resort.checkInDays.length > 0
-                        ? resort.checkInDays.join(", ")
-                        : "Not available."}
-                    </p>
+                    <label className="mb-1 block text-sm font-medium text-iw-ink">
+                      Earliest Travel Date
+                    </label>
+                    <input
+                      type="date"
+                      value={earliest}
+                      min={minDate}
+                      onChange={(e) => handleEarliestChange(e.target.value)}
+                      className="h-12 w-full rounded border border-iw-border px-3 text-sm outline-none focus:border-iw-link"
+                    />
                   </div>
                   <div>
-                    <h4 className="font-bold">Nearest Airport</h4>
-                    <p>{resort.nearestAirport || "Not available."}</p>
+                    <label className="mb-1 block text-sm font-medium text-iw-ink">
+                      Latest Travel Date
+                    </label>
+                    <input
+                      type="date"
+                      value={latest}
+                      min={latestMin}
+                      onChange={(e) => setLatest(e.target.value)}
+                      className="h-12 w-full rounded border border-iw-border px-3 text-sm outline-none focus:border-iw-link"
+                    />
                   </div>
                   <div>
-                    <h4 className="font-bold">Contact Information</h4>
-                    <p className="whitespace-pre-wrap">
-                      {resort.contactInfo || "Not available."}
-                    </p>
+                    <label className="mb-1 block text-sm font-medium text-iw-ink">Adults</label>
+                    <select
+                      value={adults}
+                      onChange={(e) => setAdults(Number(e.target.value))}
+                      className="h-12 w-full rounded border border-iw-border px-3 text-sm outline-none focus:border-iw-link"
+                    >
+                      {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
+                        <option key={n} value={n}>
+                          {n}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="mb-1 block text-sm font-medium text-iw-ink">Children</label>
+                    <select
+                      value={children}
+                      onChange={(e) => setChildren(Number(e.target.value))}
+                      className="h-12 w-full rounded border border-iw-border px-3 text-sm outline-none focus:border-iw-link"
+                    >
+                      {Array.from({ length: 11 }, (_, i) => i).map((n) => (
+                        <option key={n} value={n}>
+                          {n}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
-              ) : null}
-            </div>
-          </div>
-        )}
 
-        {tab === "map" && (
-          <div>
-            <p className="mb-3 text-sm text-gray-600">
-              {resort.location || "Location unavailable"}
+                <button
+                  type="button"
+                  onClick={handleSearch}
+                  className={`w-full rounded-lg py-3 text-[17px] font-medium text-white transition-colors ${
+                    isExchange
+                      ? "bg-iw-navy hover:bg-[#0a1f45]"
+                      : "bg-iw-link hover:bg-[#0a7fc0]"
+                  }`}
+                >
+                  {isExchange
+                    ? "Search Available Units (Points)"
+                    : "Search Available Units (Cash)"}
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-4 rounded-2xl bg-iw-surface p-2">
+          {(
+            [
+              ["description", "Description"],
+              ["amenities", "Amenities"],
+              ["map", "Map"],
+            ] as const
+          ).map(([id, label]) => (
+            <button
+              key={id}
+              type="button"
+              className={`min-w-[140px] rounded-lg px-4 py-2.5 text-[17px] font-medium transition-colors md:min-w-[210px] ${
+                tab === id
+                  ? "bg-iw-link text-white"
+                  : "bg-white text-iw-navy hover:bg-white/90"
+              }`}
+              onClick={() => setTab(id)}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        <div className="w-full max-w-[791px] text-iw-ink">
+          {tab === "description" && (
+            <p className="whitespace-pre-wrap text-sm leading-[1.7]">
+              {description || "Description not available."}
             </p>
-            {resort.location ? (
-              <iframe
-                title={`Map of ${name}`}
-                className="h-[320px] w-full rounded-lg border"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                src={`https://maps.google.com/maps?q=${encodeURIComponent(resort.location)}&z=12&output=embed`}
-              />
-            ) : (
-              <p>Map not available.</p>
-            )}
-          </div>
-        )}
+          )}
+
+          {tab === "amenities" && (
+            <div>
+              <h3 className="mb-3 text-lg font-bold text-iw-navy">On-Site Amenities</h3>
+              {onSite.length > 0 ? (
+                <ul className="mb-4 ml-5 list-disc columns-1 gap-x-8 text-sm leading-[1.7] sm:columns-2">
+                  {onSite.map((item) => (
+                    <li key={item} className="mb-1 break-inside-avoid">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mb-4 text-sm text-iw-muted">Not available.</p>
+              )}
+
+              <h3 className="mb-3 mt-4 text-lg font-bold text-iw-navy">Nearby Amenities</h3>
+              {nearby.length > 0 ? (
+                <ul className="ml-5 list-disc columns-1 gap-x-8 text-sm leading-[1.7] sm:columns-2">
+                  {nearby.map((item) => (
+                    <li key={item} className="mb-1 break-inside-avoid">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-sm text-iw-muted">Not available.</p>
+              )}
+
+              <div className="mt-5 border-y border-iw-border py-3">
+                <button
+                  type="button"
+                  className="w-full text-left text-lg font-medium text-iw-muted"
+                  onClick={() => setShowInfo((v) => !v)}
+                >
+                  {showInfo ? "Hide Resort Information" : "Resort Information"}
+                </button>
+                {showInfo ? (
+                  <div className="mt-3 space-y-3 text-sm leading-[1.7]">
+                    <div>
+                      <h4 className="font-bold">Check-In Days</h4>
+                      <p>
+                        {resort.checkInDays && resort.checkInDays.length > 0
+                          ? resort.checkInDays.join(", ")
+                          : "Not available."}
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Nearest Airport</h4>
+                      <p>{resort.nearestAirport || "Not available."}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold">Contact Information</h4>
+                      <p className="whitespace-pre-wrap">
+                        {resort.contactInfo || "Not available."}
+                      </p>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          )}
+
+          {tab === "map" && (
+            <div>
+              <p className="mb-3 text-sm text-iw-muted">{resort.location || "Location unavailable"}</p>
+              {resort.location ? (
+                <iframe
+                  title={`Map of ${name}`}
+                  className="h-[320px] w-full rounded-2xl border border-iw-border"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(resort.location)}&z=12&output=embed`}
+                />
+              ) : (
+                <p>Map not available.</p>
+              )}
+            </div>
+          )}
+        </div>
+
+        <Link
+          href={backHref}
+          className="inline-flex items-center gap-2 text-sm font-medium text-iw-muted transition-colors hover:text-iw-link"
+        >
+          ← Back to Results
+        </Link>
       </div>
 
-      <Link
-        href={backHref}
-        className="inline-flex items-center gap-2 font-bold text-gray-500 transition-colors hover:text-iw-blue"
-      >
-        ← Back to Results
-      </Link>
-    </div>
+      <AskExpert />
+    </>
   );
 }

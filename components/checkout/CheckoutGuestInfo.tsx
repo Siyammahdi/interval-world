@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
@@ -43,109 +44,104 @@ export function CheckoutGuestInfo({ resort, booking }: Props) {
   }
 
   return (
-    <div className="min-h-[70vh] bg-[#1e293b] px-4 py-8 md:px-6 md:py-10">
-      <div className="mx-auto max-w-3xl">
+    <div className="bg-white px-4 py-8 md:px-6 md:py-10">
+      <div className="mx-auto max-w-[1200px]">
         <CheckoutStepper current={2} />
 
-        {/* Booking type banner */}
-        <div className="mb-4 flex items-start gap-3 rounded-2xl bg-white px-5 py-4 shadow-sm">
-          <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-iw-blue">
-            {isExchange ? (
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            ) : (
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V5a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-            )}
+        {/* Booking type banner — Figma 97:1799 */}
+        <div className="mb-8 flex items-center gap-3 rounded-lg bg-[#c9ecff] px-4 py-3.5 md:px-5">
+          <div className="flex h-[68px] w-[68px] shrink-0 items-center justify-center rounded bg-iw-navy p-2.5">
+            <Image
+              src="/images/figma/booking/exchange.svg"
+              alt=""
+              width={48}
+              height={48}
+              className="h-12 w-12"
+            />
           </div>
           <div>
-            <p className="text-base font-bold text-gray-900">
+            <p className="text-xl font-bold text-iw-navy md:text-[29px]">
               {isExchange ? "Points Exchange Booking" : "Getaway Vacation Booking"}
             </p>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm leading-[1.7] text-iw-muted">
               {isExchange
-                ? "You are redeeming Interval points for this exclusive stay."
+                ? "You are redeeming your Interval points for this vacation."
                 : "You are paying with card for this exclusive member rate."}
             </p>
           </div>
         </div>
 
         {/* Summary */}
-        <div className="mb-4 overflow-hidden rounded-2xl bg-white shadow-sm">
-          <div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-start">
-            <div className="h-28 w-full shrink-0 overflow-hidden rounded-xl bg-gray-100 sm:h-28 sm:w-36">
+        <div className="mb-8 overflow-hidden rounded-2xl border border-iw-border bg-white">
+          <div className="flex flex-col gap-4 pr-0 sm:flex-row sm:items-center sm:pr-8">
+            <div className="h-[180px] w-full shrink-0 overflow-hidden bg-iw-surface sm:h-[200px] sm:w-[300px]">
               <ResortImage
                 src={images[0] || resort.img}
                 fallbacks={images.slice(1)}
                 alt={name}
                 seed={resort._id || name}
-                className="h-28 w-full sm:w-36"
+                className="h-full w-full object-cover"
               />
             </div>
-            <div className="min-w-0 flex-1">
-              <h2 className="text-xl font-bold text-gray-900">{name}</h2>
-              {resort.location ? (
-                <p className="mt-1 text-sm text-gray-500">{resort.location}</p>
-              ) : null}
-              <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-700">
-                <p>
-                  <span className="font-semibold">Unit:</span> {booking.unit}
-                </p>
-                <p>
-                  <span className="font-semibold">Nights:</span> {nights}
-                </p>
-                <p>
-                  <span className="font-semibold">Check-in:</span>{" "}
-                  {formatCheckoutDate(booking.earliestDate)}
-                </p>
-                <p>
-                  <span className="font-semibold">Check-out:</span>{" "}
-                  {formatCheckoutDate(booking.latestDate)}
-                </p>
+            <div className="min-w-0 flex-1 px-5 py-5 sm:px-0">
+              <p className="text-lg text-iw-muted md:text-[20px]">
+                {resort.location || name}
+              </p>
+              <div className="mt-6 flex flex-wrap gap-x-16 gap-y-4 text-base text-iw-ink md:text-[20px]">
+                <div className="space-y-4">
+                  <p>
+                    <span className="text-iw-ink">Unit</span>: {booking.unit}
+                  </p>
+                  <p>
+                    <span className="text-iw-ink">Check-in:</span>{" "}
+                    <span className="text-iw-muted">
+                      {formatCheckoutDate(booking.earliestDate)}
+                    </span>
+                  </p>
+                </div>
+                <div className="space-y-4 text-iw-muted">
+                  <p>
+                    <span className="text-iw-ink">Nights:</span> {nights}
+                  </p>
+                  <p>
+                    <span className="text-iw-ink">Check-out:</span>{" "}
+                    {formatCheckoutDate(booking.latestDate)}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="space-y-2 border-t border-gray-100 bg-gray-50 px-5 py-4 text-sm">
+          <div className="bg-iw-surface">
             {pricing.mode === "cash" ? (
               <>
-                <div className="flex items-center justify-between text-gray-600">
-                  <span>
+                <div className="flex items-center justify-between border-b border-iw-border px-6 py-6 text-[20px] md:px-8">
+                  <span className="text-iw-muted">
                     Base price (${money(pricing.pricePerNight)} × {nights} nights)
                   </span>
-                  <span>${money(pricing.totalPrice)}</span>
+                  <span className="text-iw-ink">${money(pricing.totalPrice)}</span>
                 </div>
-                <div className="flex items-center justify-between text-gray-600">
-                  <span>Tax &amp; Fees</span>
-                  <span>${money(pricing.tax)}</span>
+                <div className="flex items-center justify-between border-b border-iw-border px-6 py-6 text-[20px] md:px-8">
+                  <span className="text-iw-muted">Tax &amp; Fees</span>
+                  <span className="text-iw-ink">${money(pricing.tax)}</span>
                 </div>
-                <div className="flex items-center justify-between pt-1 text-base font-bold text-iw-blue">
+                <div className="flex items-center justify-between px-6 py-6 text-[20px] font-bold text-iw-ink md:px-8">
                   <span>Total (tax inclusive)</span>
                   <span>${money(pricing.totalCash)} USD</span>
                 </div>
               </>
             ) : (
               <>
-                <div className="flex items-center justify-between text-gray-600">
-                  <span>
-                    Points ({pricing.pointsPerNight.toLocaleString()} × {nights} nights)
+                <div className="flex items-center justify-between border-b border-iw-border px-6 py-6 text-[20px] md:px-8">
+                  <span className="text-iw-muted">
+                    Base points ({pricing.pointsPerNight.toLocaleString()} × {nights} nights)
                   </span>
-                  <span>{pricing.totalPoints.toLocaleString()} pts</span>
+                  <span className="text-iw-ink">
+                    {pricing.totalPoints.toLocaleString()} pts
+                  </span>
                 </div>
-                <div className="flex items-center justify-between pt-1 text-base font-bold text-iw-navy">
-                  <span>Total points</span>
+                <div className="flex items-center justify-between px-6 pb-8 pt-4 text-[20px] font-bold text-iw-ink md:px-8">
+                  <span>Total Points</span>
                   <span>{pricing.totalPoints.toLocaleString()} pts</span>
                 </div>
               </>
@@ -154,48 +150,35 @@ export function CheckoutGuestInfo({ resort, booking }: Props) {
         </div>
 
         {/* Who's checking in */}
-        <div className="mb-4 rounded-2xl bg-white p-5 shadow-sm sm:p-6">
-          <h3 className="mb-4 text-lg font-bold text-gray-900">Who&apos;s Checking In?</h3>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div className="mb-8 rounded-lg border border-iw-border bg-white p-6 md:p-8">
+          <h3 className="mb-6 text-2xl font-medium text-iw-ink md:text-[29px]">
+            Who&apos;s Checking In?
+          </h3>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <button
               type="button"
               onClick={() => setCheckInAs("member")}
-              className={`flex items-center justify-center gap-2 rounded-xl border-2 px-4 py-4 text-base font-semibold transition-colors ${
+              className={`flex items-center justify-center gap-2.5 rounded-lg px-[42px] py-3.5 text-[17px] font-medium transition-colors ${
                 checkInAs === "member"
-                  ? "border-iw-blue bg-iw-blue text-white"
-                  : "border-gray-200 bg-white text-gray-700 hover:border-gray-300"
+                  ? "bg-iw-navy text-white"
+                  : "border border-iw-muted bg-white text-iw-ink hover:bg-iw-surface"
               }`}
             >
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden>
-                <path
-                  fillRule="evenodd"
-                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                  clipRule="evenodd"
-                />
-              </svg>
               Member
             </button>
             <button
               type="button"
               onClick={() => setCheckInAs("guest")}
-              className={`flex items-center justify-center gap-2 rounded-xl border-2 px-4 py-4 text-base font-semibold transition-colors ${
+              className={`flex items-center justify-center gap-2.5 rounded-lg px-[42px] py-3.5 text-[17px] font-medium transition-colors ${
                 checkInAs === "guest"
-                  ? "border-iw-blue bg-iw-blue text-white"
-                  : "border-gray-200 bg-white text-gray-700 hover:border-gray-300"
+                  ? "bg-iw-navy text-white"
+                  : "border border-iw-muted bg-white text-iw-ink hover:bg-iw-surface"
               }`}
             >
-              <svg
-                className={`h-5 w-5 ${checkInAs === "guest" ? "text-white" : "text-orange-500"}`}
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                aria-hidden
-              >
-                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-              </svg>
               Guest
             </button>
           </div>
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-6 text-sm leading-[1.7] text-iw-ink">
             {checkInAs === "member"
               ? "You (the member) will check in for this vacation."
               : "A guest will check in for this vacation under your membership."}
@@ -203,16 +186,24 @@ export function CheckoutGuestInfo({ resort, booking }: Props) {
         </div>
 
         {/* Action bar */}
-        <div className="flex flex-col gap-4 rounded-2xl bg-white px-5 py-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 rounded-lg border border-iw-border bg-white px-6 py-4 sm:flex-row sm:items-center sm:justify-between md:px-8">
           <div>
-            <p className="text-xs font-medium uppercase tracking-wide text-gray-400">Total amount</p>
-            <p className="text-xl font-bold text-gray-900">
-              {pricing.mode === "cash"
-                ? `$${money(pricing.totalCash)} USD`
-                : `${pricing.totalPoints.toLocaleString()} pts`}
+            <p className="text-[10px] font-medium text-iw-ink">Total amount</p>
+            <p className="flex items-baseline gap-2 text-[35px] font-bold leading-none text-iw-ink">
+              {pricing.mode === "cash" ? (
+                <>
+                  ${money(pricing.totalCash)}
+                  <span className="text-sm font-normal">USD</span>
+                </>
+              ) : (
+                <>
+                  {pricing.totalPoints.toLocaleString()}
+                  <span className="text-sm font-normal">points</span>
+                </>
+              )}
             </p>
           </div>
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href={`/available-unit?${new URLSearchParams({
                 resortId: booking.resortId,
@@ -222,21 +213,23 @@ export function CheckoutGuestInfo({ resort, booking }: Props) {
                 children: String(booking.children),
                 vacationType: booking.vacationType,
               }).toString()}`}
-              className="text-center text-sm font-semibold text-gray-500 hover:text-iw-blue"
+              className="text-center text-sm font-medium text-iw-muted hover:text-iw-link"
             >
               ← Back
             </Link>
             <button
               type="button"
               onClick={continueToPayment}
-              className="rounded-xl bg-iw-blue px-6 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-iw-blue-dark"
+              className="rounded-lg bg-iw-navy px-10 py-3.5 text-[17px] font-medium text-white transition-colors hover:bg-[#0a1f45]"
             >
               {isExchange ? "Continue to Confirm" : "Continue to Payment"}
             </button>
           </div>
         </div>
 
-        <p className="mt-4 text-center text-[11px] text-slate-400">Demo checkout — no real charges.</p>
+        <p className="mt-4 text-center text-[11px] text-iw-muted">
+          Demo checkout — no real charges.
+        </p>
       </div>
     </div>
   );

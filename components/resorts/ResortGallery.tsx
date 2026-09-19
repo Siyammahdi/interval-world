@@ -17,16 +17,16 @@ export function ResortGallery({ images, alt, seed = "" }: Props) {
   const current = list[index] ?? list[0];
 
   return (
-    <div className="my-6">
-      <div className="group relative">
+    <div className="flex w-full flex-col items-center gap-3">
+      <div className="group relative w-full max-w-[1200px]">
         <ResortImage
           src={current}
           fallbacks={list.filter((_, i) => i !== index)}
           alt={alt}
           seed={seed || alt}
-          className="h-[300px] w-full rounded-lg shadow-md md:h-[450px]"
+          className="h-[240px] w-full rounded-2xl object-cover shadow-sm md:h-[378px]"
         />
-        {list.length > 1 && (
+        {list.length > 1 ? (
           <>
             <button
               type="button"
@@ -48,30 +48,17 @@ export function ResortGallery({ images, alt, seed = "" }: Props) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>
             </button>
-            <div className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 gap-2">
-              {list.map((_, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  aria-label={`Go to photo ${i + 1}`}
-                  className={`h-2.5 w-2.5 rounded-full transition-all ${
-                    i === index ? "scale-110 bg-white" : "bg-white/50 hover:bg-white/80"
-                  }`}
-                  onClick={() => setIndex(i)}
-                />
-              ))}
-            </div>
           </>
-        )}
+        ) : null}
       </div>
-      {list.length > 1 && (
-        <div className="mt-4 flex justify-center gap-2 overflow-x-auto pb-2">
+      {list.length > 1 ? (
+        <div className="flex justify-center gap-4 overflow-x-auto pb-1">
           {list.map((src, i) => (
             <button
               key={src + i}
               type="button"
-              className={`h-16 w-16 flex-shrink-0 overflow-hidden rounded-md border-2 transition-all md:h-20 md:w-20 ${
-                i === index ? "border-blue-500" : "border-gray-300 hover:border-blue-300"
+              className={`h-[72px] w-[140px] flex-shrink-0 overflow-hidden rounded md:h-[100px] md:w-[200px] ${
+                i === index ? "ring-2 ring-iw-link ring-offset-2" : "opacity-90 hover:opacity-100"
               }`}
               onClick={() => setIndex(i)}
             >
@@ -79,12 +66,12 @@ export function ResortGallery({ images, alt, seed = "" }: Props) {
                 src={src}
                 alt={`${alt} photo ${i + 1}`}
                 seed={`${seed || alt}-${i}`}
-                className="h-full w-full"
+                className="h-full w-full object-cover"
               />
             </button>
           ))}
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

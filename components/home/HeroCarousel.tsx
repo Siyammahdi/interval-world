@@ -2,97 +2,73 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import type { HeroSlide } from "@/data/homepage";
-import { cn } from "@/lib/cn";
 
-type HeroCarouselProps = {
+type Props = {
   slides: HeroSlide[];
-  intervalMs?: number;
 };
 
-/**
- * Promo carousel. Uses a single visible <Image> plus a fading overlay
- * so we never stack an invisible slide above a visible one (which caused
- * a blank navy flash on the previous cross-fade).
- */
-export function HeroCarousel({ slides, intervalMs = 5000 }: HeroCarouselProps) {
+export function HeroCarousel({ slides }: Props) {
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const len = slides.length;
-
-  const goTo = useCallback(
-    (next: number) => {
-      if (!len) return;
-      setIndex(((next % len) + len) % len);
-    },
-    [len],
-  );
+  const current = slides[index] ?? slides[0];
 
   useEffect(() => {
-    if (paused || len < 2) return;
-    const id = window.setInterval(() => {
-      setIndex((current) => (current + 1) % len);
-    }, intervalMs);
-    return () => window.clearInterval(id);
-  }, [paused, len, intervalMs]);
+    if (slides.length < 2) return;
+    const timer = window.setInterval(() => {
+      setIndex((i) => (i + 1) % slides.length);
+    }, 6000);
+    return () => window.clearInterval(timer);
+  }, [slides.length]);
 
-  if (!len) return null;
-
-  const current = slides[index];
+  if (!current) return null;
 
   return (
-    <div
-      className="relative mx-auto w-full overflow-hidden bg-[#0b2744]"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      aria-roledescription="carousel"
-      aria-label="Promotions"
-    >
-      <Link
-        href={current.href}
-        aria-label={current.alt}
-        className="relative block aspect-[940/296] w-full"
-      >
+    <section className="relative mx-auto w-full max-w-[1200px] overflow-hidden rounded-2xl">
+      <Link href={current.href} className="relative block min-h-[420px] w-full md:min-h-[520px]">
         <Image
-          key={current.id}
           src={current.image}
           alt={current.alt}
           fill
           priority
-          sizes="(max-width: 960px) 100vw, 940px"
-          className="object-cover object-center"
+          className="object-cover"
+          sizes="(max-width: 1200px) 100vw, 1200px"
         />
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent"
+          aria-hidden
+        />
+        <div className="relative z-10 flex h-full min-h-[420px] max-w-[593px] flex-col justify-between px-8 py-16 md:min-h-[520px] md:px-16 md:py-24">
+          <div className="text-white">
+            <h1 className="text-[36px] font-medium leading-[1.2] md:text-[50px]">
+              <span className="block">Total price.</span>
+              <span className="block">Total transparency.</span>
+            </h1>
+            <p className="mt-3 text-[16px] font-normal md:text-[20px]">
+              Vacation planning is easier than even with up-front pricing.
+            </p>
+          </div>
+          <span className="inline-flex w-fit items-center justify-center rounded-lg bg-iw-blue px-[42px] py-3 text-[17px] font-medium text-white">
+            Learn More
+          </span>
+        </div>
       </Link>
 
-      <button
-        type="button"
-        aria-label="Prev"
-        onClick={() => goTo(index - 1)}
-        className="absolute left-1 top-1/2 z-20 h-[30px] w-[30px] -translate-y-1/2 bg-[url('/images/ui/arrows.png')] bg-[length:60px_30px] bg-left bg-no-repeat opacity-80 hover:opacity-100"
-      />
-      <button
-        type="button"
-        aria-label="Next"
-        onClick={() => goTo(index + 1)}
-        className="absolute right-1 top-1/2 z-20 h-[30px] w-[30px] -translate-y-1/2 bg-[url('/images/ui/arrows.png')] bg-[length:60px_30px] bg-right bg-no-repeat opacity-80 hover:opacity-100"
-      />
-
-      <div className="absolute bottom-2 left-1/2 z-20 flex -translate-x-1/2 gap-1.5">
-        {slides.map((slide, i) => (
-          <button
-            key={slide.id}
-            type="button"
-            aria-label={`Go to slide ${i + 1}`}
-            aria-current={i === index ? "true" : undefined}
-            onClick={() => goTo(i)}
-            className={cn(
-              "h-[10px] w-[10px] rounded-full border border-white/90",
-              i === index ? "border-iw-navy bg-iw-navy" : "bg-transparent hover:bg-white/50",
-            )}
-          />
-        ))}
-      </div>
-    </div>
+      {slides.length > 1 ? (
+        <div className="absolute bottom-6 right-6 z-20 flex gap-2">
+          {slides.map((slide, i) => (
+            <button
+              key={slide.id}
+              type="button"
+              aria-label={`Go to slide ${i + 1}`}
+              onClick={() => setIndex(i)}
+              className={`h-3 w-3 rounded-full transition-colors ${
+                i === index ? "bg-white" : "bg-white/50 hover:bg-white/80"
+              }`}
+            />
+          ))}
+        </div>
+      ) : null}
+    </section>
   );
 }

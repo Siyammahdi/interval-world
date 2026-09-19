@@ -5,6 +5,7 @@ import { FaqContent } from "@/components/content/FaqContent";
 import { IntervalHdPage } from "@/components/content/IntervalHdPage";
 import { LoginForm } from "@/components/content/LoginForm";
 import { LoginHelpContent } from "@/components/content/LoginHelpContent";
+import { MarketingLiveShell } from "@/components/content/MarketingLiveShell";
 import { OfficesContent } from "@/components/content/OfficesContent";
 import { TrackerPage } from "@/components/content/TrackerPage";
 import { Container } from "@/components/ui/Container";
@@ -24,6 +25,10 @@ function isCsPage(page: LivePage) {
     page.path.startsWith("/web/cs/") ||
     page.path === "/web/my/account/forgotSignInInfo"
   );
+}
+
+function isMarketingInfoPage(page: LivePage) {
+  return page.path.startsWith("/web/my/info/");
 }
 
 /**
@@ -52,7 +57,7 @@ export function LiveContentPage({ page }: Props) {
   if (isCsPage(page) && page.path !== "/web/cs/directory" && page.path !== "/web/cs/mobile-app") {
     let content: React.ReactNode;
 
-    if (page.path === "/web/cs/email-us") {
+    if (page.path === "/web/cs/email-us" || page.path === "/web/cs/customer-service") {
       content = <EmailUsForm />;
     } else if (page.path === "/web/cs/help-login") {
       content = <FaqContent html={page.bodyHtml} />;
@@ -70,6 +75,14 @@ export function LiveContentPage({ page }: Props) {
     }
 
     return <CsSupportLayout activePath={page.path}>{content}</CsSupportLayout>;
+  }
+
+  if (isMarketingInfoPage(page)) {
+    return (
+      <MarketingLiveShell title={page.title}>
+        <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+      </MarketingLiveShell>
+    );
   }
 
   return (

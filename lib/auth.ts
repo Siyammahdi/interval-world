@@ -13,11 +13,15 @@ export const PUBLIC_AUTH_PATHS = [
 
 /** Marketing / directory pages anyone can open (logged in or not). */
 const PUBLIC_CONTENT_PREFIXES = [
+  "/",
   "/resort-directory",
   "/resort-page",
   "/single-resort-page",
   "/available-unit",
   "/checkout",
+  "/web/my/info",
+  "/web/cs",
+  "/web/my/channel",
 ] as const;
 
 export function isAuthOnlyPublicPath(pathname: string) {
@@ -26,8 +30,9 @@ export function isAuthOnlyPublicPath(pathname: string) {
 
 export function isPublicPath(pathname: string) {
   if (isAuthOnlyPublicPath(pathname)) return true;
+  if (pathname === "/") return true;
   return PUBLIC_CONTENT_PREFIXES.some(
-    (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
+    (prefix) => prefix !== "/" && (pathname === prefix || pathname.startsWith(`${prefix}/`)),
   );
 }
 

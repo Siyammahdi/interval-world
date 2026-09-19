@@ -3,26 +3,20 @@ import { memberAlert } from "@/data/homepage";
 
 export function MemberAlert() {
   return (
-    <section className="mb-1 mt-5" aria-labelledby="member-alert-heading">
-      <h1
-        id="member-alert-heading"
-        className="mb-2 text-[26px] font-normal leading-tight text-iw-blue"
-      >
+    <div className="mx-auto max-w-[900px] text-center">
+      <h2 className="text-[32px] font-medium leading-[1.3] tracking-[-0.42px] text-iw-navy md:text-[42px]">
         {memberAlert.title}
-      </h1>
-      <p className="max-w-[900px] text-[12px] leading-[1.55] text-iw-navy">
+      </h2>
+      <p className="mt-2 text-[14px] leading-[1.7] text-iw-ink">
         {memberAlert.bodyBefore}{" "}
-        <strong>
-          <Link
-            href={memberAlert.linkHref}
-            className="font-bold text-iw-blue hover:underline"
-            title="Travel Advisories"
-          >
-            {memberAlert.linkLabel}
-          </Link>
-        </strong>{" "}
+        <Link
+          href={memberAlert.linkHref}
+          className="font-bold text-iw-link underline decoration-[10.5%] underline-offset-2"
+        >
+          {memberAlert.linkLabel}
+        </Link>{" "}
         {memberAlert.bodyAfter}
       </p>
-    </section>
+    </div>
   );
 }

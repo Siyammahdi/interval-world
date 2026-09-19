@@ -19,7 +19,7 @@ export const intervalHd = {
   title: "Interval HD",
   tagline: "Explore destinations. Tour resorts. Take a peek.",
   learnMoreHref: "#vid=2183760959001&vname=Presenting Interval HD&vref=tutorial",
-  heroImage: "/images/channel/ihd_header_laptop_beach.jpg",
+  heroImage: "/images/figma/hd/hero.jpg",
   logoSmall: "/images/channel/ihd_logo_small.png",
   playOverlay: "/images/channel/ihd_carousel_thumbnails_play.png",
   tabs: [
@@ -28,23 +28,23 @@ export const intervalHd = {
   ],
   regionLinks: [
   {
-    "label": "UNITED STATES",
+    "label": "United States",
     "href": "#united-states"
   },
   {
-    "label": "CANADA",
+    "label": "Canada",
     "href": "#canada"
   },
   {
-    "label": "CARIBBEAN",
+    "label": "Caribbean",
     "href": "#caribbean"
   },
   {
-    "label": "EUROPE",
+    "label": "Europe",
     "href": "#europe"
   },
   {
-    "label": "MEXICO & CENTRAL AMERICA",
+    "label": "Mexico & Central America",
     "href": "#mexico-central-america"
   }
 ],

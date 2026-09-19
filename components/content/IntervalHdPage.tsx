@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { AskExpert } from "@/components/home/AskExpert";
 import type { HdRegion, HdVideo } from "@/data/interval-hd";
 
 /** Live jcarousel pages hold 6 thumbs (2 rows × 3). */
@@ -141,23 +142,36 @@ type IntervalHdPageProps = {
 };
 
 export function IntervalHdPage({ data }: IntervalHdPageProps) {
-  const learnHref = data.learnMoreHref.startsWith("#")
-    ? `/web/my/channel${data.learnMoreHref}`
-    : data.learnMoreHref;
-
   return (
     <main id="main-content" className="ihd-page">
       <div className="ihd-shell">
-        <section
-          className="ihd-hero"
-          style={{ backgroundImage: `url(${data.heroImage})` }}
-          aria-label={data.title}
-        >
-          <h2 className="sr-only">{data.title}</h2>
-          <p className="sr-only">{data.tagline}</p>
-          <Link href={learnHref} className="ihd-hero-cta">
-            Learn More
-          </Link>
+        <div className="ihd-page-header">
+          <h1>Vacation Planning made easy</h1>
+          <nav aria-label="Breadcrumb" className="ihd-breadcrumb">
+            <Link href="/">Home</Link>
+            <Image
+              src="/images/figma/ownership/chevron.svg"
+              alt=""
+              width={5}
+              height={8}
+              aria-hidden
+            />
+            <span>Vacation Planning made easy</span>
+          </nav>
+        </div>
+
+        <section className="ihd-hero" aria-label={data.title}>
+          <Image
+            src={data.heroImage}
+            alt={data.tagline}
+            fill
+            priority
+            className="object-cover"
+            sizes="1200px"
+          />
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+            <Image src="/images/figma/ownership/play.svg" alt="" width={80} height={80} />
+          </div>
         </section>
 
         <div className="ihd-content">
@@ -173,8 +187,8 @@ export function IntervalHdPage({ data }: IntervalHdPageProps) {
 
           <nav className="ihd-region-links" aria-label="Regions">
             <ul>
-              {data.regionLinks.map((link) => (
-                <li key={link.href}>
+              {data.regionLinks.map((link, index) => (
+                <li key={link.href} className={index === 0 ? "active" : undefined}>
                   <a href={link.href}>{link.label}</a>
                 </li>
               ))}
@@ -186,6 +200,7 @@ export function IntervalHdPage({ data }: IntervalHdPageProps) {
           ))}
         </div>
       </div>
+      <AskExpert />
     </main>
   );
 }
