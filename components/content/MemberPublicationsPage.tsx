@@ -23,7 +23,7 @@ export function MemberPublicationsPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Member Publications" }]}
         heroImage="/images/figma/magazine/hero.jpg"
         heroAlt="50 years of looking forward celebration banner"
-        showPlay={false}
+        showPlay
         sideCards={SIDE_CARDS}
       >
         <h2 className="mb-8 text-[24px] font-medium text-iw-ink md:text-[29px]">

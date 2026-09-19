@@ -36,13 +36,13 @@ export function StayConnectedPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Stay Connected" }]}
         heroImage="/images/figma/community/hero.jpg"
         heroAlt="Couple reviewing a tablet on the beach"
-        showPlay={false}
+        showPlay
         sideCards={SIDE_CARDS}
       >
         <h2 className="mb-8 text-[24px] font-medium text-iw-ink md:text-[29px]">
           Socialize with Us
         </h2>
-        <div className="space-y-8 text-[14px] leading-[1.7] text-iw-ink">
+        <div className="flex flex-col gap-8 text-[14px] leading-[1.7] text-iw-ink">
           <p>
             Whether you &apos;Like&apos; Facebook, share pictures on Instagram, post videos on
             YouTube or pin favorites on Pinterest, you can connect with Interval wherever you go.
@@ -67,23 +67,21 @@ export function StayConnectedPage() {
             resort details from your fellow Interval members. You can share your travel experiences
             — even your favorite vacation photos.
           </p>
-          <p className="flex items-start gap-2">
-            <Image
-              src="/images/figma/community/profile.svg"
-              alt=""
-              width={32}
-              height={32}
-              className="mt-0.5 size-8 shrink-0"
-            />
-            <span>
-              <Link
-                href="/web/my/account/createProfileOrJoin"
-                className="font-medium text-iw-link underline"
-              >
-                Become a member of our community today
-              </Link>{" "}
-              and begin exploring!
-            </span>
+          <Image
+            src="/images/figma/community/profile.svg"
+            alt=""
+            width={32}
+            height={32}
+            className="size-8"
+          />
+          <p>
+            <Link
+              href="/web/my/account/createProfileOrJoin"
+              className="font-medium text-iw-link underline"
+            >
+              Become a member of our community today
+            </Link>{" "}
+            and begin exploring!
           </p>
         </div>
       </MarketingContentLayout>

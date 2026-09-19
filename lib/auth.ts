@@ -22,6 +22,8 @@ const PUBLIC_CONTENT_PREFIXES = [
   "/web/my/info",
   "/web/cs",
   "/web/my/channel",
+  "/videos",
+  "/images",
 ] as const;
 
 export function isAuthOnlyPublicPath(pathname: string) {

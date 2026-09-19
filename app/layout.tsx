@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { AppShell } from "@/components/layout/AppShell";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -25,10 +26,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${poppins.variable} h-full`}>
       <body className="min-h-full bg-white font-sans text-iw-ink antialiased">
-        <SiteHeader />
-        {children}
-        <SiteFooter />
-        <CookieBanner />
+        <AppShell
+          header={<SiteHeader />}
+          footer={<SiteFooter />}
+          banner={<CookieBanner />}
+        >
+          {children}
+        </AppShell>
       </body>
     </html>
   );

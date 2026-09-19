@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "www.intervalworld.com" },
       { protocol: "https", hostname: "www.rci.com" },
       { protocol: "https", hostname: "f1.media.brightcove.com" },
+      { protocol: "http", hostname: "f1.media.brightcove.com" },
       { protocol: "https", hostname: "cf-images.us-east-1.prod.boltdns.net" },
     ],
   },

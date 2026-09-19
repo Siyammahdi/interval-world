@@ -46,3 +46,8 @@ next-env.d.ts
 
 # Downloaded resort photos (regenerate with: pnpm images:download)
 /public/images/resorts/
+
+# Interval HD progressive videos (regenerate with: pnpm videos:hd)
+/public/videos/hd/*.mp4
+!/public/videos/hd/manifest.json
+!/public/videos/hd/.gitkeep

@@ -32,6 +32,6 @@ export const config = {
     /*
      * Match all paths except static assets and Next internals.
      */
-    "/((?!_next/static|_next/image|favicon.ico|images/|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|map)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|images/|videos/|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|map|mp4|webm|m4v)$).*)",
   ],
 };

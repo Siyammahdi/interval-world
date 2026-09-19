@@ -1800,28 +1800,6 @@ ul.sidemenu a.menuHighlight {
   background: #fff;
 }
 
-.iw-auth-page--login {
-  position: relative;
-  align-items: center;
-  min-height: calc(100vh - 200px);
-  padding: 80px 16px 280px;
-  overflow: hidden;
-  background: #fff;
-}
-
-.iw-auth-page--login::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  z-index: 0;
-  width: min(1510px, 120%);
-  height: 280px;
-  transform: translateX(-50%);
-  background: url("/images/figma/auth/login-bg.png") center bottom / cover no-repeat;
-  pointer-events: none;
-}
-
 .iw-auth-card {
   width: 100%;
   max-width: 690px;
@@ -1838,19 +1816,6 @@ ul.sidemenu a.menuHighlight {
     29px 76px 40.5px rgba(120, 120, 120, 0.09),
     66px 171px 55px rgba(120, 120, 120, 0.05);
   box-sizing: border-box;
-}
-
-.iw-auth-card--login {
-  position: relative;
-  z-index: 1;
-  gap: 32px;
-  padding: 100px 32px;
-  border-color: #0c90da;
-  box-shadow:
-    7px 19px 22.5px rgba(120, 120, 120, 0.1),
-    29px 76px 40.5px rgba(120, 120, 120, 0.09),
-    66px 171px 55px rgba(120, 120, 120, 0.05),
-    117px 303px 65px rgba(120, 120, 120, 0.01);
 }
 
 .iw-auth-card__intro {
@@ -1880,16 +1845,6 @@ ul.sidemenu a.menuHighlight {
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-.iw-auth-form--login {
-  gap: 24px;
-  align-items: stretch;
-}
-
-.iw-auth-form--login .iw-auth-btn {
-  width: 100%;
-  margin-top: 0;
 }
 
 .iw-auth-field {
@@ -2068,22 +2023,9 @@ ul.sidemenu a.menuHighlight {
     padding: 24px 12px 40px;
   }
 
-  .iw-auth-page--login {
-    padding: 48px 12px 200px;
-    min-height: auto;
-  }
-
-  .iw-auth-page--login::after {
-    height: 180px;
-  }
-
   .iw-auth-card {
     padding: 24px 16px;
     gap: 24px;
-  }
-
-  .iw-auth-card--login {
-    padding: 48px 20px;
   }
 
   .iw-auth-card__title {
@@ -2109,5 +2051,382 @@ ul.sidemenu a.menuHighlight {
   .iw-auth-switch,
   .iw-auth-divider p {
     font-size: 15px;
+  }
+}
+
+/* —— Login page (Figma 57:4594) —— */
+.iw-login {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 16px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.iw-login__card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 690px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 100px 32px;
+  background: #fff;
+  border: 1px solid #0c90da;
+  border-radius: 16px;
+  box-shadow:
+    7px 19px 22.5px rgba(120, 120, 120, 0.1),
+    29px 76px 40.5px rgba(120, 120, 120, 0.09),
+    66px 171px 55px rgba(120, 120, 120, 0.05),
+    117px 303px 65px rgba(120, 120, 120, 0.01);
+  box-sizing: border-box;
+}
+
+.iw-login__title {
+  margin: 0;
+  width: 100%;
+  max-width: 416px;
+  color: #0c90da;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.iw-login__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.iw-login__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.iw-login__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.iw-login__field label {
+  color: #101010;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.iw-login__field input {
+  width: 100%;
+  height: 48px;
+  padding: 12px 17px;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  background: #fff;
+  color: #101010;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.iw-login__field input::placeholder {
+  color: #d2d2d2;
+}
+
+.iw-login__field input:focus {
+  border-color: #0c90da;
+}
+
+.iw-login__error {
+  margin: -16px 0 0;
+  color: #b00020;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.iw-login__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 42px;
+  border: none;
+  border-radius: 8px;
+  background: #216db2;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.iw-login__submit:hover:not(:disabled) {
+  background: #1a5a94;
+}
+
+.iw-login__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.iw-login__art {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  height: 462px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.iw-login__art-img {
+  object-fit: cover;
+  object-position: right bottom;
+}
+
+@media (max-height: 900px) {
+  .iw-login__card {
+    padding: 56px 32px;
+  }
+}
+
+@media (max-width: 700px) {
+  .iw-login {
+    min-height: 100vh;
+    padding: 24px 12px 32px;
+  }
+
+  .iw-login__card {
+    padding: 40px 20px;
+    gap: 24px;
+  }
+
+  .iw-login__title {
+    font-size: 28px;
+  }
+
+  .iw-login__art {
+    height: min(280px, 42%);
+  }
+}
+
+/* —— Our Offices Figma card (33:1999) —— */
+.iw-offices-figma {
+  width: 100%;
+  max-width: 827px;
+}
+
+.iw-offices-figma__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.iw-offices-figma__intro h2 {
+  margin: 0;
+  color: #0c90da;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.iw-offices-figma__intro p {
+  margin: 0;
+  max-width: 791px;
+  color: #101010;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.iw-offices-figma__filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  max-width: 827px;
+  margin-bottom: 32px;
+}
+
+.iw-offices-figma__filter label {
+  color: #0f2a5c;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.iw-offices-figma__filter select {
+  width: 240px;
+  max-width: 100%;
+  height: 44px;
+  padding: 10px 40px 10px 16px;
+  border: 1px solid #101010;
+  border-radius: 8px;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='10' viewBox='0 0 15 10'%3E%3Cpath fill='%23101010' d='M1.5.8 7.5 6.8 13.5.8 15 2.3 7.5 9.8 0 2.3z'/%3E%3C/svg%3E")
+    no-repeat right 16px center;
+  background-size: 12px 8px;
+  color: #101010;
+  font-size: 17px;
+  font-weight: 500;
+  appearance: none;
+  cursor: pointer;
+}
+
+.iw-offices-card {
+  width: 100%;
+  max-width: 827px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px 16px 16px;
+  background: #fff;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.iw-offices-card__head,
+.iw-offices-card__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  max-width: 791px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.iw-offices-card__head {
+  align-items: center;
+  background: #d2d2d2;
+  color: #101010;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12px;
+  line-height: 1.6;
+  max-width: none;
+}
+
+.iw-offices-card__head > span,
+.iw-offices-cell {
+  flex: 0 0 160px;
+  width: 160px;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.iw-offices-card__row {
+  color: #101010;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12px;
+  line-height: 1.6;
+}
+
+.iw-offices-cell--lg {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.iw-offices-cell--muted {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.7;
+}
+
+.iw-offices-card__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.iw-offices-card__rule {
+  width: 100%;
+  max-width: 768px;
+  height: 0;
+  margin: 0 auto;
+  border-top: 1px solid #d2d2d2;
+}
+
+.iw-offices-cell--empty {
+  display: block;
+  min-height: 1em;
+  visibility: hidden;
+}
+
+.iw-offices-card--legacy {
+  overflow-x: auto;
+  font-size: 12px;
+  line-height: 1.5;
+  align-items: stretch;
+}
+
+.iw-offices-card--legacy table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.iw-offices-card--legacy td,
+.iw-offices-card--legacy th {
+  vertical-align: top;
+  padding: 8px;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .iw-offices-figma__intro h2 {
+    font-size: 28px;
+  }
+
+  .iw-offices-figma__filter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .iw-offices-figma__filter select {
+    width: 100%;
+  }
+
+  .iw-offices-card__head,
+  .iw-offices-card__row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .iw-offices-card__head > span,
+  .iw-offices-cell {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .iw-offices-card__head span:not(:first-child) {
+    display: none;
   }
 }

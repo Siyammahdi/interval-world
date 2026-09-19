@@ -59,7 +59,7 @@ export function MarketingContentLayout({
 
       <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-6">
         <div className="flex min-w-0 flex-1 flex-col gap-8">
-          <div className="relative h-[220px] w-full overflow-hidden rounded-2xl md:h-[343px]">
+          <div className="relative h-[220px] w-full overflow-hidden rounded-2xl md:h-[295px]">
             <Image src={heroImage} alt={heroAlt} fill className="object-cover" sizes="792px" priority />
             {showPlay ? (
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
