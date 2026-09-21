@@ -1,33 +1,12 @@
-import live from "./live-pages.json";
+import { fetchLivePageByPath, fetchLivePagePaths, type LivePage } from "@/lib/cms";
 
-export type LivePage = {
-  path: string;
-  source: string;
-  status: number;
-  layout: string;
-  title: string;
-  documentTitle?: string;
-  bodyHtml: string;
-};
+export type { LivePage };
 
-type LivePagesFile = {
-  generatedAt: string;
-  pages: LivePage[];
-};
-
-const data = live as LivePagesFile;
-
-const pageMap = new Map(data.pages.map((page) => [page.path.replace(/\/$/, "") || "/", page]));
-
-export function getLivePageByPath(path: string): LivePage | undefined {
-  const normalized = path.replace(/\/$/, "") || "/";
-  return pageMap.get(normalized);
+export async function getLivePageByPath(path: string): Promise<LivePage | undefined> {
+  const page = await fetchLivePageByPath(path);
+  return page ?? undefined;
 }
 
-export function getAllLivePagePaths(): string[] {
-  return data.pages.map((page) => page.path);
-}
-
-export function getLivePages(): LivePage[] {
-  return data.pages;
+export async function getAllLivePagePaths(): Promise<string[]> {
+  return fetchLivePagePaths();
 }

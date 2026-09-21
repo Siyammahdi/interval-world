@@ -19,7 +19,7 @@ import { SpecialOffersPage } from "@/components/content/SpecialOffersPage";
 import { StayConnectedPage } from "@/components/content/StayConnectedPage";
 import { WhyIntervalPage } from "@/components/content/WhyIntervalPage";
 import { WhyVacationOwnershipPage } from "@/components/content/WhyVacationOwnershipPage";
-import { getAllLivePagePaths, getLivePageByPath } from "@/data/live-pages";
+import { getLivePageByPath } from "@/data/live-pages";
 
 type PageProps = {
   params: Promise<{ slug: string[] }>;
@@ -67,22 +67,12 @@ function pathFromSlug(slug: string[]) {
   return `/web/${slug.join("/")}`;
 }
 
-export function generateStaticParams() {
-  const fromLive = getAllLivePagePaths().map((path) => ({
-    slug: path.replace(/^\/web\//, "").split("/"),
-  }));
-  const fromFigma = FIGMA_MARKETING_PATHS.map((path) => ({
-    slug: path.replace(/^\/web\//, "").split("/"),
-  }));
-  return [...fromLive, ...fromFigma];
-}
-
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const path = pathFromSlug(slug);
   if (FIGMA_PAGE_TITLES[path]) return { title: FIGMA_PAGE_TITLES[path] };
 
-  const page = getLivePageByPath(path);
+  const page = await getLivePageByPath(path);
   if (!page) return { title: "Page Not Found" };
   return {
     title: page.title,
@@ -117,7 +107,10 @@ export default async function WebCatchAllPage({ params }: PageProps) {
 
   if (path === "/web/my/info/membership") return <JoinTodayPage />;
 
-  const page = getLivePageByPath(path);
+  const page = await getLivePageByPath(path);
   if (!page) notFound();
   return <LiveContentPage page={page} />;
 }
+
+// Keep path list for reference / future static generation (API-backed at runtime).
+void FIGMA_MARKETING_PATHS;

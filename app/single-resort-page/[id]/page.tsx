@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ResortDetail } from "@/components/resorts/ResortDetail";
+import { fetchUnitRates } from "@/lib/cms";
 import {
-  fetchResorts,
-  getResortById,
+  fetchResortById,
   resortDisplayName,
 } from "@/lib/resort-data";
 
@@ -13,7 +13,7 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
-  const resort = getResortById(fetchResorts(), id);
+  const resort = await fetchResortById(id);
   if (!resort) return { title: "Resort Not Found" };
   return {
     title: resortDisplayName(resort),
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function SingleResortPage({ params }: PageProps) {
   const { id } = await params;
-  const resort = getResortById(fetchResorts(), id);
+  const [resort, unitRates] = await Promise.all([fetchResortById(id), fetchUnitRates()]);
   if (!resort) notFound();
 
   const country = (resort.country || "").trim();
@@ -33,7 +33,7 @@ export default async function SingleResortPage({ params }: PageProps) {
 
   return (
     <main id="main-content">
-      <ResortDetail resort={resort} backHref={backHref} />
+      <ResortDetail resort={resort} backHref={backHref} unitRates={unitRates} />
     </main>
   );
 }

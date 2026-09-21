@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { socialLinks } from "@/data/navigation";
+import { useEffect, useState } from "react";
+import { getApiBaseUrl } from "@/lib/api";
 
 const FIGMA_SOCIAL: Record<string, string> = {
   Facebook: "/images/figma/home/social-fb.png",
@@ -9,7 +12,27 @@ const FIGMA_SOCIAL: Record<string, string> = {
   Pinterest: "/images/figma/home/social-pin.png",
 };
 
-export function AskExpert() {
+type SocialLink = { label: string; href: string; icon: string };
+
+export function AskExpert({ socialLinks: initial }: { socialLinks?: SocialLink[] } = {}) {
+  const [socialLinks, setSocialLinks] = useState<SocialLink[]>(initial ?? []);
+
+  useEffect(() => {
+    if (initial?.length) return;
+    let cancelled = false;
+    fetch(`${getApiBaseUrl()}/api/cms/navigation/`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (!cancelled && Array.isArray(data.socialLinks)) {
+          setSocialLinks(data.socialLinks);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [initial]);
+
   return (
     <section className="w-full border-t border-iw-muted bg-white">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center gap-12 px-6 py-[60px] md:flex-row md:justify-between md:gap-[71px] md:px-[120px] md:py-[100px]">

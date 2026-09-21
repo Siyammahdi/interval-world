@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import {
   AUTH_COOKIE,
-  AUTH_COOKIE_VALUE,
   isAuthOnlyPublicPath,
   isPublicPath,
 } from "@/lib/auth";
@@ -10,7 +9,7 @@ import {
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const session = request.cookies.get(AUTH_COOKIE)?.value;
-  const authenticated = session === AUTH_COOKIE_VALUE;
+  const authenticated = Boolean(session);
 
   // Logged-in users should not stay on login / signup screens
   if (authenticated && isAuthOnlyPublicPath(pathname)) {

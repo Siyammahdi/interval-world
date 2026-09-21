@@ -9,17 +9,19 @@ import { MarketingLiveShell } from "@/components/content/MarketingLiveShell";
 import { OfficesContent } from "@/components/content/OfficesContent";
 import { TrackerPage } from "@/components/content/TrackerPage";
 import { Container } from "@/components/ui/Container";
-import { intervalHd } from "@/data/interval-hd";
+import type { IntervalHdData } from "@/data/interval-hd";
 import type { LivePage } from "@/data/live-pages";
+import type { TrackerContent, TrackerTrip } from "@/data/tracker";
+import { fetchIntervalHd, fetchTracker, type LivePage as CmsLivePage } from "@/lib/cms";
 import { rewriteLiveHtmlLinks } from "@/lib/rewrite-live-links";
 
 type Props = {
-  page: LivePage;
+  page: LivePage | CmsLivePage;
 };
 
 const CS_LAYOUTS = new Set(["cs", "cs-offices"]);
 
-function isCsPage(page: LivePage) {
+function isCsPage(page: Props["page"]) {
   return (
     CS_LAYOUTS.has(page.layout) ||
     page.path.startsWith("/web/cs/") ||
@@ -27,7 +29,7 @@ function isCsPage(page: LivePage) {
   );
 }
 
-function isMarketingInfoPage(page: LivePage) {
+function isMarketingInfoPage(page: Props["page"]) {
   return page.path.startsWith("/web/my/info/");
 }
 
@@ -35,9 +37,10 @@ function isMarketingInfoPage(page: LivePage) {
  * Renders exact markup extracted from intervalworld.com,
  * styled with the live #p101_* / CS / Interval HD layout rules.
  */
-export function LiveContentPage({ page }: Props) {
+export async function LiveContentPage({ page }: Props) {
   if (page.layout === "interval-hd" || page.path === "/web/my/channel") {
-    return <IntervalHdPage data={intervalHd} />;
+    const hd = (await fetchIntervalHd()) as IntervalHdData;
+    return <IntervalHdPage data={hd} />;
   }
 
   if (page.path === "/web/my/auth/loginPage" || page.layout === "login") {
@@ -49,7 +52,13 @@ export function LiveContentPage({ page }: Props) {
   }
 
   if (page.layout === "tracker" || page.path === "/web/my/info/planning/tracker") {
-    return <TrackerPage />;
+    const tracker = await fetchTracker();
+    return (
+      <TrackerPage
+        content={tracker.content as TrackerContent}
+        trips={tracker.trips as TrackerTrip[]}
+      />
+    );
   }
 
   const bodyHtml = rewriteLiveHtmlLinks(page.bodyHtml);

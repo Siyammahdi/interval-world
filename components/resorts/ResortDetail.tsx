@@ -7,18 +7,18 @@ import { useMemo, useState } from "react";
 import { AskExpert } from "@/components/home/AskExpert";
 import { ResortGallery } from "@/components/resorts/ResortGallery";
 import {
-  EXCHANGE_RATES,
-  GETAWAY_RATES,
   parseAmenityList,
   resortDescription,
   resortDisplayName,
   resortImages,
   type Resort,
 } from "@/lib/resort-types";
+import type { UnitRate } from "@/lib/cms";
 
 type Props = {
   resort: Resort;
   backHref: string;
+  unitRates: UnitRate[];
 };
 
 type VacationType = "Exchange" | "Getaways" | "";
@@ -32,7 +32,7 @@ function todayInputValue() {
   return `${y}-${m}-${d}`;
 }
 
-export function ResortDetail({ resort, backHref }: Props) {
+export function ResortDetail({ resort, backHref, unitRates }: Props) {
   const router = useRouter();
   const [vacationType, setVacationType] = useState<VacationType>("");
   const [tab, setTab] = useState<Tab>("description");
@@ -53,6 +53,14 @@ export function ResortDetail({ resort, backHref }: Props) {
 
   const isExchange = vacationType === "Exchange";
   const isGetaways = vacationType === "Getaways";
+  const rateCards = useMemo(
+    () =>
+      unitRates.map((r) => ({
+        t: r.unit_type,
+        p: isExchange ? r.points_per_night.toLocaleString() : `$${r.cash_per_night}`,
+      })),
+    [unitRates, isExchange],
+  );
 
   function handleEarliestChange(value: string) {
     setEarliest(value);
@@ -162,7 +170,7 @@ export function ResortDetail({ resort, backHref }: Props) {
                     : "Book with cash at our competitive Last Call rates."}
                 </p>
                 <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
-                  {(isExchange ? EXCHANGE_RATES : GETAWAY_RATES).map((rate) => (
+                  {rateCards.map((rate) => (
                     <div
                       key={rate.t}
                       className="rounded-lg border border-white/20 bg-white p-2.5 text-center"

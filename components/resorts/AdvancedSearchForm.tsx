@@ -5,13 +5,13 @@ import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AskExpert } from "@/components/home/AskExpert";
-import { advancedSearchAmenities } from "@/data/resort-directory";
 
 type Props = {
   countries: string[];
+  amenities?: string[];
 };
 
-export function AdvancedSearchForm({ countries }: Props) {
+export function AdvancedSearchForm({ countries, amenities: amenityOptions = [] }: Props) {
   const router = useRouter();
   const [region, setRegion] = useState("");
   const [allInclusive, setAllInclusive] = useState(false);
@@ -19,6 +19,7 @@ export function AdvancedSearchForm({ countries }: Props) {
   const [query, setQuery] = useState("");
   const [matchMode, setMatchMode] = useState<"all" | "any">("all");
   const [amenities, setAmenities] = useState<string[]>([]);
+  const amenityList = amenityOptions;
 
   const sortedCountries = useMemo(
     () => [...countries].sort((a, b) => a.localeCompare(b)),
@@ -218,7 +219,7 @@ export function AdvancedSearchForm({ countries }: Props) {
               </label>
             </div>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {advancedSearchAmenities.map((amenity) => (
+              {amenityList.map((amenity) => (
                 <label
                   key={amenity}
                   className="flex items-center gap-2 rounded-lg border border-iw-border bg-white px-3 py-2 text-[14px]"

@@ -13,6 +13,8 @@ import {
   unitPointsQuote,
   type AvailableUnitType,
 } from "@/lib/available-units";
+import { createCheckoutSession } from "@/app/actions/api";
+import type { UnitRate } from "@/lib/cms";
 import {
   resortDisplayName,
   resortImages,
@@ -30,9 +32,10 @@ export type AvailableUnitSearch = {
 type Props = {
   resort: Resort;
   search: AvailableUnitSearch;
+  unitRates: UnitRate[];
 };
 
-export function AvailableUnitView({ resort, search }: Props) {
+export function AvailableUnitView({ resort, search, unitRates }: Props) {
   const router = useRouter();
   const [selected, setSelected] = useState<AvailableUnitType | null>(null);
   const isExchange = search.vacationType === "Exchange";
@@ -42,13 +45,20 @@ export function AvailableUnitView({ resort, search }: Props) {
     () => nightsBetween(search.earliestDate, search.latestDate),
     [search.earliestDate, search.latestDate],
   );
+  const unitTypes = useMemo(
+    () =>
+      (unitRates.length
+        ? unitRates.map((r) => r.unit_type)
+        : [...AVAILABLE_UNIT_TYPES]) as AvailableUnitType[],
+    [unitRates],
+  );
   const guests = search.adults + search.children;
   const usageYear = useMemo(() => {
     const d = new Date(search.earliestDate);
     return Number.isNaN(d.getTime()) ? new Date().getFullYear() : d.getFullYear();
   }, [search.earliestDate]);
 
-  function handleSelectUnit(unit: AvailableUnitType) {
+  async function handleSelectUnit(unit: AvailableUnitType) {
     setSelected(unit);
     const params = new URLSearchParams({
       resortId: resort._id,
@@ -60,6 +70,21 @@ export function AvailableUnitView({ resort, search }: Props) {
       vacationType: search.vacationType,
       checkInAs: "member",
     });
+    try {
+      const session = await createCheckoutSession({
+        resortId: resort._id,
+        unit,
+        earliestDate: search.earliestDate,
+        latestDate: search.latestDate,
+        adults: search.adults,
+        children: search.children,
+        vacationType: search.vacationType,
+        checkInAs: "member",
+      });
+      params.set("sessionId", session.id);
+    } catch {
+      // Fall back to URL-only checkout if API is unavailable
+    }
     router.push(`/checkout?${params.toString()}`);
   }
 
@@ -162,9 +187,9 @@ export function AvailableUnitView({ resort, search }: Props) {
           </h2>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {AVAILABLE_UNIT_TYPES.map((unit) => {
-              const cash = unitCashQuote(unit, nights);
-              const points = unitPointsQuote(unit, nights);
+            {unitTypes.map((unit) => {
+              const cash = unitCashQuote(unit, nights, unitRates);
+              const points = unitPointsQuote(unit, nights, unitRates);
               const isSelected = selected === unit;
 
               return (

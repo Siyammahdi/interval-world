@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckoutPayment } from "@/components/checkout/CheckoutPayment";
 import { parseCheckoutSearchParams } from "@/lib/checkout";
-import { fetchResorts, getResortById, resortDisplayName } from "@/lib/resort-data";
+import { fetchResortById, resortDisplayName } from "@/lib/resort-data";
 
 type PageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
@@ -10,7 +10,7 @@ type PageProps = {
 
 export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
   const booking = parseCheckoutSearchParams(await searchParams);
-  const resort = booking ? getResortById(fetchResorts(), booking.resortId) : null;
+  const resort = booking ? await fetchResortById(booking.resortId) : null;
   return {
     title: resort ? `Payment — ${resortDisplayName(resort)}` : "Payment",
   };
@@ -18,7 +18,7 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
 
 export default async function CheckoutPaymentPage({ searchParams }: PageProps) {
   const booking = parseCheckoutSearchParams(await searchParams);
-  const resort = booking ? getResortById(fetchResorts(), booking.resortId) : null;
+  const resort = booking ? await fetchResortById(booking.resortId) : null;
 
   if (!booking || !resort) {
     return (

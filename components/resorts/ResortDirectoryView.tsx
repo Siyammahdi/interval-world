@@ -3,19 +3,22 @@ import Link from "next/link";
 import { AskExpert } from "@/components/home/AskExpert";
 import { DirectoryDestinationCard } from "@/components/resorts/DirectoryDestinationCard";
 import { DirectoryPagination } from "@/components/resorts/DirectoryPagination";
-import { DIRECTORY_PAGE_SIZE, mapSearchRegions } from "@/data/resort-directory";
+import type { DirectoryMeta } from "@/lib/cms";
 import type { Resort } from "@/lib/resort-types";
 
 type Props = {
   resorts: Resort[];
   page: number;
+  directory: DirectoryMeta;
 };
 
-export function ResortDirectoryView({ resorts, page }: Props) {
-  const totalPages = Math.max(1, Math.ceil(resorts.length / DIRECTORY_PAGE_SIZE));
+export function ResortDirectoryView({ resorts, page, directory }: Props) {
+  const pageSize = directory.pageSize || 12;
+  const mapSearchRegions = directory.mapSearchRegions || [];
+  const totalPages = Math.max(1, Math.ceil(resorts.length / pageSize));
   const currentPage = Math.min(Math.max(1, page), totalPages);
-  const start = (currentPage - 1) * DIRECTORY_PAGE_SIZE;
-  const pageItems = resorts.slice(start, start + DIRECTORY_PAGE_SIZE);
+  const start = (currentPage - 1) * pageSize;
+  const pageItems = resorts.slice(start, start + pageSize);
 
   return (
     <main id="main-content">

@@ -4,7 +4,6 @@ import { AskExpert } from "@/components/home/AskExpert";
 import { CountryJumpSelect } from "@/components/resorts/CountryJumpSelect";
 import { DirectoryDestinationCard } from "@/components/resorts/DirectoryDestinationCard";
 import { DirectoryPagination } from "@/components/resorts/DirectoryPagination";
-import { DIRECTORY_PAGE_SIZE } from "@/data/resort-directory";
 import type { Resort } from "@/lib/resort-types";
 
 type Props = {
@@ -12,13 +11,20 @@ type Props = {
   resorts: Resort[];
   countries: string[];
   page: number;
+  pageSize?: number;
 };
 
-export function ResortCountryResultsView({ country, resorts, countries, page }: Props) {
-  const totalPages = Math.max(1, Math.ceil(resorts.length / DIRECTORY_PAGE_SIZE));
+export function ResortCountryResultsView({
+  country,
+  resorts,
+  countries,
+  page,
+  pageSize = 12,
+}: Props) {
+  const totalPages = Math.max(1, Math.ceil(resorts.length / pageSize));
   const currentPage = Math.min(Math.max(1, page), totalPages);
-  const start = (currentPage - 1) * DIRECTORY_PAGE_SIZE;
-  const pageItems = resorts.slice(start, start + DIRECTORY_PAGE_SIZE);
+  const start = (currentPage - 1) * pageSize;
+  const pageItems = resorts.slice(start, start + pageSize);
   const basePath = `/resort-page/${encodeURIComponent(country)}`;
 
   return (

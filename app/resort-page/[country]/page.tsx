@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ResortCountryResultsView } from "@/components/resorts/ResortCountryResultsView";
-import { fetchResorts, getCountries, getResortsByCountry } from "@/lib/resort-data";
+import { fetchDirectoryMeta } from "@/lib/cms";
+import {
+  fetchResortCountries,
+  fetchResorts,
+  getResortsByCountry,
+} from "@/lib/resort-data";
 
 type PageProps = {
   params: Promise<{ country: string }>;
   searchParams: Promise<{ page?: string }>;
 };
-
-export function generateStaticParams() {
-  return getCountries(fetchResorts()).map((country) => ({ country }));
-}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { country } = await params;
@@ -25,8 +26,11 @@ export default async function ResortCountryPage({ params, searchParams }: PagePr
   const { country: raw } = await params;
   const { page: pageRaw } = await searchParams;
   const country = decodeURIComponent(raw);
-  const resorts = fetchResorts();
-  const countries = getCountries(resorts);
+  const [resorts, countries, directory] = await Promise.all([
+    fetchResorts(),
+    fetchResortCountries(),
+    fetchDirectoryMeta(),
+  ]);
   const list = getResortsByCountry(resorts, country);
   const page = Number(pageRaw) || 1;
 
@@ -40,6 +44,7 @@ export default async function ResortCountryPage({ params, searchParams }: PagePr
       resorts={list}
       countries={countries}
       page={page}
+      pageSize={directory.pageSize}
     />
   );
 }

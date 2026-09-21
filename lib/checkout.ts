@@ -20,6 +20,9 @@ export type CheckoutBooking = {
   children: number;
   vacationType: CheckoutVacationType;
   checkInAs: CheckInAs;
+  /** Django checkout session id when available */
+  sessionId?: string;
+  confirmationCode?: string;
 };
 
 export function isAvailableUnitType(value: string): value is AvailableUnitType {
@@ -63,7 +66,11 @@ export function money(amount: number): string {
 }
 
 export function buildCheckoutQuery(
-  booking: Omit<CheckoutBooking, "checkInAs"> & { checkInAs?: CheckInAs },
+  booking: Omit<CheckoutBooking, "checkInAs"> & {
+    checkInAs?: CheckInAs;
+    sessionId?: string;
+    confirmationCode?: string;
+  },
 ): string {
   const params = new URLSearchParams({
     resortId: booking.resortId,
@@ -75,6 +82,8 @@ export function buildCheckoutQuery(
     vacationType: booking.vacationType,
     checkInAs: booking.checkInAs || "member",
   });
+  if (booking.sessionId) params.set("sessionId", booking.sessionId);
+  if (booking.confirmationCode) params.set("confirmationCode", booking.confirmationCode);
   return params.toString();
 }
 
@@ -93,6 +102,9 @@ export function parseCheckoutSearchParams(
   const vacationTypeRaw = first(sp.vacationType);
   const checkInRaw = first(sp.checkInAs);
 
+  const sessionId = first(sp.sessionId) || undefined;
+  const confirmationCode = first(sp.confirmationCode) || undefined;
+
   return {
     resortId,
     unit: unitRaw,
@@ -102,6 +114,8 @@ export function parseCheckoutSearchParams(
     children: Math.max(0, Number(first(sp.children) || 0) || 0),
     vacationType: vacationTypeRaw === "Exchange" ? "Exchange" : "Getaways",
     checkInAs: checkInRaw === "guest" ? "guest" : "member",
+    sessionId,
+    confirmationCode,
   };
 }
 

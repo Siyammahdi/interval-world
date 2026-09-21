@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AvailableUnitView } from "@/components/resorts/AvailableUnitView";
-import { fetchResorts, getResortById, resortDisplayName } from "@/lib/resort-data";
+import { fetchUnitRates } from "@/lib/cms";
+import { fetchResortById, resortDisplayName } from "@/lib/resort-data";
 
 type PageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
@@ -14,7 +15,7 @@ function first(value: string | string[] | undefined): string {
 
 export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
   const sp = await searchParams;
-  const resort = getResortById(fetchResorts(), first(sp.resortId));
+  const resort = await fetchResortById(first(sp.resortId));
   return {
     title: resort ? `Available Units — ${resortDisplayName(resort)}` : "Available Units",
   };
@@ -30,7 +31,10 @@ export default async function AvailableUnitPage({ searchParams }: PageProps) {
   const vacationTypeRaw = first(sp.vacationType);
   const vacationType = vacationTypeRaw === "Exchange" ? "Exchange" : "Getaways";
 
-  const resort = getResortById(fetchResorts(), resortId);
+  const [resort, unitRates] = await Promise.all([
+    fetchResortById(resortId),
+    fetchUnitRates(),
+  ]);
 
   const today = new Date();
   const todayIso = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
@@ -60,6 +64,7 @@ export default async function AvailableUnitPage({ searchParams }: PageProps) {
     <main id="main-content">
       <AvailableUnitView
         resort={resort}
+        unitRates={unitRates}
         search={{
           earliestDate,
           latestDate,

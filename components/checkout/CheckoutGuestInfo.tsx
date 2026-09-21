@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { CheckoutStepper } from "@/components/checkout/CheckoutStepper";
 import { ResortImage } from "@/components/resorts/ResortImage";
+import { patchCheckoutSession } from "@/app/actions/api";
 import {
   buildCheckoutQuery,
   checkoutPricing,
@@ -39,7 +40,14 @@ export function CheckoutGuestInfo({ resort, booking }: Props) {
 
   const query = buildCheckoutQuery({ ...booking, checkInAs });
 
-  function continueToPayment() {
+  async function continueToPayment() {
+    if (booking.sessionId) {
+      try {
+        await patchCheckoutSession(booking.sessionId, { checkInAs });
+      } catch {
+        // continue with local query state
+      }
+    }
     router.push(`/checkout/payment?${query}`);
   }
 

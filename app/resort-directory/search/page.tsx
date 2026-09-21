@@ -3,8 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AskExpert } from "@/components/home/AskExpert";
 import { DirectoryDestinationCard } from "@/components/resorts/DirectoryDestinationCard";
-import { fetchResorts } from "@/lib/resort-data";
-import { resortDisplayName } from "@/lib/resort-types";
+import { searchResorts } from "@/lib/resort-data";
 
 export const metadata: Metadata = {
   title: "Resort Search Results",
@@ -16,18 +15,9 @@ type PageProps = {
 
 export default async function ResortSearchPage({ searchParams }: PageProps) {
   const { q = "", by = "name" } = await searchParams;
-  const query = q.trim().toLowerCase();
-  const resorts = fetchResorts();
-
-  const results = query
-    ? resorts.filter((resort) => {
-        if (by === "code") {
-          const code = (resort.symbol || resort.resort_ID || "").toLowerCase();
-          return code.includes(query);
-        }
-        return resortDisplayName(resort).toLowerCase().includes(query);
-      })
-    : [];
+  const query = q.trim();
+  const searchBy = by === "code" ? "code" : "name";
+  const results = query ? await searchResorts(query, searchBy, 36) : [];
 
   return (
     <main id="main-content">
@@ -63,7 +53,7 @@ export default async function ResortSearchPage({ searchParams }: PageProps) {
 
         {results.length > 0 ? (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-            {results.slice(0, 36).map((resort) => (
+            {results.map((resort) => (
               <DirectoryDestinationCard key={resort._id} resort={resort} />
             ))}
           </div>

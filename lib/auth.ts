@@ -1,8 +1,5 @@
-/** Temporary demo gate — replace with real auth later. */
-export const DEMO_USERNAME = "Ann";
-export const DEMO_PASSWORD = "Foysal";
-export const AUTH_COOKIE = "iw_demo_session";
-export const AUTH_COOKIE_VALUE = "ann-authenticated";
+/** Auth cookie holds Django session key (forwarded via BFF). */
+export const AUTH_COOKIE = "iw_session";
 
 /** Login / signup pages — logged-in users are redirected away from these. */
 export const PUBLIC_AUTH_PATHS = [
@@ -41,8 +38,4 @@ export function isPublicPath(pathname: string) {
 /** @deprecated Prefer isPublicPath / isAuthOnlyPublicPath */
 export function isPublicAuthPath(pathname: string) {
   return isPublicPath(pathname);
-}
-
-export function credentialsMatch(username: string, password: string) {
-  return username.trim() === DEMO_USERNAME && password === DEMO_PASSWORD;
 }

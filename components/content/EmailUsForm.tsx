@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useMemo, useState } from "react";
-import helpTopics from "@/data/email-help-topics.json";
+import { FormEvent, useEffect, useMemo, useState } from "react";
+import { submitSupportEmail } from "@/app/actions/api";
+import { getApiBaseUrl } from "@/lib/api";
 import { cn } from "@/lib/cn";
 
 type Subject = {
@@ -10,8 +11,6 @@ type Subject = {
   label: string;
   topics: { label: string; value: string }[];
 };
-
-const subjects = helpTopics as Subject[];
 
 type FormState = {
   memberNo: string;
@@ -42,9 +41,20 @@ const labelClass = "mb-1 block text-[14px] leading-[1.7] text-iw-ink";
 
 /** E-mail Us form — Figma Customer Support / Email US */
 export function EmailUsForm() {
+  const [subjects, setSubjects] = useState<Subject[]>([]);
   const [form, setForm] = useState<FormState>(initial);
   const [errors, setErrors] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    fetch(`${getApiBaseUrl()}/api/support/topics/`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (Array.isArray(data)) setSubjects(data);
+      })
+      .catch(() => {});
+  }, []);
 
   const topics = useMemo(() => {
     const id = Number(form.helpSubject);
@@ -72,12 +82,29 @@ export function EmailUsForm() {
     return next;
   }
 
-  function onSubmit(event: FormEvent) {
+  async function onSubmit(event: FormEvent) {
     event.preventDefault();
     const nextErrors = validate();
     setErrors(nextErrors);
     if (nextErrors.length) return;
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      await submitSupportEmail({
+        memberNo: form.memberNo,
+        emailAddress: form.emailAddress,
+        firstName: form.firstName,
+        lastName: form.lastName,
+        exchangeNumber: form.exchangeNumber,
+        helpSubject: form.helpSubject,
+        helpTopic: form.helpTopic,
+        comment: form.comment,
+      });
+      setSubmitted(true);
+    } catch {
+      setErrors(["Unable to send your message. Please try again."]);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -302,9 +329,10 @@ export function EmailUsForm() {
       <button
         type="submit"
         name="submit"
-        className="inline-flex w-full max-w-[284px] items-center justify-center rounded-lg bg-iw-blue px-[42px] py-3 text-[17px] font-medium text-white transition-colors hover:bg-iw-blue-dark"
+        disabled={submitting}
+        className="inline-flex w-full max-w-[284px] items-center justify-center rounded-lg bg-iw-blue px-[42px] py-3 text-[17px] font-medium text-white transition-colors hover:bg-iw-blue-dark disabled:opacity-60"
       >
-        Submit
+        {submitting ? "Sending…" : "Submit"}
       </button>
     </form>
   );

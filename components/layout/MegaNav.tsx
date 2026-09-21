@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { mainNav, type NavItem } from "@/data/navigation";
+import type { NavItem } from "@/lib/cms";
 import { cn } from "@/lib/cn";
 
 function NavTab({ item }: { item: NavItem }) {
@@ -46,13 +46,12 @@ function NavTab({ item }: { item: NavItem }) {
 }
 
 /** Full-width primary nav — Figma Color-09 navy bar */
-export function MegaNav() {
+export function MegaNav({ items }: { items: NavItem[] }) {
   return (
     <nav aria-label="Primary" className="relative z-50 w-full overflow-visible bg-iw-navy text-white">
-      {/* Never use overflow-x:auto here — it forces overflow-y to clip and hides dropdowns */}
       <div className="mx-auto w-full max-w-[1440px] overflow-visible">
         <ul className="flex w-full list-none items-center justify-start gap-0 overflow-visible px-2 py-1.5 md:justify-center md:px-8 lg:px-[116px]">
-          {mainNav.map((item) => (
+          {items.map((item) => (
             <NavTab key={item.id} item={item} />
           ))}
         </ul>

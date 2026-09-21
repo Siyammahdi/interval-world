@@ -1,21 +1,21 @@
 import Link from "next/link";
-import { memberAlert } from "@/data/homepage";
+import type { MemberAlert as MemberAlertData } from "@/lib/cms";
 
-export function MemberAlert() {
+export function MemberAlert({ alert }: { alert: MemberAlertData }) {
   return (
     <div className="mx-auto max-w-[900px] text-center">
       <h2 className="text-[32px] font-medium leading-[1.3] tracking-[-0.42px] text-iw-navy md:text-[42px]">
-        {memberAlert.title}
+        {alert.title}
       </h2>
       <p className="mt-2 text-[14px] leading-[1.7] text-iw-ink">
-        {memberAlert.bodyBefore}{" "}
+        {alert.bodyBefore}{" "}
         <Link
-          href={memberAlert.linkHref}
+          href={alert.linkHref}
           className="font-bold text-iw-link underline decoration-[10.5%] underline-offset-2"
         >
-          {memberAlert.linkLabel}
+          {alert.linkLabel}
         </Link>{" "}
-        {memberAlert.bodyAfter}
+        {alert.bodyAfter}
       </p>
     </div>
   );

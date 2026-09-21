@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { languages } from "@/data/navigation";
+
+type Language = { label: string; href: string; code: string };
 
 /** Language control matching Figma header (text + chevron). */
-export function LanguageSelect() {
+export function LanguageSelect({ languages }: { languages: Language[] }) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 

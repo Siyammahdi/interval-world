@@ -4,8 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AskExpert } from "@/components/home/AskExpert";
-import { trackerContent, type TrackerTrip } from "@/data/tracker";
-import trips from "@/data/tracker-map-data.json";
+import type { TrackerContent, TrackerTrip } from "@/data/tracker";
+
+type TrackerPageProps = {
+  content: TrackerContent;
+  trips: TrackerTrip[];
+};
 
 type LeafletNS = {
   map: (el: HTMLElement, opts: Record<string, unknown>) => LeafletMap;
@@ -88,7 +92,7 @@ async function loadLeaflet(): Promise<LeafletNS> {
   return window.L;
 }
 
-export function TrackerPage() {
+export function TrackerPage({ content, trips }: TrackerPageProps) {
   const mapRef = useRef<HTMLDivElement>(null);
   const cleanupRef = useRef<(() => void) | null>(null);
   const [selected, setSelected] = useState<TrackerTrip | null>(null);
@@ -105,8 +109,8 @@ export function TrackerPage() {
 
         mapRef.current.innerHTML = "";
         const map = L.map(mapRef.current, {
-          center: [trackerContent.mapCenter.lat, trackerContent.mapCenter.lng],
-          zoom: trackerContent.mapZoom,
+          center: [content.mapCenter.lat, content.mapCenter.lng],
+          zoom: content.mapZoom,
           scrollWheelZoom: true,
         });
 
@@ -121,7 +125,7 @@ export function TrackerPage() {
         streets.addTo(map);
         L.control.layers({ Map: streets, Satellite: satellite }).addTo(map);
 
-        const data = trips as TrackerTrip[];
+        const data = trips;
         const animateCount = Math.min(28, data.length);
         const timers: number[] = [];
         const markers: LeafletMarker[] = [];
@@ -137,8 +141,8 @@ export function TrackerPage() {
             if (cancelled) return;
             const isExchange = trip.transactionType === "EX";
             const iconUrl = isExchange
-              ? trackerContent.pins.exchange
-              : trackerContent.pins.getaway;
+              ? content.pins.exchange
+              : content.pins.getaway;
             const marker = L.marker([dLat, dLng], {
               title: trip.destinationResortName,
               icon: L.icon({
@@ -154,7 +158,7 @@ export function TrackerPage() {
               const home = L.marker([sLat, sLng], {
                 title: trip.relinquishedResortName,
                 icon: L.icon({
-                  iconUrl: trackerContent.pins.home,
+                  iconUrl: content.pins.home,
                   iconSize: [14, 14],
                   iconAnchor: [7, 7],
                 }),
@@ -201,7 +205,7 @@ export function TrackerPage() {
       cleanupRef.current?.();
       cleanupRef.current = null;
     };
-  }, []);
+  }, [content, trips]);
 
   const heading =
     selected?.transactionType === "EX" ? "Exchange" : selected ? "Getaway" : null;
@@ -210,7 +214,7 @@ export function TrackerPage() {
     <main id="main-content" className="tracker-page">
       <div className="tracker-shell">
         <div className="tracker-header">
-          <h1>{trackerContent.title}</h1>
+          <h1>{content.title}</h1>
           <nav aria-label="Breadcrumb" className="tracker-breadcrumb">
             <Link href="/">Home</Link>
             <Image
@@ -220,7 +224,7 @@ export function TrackerPage() {
               height={8}
               aria-hidden
             />
-            <span>{trackerContent.breadcrumb}</span>
+            <span>{content.breadcrumb}</span>
           </nav>
         </div>
 
@@ -266,8 +270,8 @@ export function TrackerPage() {
         )}
 
         <section className="tracker-legend">
-          <h2>{trackerContent.legendTitle}</h2>
-          {trackerContent.legend.map((item) => (
+          <h2>{content.legendTitle}</h2>
+          {content.legend.map((item) => (
             <p key={item.text} className="tracker-legend-row">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={item.icon} alt="" width={item.iconWidth} height={item.iconHeight} />

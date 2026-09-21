@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { footerLinks } from "@/data/navigation";
+import { fetchNavigation } from "@/lib/cms";
 
 /** Minimal Figma footer — copyright + legal links (social lives in Ask Expert). */
-export function SiteFooter() {
+export async function SiteFooter() {
+  const { footerLinks } = await fetchNavigation();
+
   return (
     <footer className="w-full border-t border-iw-muted bg-white">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center gap-4 px-6 pb-6 pt-[60px] text-center md:px-[120px]">

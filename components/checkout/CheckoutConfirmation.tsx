@@ -25,7 +25,7 @@ export function CheckoutConfirmation({ resort, booking }: Props) {
   const images = resortImages(resort);
   const nights = nightsBetween(booking.earliestDate, booking.latestDate);
   const pricing = checkoutPricing(booking.unit, nights, booking.vacationType);
-  const code = demoConfirmationCode(booking);
+  const code = booking.confirmationCode || demoConfirmationCode(booking);
   const isExchange = booking.vacationType === "Exchange";
 
   return (

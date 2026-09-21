@@ -1,12 +1,54 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
+import { submitCreateProfile } from "@/app/actions/api";
 
-/** Create A Profile — matches Figma auth card (node 57:2333). Visual only. */
+/** Create A Profile — matches Figma auth card (node 57:2333). */
 export function CreateProfilePage() {
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  const [error, setError] = useState<string | null>(null);
+  const [done, setDone] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setError(null);
+    setSubmitting(true);
+    const form = new FormData(event.currentTarget);
+    try {
+      await submitCreateProfile({
+        memberNumber: String(form.get("memberNumber") ?? ""),
+        phoneCode: String(form.get("phoneCode") ?? ""),
+        phoneNumber: String(form.get("phoneNumber") ?? ""),
+        userId: String(form.get("userId") ?? ""),
+        email: String(form.get("email") ?? ""),
+        password: String(form.get("password") ?? ""),
+      });
+      setDone(true);
+    } catch {
+      setError("Unable to create profile. Please check your details and try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  if (done) {
+    return (
+      <main id="main-content" className="iw-auth-page">
+        <div className="iw-auth-card iw-auth-card--create">
+          <div className="iw-auth-card__intro">
+            <h1 className="iw-auth-card__title">Profile Submitted</h1>
+            <p>
+              Thanks — your profile request was received and is pending review. You can sign in
+              once membership setup is complete.
+            </p>
+          </div>
+          <p className="iw-auth-switch">
+            <Link href="/web/my/auth/loginPage">Back to Login</Link>
+          </p>
+        </div>
+      </main>
+    );
   }
 
   return (
@@ -27,6 +69,7 @@ export function CreateProfilePage() {
               id="memberNumber"
               name="memberNumber"
               type="text"
+              required
               placeholder="Enter your membership number"
             />
           </div>
@@ -50,6 +93,7 @@ export function CreateProfilePage() {
                 id="phoneNumber"
                 name="phoneNumber"
                 type="tel"
+                required
                 placeholder="Phone Number"
               />
             </div>
@@ -61,6 +105,7 @@ export function CreateProfilePage() {
               id="userId"
               name="userId"
               type="text"
+              required
               placeholder="Choose a username"
             />
           </div>
@@ -71,6 +116,7 @@ export function CreateProfilePage() {
               id="email"
               name="email"
               type="email"
+              required
               placeholder="Enter your email address"
             />
           </div>
@@ -81,12 +127,15 @@ export function CreateProfilePage() {
               id="password"
               name="password"
               type="password"
+              required
               placeholder="Create a strong password"
             />
           </div>
 
-          <button type="submit" className="iw-auth-btn">
-            Submit
+          {error ? <p className="text-sm text-red-600">{error}</p> : null}
+
+          <button type="submit" className="iw-auth-btn" disabled={submitting}>
+            {submitting ? "Submitting…" : "Submit"}
           </button>
         </form>
 

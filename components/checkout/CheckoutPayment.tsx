@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState, type FormEvent } from "react";
 import { CheckoutStepper } from "@/components/checkout/CheckoutStepper";
+import { confirmCheckoutSession } from "@/app/actions/api";
 import {
   buildCheckoutQuery,
   checkoutPricing,
@@ -33,10 +34,23 @@ export function CheckoutPayment({ resort, booking }: Props) {
   const isExchange = booking.vacationType === "Exchange";
   const query = buildCheckoutQuery(booking);
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setSubmitting(true);
-    router.push(`/checkout/confirmation?${query}`);
+    let confirmationCode = "";
+    if (booking.sessionId) {
+      try {
+        const bookingResult = await confirmCheckoutSession(booking.sessionId);
+        confirmationCode = bookingResult.confirmationCode;
+      } catch {
+        // fall through to demo confirmation
+      }
+    }
+    const next = buildCheckoutQuery({
+      ...booking,
+      confirmationCode: confirmationCode || undefined,
+    });
+    router.push(`/checkout/confirmation?${next || query}`);
   }
 
   return (

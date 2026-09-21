@@ -3,10 +3,11 @@ import Link from "next/link";
 import { logoutAction } from "@/app/actions/auth";
 import { LanguageSelect } from "@/components/layout/LanguageSelect";
 import { MegaNav } from "@/components/layout/MegaNav";
+import { fetchNavigation } from "@/lib/cms";
 import { isLoggedIn } from "@/lib/session";
 
 export async function SiteHeader() {
-  const loggedIn = await isLoggedIn();
+  const [loggedIn, navigation] = await Promise.all([isLoggedIn(), fetchNavigation()]);
 
   return (
     <header className="relative z-[60] w-full overflow-visible bg-white">
@@ -30,7 +31,7 @@ export async function SiteHeader() {
         </Link>
 
         <div className="flex items-center gap-3 md:gap-4">
-          <LanguageSelect />
+          <LanguageSelect languages={navigation.languages} />
           {loggedIn ? (
             <form action={logoutAction}>
               <button
@@ -59,7 +60,7 @@ export async function SiteHeader() {
         </div>
       </div>
 
-      <MegaNav />
+      <MegaNav items={navigation.mainNav} />
     </header>
   );
 }
