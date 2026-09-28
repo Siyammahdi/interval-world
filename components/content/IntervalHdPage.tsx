@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AskExpert } from "@/components/home/AskExpert";
 import type { HdRegion, HdVideo } from "@/data/interval-hd";
 import { cn } from "@/lib/cn";
+import { mediaUrl } from "@/lib/media";
 
 /** Figma grid: 3 columns × 4 rows */
 const PER_PAGE = 12;
@@ -31,7 +32,7 @@ function videoIdFromHref(href: string) {
 }
 
 function resolveSrc(video: HdVideo) {
-  return video.src || `/videos/hd/${video.id || videoIdFromHref(video.href)}.mp4`;
+  return mediaUrl(video.src || `/videos/hd/${video.id || videoIdFromHref(video.href)}.mp4`);
 }
 
 function resolveThumb(image: string) {
@@ -59,7 +60,7 @@ function VideoThumb({
     // Native img avoids next/image optimizer issues with mixed local/Brightcove assets
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={current}
+      src={mediaUrl(current)}
       alt={alt}
       className={cn("absolute inset-0 h-full w-full object-cover", className)}
       loading="lazy"
@@ -152,8 +153,13 @@ function VideoModal({
 
   useEffect(() => {
     let cancelled = false;
-    setChecking(true);
     setError(null);
+    // Cross-origin HEAD needs bucket CORS; for remote media rely on <video onError> instead
+    if (!src.startsWith("/")) {
+      setChecking(false);
+      return;
+    }
+    setChecking(true);
 
     (async () => {
       try {
@@ -213,7 +219,7 @@ function VideoModal({
             controls
             autoPlay={!checking}
             playsInline
-            poster={poster.startsWith("http") ? undefined : poster}
+            poster={poster.startsWith("http") ? undefined : mediaUrl(poster)}
             src={src}
             onError={() =>
               setError("This video file couldn’t be played. It may still be downloading.")

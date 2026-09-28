@@ -1,4 +1,4 @@
-import { apiFetch } from "@/lib/api";
+import resortsJson from "@/data/content/resorts.json";
 import type { Resort } from "@/lib/resort-types";
 
 export type { Resort } from "@/lib/resort-types";
@@ -14,48 +14,38 @@ export {
   GETAWAY_RATES,
 } from "@/lib/resort-types";
 
-type PaginatedResorts = {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: Resort[];
-};
+/** Full catalog (~1.7k), sorted by name like the original API. */
+const allResorts = resortsJson as Resort[];
 
-/** Fetch all resorts from Django (paginates through the API). */
+function includes(value: string | undefined, q: string) {
+  return (value || "").toLowerCase().includes(q);
+}
+
 export async function fetchResorts(options?: { hasImage?: boolean }): Promise<Resort[]> {
-  const all: Resort[] = [];
-  let page = 1;
-  const pageSize = 100;
-  // Safety cap — dataset is ~1.7k
-  for (let i = 0; i < 50; i++) {
-    const params = new URLSearchParams({
-      page: String(page),
-      pageSize: String(pageSize),
-    });
-    if (options?.hasImage) params.set("hasImage", "true");
-    const data = await apiFetch<PaginatedResorts>(`/api/resorts/?${params}`);
-    all.push(...data.results);
-    if (!data.next) break;
-    page += 1;
-  }
-  return all;
+  if (!options?.hasImage) return allResorts;
+  return allResorts.filter((r) => r.img || r.img2 || r.img3);
 }
 
 export async function fetchResortById(id: string): Promise<Resort | null> {
-  try {
-    return await apiFetch<Resort>(`/api/resorts/${encodeURIComponent(id)}/`);
-  } catch {
-    return null;
-  }
+  return allResorts.find((r) => r._id === id) ?? null;
 }
 
 export async function fetchResortCountries(): Promise<string[]> {
-  const data = await apiFetch<{ countries: string[] }>("/api/resorts/countries/");
-  return data.countries;
+  const set = new Set<string>();
+  for (const r of allResorts) {
+    if (r.country) set.add(r.country);
+  }
+  return [...set].sort();
 }
 
 export async function searchResorts(q: string, by: "name" | "code" = "name", limit = 50) {
-  const params = new URLSearchParams({ q, by, limit: String(limit) });
-  const data = await apiFetch<{ results: Resort[] }>(`/api/resorts/search/?${params}`);
-  return data.results;
+  const query = q.trim().toLowerCase();
+  const max = Math.min(limit, 100);
+  if (!query) return allResorts.slice(0, max);
+  const matches = allResorts.filter((r) =>
+    by === "code"
+      ? includes(r.symbol, query) || includes(r.resort_ID, query)
+      : includes(r.resortName, query) || includes(r.place_name, query) || includes(r.location, query),
+  );
+  return matches.slice(0, max);
 }

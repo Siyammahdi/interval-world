@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { mediaUrl } from "@/lib/media";
 import {
   FALLBACK_RESORT_IMAGES,
   normalizeImageUrl,
@@ -65,7 +66,7 @@ export function ResortImage({ src, alt, seed = "", className = "", fallbacks = [
       <img
         key={current}
         ref={imgRef}
-        src={current}
+        src={mediaUrl(current)}
         alt={alt}
         className={`h-full w-full object-cover transition-opacity duration-300 ${
           loaded ? "opacity-100" : "opacity-0"

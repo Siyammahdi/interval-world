@@ -1,4 +1,12 @@
-import { apiFetch } from "@/lib/api";
+import directoryJson from "@/data/content/directory.json";
+import helpTopicsJson from "@/data/content/help-topics.json";
+import homepageJson from "@/data/content/homepage.json";
+import intervalHdJson from "@/data/content/interval-hd.json";
+import livePagesJson from "@/data/content/live-pages.json";
+import marketingPagesJson from "@/data/content/marketing-pages.json";
+import navigationJson from "@/data/content/navigation.json";
+import trackerJson from "@/data/content/tracker.json";
+import unitRatesJson from "@/data/content/unit-rates.json";
 
 export type HeroSlide = {
   id: string;
@@ -74,62 +82,66 @@ export type UnitRate = {
   sort_order: number;
 };
 
+export type HelpTopicCategory = {
+  id: number;
+  label: string;
+  topics: { label: string; value: string }[];
+};
+
+export type MarketingPage = {
+  path: string;
+  component: string;
+  cards: Record<string, unknown>;
+};
+
+const livePages = livePagesJson as LivePage[];
+const marketingPages = marketingPagesJson as MarketingPage[];
+
+function normalizePath(path: string) {
+  return path.replace(/\/$/, "") || "/";
+}
+
+export const navigationData = navigationJson as NavigationData;
+export const helpTopics = helpTopicsJson as HelpTopicCategory[];
+
 export async function fetchHomepage(): Promise<HomepageData> {
-  return apiFetch<HomepageData>("/api/cms/homepage/");
+  return homepageJson as HomepageData;
 }
 
 export async function fetchNavigation(): Promise<NavigationData> {
-  return apiFetch<NavigationData>("/api/cms/navigation/");
+  return navigationData;
 }
 
 export async function fetchIntervalHd() {
-  return apiFetch<Record<string, unknown>>("/api/cms/interval-hd/");
+  return intervalHdJson as Record<string, unknown>;
 }
 
 export async function fetchDirectoryMeta(): Promise<DirectoryMeta> {
-  return apiFetch<DirectoryMeta>("/api/cms/directory/");
+  return directoryJson as DirectoryMeta;
 }
 
 export async function fetchTracker() {
-  return apiFetch<{ content: Record<string, unknown>; trips: unknown[] }>("/api/cms/tracker/");
+  return trackerJson as { content: Record<string, unknown>; trips: unknown[] };
 }
 
 export async function fetchLivePageByPath(path: string): Promise<LivePage | null> {
-  try {
-    const normalized = path.replace(/\/$/, "") || "/";
-    return await apiFetch<LivePage>(
-      `/api/cms/live-pages/by-path/?path=${encodeURIComponent(normalized)}`,
-    );
-  } catch {
-    return null;
-  }
+  const normalized = normalizePath(path);
+  return livePages.find((p) => p.path === normalized) ?? null;
 }
 
 export async function fetchLivePagePaths(): Promise<string[]> {
-  const data = await apiFetch<{ pages: LivePage[] }>("/api/cms/live-pages/");
-  return data.pages.map((p) => p.path);
+  return livePages.map((p) => p.path);
 }
 
-export async function fetchHelpTopics() {
-  return apiFetch<
-    { id: number; label: string; topics: { label: string; value: string }[] }[]
-  >("/api/support/topics/");
+export async function fetchHelpTopics(): Promise<HelpTopicCategory[]> {
+  return helpTopics;
 }
 
 export async function fetchUnitRates(): Promise<UnitRate[]> {
-  const data = await apiFetch<{ results: UnitRate[] }>("/api/cms/unit-rates/");
-  return data.results;
+  return unitRatesJson as UnitRate[];
 }
 
-export async function fetchMarketingPage(path: string) {
-  try {
-    const normalized = path.replace(/\/$/, "") || "/";
-    return await apiFetch<{
-      path: string;
-      component: string;
-      cards: Record<string, unknown>;
-    }>(`/api/cms/marketing/?path=${encodeURIComponent(normalized)}`);
-  } catch {
-    return null;
-  }
+export async function fetchMarketingPage(path: string): Promise<MarketingPage | null> {
+  const normalized = normalizePath(path);
+  return marketingPages.find((p) => p.path === normalized) ?? null;
 }

@@ -1,57 +1,12 @@
 "use server";
 
-import { cookies } from "next/headers";
-import { AUTH_COOKIE } from "@/lib/auth";
-import { apiFetch } from "@/lib/api";
+import { randomBytes, randomInt } from "node:crypto";
 import type { CheckoutBooking } from "@/lib/checkout";
 
-export type CheckoutSessionResponse = {
-  id: string;
-  resortId: string;
-  unit: string;
-  earliestDate: string;
-  latestDate: string;
-  adults: number;
-  children: number;
-  vacationType: string;
-  checkInAs: string;
-  guestFirstName: string;
-  guestLastName: string;
-  guestEmail: string;
-  guestPhone: string;
-  pricing: Record<string, unknown>;
-  status: string;
-};
-
-export type BookingResponse = {
-  id: string;
-  confirmationCode: string;
-  paymentStatus: string;
-  resortId: string;
-  unit: string;
-  pricing: Record<string, unknown>;
-};
-
-async function sessionId() {
-  const jar = await cookies();
-  return jar.get(AUTH_COOKIE)?.value ?? null;
-}
+// Demo build: no backend. Checkout state lives in the URL; forms just acknowledge.
 
 export async function createCheckoutSession(booking: CheckoutBooking) {
-  return apiFetch<CheckoutSessionResponse>("/api/checkout/sessions/", {
-    method: "POST",
-    sessionId: await sessionId(),
-    body: JSON.stringify({
-      resortId: booking.resortId,
-      unit: booking.unit,
-      earliestDate: booking.earliestDate,
-      latestDate: booking.latestDate,
-      adults: booking.adults,
-      children: booking.children,
-      vacationType: booking.vacationType,
-      checkInAs: booking.checkInAs,
-    }),
-  });
+  return { id: `cs_${randomBytes(8).toString("hex")}`, resortId: booking.resortId, status: "draft" };
 }
 
 export async function patchCheckoutSession(
@@ -64,19 +19,16 @@ export async function patchCheckoutSession(
     guestPhone?: string;
   },
 ) {
-  return apiFetch<CheckoutSessionResponse>(`/api/checkout/sessions/${id}/`, {
-    method: "PATCH",
-    sessionId: await sessionId(),
-    body: JSON.stringify(guest),
-  });
+  return { id, ...guest, status: "draft" };
 }
 
 export async function confirmCheckoutSession(id: string) {
-  return apiFetch<BookingResponse>(`/api/checkout/sessions/${id}/confirm/`, {
-    method: "POST",
-    sessionId: await sessionId(),
-    body: JSON.stringify({}),
-  });
+  return {
+    id: `bk_${randomBytes(8).toString("hex")}`,
+    sessionId: id,
+    confirmationCode: `IW${String(randomInt(0, 100_000_000)).padStart(8, "0")}`,
+    paymentStatus: "demo",
+  };
 }
 
 export async function submitSupportEmail(payload: {
@@ -89,10 +41,7 @@ export async function submitSupportEmail(payload: {
   helpTopic: string;
   comment: string;
 }) {
-  return apiFetch<{ id: number; ok: boolean }>("/api/support/email/", {
-    method: "POST",
-    body: JSON.stringify(payload),
-  });
+  return { ok: Boolean(payload.emailAddress) };
 }
 
 export async function submitCreateProfile(payload: {
@@ -103,8 +52,5 @@ export async function submitCreateProfile(payload: {
   email: string;
   password: string;
 }) {
-  return apiFetch<{ id: number; status: string; ok: boolean }>("/api/profiles/", {
-    method: "POST",
-    body: JSON.stringify(payload),
-  });
+  return { status: "pending", ok: Boolean(payload.userId) };
 }

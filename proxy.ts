@@ -2,14 +2,15 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import {
   AUTH_COOKIE,
+  LOGIN_PATH,
   isAuthOnlyPublicPath,
   isPublicPath,
+  isValidSession,
 } from "@/lib/auth";
 
 export function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  const session = request.cookies.get(AUTH_COOKIE)?.value;
-  const authenticated = Boolean(session);
+  const { pathname, search } = request.nextUrl;
+  const authenticated = isValidSession(request.cookies.get(AUTH_COOKIE)?.value);
 
   // Logged-in users should not stay on login / signup screens
   if (authenticated && isAuthOnlyPublicPath(pathname)) {
@@ -18,8 +19,8 @@ export function proxy(request: NextRequest) {
 
   // Guests may only visit public routes
   if (!authenticated && !isPublicPath(pathname)) {
-    const loginUrl = new URL("/web/my/auth/loginPage", request.url);
-    loginUrl.searchParams.set("next", pathname);
+    const loginUrl = new URL(LOGIN_PATH, request.url);
+    if (pathname !== "/") loginUrl.searchParams.set("next", `${pathname}${search}`);
     return NextResponse.redirect(loginUrl);
   }
 

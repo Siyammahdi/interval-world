@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { getApiBaseUrl } from "@/lib/api";
+import navigationJson from "@/data/content/navigation.json";
 
 const FIGMA_SOCIAL: Record<string, string> = {
   Facebook: "/images/figma/home/social-fb.png",
@@ -15,23 +14,7 @@ const FIGMA_SOCIAL: Record<string, string> = {
 type SocialLink = { label: string; href: string; icon: string };
 
 export function AskExpert({ socialLinks: initial }: { socialLinks?: SocialLink[] } = {}) {
-  const [socialLinks, setSocialLinks] = useState<SocialLink[]>(initial ?? []);
-
-  useEffect(() => {
-    if (initial?.length) return;
-    let cancelled = false;
-    fetch(`${getApiBaseUrl()}/api/cms/navigation/`)
-      .then((r) => r.json())
-      .then((data) => {
-        if (!cancelled && Array.isArray(data.socialLinks)) {
-          setSocialLinks(data.socialLinks);
-        }
-      })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-    };
-  }, [initial]);
+  const socialLinks: SocialLink[] = initial?.length ? initial : navigationJson.socialLinks;
 
   return (
     <section className="w-full border-t border-iw-muted bg-white">

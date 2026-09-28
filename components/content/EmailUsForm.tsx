@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
 import { submitSupportEmail } from "@/app/actions/api";
-import { getApiBaseUrl } from "@/lib/api";
+import helpTopicsJson from "@/data/content/help-topics.json";
 import { cn } from "@/lib/cn";
 
 type Subject = {
@@ -23,6 +23,8 @@ type FormState = {
   comment: string;
 };
 
+const subjects: Subject[] = helpTopicsJson;
+
 const initial: FormState = {
   memberNo: "",
   emailAddress: "",
@@ -41,20 +43,10 @@ const labelClass = "mb-1 block text-[14px] leading-[1.7] text-iw-ink";
 
 /** E-mail Us form — Figma Customer Support / Email US */
 export function EmailUsForm() {
-  const [subjects, setSubjects] = useState<Subject[]>([]);
   const [form, setForm] = useState<FormState>(initial);
   const [errors, setErrors] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-
-  useEffect(() => {
-    fetch(`${getApiBaseUrl()}/api/support/topics/`)
-      .then((r) => r.json())
-      .then((data) => {
-        if (Array.isArray(data)) setSubjects(data);
-      })
-      .catch(() => {});
-  }, []);
 
   const topics = useMemo(() => {
     const id = Number(form.helpSubject);

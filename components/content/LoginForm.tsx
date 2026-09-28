@@ -5,7 +5,7 @@ import { useActionState } from "react";
 import { loginAction, type LoginState } from "@/app/actions/auth";
 
 /** Member Login — Figma Log in page (node 57:4594) */
-export function LoginForm() {
+export function LoginForm({ next }: { next?: string } = {}) {
   const [state, action, pending] = useActionState(loginAction, undefined as LoginState);
 
   return (
@@ -14,6 +14,7 @@ export function LoginForm() {
         <h1 className="iw-login__title">Login</h1>
 
         <form className="iw-login__form" action={action} autoComplete="off">
+          {next ? <input type="hidden" name="next" value={next} /> : null}
           <div className="iw-login__fields">
             <div className="iw-login__field">
               <label htmlFor="loginID">Login ID</label>
