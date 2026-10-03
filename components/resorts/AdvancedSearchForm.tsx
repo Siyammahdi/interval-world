@@ -32,23 +32,27 @@ export function AdvancedSearchForm({ countries, amenities: amenityOptions = [] }
     );
   }
 
+  function clearFilters() {
+    setRegion("");
+    setAllInclusive(false);
+    setSearchBy("name");
+    setQuery("");
+    setMatchMode("all");
+    setAmenities([]);
+  }
+
   function onSubmit(event: FormEvent) {
     event.preventDefault();
-    if (region) {
-      const params = new URLSearchParams();
-      if (allInclusive) params.set("inclusive", "1");
-      const qs = params.toString();
-      router.push(
-        `/resort-page/${encodeURIComponent(region)}${qs ? `?${qs}` : ""}`,
-      );
-      return;
-    }
+    const params = new URLSearchParams();
+    if (region) params.set("country", region);
     if (query.trim()) {
-      const params = new URLSearchParams({ q: query.trim(), by: searchBy });
-      router.push(`/resort-directory/search?${params.toString()}`);
-      return;
+      params.set("q", query.trim());
+      params.set("by", searchBy);
     }
-    router.push("/resort-directory");
+    if (allInclusive) params.set("inclusive", "1");
+    if (amenities.length > 0) params.set("amenities", amenities.join("|"));
+    if (amenities.length > 0) params.set("match", matchMode);
+    router.push(`/resort-directory/search?${params.toString()}`);
   }
 
   return (
@@ -112,18 +116,18 @@ export function AdvancedSearchForm({ countries, amenities: amenityOptions = [] }
 
         <form onSubmit={onSubmit} className="flex flex-col gap-12">
           <section className="flex flex-col gap-4">
-            <h3 className="text-[24px] font-medium text-iw-ink md:text-[29px]">Select a Region</h3>
+            <h3 className="text-[24px] font-medium text-iw-ink md:text-[29px]">Select a Country</h3>
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-8">
               <label className="sr-only" htmlFor="region">
-                Region
+                Country
               </label>
               <select
-                id="region"
+                id="country"
                 value={region}
                 onChange={(e) => setRegion(e.target.value)}
                 className="h-[48px] w-full max-w-[904px] rounded-lg border border-iw-ink bg-white px-8 text-[17px] font-medium text-iw-ink"
               >
-                <option value="">Please Select Region</option>
+                <option value="">Please Select Country</option>
                 {sortedCountries.map((country) => (
                   <option key={country} value={country}>
                     {country}
@@ -193,7 +197,7 @@ export function AdvancedSearchForm({ countries, amenities: amenityOptions = [] }
                 Search By Amenities
               </h3>
               <p className="mt-1 max-w-[753px] text-[14px] leading-[1.7] text-iw-muted">
-                Select amenities to refine your search. Matching is for browsing only in this demo.
+                Select one or more amenities to refine your search.
               </p>
             </div>
             <div className="flex flex-wrap gap-8">
@@ -215,7 +219,7 @@ export function AdvancedSearchForm({ countries, amenities: amenityOptions = [] }
                   onChange={() => setMatchMode("any")}
                   className="size-5 accent-iw-link"
                 />
-                Onsite/Nearby
+                Match Any
               </label>
             </div>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -236,12 +240,21 @@ export function AdvancedSearchForm({ countries, amenities: amenityOptions = [] }
             </div>
           </section>
 
-          <button
-            type="submit"
-            className="inline-flex w-full max-w-[284px] items-center justify-center rounded-lg bg-iw-blue px-[42px] py-3 text-[17px] font-medium text-white hover:bg-iw-blue-dark"
-          >
-            Search Resorts
-          </button>
+          <div className="flex flex-wrap gap-3">
+            <button
+              type="submit"
+              className="inline-flex w-full max-w-[284px] items-center justify-center rounded-lg bg-iw-blue px-[42px] py-3 text-[17px] font-medium text-white hover:bg-iw-blue-dark"
+            >
+              Search Resorts
+            </button>
+            <button
+              type="button"
+              onClick={clearFilters}
+              className="inline-flex items-center justify-center rounded-lg border border-iw-ink bg-white px-6 py-3 text-[17px] font-medium text-iw-ink hover:bg-iw-surface"
+            >
+              Clear Filters
+            </button>
+          </div>
         </form>
       </div>
       <AskExpert />

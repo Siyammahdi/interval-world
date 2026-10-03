@@ -12,6 +12,28 @@ type Props = {
   directory: DirectoryMeta;
 };
 
+const countryRegionPaths: Record<string, string> = {
+  Australia: "Australia",
+  Aruba: "Aruba",
+  Brazil: "Brazil",
+  Canada: "Canada",
+  "Costa Rica": "Costa%20Rica",
+  "Dominican Republic": "Dominican%20Republic",
+  France: "France",
+  India: "India",
+  Italy: "Italy",
+  Japan: "Japan",
+  Mexico: "Mexico",
+  Spain: "Spain",
+  "United Kingdom": "United%20Kingdom",
+  "USA (All)": "USA",
+};
+
+function getDirectoryLink(label: string, href: string) {
+  const country = countryRegionPaths[label];
+  return country ? `/resort-directory/regions/${country}` : href;
+}
+
 export function ResortDirectoryView({ resorts, page, directory }: Props) {
   const pageSize = directory.pageSize || 12;
   const mapSearchRegions = directory.mapSearchRegions || [];
@@ -121,7 +143,7 @@ export function ResortDirectoryView({ resorts, page, directory }: Props) {
                   {group.links.map((link) => (
                     <li key={link.label}>
                       <Link
-                        href={link.href}
+                        href={getDirectoryLink(link.label, link.href)}
                         className="text-[14px] font-medium text-iw-link hover:underline"
                       >
                         {link.label}

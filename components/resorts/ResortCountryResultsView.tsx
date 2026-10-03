@@ -8,6 +8,7 @@ import type { Resort } from "@/lib/resort-types";
 
 type Props = {
   country: string;
+  regionName?: string;
   resorts: Resort[];
   countries: string[];
   page: number;
@@ -16,6 +17,7 @@ type Props = {
 
 export function ResortCountryResultsView({
   country,
+  regionName,
   resorts,
   countries,
   page,
@@ -77,7 +79,7 @@ export function ResortCountryResultsView({
 
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <h2 className="text-[28px] font-medium leading-[1.3] text-iw-navy md:text-[35px]">
-            Result of {country}{" "}
+            Result of {regionName || country}{" "}
             <span className="text-iw-link">({resorts.length})</span>
           </h2>
           <div className="flex flex-wrap items-center gap-3 md:gap-4">

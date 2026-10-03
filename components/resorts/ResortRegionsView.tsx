@@ -40,7 +40,7 @@ export function ResortRegionsView({ countries }: Props) {
               className="mx-0.5 h-2 w-auto"
               aria-hidden
             />
-            <span className="text-iw-ink">Regions</span>
+            <span className="text-iw-ink">Countries</span>
           </nav>
         </div>
 
@@ -57,7 +57,7 @@ export function ResortRegionsView({ countries }: Props) {
 
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <h2 className="text-[32px] font-medium leading-[1.3] tracking-[-0.42px] text-[#027fc2] md:text-[42px]">
-            Resort Directory
+            Select a Country
           </h2>
           <Link
             href="/resort-directory/advanced-search"
@@ -79,7 +79,7 @@ export function ResortRegionsView({ countries }: Props) {
           {countries.map((country) => (
             <Link
               key={country}
-              href={`/resort-page/${encodeURIComponent(country)}`}
+              href={`/resort-directory/regions/${encodeURIComponent(country)}`}
               className="flex items-center justify-center rounded-[7px] border border-iw-border bg-white px-6 py-2.5 text-center text-[14px] leading-[1.7] text-iw-ink transition-colors hover:border-iw-link hover:text-iw-link"
             >
               {country}

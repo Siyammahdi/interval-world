@@ -13,12 +13,12 @@ export function CountryJumpSelect({ country, countries }: Props) {
   return (
     <select
       id="country-jump"
-      aria-label="Search by Region"
+      aria-label="Choose another country"
       defaultValue={country}
       className="rounded-lg bg-iw-link px-6 py-2.5 text-[17px] font-medium text-white"
       onChange={(e) => {
         if (e.target.value) {
-          router.push(`/resort-page/${encodeURIComponent(e.target.value)}`);
+          router.push(`/resort-directory/regions/${encodeURIComponent(e.target.value)}`);
         }
       }}
     >
