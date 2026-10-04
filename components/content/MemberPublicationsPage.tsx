@@ -45,7 +45,7 @@ export function MemberPublicationsPage() {
           </p>
         </div>
         <Link
-          href="https://pub.intervalworld.com/"
+          href="https://interval-sub.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 inline-flex items-center justify-center rounded-lg bg-iw-blue px-[42px] py-3 text-[17px] font-medium text-white transition-colors hover:bg-iw-navy"
