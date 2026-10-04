@@ -83,8 +83,21 @@ export function ResortCountryResultsView({
             <span className="text-iw-link">({resorts.length})</span>
           </h2>
           <div className="flex flex-wrap items-center gap-3 md:gap-4">
-            <span className="text-[17px] font-medium text-iw-ink">Search by Region</span>
-            <CountryJumpSelect country={country} countries={countries} />
+            {regionName ? (
+              <>
+                <span className="text-[17px] font-medium text-iw-ink">
+                  Choose another country
+                </span>
+                <CountryJumpSelect country={country} countries={countries} />
+              </>
+            ) : (
+              <Link
+                href="/resort-directory/regions"
+                className="inline-flex items-center rounded-lg border border-iw-ink bg-white px-5 py-2.5 text-[14px] font-medium text-iw-ink hover:bg-iw-surface"
+              >
+                Choose another country
+              </Link>
+            )}
             <Link
               href="/resort-directory/advanced-search"
               className="inline-flex items-center gap-3 rounded-lg bg-iw-ink px-6 py-2.5 text-[14px] text-white hover:bg-black"

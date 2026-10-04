@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AskExpert } from "@/components/home/AskExpert";
 import { DirectoryDestinationCard } from "@/components/resorts/DirectoryDestinationCard";
 import { DirectoryPagination } from "@/components/resorts/DirectoryPagination";
+import { DIRECTORY_MAP_GROUPS } from "@/data/directory-map";
 import type { DirectoryMeta } from "@/lib/cms";
 import type { Resort } from "@/lib/resort-types";
 
@@ -29,7 +30,28 @@ const countryRegionPaths: Record<string, string> = {
   "USA (All)": "USA",
 };
 
-function getDirectoryLink(label: string, href: string) {
+const usaRegionLabels = new Set([
+  "California",
+  "Florida",
+  "Hawaii",
+  "Nevada",
+  "Arizona",
+  "Colorado",
+  "South Carolina",
+  "Virginia",
+  "Pennsylvania",
+]);
+
+function getDirectoryLink(groupHeading: string, label: string, href: string) {
+  if (groupHeading === "United States" && usaRegionLabels.has(label)) {
+    return `/resort-page/USA?region=${encodeURIComponent(label)}`;
+  }
+
+  const mapGroup = DIRECTORY_MAP_GROUPS.find((group) => group.label === label);
+  if (mapGroup && label !== "Mexico" && label !== "Canada") {
+    return `/resort-directory/map/${mapGroup.slug}`;
+  }
+
   const country = countryRegionPaths[label];
   return country ? `/resort-directory/regions/${country}` : href;
 }
@@ -143,7 +165,7 @@ export function ResortDirectoryView({ resorts, page, directory }: Props) {
                   {group.links.map((link) => (
                     <li key={link.label}>
                       <Link
-                        href={getDirectoryLink(link.label, link.href)}
+                        href={getDirectoryLink(group.heading, link.label, link.href)}
                         className="text-[14px] font-medium text-iw-link hover:underline"
                       >
                         {link.label}
