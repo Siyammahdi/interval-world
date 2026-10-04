@@ -15,6 +15,7 @@ type PageProps = {
     q?: string;
     by?: string;
     country?: string;
+    region?: string;
     inclusive?: string;
     amenities?: string;
     match?: string;
@@ -27,6 +28,7 @@ export default async function ResortSearchPage({ searchParams }: PageProps) {
     q = "",
     by = "name",
     country = "",
+    region = "",
     inclusive,
     amenities = "",
     match = "all",
@@ -39,6 +41,7 @@ export default async function ResortSearchPage({ searchParams }: PageProps) {
     query: q,
     searchBy,
     country,
+    region,
     inclusive: inclusive === "1",
     amenities: selectedAmenities,
     matchMode: match === "any" ? "any" : "all",
@@ -51,6 +54,7 @@ export default async function ResortSearchPage({ searchParams }: PageProps) {
     ...(q ? { q } : {}),
     ...(q ? { by: searchBy } : {}),
     ...(country ? { country } : {}),
+    ...(region ? { region } : {}),
     ...(inclusive === "1" ? { inclusive: "1" } : {}),
     ...(amenities ? { amenities } : {}),
     ...(selectedAmenities.length ? { match } : {}),

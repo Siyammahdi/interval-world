@@ -5,14 +5,21 @@ import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AskExpert } from "@/components/home/AskExpert";
+import type { ResortRegionOption } from "@/lib/resort-data";
 
 type Props = {
   countries: string[];
+  regionsByCountry?: Record<string, ResortRegionOption[]>;
   amenities?: string[];
 };
 
-export function AdvancedSearchForm({ countries, amenities: amenityOptions = [] }: Props) {
+export function AdvancedSearchForm({
+  countries,
+  regionsByCountry = {},
+  amenities: amenityOptions = [],
+}: Props) {
   const router = useRouter();
+  const [country, setCountry] = useState("");
   const [region, setRegion] = useState("");
   const [allInclusive, setAllInclusive] = useState(false);
   const [searchBy, setSearchBy] = useState<"name" | "code">("name");
@@ -25,6 +32,7 @@ export function AdvancedSearchForm({ countries, amenities: amenityOptions = [] }
     () => [...countries].sort((a, b) => a.localeCompare(b)),
     [countries],
   );
+  const availableRegions = regionsByCountry[country] || [];
 
   function toggleAmenity(label: string) {
     setAmenities((prev) =>
@@ -33,6 +41,7 @@ export function AdvancedSearchForm({ countries, amenities: amenityOptions = [] }
   }
 
   function clearFilters() {
+    setCountry("");
     setRegion("");
     setAllInclusive(false);
     setSearchBy("name");
@@ -44,7 +53,8 @@ export function AdvancedSearchForm({ countries, amenities: amenityOptions = [] }
   function onSubmit(event: FormEvent) {
     event.preventDefault();
     const params = new URLSearchParams();
-    if (region) params.set("country", region);
+    if (country) params.set("country", country);
+    if (region) params.set("region", region);
     if (query.trim()) {
       params.set("q", query.trim());
       params.set("by", searchBy);
@@ -114,146 +124,187 @@ export function AdvancedSearchForm({ countries, amenities: amenityOptions = [] }
           </p>
         </div>
 
-        <form onSubmit={onSubmit} className="flex flex-col gap-12">
-          <section className="flex flex-col gap-4">
-            <h3 className="text-[24px] font-medium text-iw-ink md:text-[29px]">Select a Country</h3>
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-8">
-              <label className="sr-only" htmlFor="region">
+        <form
+          onSubmit={onSubmit}
+          className="rounded-2xl border border-iw-border bg-white p-5 shadow-sm md:p-7"
+          aria-label="Advanced resort search"
+        >
+          <div className="mb-6">
+            <h3 className="text-[24px] font-medium text-iw-ink md:text-[29px]">
+              Find a resort
+            </h3>
+            <p className="mt-1 text-[14px] leading-[1.7] text-iw-muted">
+              Start with a country, then narrow your search if you need to.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            <div>
+              <label className="mb-2 block text-[14px] font-medium text-iw-ink" htmlFor="country">
                 Country
               </label>
               <select
                 id="country"
-                value={region}
-                onChange={(e) => setRegion(e.target.value)}
-                className="h-[48px] w-full max-w-[904px] rounded-lg border border-iw-ink bg-white px-8 text-[17px] font-medium text-iw-ink"
+                value={country}
+                onChange={(e) => {
+                  setCountry(e.target.value);
+                  setRegion("");
+                }}
+                className="h-12 w-full rounded-lg border border-iw-border bg-white px-4 text-[15px] text-iw-ink outline-none focus:border-iw-link focus:ring-2 focus:ring-iw-link/20"
               >
-                <option value="">Please Select Country</option>
-                {sortedCountries.map((country) => (
-                  <option key={country} value={country}>
-                    {country}
+                <option value="">All countries</option>
+                {sortedCountries.map((countryOption) => (
+                  <option key={countryOption} value={countryOption}>
+                    {countryOption}
                   </option>
                 ))}
               </select>
-              <label className="flex items-center gap-2 text-[14px] text-iw-ink">
-                <input
-                  type="checkbox"
-                  checked={allInclusive}
-                  onChange={(e) => setAllInclusive(e.target.checked)}
-                  className="size-5 accent-iw-link"
-                />
-                Filter by All Inclusive Resorts
-              </label>
             </div>
-          </section>
-
-          <hr className="border-iw-border" />
-
-          <section className="flex flex-col gap-6">
             <div>
-              <h3 className="text-[24px] font-medium text-iw-ink md:text-[29px]">
-                Resort Name or Code
-              </h3>
-              <p className="mt-1 max-w-[753px] text-[14px] leading-[1.7] text-iw-muted">
-                Know the name or code of the resort you would like to visit? Simply type it in to
-                continue, or if you are unsure, leave the fields empty.
-              </p>
+              <label className="mb-2 block text-[14px] font-medium text-iw-ink" htmlFor="region">
+                Region or area <span className="font-normal text-iw-muted">(optional)</span>
+              </label>
+              <select
+                id="region"
+                value={region}
+                onChange={(e) => setRegion(e.target.value)}
+                disabled={!country || availableRegions.length === 0}
+                className="h-12 w-full rounded-lg border border-iw-border bg-white px-4 text-[15px] text-iw-ink outline-none focus:border-iw-link focus:ring-2 focus:ring-iw-link/20 disabled:cursor-not-allowed disabled:bg-iw-surface disabled:text-iw-muted"
+              >
+                <option value="">
+                  {!country
+                    ? "Select a country first"
+                    : availableRegions.length > 0
+                      ? "All regions in country"
+                      : "No region data available"}
+                </option>
+                {availableRegions.map((option) => (
+                  <option key={option.name} value={option.name}>
+                    {option.name} ({option.count})
+                  </option>
+                ))}
+              </select>
             </div>
-            <div className="flex flex-wrap gap-8">
-              <label className="flex items-center gap-2 text-[14px]">
+          </div>
+
+          <div className="mt-4 grid gap-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
+            <div>
+              <label className="mb-2 block text-[14px] font-medium text-iw-ink" htmlFor="resort-query">
+                Search by name, destination, or code
+              </label>
+              <input
+                id="resort-query"
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder={searchBy === "name" ? "e.g. Marriott or Orlando" : "e.g. 12345 or ABC"}
+                className="h-12 w-full rounded-lg border border-iw-border bg-white px-4 text-[15px] outline-none placeholder:text-iw-muted focus:border-iw-link focus:ring-2 focus:ring-iw-link/20"
+              />
+            </div>
+            <div className="flex h-12 items-center gap-4 rounded-lg border border-iw-border px-4">
+              <span className="text-[13px] text-iw-muted">Match</span>
+              <label className="flex items-center gap-1.5 text-[14px] text-iw-ink">
                 <input
                   type="radio"
                   name="searchBy"
                   checked={searchBy === "name"}
                   onChange={() => setSearchBy("name")}
-                  className="size-5 accent-iw-link"
+                  className="size-4 accent-iw-link"
                 />
-                Resort Name
+                Name
               </label>
-              <label className="flex items-center gap-2 text-[14px]">
+              <label className="flex items-center gap-1.5 text-[14px] text-iw-ink">
                 <input
                   type="radio"
                   name="searchBy"
                   checked={searchBy === "code"}
                   onChange={() => setSearchBy("code")}
-                  className="size-5 accent-iw-link"
+                  className="size-4 accent-iw-link"
                 />
-                Resort Code
+                Code
               </label>
             </div>
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder={searchBy === "name" ? "Enter resort name" : "Enter resort code"}
-              className="h-14 w-full max-w-[384px] rounded-lg border border-iw-muted bg-white px-4 text-[14px] outline-none focus:border-iw-link"
-            />
-          </section>
+          </div>
 
-          <hr className="border-iw-border" />
-
-          <section className="flex flex-col gap-6">
-            <div>
-              <h3 className="text-[24px] font-medium text-iw-ink md:text-[29px]">
-                Search By Amenities
-              </h3>
-              <p className="mt-1 max-w-[753px] text-[14px] leading-[1.7] text-iw-muted">
-                Select one or more amenities to refine your search.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-8">
-              <label className="flex items-center gap-2 text-[14px]">
-                <input
-                  type="radio"
-                  name="matchMode"
-                  checked={matchMode === "all"}
-                  onChange={() => setMatchMode("all")}
-                  className="size-5 accent-iw-link"
-                />
-                Match All
-              </label>
-              <label className="flex items-center gap-2 text-[14px]">
-                <input
-                  type="radio"
-                  name="matchMode"
-                  checked={matchMode === "any"}
-                  onChange={() => setMatchMode("any")}
-                  className="size-5 accent-iw-link"
-                />
-                Match Any
-              </label>
-            </div>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {amenityList.map((amenity) => (
-                <label
-                  key={amenity}
-                  className="flex items-center gap-2 rounded-lg border border-iw-border bg-white px-3 py-2 text-[14px]"
-                >
-                  <input
-                    type="checkbox"
-                    checked={amenities.includes(amenity)}
-                    onChange={() => toggleAmenity(amenity)}
-                    className="size-4 accent-iw-link"
-                  />
-                  {amenity}
-                </label>
-              ))}
-            </div>
-          </section>
-
-          <div className="flex flex-wrap gap-3">
-            <button
-              type="submit"
-              className="inline-flex w-full max-w-[284px] items-center justify-center rounded-lg bg-iw-blue px-[42px] py-3 text-[17px] font-medium text-white hover:bg-iw-blue-dark"
-            >
-              Search Resorts
-            </button>
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
+            <label className="flex items-center gap-2 text-[14px] text-iw-ink">
+              <input
+                type="checkbox"
+                checked={allInclusive}
+                onChange={(e) => setAllInclusive(e.target.checked)}
+                className="size-5 accent-iw-link"
+              />
+              All-inclusive resorts only
+            </label>
             <button
               type="button"
               onClick={clearFilters}
-              className="inline-flex items-center justify-center rounded-lg border border-iw-ink bg-white px-6 py-3 text-[17px] font-medium text-iw-ink hover:bg-iw-surface"
+              className="text-[14px] font-medium text-iw-link hover:underline"
             >
-              Clear Filters
+              Clear all filters
             </button>
+          </div>
+
+          <details className="mt-6 border-t border-iw-border pt-5">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-medium text-iw-ink">
+              <span>More filters</span>
+              <span className="text-[13px] font-normal text-iw-muted">
+                {amenities.length > 0 ? `${amenities.length} selected` : "Add amenities +"}
+              </span>
+            </summary>
+            <div className="pt-5">
+              <div className="mb-4 flex flex-wrap items-center gap-4">
+                <span className="text-[14px] text-iw-muted">Amenities should:</span>
+                <label className="flex items-center gap-1.5 text-[14px] text-iw-ink">
+                  <input
+                    type="radio"
+                    name="matchMode"
+                    checked={matchMode === "all"}
+                    onChange={() => setMatchMode("all")}
+                    className="size-4 accent-iw-link"
+                  />
+                  Match all
+                </label>
+                <label className="flex items-center gap-1.5 text-[14px] text-iw-ink">
+                  <input
+                    type="radio"
+                    name="matchMode"
+                    checked={matchMode === "any"}
+                    onChange={() => setMatchMode("any")}
+                    className="size-4 accent-iw-link"
+                  />
+                  Match any
+                </label>
+              </div>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                {amenityList.map((amenity) => (
+                  <label
+                    key={amenity}
+                    className="flex items-center gap-2 rounded-lg border border-iw-border px-3 py-2 text-[14px] text-iw-ink hover:border-iw-link"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={amenities.includes(amenity)}
+                      onChange={() => toggleAmenity(amenity)}
+                      className="size-4 accent-iw-link"
+                    />
+                    {amenity}
+                  </label>
+                ))}
+              </div>
+            </div>
+          </details>
+
+          <div className="mt-6 flex flex-col gap-3 border-t border-iw-border pt-6 sm:flex-row sm:items-center">
+            <button
+              type="submit"
+              className="inline-flex h-12 w-full items-center justify-center rounded-lg bg-iw-blue px-8 text-[16px] font-medium text-white hover:bg-iw-blue-dark sm:w-auto"
+            >
+              Search resorts
+            </button>
+            <span className="text-center text-[13px] text-iw-muted sm:text-left">
+              Leave all fields blank to view every resort.
+            </span>
           </div>
         </form>
       </div>

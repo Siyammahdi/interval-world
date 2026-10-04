@@ -25,6 +25,7 @@ export type ResortSearchFilters = {
   query?: string;
   searchBy?: "name" | "code";
   country?: string;
+  region?: string;
   inclusive?: boolean;
   amenities?: string[];
   matchMode?: "all" | "any";
@@ -62,16 +63,7 @@ export function getResortRegionOptions(
   country: string,
 ): ResortRegionOption[] {
   const options = new Map<string, ResortRegionOption>();
-  const globalCounts = new Map<string, number>();
   const targetCountry = normalized(country);
-
-  for (const resort of resorts) {
-    const name = (resort.region || "").trim();
-    if (!name) continue;
-
-    const key = normalized(name);
-    globalCounts.set(key, (globalCounts.get(key) || 0) + 1);
-  }
 
   for (const resort of resorts) {
     if (normalized(resort.country || "") !== targetCountry) continue;
@@ -81,13 +73,13 @@ export function getResortRegionOptions(
     const key = normalized(name);
     const existing = options.get(key);
     if (existing) {
-      continue;
+      existing.count += 1;
     } else {
-      options.set(key, { name, count: globalCounts.get(key) || 0 });
+      options.set(key, { name, count: 1 });
     }
   }
 
-  return [...options.values()];
+  return [...options.values()].sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export function getResortsByRegion(resorts: Resort[], region: string) {
@@ -131,11 +123,13 @@ function searchableResortText(resort: Resort) {
 export function filterResorts(resorts: Resort[], filters: ResortSearchFilters) {
   const query = normalized(filters.query || "");
   const country = normalized(filters.country || "");
+  const region = normalized(filters.region || "");
   const amenities = (filters.amenities || []).map(normalized).filter(Boolean);
   const matchMode = filters.matchMode === "any" ? "any" : "all";
 
   return resorts.filter((resort) => {
     if (country && normalized(resort.country || "") !== country) return false;
+    if (region && normalized(resort.region || "") !== region) return false;
 
     if (query) {
       const searchable =
