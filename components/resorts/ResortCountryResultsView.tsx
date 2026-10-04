@@ -113,6 +113,7 @@ export function ResortCountryResultsView({
               currentPage={currentPage}
               totalPages={totalPages}
               basePath={basePath}
+              searchParams={regionName ? { region: regionName } : undefined}
             />
           </>
         ) : (

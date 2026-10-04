@@ -62,7 +62,16 @@ export function getResortRegionOptions(
   country: string,
 ): ResortRegionOption[] {
   const options = new Map<string, ResortRegionOption>();
+  const globalCounts = new Map<string, number>();
   const targetCountry = normalized(country);
+
+  for (const resort of resorts) {
+    const name = (resort.region || "").trim();
+    if (!name) continue;
+
+    const key = normalized(name);
+    globalCounts.set(key, (globalCounts.get(key) || 0) + 1);
+  }
 
   for (const resort of resorts) {
     if (normalized(resort.country || "") !== targetCountry) continue;
@@ -72,13 +81,20 @@ export function getResortRegionOptions(
     const key = normalized(name);
     const existing = options.get(key);
     if (existing) {
-      existing.count += 1;
+      continue;
     } else {
-      options.set(key, { name, count: 1 });
+      options.set(key, { name, count: globalCounts.get(key) || 0 });
     }
   }
 
   return [...options.values()];
+}
+
+export function getResortsByRegion(resorts: Resort[], region: string) {
+  const targetRegion = normalized(region);
+  return resorts.filter(
+    (resort) => normalized(resort.region || "") === targetRegion,
+  );
 }
 
 export function getResortsByCountryRegion(

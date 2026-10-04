@@ -7,7 +7,7 @@ import {
   fetchResortCountries,
   getResortRegionOptions,
   getResortsByCountry,
-  getResortsByCountryRegion,
+  getResortsByRegion,
 } from "@/lib/resort-data";
 
 type PageProps = {
@@ -47,7 +47,7 @@ export default async function ResortCountryPage({ params, searchParams }: PagePr
   if (regionCode && !selectedRegion) notFound();
 
   const list = selectedRegion
-    ? getResortsByCountryRegion(resorts, country, selectedRegion.name)
+    ? getResortsByRegion(resorts, selectedRegion.name)
     : getResortsByCountry(resorts, country);
   const page = Number(pageRaw) || 1;
 
