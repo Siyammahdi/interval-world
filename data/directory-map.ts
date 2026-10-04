@@ -9,6 +9,7 @@ type MapGroup = {
 export const DIRECTORY_MAP_GROUPS: MapGroup[] = [
   { slug: "asia", label: "Asia", regionCodes: ["24"] },
   { slug: "australia", label: "Australia", regionCodes: ["26"] },
+  { slug: "new-zealand", label: "New Zealand", regionCodes: ["32"] },
   { slug: "canada", label: "Canada", regionCodes: ["1", "2"] },
   { slug: "caribbean", label: "Caribbean", regionCodes: ["14"] },
   { slug: "central-america", label: "Central America", regionCodes: ["16"] },
@@ -28,13 +29,16 @@ export function getMapGroupCountries(slug: string, availableCountries: string[])
   const group = getDirectoryMapGroup(slug);
   if (!group) return [];
 
-  const available = new Set(availableCountries.map((country) => country.toLowerCase()));
+  const available = new Map(
+    availableCountries.map((country) => [country.trim().toLowerCase(), country.trim()]),
+  );
   const countries = new Set<string>();
 
   for (const region of DIRECTORY_REGIONS) {
     if (!group.regionCodes.includes(region.code)) continue;
     for (const country of region.countries) {
-      if (available.has(country.toLowerCase())) countries.add(country);
+      const availableCountry = available.get(country.trim().toLowerCase());
+      if (availableCountry) countries.add(availableCountry);
     }
   }
 

@@ -14,7 +14,8 @@ export type DirectoryRegion = {
  */
 export const DIRECTORY_REGIONS: DirectoryRegion[] = [
   { code: "24", name: "Asia", countries: ["Cambodia", "China", "Hong Kong", "India", "Indonesia", "Japan", "Maldives", "Malaysia", "Philippines", "Singapore", "South Korea", "Sri Lanka", "Taiwan", "Thailand", "Vietnam"] },
-  { code: "26", name: "Australia & New Zealand", countries: ["Australia", "New Zealand"] },
+  { code: "26", name: "Australia", countries: ["Australia"] },
+  { code: "32", name: "New Zealand", countries: ["New Zealand"] },
   { code: "1", name: "Canada - Eastern", countries: ["Canada"], keywords: ["ontario", "quebec", "new brunswick", "nova scotia", "newfoundland", "prince edward", "manitoba", "on", "qc", "nb", "ns", "nl", "pe", "mb"] },
   { code: "2", name: "Canada - Western", countries: ["Canada"], keywords: ["alberta", "british columbia", "saskatchewan", "yukon", "northwest territories", "nunavut", "ab", "bc", "sk", "yt", "nt", "nu"] },
   { code: "14", name: "Caribbean & Atlantic Islands", countries: ["Antigua", "Antigua and Barbuda", "Aruba", "Bahamas", "Barbados", "Bermuda", "Bonaire", "British Virgin Islands", "Cayman Islands", "Cuba", "Curaçao", "Cura��ao", "Dominican Republic", "Grenada", "Guadeloupe", "Jamaica", "Puerto Rico", "Saint Lucia", "St. Kitts", "St. Lucia", "St. Maarten", "St. Martin", "Saint Martin", "Sint Maarten", "St. Vincent and the Grenadines", "Trinidad and Tobago", "Turks and Caicos", "Turks and Caicos Islands", "US Virgin Islands", "Virgin Islands"] },

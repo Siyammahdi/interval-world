@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { DirectoryMapGroupView } from "@/components/resorts/DirectoryMapGroupView";
 import { getDirectoryMapGroup, getMapGroupCountries } from "@/data/directory-map";
 import { fetchResortCountries } from "@/lib/resort-data";
@@ -23,7 +23,16 @@ export default async function DirectoryMapGroupPage({ params }: PageProps) {
   const { slug } = await params;
   const group = getDirectoryMapGroup(slug);
   if (!group) notFound();
+  if (slug === "australia" || slug === "new-zealand") {
+    redirect(`/resort-directory/regions/${encodeURIComponent(group.label)}`);
+  }
 
-  const countries = getMapGroupCountries(slug, await fetchResortCountries());
+  const availableCountries = await fetchResortCountries();
+  const countries =
+    slug === "australia"
+      ? availableCountries.filter((country) => country.toLowerCase() === "australia")
+      : slug === "new-zealand"
+        ? availableCountries.filter((country) => country.toLowerCase() === "new zealand")
+        : getMapGroupCountries(slug, availableCountries);
   return <DirectoryMapGroupView groupLabel={group.label} countries={countries} />;
 }

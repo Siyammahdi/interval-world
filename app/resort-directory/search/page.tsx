@@ -65,7 +65,7 @@ export default async function ResortSearchPage({ searchParams }: PageProps) {
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-4 pb-12 pt-8 md:px-[120px] md:pb-[50px]">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <h1 className="text-[28px] font-medium leading-[1.3] text-iw-navy md:text-[35px]">
-            Search Results
+            Resort Directory
           </h1>
           <nav
             aria-label="Breadcrumb"

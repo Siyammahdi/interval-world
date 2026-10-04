@@ -135,7 +135,19 @@ export function filterResorts(resorts: Resort[], filters: ResortSearchFilters) {
       const searchable =
         filters.searchBy === "code"
           ? `${resort.symbol || ""} ${resort.resort_ID || ""}`.toLowerCase()
-          : `${resort.resortName || ""} ${resort.place_name || ""} ${resort.location || ""}`.toLowerCase();
+          : [
+              resort.resortName,
+              resort.place_name,
+              resort.location,
+              resort.description,
+              resort.resort_details,
+            ]
+              .filter(Boolean)
+              .map((value) =>
+                typeof value === "string" ? value : JSON.stringify(value),
+              )
+              .join(" ")
+              .toLowerCase();
       if (!searchable.includes(query)) return false;
     }
 

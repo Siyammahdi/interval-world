@@ -38,7 +38,7 @@ export function HeroCarousel({ slides }: Props) {
           className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent"
           aria-hidden
         />
-        <div className="relative z-10 flex h-full min-h-[420px] max-w-[593px] flex-col justify-between px-8 py-16 md:min-h-[520px] md:px-16 md:py-24">
+        <div className="relative z-10 flex h-full min-h-[420px] max-w-[693px] flex-col justify-between px-8 py-16 md:min-h-[520px] md:px-16 md:py-24">
           <div className="text-white">
             <h1 className="text-[36px] font-medium leading-[1.2] md:text-[50px]">
               <span className="block">Total price.</span>

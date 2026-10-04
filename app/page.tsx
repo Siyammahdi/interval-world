@@ -2,6 +2,7 @@ import { AppPromo } from "@/components/home/AppPromo";
 import { AskExpert } from "@/components/home/AskExpert";
 import { FeatureModules } from "@/components/home/FeatureModules";
 import { HeroCarousel } from "@/components/home/HeroCarousel";
+import { InspirationSection } from "@/components/home/InspirationSection";
 import { MemberAlert } from "@/components/home/MemberAlert";
 import { ResortDirectory } from "@/components/home/ResortDirectory";
 import { fetchHomepage, fetchNavigation } from "@/lib/cms";
@@ -22,6 +23,7 @@ export default async function HomePage() {
         </div>
       </div>
       <ResortDirectory destinations={destinations} />
+      <InspirationSection />
       <AppPromo />
       <AskExpert socialLinks={navigation.socialLinks} />
     </main>

@@ -54,7 +54,7 @@ export function ResortDirectory({ destinations }: Props) {
               </div>
             ))}
           </div>
-          <Link href="/web/cs/interval-hd" className="mx-auto shrink-0 md:mx-0">
+          <Link href="/web/my/channel" className="mx-auto shrink-0 md:mx-0">
             <Image
               src="/images/figma/home/intervalhd.png"
               alt="intervalHD — Now with helpful videos"
