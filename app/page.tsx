@@ -4,13 +4,14 @@ import { FeatureModules } from "@/components/home/FeatureModules";
 import { HeroCarousel } from "@/components/home/HeroCarousel";
 import { InspirationSection } from "@/components/home/InspirationSection";
 import { MemberAlert } from "@/components/home/MemberAlert";
-import { ResortDirectory } from "@/components/home/ResortDirectory";
-import { fetchHomepage, fetchNavigation } from "@/lib/cms";
+import { MapSearchSection } from "@/components/resorts/MapSearchSection";
+import { fetchDirectoryMeta, fetchHomepage, fetchNavigation } from "@/lib/cms";
 
 export default async function HomePage() {
-  const [{ heroSlides, memberAlert, benefitCards, destinations }, navigation] = await Promise.all([
+  const [{ heroSlides, memberAlert, benefitCards }, navigation, directory] = await Promise.all([
     fetchHomepage(),
     fetchNavigation(),
+    fetchDirectoryMeta(),
   ]);
 
   return (
@@ -22,10 +23,14 @@ export default async function HomePage() {
           <FeatureModules cards={benefitCards} />
         </div>
       </div>
-      <ResortDirectory destinations={destinations} />
       <InspirationSection />
       <AppPromo />
       <AskExpert socialLinks={navigation.socialLinks} />
+      <div className="w-full border-t border-iw-muted bg-white">
+        <div className="mx-auto w-full max-w-[1440px] px-4 py-[60px] md:px-[120px] md:py-[80px]">
+          <MapSearchSection regions={directory.mapSearchRegions || []} />
+        </div>
+      </div>
     </main>
   );
 }

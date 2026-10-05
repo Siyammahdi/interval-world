@@ -10,7 +10,7 @@ export async function SiteHeader() {
   const [loggedIn, navigation] = await Promise.all([isLoggedIn(), fetchNavigation()]);
 
   return (
-    <header className="relative z-[60] w-full overflow-visible bg-white">
+    <header className="sticky top-0 z-[60] w-full overflow-visible bg-white shadow-[0_1px_0_rgba(16,16,16,0.08)]">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-white focus:px-3 focus:py-2 focus:text-iw-blue"
